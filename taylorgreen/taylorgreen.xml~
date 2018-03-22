@@ -1,0 +1,28 @@
+<config>
+<fvm>
+  <name>
+    taylorgreen
+  </name>
+  <platform>cpu</platform>
+  <grid>
+    <lowerCorner>0 0 0</lowerCorner>
+    <upperCorner>1 1 1</upperCorner>
+    <dimension>64 64 64</dimension>
+  </grid>
+  <boundary>periodic</boundary>
+  <flux>HLL3</flux>
+  <endTime>0.1</endTime>
+  <equation>euler3</equation>
+  <reconstruction>weno2</reconstruction>
+  <cfl>auto</cfl>
+  <integrator>rungekutta4</integrator>
+  <initialData>
+    <python>taylorgreen.py</python>
+  </initialData>
+  <writer>
+    <type>netcdf</type>
+    <basename>tg</basename>
+    <numberOfSaves>10</numberOfSaves>
+  </writer>
+</fvm>
+</config>
