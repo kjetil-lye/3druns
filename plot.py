@@ -16,6 +16,6 @@ with netCDF4.Dataset(sys.argv[1]) as f:
         x,y = mgrid[0:1:N*1j, 0:1:N*1j]
         plt.pcolormesh(x,y,dl)
         plt.colorbar()
-        plt.savefig('%s_%d.png' % (sys.argv[1].replace('.nc', ''), k))
+        plt.savefig('img/%s_%d.png' % (sys.argv[1].replace('.nc', ''), k))
         plt.close('all')
 
