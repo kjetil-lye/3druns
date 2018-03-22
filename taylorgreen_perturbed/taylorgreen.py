@@ -27,7 +27,8 @@ if abs(normalization3) < 1e-10:
 
 perturbation_x = perturbation*sum([a1[i]*cos(2*pi*(i+1)*(x+b1[i])) for i in range(len(a1))])/normalization1
 perturbation_y = perturbation*sum([a2[i]*cos(2*pi*(i+1)*(x+b2[i])) for i in range(len(a2))])/normalization2
-perturbation_y = perturbation*sum([a3[i]*cos(2*pi*(i+1)*(x+b3[i])) for i in range(len(a3))])/normalization3
+perturbation_z = perturbation*sum([a3[i]*cos(2*pi*(i+1)*(x+b3[i])) for i in range(len(a3))])/normalization3
+
 x_p = x + perturbation_x
 y_p = y + perturbation_y
 z_p = z + perturbation_z
