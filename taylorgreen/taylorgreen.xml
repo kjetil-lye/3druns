@@ -7,11 +7,11 @@
   <grid>
     <lowerCorner>0 0 0</lowerCorner>
     <upperCorner>1 1 1</upperCorner>
-    <dimension>64 64 64</dimension>
+    <dimension>256 256 256</dimension>
   </grid>
   <boundary>periodic</boundary>
   <flux>HLL3</flux>
-  <endTime>0.1</endTime>
+  <endTime>4</endTime>
   <equation>euler3</equation>
   <reconstruction>weno2</reconstruction>
   <cfl>auto</cfl>
@@ -26,7 +26,7 @@
   </writer>
 </fvm>
 <uq>
- <samples>4</samples>
+ <samples>1</samples>
   <generator>auto</generator>
   <parameters>
     <parameter>

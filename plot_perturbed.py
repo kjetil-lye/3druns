@@ -7,7 +7,7 @@ import sys
 import netCDF4
 
 with netCDF4.Dataset(sys.argv[1]) as f:
-    for sample in range(4):
+    for sample in range(2):
         d = f.variables['sample_%d_rho' % sample][:,:,:]
 
         N = d.shape[0]
