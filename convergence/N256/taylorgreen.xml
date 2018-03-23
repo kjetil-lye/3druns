@@ -33,7 +33,7 @@
   </writer>
 </fvm>
 <uq>
- <samples>4</samples>
+ <samples>1</samples>
   <generator>auto</generator>
   <parameters>
     <parameter>
