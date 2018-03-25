@@ -10,9 +10,9 @@ for t in range(11):
     errors = []
     resolutions = [64,128,256,512,1024]
 
-    for r in resolutions[]:
-        with netCDF4.Dataset('convergence/N{}/tg_{}.nc'.format(r, t)) as f:
-
+    for r in resolutions:
+        with netCDF4.Dataset('convergence/N{}/tg_perturbed_{}.nc'.format(r, t)) as f:
+            sample = 0
             d = f.variables['sample_%d_rho' % sample][:,:,:]
 
             N = d.shape[0]
@@ -26,7 +26,8 @@ for t in range(11):
                 plt.close('all')
             if r > resolutions[0]:
                 errors.append(sum(abs(d-dPrev))/r**3)
-    plt.loglog(resolutions, errors, '-o')
+            dPrev = repeat(repeat(repeat(d,2,0),2,1),2,2)
+    plt.loglog(resolutions[1:], errors, '-o')
     plt.title('$L^1$ convergence at $t={}$'.format(t/10.*4))
     plt.xlabel('Resolution (number of cells in one direction)')
     plt.ylabel('Error ($||\\cdot||_{L^1}$)')
