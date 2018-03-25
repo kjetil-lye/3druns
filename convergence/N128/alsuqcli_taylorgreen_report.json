@@ -1,0 +1,29 @@
+{
+    "report": {
+        "executable": "alsuqcli",
+        "name": "taylorgreen",
+        "currentWorkingDirectory": "\/scratch\/snx3000\/klye\/3drun_git\/3druns\/convergence\/N128",
+        "endTime": "20180323T093505",
+        "cpuDuration": "2424381",
+        "cpuDurationHuman": "00:40:24",
+        "wallTime": "2589000",
+        "wallTimeHuman": "00:43:09",
+        "timesteps": "40217",
+        "command": "\/users\/klye\/alsvinn\/build\/alsuqcli\/alsuqcli taylorgreen.xml ",
+        "revision": "3e89ad279af0e70c2badb69d5e7bf65c3cb90372",
+        "versionControlStatus": "CLEAN",
+        "buildType": "Release",
+        "cxxFlags": "",
+        "cudaFlags": "--use_fast_math -Xptxas -warn-spills -arch=compute_60 -code=sm_60",
+        "cudaVersion": "8.0",
+        "floatingPointPrecisionDescription": "double (double precision, 64 bits)",
+        "floatingPointType": "double",
+        "floatingPointMax": "1.79769e+308",
+        "floatingPointMin": "2.22507e-308",
+        "floatingPointEpsilon": "2.22045e-16",
+        "mpiEnabled": "true",
+        "mpiProcesses": "1",
+        "ompEnabled": "true",
+        "ompThreads": "1"
+    }
+}
