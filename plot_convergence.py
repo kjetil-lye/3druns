@@ -8,7 +8,7 @@ import netCDF4
 
 for t in range(11):
     errors = []
-    resolutions = [64,128,256,512,1024]
+    resolutions = [64,128,256,512]
 
     for r in resolutions:
         with netCDF4.Dataset('convergence/N{}/tg_perturbed_{}.nc'.format(r, t)) as f:
@@ -31,7 +31,7 @@ for t in range(11):
     plt.title('$L^1$ convergence at $t={}$'.format(t/10.*4))
     plt.xlabel('Resolution (number of cells in one direction)')
     plt.ylabel('Error ($||\\cdot||_{L^1}$)')
-    plt.savefig('img/convergence_perturbed_%d.png' % t)
+    plt.savefig('img/convergence_perturbed_%d.png' % t, bbox_inches='tight')
     plt.close('all')
             
 
