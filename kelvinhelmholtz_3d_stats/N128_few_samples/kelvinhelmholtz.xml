@@ -44,7 +44,7 @@
   </writer>
 </fvm>
 <uq>
-  <samples>1024</samples>
+  <samples>128</samples>
   <generator>auto</generator>
   <parameters>
     <parameter>

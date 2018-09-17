@@ -7,7 +7,7 @@
   <grid>
     <lowerCorner>0 0 0</lowerCorner>
     <upperCorner>1 1 1</upperCorner>
-    <dimension>128 128 128</dimension>
+    <dimension>256 256 256</dimension>
   </grid>
   <boundary>periodic</boundary>
   <flux>hll3</flux>
@@ -44,7 +44,7 @@
   </writer>
 </fvm>
 <uq>
-  <samples>1024</samples>
+  <samples>1</samples>
   <generator>auto</generator>
   <parameters>
     <parameter>
@@ -64,76 +64,7 @@
       <basename>kh</basename>
     </writer>
     </stat>
-    <stat>
-  <name>
-    structure_basic
-  </name>
-  <numberOfSaves>1</numberOfSaves>
-  <direction>0</direction>
-  <numberOfH>4</numberOfH>
-  <p>1</p>
-  <writer>
-    <type>netcdf</type>
-    <basename>kh_x</basename>
-  </writer>
-  </stat>
-
-<stat>
-  <name>
-    structure_basic
-  </name>
-  <numberOfSaves>1</numberOfSaves>
-  <direction>1</direction>
-  <numberOfH>4</numberOfH>
-  <p>1</p>
-  <writer>
-    <type>netcdf</type>
-    <basename>kh_y</basename>
-  </writer>
-  </stat>
-
-<stat>
-  <name>
-    structure_cube
-  </name>
-  <numberOfSaves>1</numberOfSaves>
-  <numberOfH>4</numberOfH>
-  <p>1</p>
-  <writer>
-    <type>netcdf</type>
-    <basename>kh_cube</basename>
-  </writer>
-  </stat>
-
-
-<stat>
-  <name>
-    structure_cube
-  </name>
-  <numberOfSaves>1</numberOfSaves>
-  <numberOfH>4</numberOfH>
-  <p>2</p>
-  <writer>
-    <type>netcdf</type>
-    <basename>kh_cube</basename>
-  </writer>
-  </stat>
-
-
-<stat>
-  <name>
-    structure_cube
-  </name>
-  <numberOfSaves>1</numberOfSaves>
-  <numberOfH>4</numberOfH>
-  <p>3</p>
-  <writer>
-    <type>netcdf</type>
-    <basename>kh_cube</basename>
-  </writer>
-  </stat>
-
-
+    
   </stats>
 </uq>
 </config>
