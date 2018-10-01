@@ -26,14 +26,10 @@
     </parameters>
     <python>taylorgreen.py</python>
   </initialData>
-  <writer>
-    <type>netcdf</type>
-    <basename>tg_perturbed</basename>
-    <numberOfSaves>2</numberOfSaves>
-  </writer>
 </fvm>
 <uq>
- <samples>512</samples>
+ <samples>1024</samples>
+ <sampleStart>0</sampleStart>
   <generator>auto</generator>
   <parameters>
     <parameter>
@@ -43,6 +39,37 @@
     </parameter>
   </parameters>
   <stats>
+<stat>
+    <name>
+      meanvar
+    </name>
+    <numberOfSaves>2</numberOfSaves>
+    <writer>
+      <type>netcdf</type>
+      <basename>tg</basename>
+    </writer>
+</stat>
+<stat>
+    <name>
+      meanvar
+    </name>
+    <numberOfSaves>2</numberOfSaves>
+    <writer>
+      <type>netcdf</type>
+      <basename>tg</basename>
+    </writer>
+</stat>
+<stat>
+    <name>
+      onepointmoment
+    </name>
+    <p>2</p>
+    <numberOfSaves>2</numberOfSaves>
+    <writer>
+      <type>netcdf</type>
+      <basename>tg</basename>
+    </writer>
+</stat>
 
   </stats>
 </uq>

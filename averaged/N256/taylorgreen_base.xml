@@ -7,7 +7,7 @@
   <grid>
     <lowerCorner>0 0 0</lowerCorner>
     <upperCorner>1 1 1</upperCorner>
-    <dimension>64 64 64</dimension>
+    <dimension>256 256 256</dimension>
   </grid>
   <boundary>periodic</boundary>
   <flux>HLL3</flux>
@@ -28,8 +28,8 @@
   </initialData>
 </fvm>
 <uq>
- <samples>1024</samples>
- <sampleStart>0</sampleStart>
+ <samples>16</samples>
+ <sampleStart>START</sampleStart>
   <generator>auto</generator>
   <parameters>
     <parameter>
