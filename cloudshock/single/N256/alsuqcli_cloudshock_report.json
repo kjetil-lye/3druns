@@ -1,0 +1,159 @@
+{
+    "report": {
+        "software": "alsvinn https:\/\/github.com\/alsvinn",
+        "softwareVersion": "0.1.2",
+        "currentWorkingDirectory": "\/cluster\/scratch\/klye\/3druns-2018-09-06\/cloudshock\/single\/N256",
+        "operatingSystem": "Linux: Linux 3.10.0-862.3.3.el7.x86_64 #1 SMP Fri Jun 15 04:15:27 UTC 2018 x86_64",
+        "username": "klye",
+        "host": "lo-s4-020",
+        "standardCLibrary": "GNU libc 2.17 stable",
+        "generatedAt": "20181001T161522",
+        "CPU": "Intel(R) Xeon(R) CPU E5-2630 v4 @ 2.20GHz",
+        "revision": "5f0f46b63c91ef879576c63774b0b1f7314b9d43",
+        "versionControlStatus": "DIRTY",
+        "buildType": "Release",
+        "cxxFlags": "",
+        "cxxFlagsDebug": "-g",
+        "cxxFlagsRelease": "-O3 -DNDEBUG",
+        "cxxFlagsMinSizeRel": "-Os -DNDEBUG",
+        "cxxFlagsRelWithDebInfo": "-O2 -g -DNDEBUG",
+        "cudaFlags": "--use_fast_math -Xptxas -warn-spills -gencode arch=compute_50,code=sm_50 -gencode arch=compute_60,code=sm_60 -gencode arch=compute_61,code=sm_61",
+        "cudaVersion": "9.0",
+        "cxxCompiler": "GNU 6.3.0",
+        "cudaCompiler": "NVIDIA 9.0.176",
+        "boost": {
+            "BOOST_VERSION": "106600",
+            "BOOST_LIB_VERSION": "1_66",
+            "BOOST_PLATFORM": "linux",
+            "BOOST_PLATFORM_CONFIG": "boost\/config\/platform\/linux.hpp",
+            "BOOST_COMPILER": "GNU C++ version 6.3.0",
+            "BOOST_LIBSTDCXX_VERSION": "60300",
+            "C++11": "true",
+            "BOOST_STDLIB": "GNU libstdc++ version 20161221",
+            "BOOST_STDLIB_CONFIG": "boost\/config\/stdlib\/libstdcpp3.hpp"
+        },
+        "floatingPointPrecisionDescription": "double (double precision, 64 bits)",
+        "floatingPointType": "double",
+        "floatingPointMax": "1.79769e+308",
+        "floatingPointMin": "2.22507e-308",
+        "floatingPointEpsilon": "2.22045e-16",
+        "cudaProperties": {
+            "name": "GeForce GTX 1080",
+            "totalGlobalMem": "8513978368",
+            "sharedMemPerBlock": "49152",
+            "regsPerBlock": "65536",
+            "warpSize": "32",
+            "memPitch": "2147483647",
+            "maxThreadsPerBlock": "1024",
+            "maxThreadsDim": "1024, 1024, 64",
+            "maxGridSize": "2147483647, 65535, 65535",
+            "totalConstMem": "65536",
+            "major": "6",
+            "minor": "1",
+            "clockRate": "1733500",
+            "textureAlignment": "512",
+            "deviceOverlap": "1",
+            "multiProcessorCount": "20",
+            "kernelExecTimeoutEnabled": "0",
+            "integrated": "0",
+            "canMapHostMemory": "1",
+            "computeMode": "3",
+            "concurrentKernels": "1",
+            "ECCEnabled": "0",
+            "pciBusID": "4",
+            "pciDeviceID": "0",
+            "tccDriver": "0"
+        },
+        "mpiEnabled": "true",
+        "mpiProcesses": "2",
+        "mpiVersion": "Open MPI v2.1.0, package: Open MPI spackapps@lo-login-02 Distribution, ident: 2.1.0, repo rev: v2.0.1-696-g1cd1edf, Mar 20, 2017",
+        "ompEnabled": "true",
+        "ompThreads": "1",
+        "timings": {
+            "allTimedEvents": {
+                "totalTime": "626.62201252",
+                "percentOfProgramTotalTime": "100",
+                "hasIndividualTimeData": "false",
+                "alsvinn": {
+                    "totalTime": "626.62201252",
+                    "percentOfProgramTotalTime": "100",
+                    "hasIndividualTimeData": "true",
+                    "fvm": {
+                        "totalTime": "569.35239723699931",
+                        "percentOfProgramTotalTime": "91",
+                        "hasIndividualTimeData": "false",
+                        "init": {
+                            "totalTime": "71.068898493000006",
+                            "percentOfProgramTotalTime": "12",
+                            "hasIndividualTimeData": "false",
+                            "python": {
+                                "totalTime": "71.068898493000006",
+                                "percentOfProgramTotalTime": "12",
+                                "hasIndividualTimeData": "true"
+                            }
+                        },
+                        "io": {
+                            "totalTime": "42.535743941999996",
+                            "percentOfProgramTotalTime": "7",
+                            "hasIndividualTimeData": "false",
+                            "netcdf": {
+                                "totalTime": "42.535743941999996",
+                                "percentOfProgramTotalTime": "7",
+                                "hasIndividualTimeData": "true"
+                            }
+                        },
+                        "numflux": {
+                            "totalTime": "454.15081215399937",
+                            "percentOfProgramTotalTime": "73",
+                            "hasIndividualTimeData": "true"
+                        },
+                        "reconstruction": {
+                            "totalTime": "1.5969426480000213",
+                            "percentOfProgramTotalTime": "1",
+                            "hasIndividualTimeData": "true"
+                        }
+                    },
+                    "uq": {
+                        "totalTime": "4.3251000380000004",
+                        "percentOfProgramTotalTime": "1",
+                        "hasIndividualTimeData": "false",
+                        "generate": {
+                            "totalTime": "1.8048999999999999e-05",
+                            "percentOfProgramTotalTime": "1",
+                            "hasIndividualTimeData": "true"
+                        },
+                        "init": {
+                            "totalTime": "0.010631501999999999",
+                            "percentOfProgramTotalTime": "1",
+                            "hasIndividualTimeData": "true"
+                        },
+                        "stats": {
+                            "totalTime": "4.3144504870000002",
+                            "percentOfProgramTotalTime": "1",
+                            "hasIndividualTimeData": "false",
+                            "combine": {
+                                "totalTime": "4.2558078359999998",
+                                "percentOfProgramTotalTime": "1",
+                                "hasIndividualTimeData": "true"
+                            },
+                            "compute": {
+                                "totalTime": "0.058642650999999997",
+                                "percentOfProgramTotalTime": "1",
+                                "hasIndividualTimeData": "true"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "executable": "alsuqcli",
+        "name": "cloudshock",
+        "endTime": "20181001T161522",
+        "cpuDuration": "448623",
+        "cpuDurationHuman": "00:07:28",
+        "wallTime": "627000",
+        "wallTimeHuman": "00:10:27",
+        "timesteps": "1591",
+        "command": "\/cluster\/home\/klye\/alsvinn\/build\/alsuqcli\/alsuqcli --multi-z 2 cloudshock.xml "
+    }
+}
