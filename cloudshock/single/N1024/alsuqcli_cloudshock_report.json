@@ -2,12 +2,12 @@
     "report": {
         "software": "alsvinn https:\/\/github.com\/alsvinn",
         "softwareVersion": "0.2.1",
-        "currentWorkingDirectory": "\/scratch\/snx3000\/klye\/3drunscloud\/cloudshock\/single\/N256",
+        "currentWorkingDirectory": "\/scratch\/snx3000\/klye\/3drunscloud\/cloudshock\/single\/N1024",
         "operatingSystem": "Linux: Linux 4.4.103-6.38_4.0.153-cray_ari_c #1 SMP Thu Nov 1 16:05:05 UTC 2018 (6ef8fef) x86_64",
         "username": "klye",
-        "host": "nid04800",
+        "host": "nid03313",
         "standardCLibrary": "GNU libc 2.22 stable",
-        "generatedAt": "20190320T152759",
+        "generatedAt": "20190320T161250",
         "CPU": "Intel(R) Xeon(R) CPU E5-2690 v3 @ 2.60GHz",
         "revision": "8adf34e41b048b19e31251c144fac8362628a899",
         "versionControlStatus": "DIRTY",
@@ -65,104 +65,104 @@
             "tccDriver": "0"
         },
         "mpiEnabled": "true",
-        "mpiProcesses": "1",
+        "mpiProcesses": "64",
         "mpiVersion": "MPI VERSION    : CRAY MPICH version 7.7.2 (ANL base 3.2)\nMPI BUILD INFO : Built Thu Jul 19 20:01:04 2018 (git hash 5d705bad2) MT-G",
         "ompEnabled": "true",
         "ompThreads": "1",
         "timings": {
             "allTimedEvents": {
-                "totalTime": "450.60509434800002",
-                "percentOfProgramTotalTime": "101",
+                "totalTime": "3143.018181038",
+                "percentOfProgramTotalTime": "100",
                 "hasIndividualTimeData": "false",
                 "alsvinn": {
-                    "totalTime": "450.60509434800002",
-                    "percentOfProgramTotalTime": "101",
+                    "totalTime": "3143.018181038",
+                    "percentOfProgramTotalTime": "100",
                     "hasIndividualTimeData": "true",
                     "fvm": {
-                        "totalTime": "412.96049859300035",
-                        "percentOfProgramTotalTime": "92",
+                        "totalTime": "2661.2733614489925",
+                        "percentOfProgramTotalTime": "85",
                         "hasIndividualTimeData": "false",
                         "init": {
-                            "totalTime": "143.24609675599999",
-                            "percentOfProgramTotalTime": "32",
+                            "totalTime": "113.681021816",
+                            "percentOfProgramTotalTime": "4",
                             "hasIndividualTimeData": "false",
                             "python": {
-                                "totalTime": "143.24609675599999",
-                                "percentOfProgramTotalTime": "32",
+                                "totalTime": "113.681021816",
+                                "percentOfProgramTotalTime": "4",
                                 "hasIndividualTimeData": "true",
                                 "evaluation": {
-                                    "totalTime": "0.000490249",
+                                    "totalTime": "0.000438016",
                                     "percentOfProgramTotalTime": "1",
                                     "hasIndividualTimeData": "true"
                                 },
                                 "extract": {
-                                    "totalTime": "140.72157139897337",
-                                    "percentOfProgramTotalTime": "32",
+                                    "totalTime": "111.27126760863584",
+                                    "percentOfProgramTotalTime": "4",
                                     "hasIndividualTimeData": "true"
                                 }
                             }
                         },
                         "io": {
-                            "totalTime": "54.543214198999998",
-                            "percentOfProgramTotalTime": "13",
+                            "totalTime": "1616.684257463",
+                            "percentOfProgramTotalTime": "52",
                             "hasIndividualTimeData": "false",
                             "netcdf": {
-                                "totalTime": "54.543214198999998",
-                                "percentOfProgramTotalTime": "13",
+                                "totalTime": "1616.684257463",
+                                "percentOfProgramTotalTime": "52",
                                 "hasIndividualTimeData": "true"
                             }
                         },
                         "numflux": {
-                            "totalTime": "214.89899534700032",
-                            "percentOfProgramTotalTime": "48",
+                            "totalTime": "922.95565392699257",
+                            "percentOfProgramTotalTime": "30",
                             "hasIndividualTimeData": "true"
                         },
                         "reconstruction": {
-                            "totalTime": "0.27219229099999809",
+                            "totalTime": "7.9524282429999893",
                             "percentOfProgramTotalTime": "1",
                             "hasIndividualTimeData": "true"
                         }
                     },
                     "mpi": {
-                        "totalTime": "54.712510307999899",
-                        "percentOfProgramTotalTime": "13",
+                        "totalTime": "962.95377831100177",
+                        "percentOfProgramTotalTime": "31",
                         "hasIndividualTimeData": "false",
                         "exchange": {
-                            "totalTime": "54.712510307999899",
-                            "percentOfProgramTotalTime": "13",
+                            "totalTime": "962.95377831100177",
+                            "percentOfProgramTotalTime": "31",
                             "hasIndividualTimeData": "true",
                             "wait": {
-                                "totalTime": "0.0030314120000000055",
+                                "totalTime": "0.018780961999999991",
                                 "percentOfProgramTotalTime": "1",
                                 "hasIndividualTimeData": "true"
                             }
                         }
                     },
                     "uq": {
-                        "totalTime": "6.9782286759999996",
-                        "percentOfProgramTotalTime": "2",
+                        "totalTime": "6.8802737570000003",
+                        "percentOfProgramTotalTime": "1",
                         "hasIndividualTimeData": "false",
                         "generate": {
-                            "totalTime": "7.8809999999999996e-06",
+                            "totalTime": "8.9989999999999997e-06",
                             "percentOfProgramTotalTime": "1",
                             "hasIndividualTimeData": "true"
                         },
                         "init": {
-                            "totalTime": "0.023972534",
+                            "totalTime": "0.061019129999999998",
                             "percentOfProgramTotalTime": "1",
                             "hasIndividualTimeData": "true"
                         },
                         "stats": {
-                            "totalTime": "6.954248261",
-                            "percentOfProgramTotalTime": "2",
+                            "totalTime": "6.819245628",
+                            "percentOfProgramTotalTime": "1",
                             "hasIndividualTimeData": "false",
                             "combine": {
-                                "totalTime": "6.9295637130000003",
-                                "percentOfProgramTotalTime": "2",
+                                "totalTime": "6.7939740119999996",
+                                "percentOfProgramTotalTime": "1",
                                 "hasIndividualTimeData": "true"
                             },
                             "compute": {
-                                "totalTime": "0.024684548000000001",
+                                "totalTime": "0.025271616",
                                 "percentOfProgramTotalTime": "1",
                                 "hasIndividualTimeData": "true"
                             }
@@ -173,12 +173,12 @@
         },
         "executable": "alsuqcli",
         "name": "cloudshock",
-        "endTime": "20190320T152759",
-        "cpuDuration": "449909",
-        "cpuDurationHuman": "00:07:29",
-        "wallTime": "451000",
-        "wallTimeHuman": "00:07:31",
-        "timesteps": "1591",
-        "command": "\/users\/klye\/alsvinn\/build\/alsuqcli\/alsuqcli cloudshock.xml "
+        "endTime": "20190320T161250",
+        "cpuDuration": "2777939",
+        "cpuDurationHuman": "00:46:17",
+        "wallTime": "3143000",
+        "wallTimeHuman": "00:52:23",
+        "timesteps": "7320",
+        "command": "\/users\/klye\/alsvinn\/build\/alsuqcli\/alsuqcli --multi-z 4 --multi-x 4 --multi-y 4 cloudshock.xml "
     }
 }
