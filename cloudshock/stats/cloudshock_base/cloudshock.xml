@@ -99,16 +99,6 @@
 	  <basename>cloudshock_cube</basename>
 	</writer>
       </stat>
-      <stat>
-	<name>                                                                          bv
-	</name>
-	<numberOfSaves>10</numberOfSaves>
-	<p>1</p>
-	<writer>
-	  <type>netcdf</type>
-	  <basename>cloudshock</basename>
-	</writer>
-      </stat>
     </stats>
   </uq>
 </config>
