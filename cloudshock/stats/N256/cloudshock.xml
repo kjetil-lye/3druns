@@ -16,9 +16,9 @@
     <equationParameters>
       <gamma>1.4</gamma>
     </equationParameters>
-    <reconstruction>wenof2</reconstruction>
-    <cfl>auto</cfl>
-    <integrator>auto</integrator>
+    <reconstruction>mm</reconstruction>
+    <cfl>0.25</cfl>
+    <integrator>rungekutta2</integrator>
     <functionals>
 
 

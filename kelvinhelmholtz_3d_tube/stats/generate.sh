@@ -1,12 +1,12 @@
 #!/bin/bash
 set -e
 
-PERTURBATION=0.1
+PERTURBATION=0.01
 SAMPLES=512
 for r in 32 64 128 256 512;
 do
     NH=$(($r/32))
-    name=kelvinhelholtz_${r}_${PERTURBATION}
+    name=kelvinhelmholtz_${r}_${PERTURBATION}
     mkdir ${name}
     cp template/kelvinhelmholtz.* ./${name}/
     sed -i "s/NX/${r}/g" ./${name}/kelvinhelmholtz.xml
