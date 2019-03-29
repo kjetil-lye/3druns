@@ -36,9 +36,9 @@ def brownian(Y, nx, ny, nz, x, y, z, Nx, Ny, Nz):
 
 # Using tensor product Karuhnen Loewe expansion of Brownian motion
 def init_global(rho, ux, uy, p, nx, ny, nz, ax, ay, az, bx, by, bz):
-    Y1 = X[:nx*ny*ny].reshape(nx, ny, nz)
-    Y2 = X[nx*ny*ny:].reshape(nx, ny, nz)
-    Y3 = X[2*nx*ny*ny:].reshape(nx, ny, nz)
+    Y1 = X[:nx*ny*nz].reshape(nx, ny, nz)
+    Y2 = X[nx*ny*nz:2*nx*ny*nz].reshape(nx, ny, nz)
+    Y3 = X[2*nx*ny*nz:].reshape(nx, ny, nz)
     x, y, z = np.mgrid[ax:bx:nx*1j, ay:by:ny*1j, az:bz:nz*1j]
     Nx, Ny, Nz = np.meshgrid(np.arange(0,ny), np.arange(0,ny), np.arange(0, nz))
 
