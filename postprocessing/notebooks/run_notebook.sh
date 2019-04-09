@@ -1,10 +1,10 @@
 #!/bin/bash
 set -e
-if [ -z "$3DRUNS_KH_PATH" ]
+if [ -z "$THREEDIMS_KH_PATH" ]
 then
-    echo "Missing 3DRUNS_PATH from ENV"
+    echo "Missing THREEDIMS_PATH from ENV"
     echo "Set it using"
-    echo "    export 3DRUNS_PATH=<path to folder containing the 3druns repository WITH DATA FILES>"
+    echo "    export THREEDIMS_PATH=<path to folder containing the 3druns repository WITH DATA FILES>"
     exit 1
 fi
 
