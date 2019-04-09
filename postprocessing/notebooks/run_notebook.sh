@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-if [ -z "$THREEDIMS_KH_PATH" ]
+if [ -z "$THREEDIMS_PATH" ]
 then
     echo "Missing THREEDIMS_PATH from ENV"
     echo "Set it using"
