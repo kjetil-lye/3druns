@@ -1,45 +1,186 @@
 % This file was created by matplotlib2tikz v0.7.3.
 \begin{tikzpicture}
 
-\definecolor{color0}{rgb}{0.12156862745098,0.466666666666667,0.705882352941177}
-
-\begin{axis}[
+\begin{groupplot}[group style={group size=3 by 4}]
+\nextgroupplot[
 height=\figureheight,
-legend cell align={left},
-legend style={draw=white!80.0!black},
-log basis x={2},
-log basis y={2},
 tick align=outside,
 tick pos=left,
-title={Convergence of rho (mean, Kelvin-Helmholtz $\epsilon=0.01$)},
+title={$z=\frac{0}{3}$},
 width=\figurewidth,
 x grid style={white!69.01960784313725!black},
-xlabel={Resolution (\(\displaystyle N^3\))},
-xmin=119.428222916711, xmax=548.748012818582,
-xmode=log,
+xmin=0, xmax=1,
 xtick style={color=black},
-xtick={128,256,512},
-xticklabels={\(\displaystyle 128^{3}\),\(\displaystyle 256^{3}\),\(\displaystyle 512^{3}\)},
 y grid style={white!69.01960784313725!black},
-ylabel={Error (\(\displaystyle ||\cdot||_{L^1(D)}\)},
-ymin=0.00810295367683945, ymax=0.0614693110994705,
-ymode=log,
+ymin=0, ymax=1,
 ytick style={color=black}
 ]
-\addplot [semithick, color0, mark=*, mark size=3, mark options={solid}]
-table {%
-128 0.056060590058333
-256 0.0212777258098298
-512 0.00905595580972939
-};
-\addlegendentry{Error mean}
-\addplot [semithick, color0, dashed]
-table {%
-128 0.0550005974908932
-256 0.0221057738361333
-512 0.00888472597002582
-};
-\addlegendentry{$\mathcal{O}(N^{-1.32})$}
+\addplot graphics [includegraphics cmd=\pgfimage,xmin=0, xmax=1, ymin=0, ymax=1] {tmp-000.png};
+
+\nextgroupplot[
+height=\figureheight,
+tick align=outside,
+tick pos=left,
+title={$y=\frac{0}{3}$},
+width=\figurewidth,
+x grid style={white!69.01960784313725!black},
+xmin=0, xmax=1,
+xtick style={color=black},
+y grid style={white!69.01960784313725!black},
+ymin=0, ymax=1,
+ytick style={color=black}
+]
+\addplot graphics [includegraphics cmd=\pgfimage,xmin=0, xmax=1, ymin=0, ymax=1] {tmp-001.png};
+
+\nextgroupplot[
+height=\figureheight,
+tick align=outside,
+tick pos=left,
+title={$x=\frac{0}{3}$},
+width=\figurewidth,
+x grid style={white!69.01960784313725!black},
+xmin=0, xmax=1,
+xtick style={color=black},
+y grid style={white!69.01960784313725!black},
+ymin=0, ymax=1,
+ytick style={color=black}
+]
+\addplot graphics [includegraphics cmd=\pgfimage,xmin=0, xmax=1, ymin=0, ymax=1] {tmp-002.png};
+
+\nextgroupplot[
+height=\figureheight,
+tick align=outside,
+tick pos=left,
+title={$z=\frac{1}{3}$},
+width=\figurewidth,
+x grid style={white!69.01960784313725!black},
+xmin=0, xmax=1,
+xtick style={color=black},
+y grid style={white!69.01960784313725!black},
+ymin=0, ymax=1,
+ytick style={color=black}
+]
+\addplot graphics [includegraphics cmd=\pgfimage,xmin=0, xmax=1, ymin=0, ymax=1] {tmp-003.png};
+
+\nextgroupplot[
+height=\figureheight,
+tick align=outside,
+tick pos=left,
+title={$y=\frac{1}{3}$},
+width=\figurewidth,
+x grid style={white!69.01960784313725!black},
+xmin=0, xmax=1,
+xtick style={color=black},
+y grid style={white!69.01960784313725!black},
+ymin=0, ymax=1,
+ytick style={color=black}
+]
+\addplot graphics [includegraphics cmd=\pgfimage,xmin=0, xmax=1, ymin=0, ymax=1] {tmp-004.png};
+
+\nextgroupplot[
+height=\figureheight,
+tick align=outside,
+tick pos=left,
+title={$x=\frac{1}{3}$},
+width=\figurewidth,
+x grid style={white!69.01960784313725!black},
+xmin=0, xmax=1,
+xtick style={color=black},
+y grid style={white!69.01960784313725!black},
+ymin=0, ymax=1,
+ytick style={color=black}
+]
+\addplot graphics [includegraphics cmd=\pgfimage,xmin=0, xmax=1, ymin=0, ymax=1] {tmp-005.png};
+
+\nextgroupplot[
+height=\figureheight,
+tick align=outside,
+tick pos=left,
+title={$z=\frac{2}{3}$},
+width=\figurewidth,
+x grid style={white!69.01960784313725!black},
+xmin=0, xmax=1,
+xtick style={color=black},
+y grid style={white!69.01960784313725!black},
+ymin=0, ymax=1,
+ytick style={color=black}
+]
+\addplot graphics [includegraphics cmd=\pgfimage,xmin=0, xmax=1, ymin=0, ymax=1] {tmp-006.png};
+
+\nextgroupplot[
+height=\figureheight,
+tick align=outside,
+tick pos=left,
+title={$y=\frac{2}{3}$},
+width=\figurewidth,
+x grid style={white!69.01960784313725!black},
+xmin=0, xmax=1,
+xtick style={color=black},
+y grid style={white!69.01960784313725!black},
+ymin=0, ymax=1,
+ytick style={color=black}
+]
+\addplot graphics [includegraphics cmd=\pgfimage,xmin=0, xmax=1, ymin=0, ymax=1] {tmp-007.png};
+
+\nextgroupplot[
+height=\figureheight,
+tick align=outside,
+tick pos=left,
+title={$x=\frac{2}{3}$},
+width=\figurewidth,
+x grid style={white!69.01960784313725!black},
+xmin=0, xmax=1,
+xtick style={color=black},
+y grid style={white!69.01960784313725!black},
+ymin=0, ymax=1,
+ytick style={color=black}
+]
+\addplot graphics [includegraphics cmd=\pgfimage,xmin=0, xmax=1, ymin=0, ymax=1] {tmp-008.png};
+
+\nextgroupplot[
+height=\figureheight,
+tick align=outside,
+tick pos=left,
+title={$z=\frac{3}{3}$},
+width=\figurewidth,
+x grid style={white!69.01960784313725!black},
+xmin=0, xmax=1,
+xtick style={color=black},
+y grid style={white!69.01960784313725!black},
+ymin=0, ymax=1,
+ytick style={color=black}
+]
+\addplot graphics [includegraphics cmd=\pgfimage,xmin=0, xmax=1, ymin=0, ymax=1] {tmp-009.png};
+
+\nextgroupplot[
+height=\figureheight,
+tick align=outside,
+tick pos=left,
+title={$y=\frac{3}{3}$},
+width=\figurewidth,
+x grid style={white!69.01960784313725!black},
+xmin=0, xmax=1,
+xtick style={color=black},
+y grid style={white!69.01960784313725!black},
+ymin=0, ymax=1,
+ytick style={color=black}
+]
+\addplot graphics [includegraphics cmd=\pgfimage,xmin=0, xmax=1, ymin=0, ymax=1] {tmp-010.png};
+
+\nextgroupplot[
+height=\figureheight,
+tick align=outside,
+tick pos=left,
+title={$x=\frac{3}{3}$},
+width=\figurewidth,
+x grid style={white!69.01960784313725!black},
+xmin=0, xmax=1,
+xtick style={color=black},
+y grid style={white!69.01960784313725!black},
+ymin=0, ymax=1,
+ytick style={color=black}
+]
+\addplot graphics [includegraphics cmd=\pgfimage,xmin=0, xmax=1, ymin=0, ymax=1] {tmp-011.png};
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -56,13 +197,19 @@ Hostname: daint107};
   text=white!50.19607843137255!black,
   rotate=0.0
 ]{@a69e};
-\end{axis}
+\end{groupplot}
 
+\node at ({$(current bounding box.south west)!0.5!(current bounding box.south east)$}|-{$(current bounding box.south west)!0.98!(current bounding box.north west)$})[
+  scale=0.6,
+  anchor=north,
+  text=black,
+  rotate=0.0
+]{variance at $512^{3}$};
 \end{tikzpicture}
 
 %% INCLUDE THE COMMENTS AT THE END WHEN COPYING
 %%%%%%%%%%%%%TITLE%%%%%%%%%%%%%%%%%
-%% Convergence of rho (mean, Kelvin-Helmholtz $\epsilon=0.01$)
+%% $x=\frac{3}{3}$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% script name: /users/klye/.local/lib/python3.6/site-packages/ipykernel_launcher.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
@@ -74,7 +221,7 @@ Hostname: daint107};
 %% GIT git_short_commit : a69e
 %% working_directory : /scratch/snx3000/klye/3drunscloud/postprocessing/notebooks
 %% hostname : daint107
-%% generated_on_date : 2019-04-15 11:32:08.613940
+%% generated_on_date : 2019-04-15 11:36:32.506879
 %% accessed_environment:
 %%    THREEDIMS_PATH=/scratch/snx3000/klye/3drunscloud/
 %% python_version: 
@@ -1143,8 +1290,8 @@ Hostname: daint107};
 %% stacktrace:
 %%     [function: savePlot, line: 263, file: ../python/plot_info.py]
 %%     [function: showAndSave, line: 306, file: ../python/plot_info.py]
-%%     [function: plot_statistics_convergence, line: 133, file: ../python/convergence.py]
-%%     [function: <module>, line: 11, file: <ipython-input-2-f81029b547b7>]
+%%     [function: plot_statistics_convergence, line: 139, file: ../python/convergence.py]
+%%     [function: <module>, line: 11, file: <ipython-input-2-438462767ed9>]
 %%     [function: run_code, line: 3296, file: /users/klye/.local/lib/python3.6/site-packages/IPython/core/interactiveshell.py]
 %%     [function: run_ast_nodes, line: 3214, file: /users/klye/.local/lib/python3.6/site-packages/IPython/core/interactiveshell.py]
 %%     [function: run_cell_async, line: 3049, file: /users/klye/.local/lib/python3.6/site-packages/IPython/core/interactiveshell.py]
