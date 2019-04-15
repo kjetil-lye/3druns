@@ -3,7 +3,12 @@
 
 \begin{groupplot}[group style={group size=3 by 4}]
 \nextgroupplot[
+colorbar,
+colorbar style={ytick={0.00075,0.0008,0.00085},yticklabels={0.00075,0.00080,0.00085},ylabel={}},
+colormap/viridis,
 height=\figureheight,
+point meta max=0.000884541439850928,
+point meta min=0.000723715723514395,
 tick align=outside,
 tick pos=left,
 title={$z=\frac{0}{3}$},
@@ -13,12 +18,19 @@ xmin=0, xmax=1,
 xtick style={color=black},
 y grid style={white!69.01960784313725!black},
 ymin=0, ymax=1,
-ytick style={color=black}
+ytick style={color=black},
+ytick={0,1},
+yticklabels={0.0,0.5}
 ]
 \addplot graphics [includegraphics cmd=\pgfimage,xmin=0, xmax=1, ymin=0, ymax=1] {tmp-000.png};
 
 \nextgroupplot[
+colorbar,
+colorbar style={ylabel={}},
+colormap/viridis,
 height=\figureheight,
+point meta max=4.45974292381675,
+point meta min=0,
 tick align=outside,
 tick pos=left,
 title={$y=\frac{0}{3}$},
@@ -28,12 +40,19 @@ xmin=0, xmax=1,
 xtick style={color=black},
 y grid style={white!69.01960784313725!black},
 ymin=0, ymax=1,
-ytick style={color=black}
+ytick style={color=black},
+ytick={0,1},
+yticklabels={0.0,0.5}
 ]
 \addplot graphics [includegraphics cmd=\pgfimage,xmin=0, xmax=1, ymin=0, ymax=1] {tmp-001.png};
 
 \nextgroupplot[
+colorbar,
+colorbar style={ylabel={}},
+colormap/viridis,
 height=\figureheight,
+point meta max=4.45974292381675,
+point meta min=0,
 tick align=outside,
 tick pos=left,
 title={$x=\frac{0}{3}$},
@@ -43,12 +62,19 @@ xmin=0, xmax=1,
 xtick style={color=black},
 y grid style={white!69.01960784313725!black},
 ymin=0, ymax=1,
-ytick style={color=black}
+ytick style={color=black},
+ytick={0,1},
+yticklabels={0.0,0.5}
 ]
 \addplot graphics [includegraphics cmd=\pgfimage,xmin=0, xmax=1, ymin=0, ymax=1] {tmp-002.png};
 
 \nextgroupplot[
+colorbar,
+colorbar style={ylabel={}},
+colormap/viridis,
 height=\figureheight,
+point meta max=0.0680664523332304,
+point meta min=0.000857760548413466,
 tick align=outside,
 tick pos=left,
 title={$z=\frac{1}{3}$},
@@ -58,12 +84,19 @@ xmin=0, xmax=1,
 xtick style={color=black},
 y grid style={white!69.01960784313725!black},
 ymin=0, ymax=1,
-ytick style={color=black}
+ytick style={color=black},
+ytick={0,1},
+yticklabels={0.0,0.5}
 ]
 \addplot graphics [includegraphics cmd=\pgfimage,xmin=0, xmax=1, ymin=0, ymax=1] {tmp-003.png};
 
 \nextgroupplot[
+colorbar,
+colorbar style={ylabel={}},
+colormap/viridis,
 height=\figureheight,
+point meta max=5.41996609930853,
+point meta min=-6.66133814775094e-16,
 tick align=outside,
 tick pos=left,
 title={$y=\frac{1}{3}$},
@@ -73,12 +106,19 @@ xmin=0, xmax=1,
 xtick style={color=black},
 y grid style={white!69.01960784313725!black},
 ymin=0, ymax=1,
-ytick style={color=black}
+ytick style={color=black},
+ytick={0,1},
+yticklabels={0.0,0.5}
 ]
 \addplot graphics [includegraphics cmd=\pgfimage,xmin=0, xmax=1, ymin=0, ymax=1] {tmp-004.png};
 
 \nextgroupplot[
+colorbar,
+colorbar style={ylabel={}},
+colormap/viridis,
 height=\figureheight,
+point meta max=5.52586915304341,
+point meta min=-4.44089209850063e-16,
 tick align=outside,
 tick pos=left,
 title={$x=\frac{1}{3}$},
@@ -88,12 +128,19 @@ xmin=0, xmax=1,
 xtick style={color=black},
 y grid style={white!69.01960784313725!black},
 ymin=0, ymax=1,
-ytick style={color=black}
+ytick style={color=black},
+ytick={0,1},
+yticklabels={0.0,0.5}
 ]
 \addplot graphics [includegraphics cmd=\pgfimage,xmin=0, xmax=1, ymin=0, ymax=1] {tmp-005.png};
 
 \nextgroupplot[
+colorbar,
+colorbar style={ylabel={}},
+colormap/viridis,
 height=\figureheight,
+point meta max=0.401100484486875,
+point meta min=0.000760623528551108,
 tick align=outside,
 tick pos=left,
 title={$z=\frac{2}{3}$},
@@ -103,12 +150,19 @@ xmin=0, xmax=1,
 xtick style={color=black},
 y grid style={white!69.01960784313725!black},
 ymin=0, ymax=1,
-ytick style={color=black}
+ytick style={color=black},
+ytick={0,1},
+yticklabels={0.0,0.5}
 ]
 \addplot graphics [includegraphics cmd=\pgfimage,xmin=0, xmax=1, ymin=0, ymax=1] {tmp-006.png};
 
 \nextgroupplot[
+colorbar,
+colorbar style={ylabel={}},
+colormap/viridis,
 height=\figureheight,
+point meta max=5.98517348174967,
+point meta min=-6.66133814775094e-16,
 tick align=outside,
 tick pos=left,
 title={$y=\frac{2}{3}$},
@@ -118,12 +172,19 @@ xmin=0, xmax=1,
 xtick style={color=black},
 y grid style={white!69.01960784313725!black},
 ymin=0, ymax=1,
-ytick style={color=black}
+ytick style={color=black},
+ytick={0,1},
+yticklabels={0.0,0.5}
 ]
 \addplot graphics [includegraphics cmd=\pgfimage,xmin=0, xmax=1, ymin=0, ymax=1] {tmp-007.png};
 
 \nextgroupplot[
+colorbar,
+colorbar style={ytick={-4.93038065763132e-32,5},yticklabels={0,5},ylabel={}},
+colormap/viridis,
 height=\figureheight,
+point meta max=5.52998520027404,
+point meta min=-4.44089209850063e-16,
 tick align=outside,
 tick pos=left,
 title={$x=\frac{2}{3}$},
@@ -133,12 +194,19 @@ xmin=0, xmax=1,
 xtick style={color=black},
 y grid style={white!69.01960784313725!black},
 ymin=0, ymax=1,
-ytick style={color=black}
+ytick style={color=black},
+ytick={0,1},
+yticklabels={0.0,0.5}
 ]
 \addplot graphics [includegraphics cmd=\pgfimage,xmin=0, xmax=1, ymin=0, ymax=1] {tmp-008.png};
 
 \nextgroupplot[
+colorbar,
+colorbar style={ylabel={}},
+colormap/viridis,
 height=\figureheight,
+point meta max=0.1,
+point meta min=-0.1,
 tick align=outside,
 tick pos=left,
 title={$z=\frac{3}{3}$},
@@ -148,12 +216,19 @@ xmin=0, xmax=1,
 xtick style={color=black},
 y grid style={white!69.01960784313725!black},
 ymin=0, ymax=1,
-ytick style={color=black}
+ytick style={color=black},
+ytick={0,1},
+yticklabels={0.0,0.5}
 ]
 \addplot graphics [includegraphics cmd=\pgfimage,xmin=0, xmax=1, ymin=0, ymax=1] {tmp-009.png};
 
 \nextgroupplot[
+colorbar,
+colorbar style={ylabel={}},
+colormap/viridis,
 height=\figureheight,
+point meta max=4.45974292381675,
+point meta min=0,
 tick align=outside,
 tick pos=left,
 title={$y=\frac{3}{3}$},
@@ -163,12 +238,19 @@ xmin=0, xmax=1,
 xtick style={color=black},
 y grid style={white!69.01960784313725!black},
 ymin=0, ymax=1,
-ytick style={color=black}
+ytick style={color=black},
+ytick={0,1},
+yticklabels={0.0,0.5}
 ]
 \addplot graphics [includegraphics cmd=\pgfimage,xmin=0, xmax=1, ymin=0, ymax=1] {tmp-010.png};
 
 \nextgroupplot[
+colorbar,
+colorbar style={ylabel={}},
+colormap/viridis,
 height=\figureheight,
+point meta max=4.45974292381675,
+point meta min=0,
 tick align=outside,
 tick pos=left,
 title={$x=\frac{3}{3}$},
@@ -178,7 +260,9 @@ xmin=0, xmax=1,
 xtick style={color=black},
 y grid style={white!69.01960784313725!black},
 ymin=0, ymax=1,
-ytick style={color=black}
+ytick style={color=black},
+ytick={0,1},
+yticklabels={0.0,0.5}
 ]
 \addplot graphics [includegraphics cmd=\pgfimage,xmin=0, xmax=1, ymin=0, ymax=1] {tmp-011.png};
 \node at (axis cs:0.95,0.01)[
@@ -188,7 +272,7 @@ ytick style={color=black}
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: a69e962efb1c019e25a2134056b2b97b2ffe57ea
+Commit: d0e73d191621f1ce44c2edeec8702a16abbef269
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint107};
 \node at (axis cs:0.2,0.93)[
@@ -196,7 +280,7 @@ Hostname: daint107};
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@a69e};
+]{@d0e7};
 \end{groupplot}
 
 \node at ({$(current bounding box.south west)!0.5!(current bounding box.south east)$}|-{$(current bounding box.south west)!0.98!(current bounding box.north west)$})[
@@ -214,14 +298,14 @@ Hostname: daint107};
 %% script name: /users/klye/.local/lib/python3.6/site-packages/ipykernel_launcher.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : a69e962efb1c019e25a2134056b2b97b2ffe57ea
+%% GIT git_commit : d0e73d191621f1ce44c2edeec8702a16abbef269
 %% GIT git_repo_modified : True
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : a69e
+%% GIT git_short_commit : d0e7
 %% working_directory : /scratch/snx3000/klye/3drunscloud/postprocessing/notebooks
 %% hostname : daint107
-%% generated_on_date : 2019-04-15 11:36:32.506879
+%% generated_on_date : 2019-04-15 12:10:12.522210
 %% accessed_environment:
 %%    THREEDIMS_PATH=/scratch/snx3000/klye/3drunscloud/
 %% python_version: 
@@ -1286,11 +1370,10 @@ Hostname: daint107};
 %%     PIL.JpegPresets: Unknown (/users/klye/.local/lib/python3.6/site-packages/PIL/JpegPresets.py)
 %%     PIL.PpmImagePlugin: 0.2 (/users/klye/.local/lib/python3.6/site-packages/PIL/PpmImagePlugin.py)
 %%     PIL.PngImagePlugin: 0.9 (/users/klye/.local/lib/python3.6/site-packages/PIL/PngImagePlugin.py)
-%%     zmq.utils.garbage: Unknown (/users/klye/.local/lib/python3.6/site-packages/zmq/utils/garbage.py)
 %% stacktrace:
 %%     [function: savePlot, line: 263, file: ../python/plot_info.py]
 %%     [function: showAndSave, line: 306, file: ../python/plot_info.py]
-%%     [function: plot_statistics_convergence, line: 139, file: ../python/convergence.py]
+%%     [function: plot_statistics_convergence, line: 145, file: ../python/convergence.py]
 %%     [function: <module>, line: 11, file: <ipython-input-2-438462767ed9>]
 %%     [function: run_code, line: 3296, file: /users/klye/.local/lib/python3.6/site-packages/IPython/core/interactiveshell.py]
 %%     [function: run_ast_nodes, line: 3214, file: /users/klye/.local/lib/python3.6/site-packages/IPython/core/interactiveshell.py]

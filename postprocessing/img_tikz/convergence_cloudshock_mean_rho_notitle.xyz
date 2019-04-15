@@ -48,7 +48,7 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: a69e962efb1c019e25a2134056b2b97b2ffe57ea
+Commit: d0e73d191621f1ce44c2edeec8702a16abbef269
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint107};
 \node at (axis cs:0.2,0.93)[
@@ -56,7 +56,7 @@ Hostname: daint107};
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@a69e};
+]{@d0e7};
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -64,7 +64,7 @@ Hostname: daint107};
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: a69e962efb1c019e25a2134056b2b97b2ffe57ea
+Commit: d0e73d191621f1ce44c2edeec8702a16abbef269
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint107};
 \end{axis}
@@ -78,14 +78,14 @@ Hostname: daint107};
 %% script name: /users/klye/.local/lib/python3.6/site-packages/ipykernel_launcher.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : a69e962efb1c019e25a2134056b2b97b2ffe57ea
+%% GIT git_commit : d0e73d191621f1ce44c2edeec8702a16abbef269
 %% GIT git_repo_modified : True
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : a69e
+%% GIT git_short_commit : d0e7
 %% working_directory : /scratch/snx3000/klye/3drunscloud/postprocessing/notebooks
 %% hostname : daint107
-%% generated_on_date : 2019-04-15 11:34:49.692892
+%% generated_on_date : 2019-04-15 12:08:11.663234
 %% accessed_environment:
 %%    THREEDIMS_PATH=/scratch/snx3000/klye/3drunscloud/
 %% python_version: 
@@ -1154,7 +1154,7 @@ Hostname: daint107};
 %%     [function: savePlot, line: 263, file: ../python/plot_info.py]
 %%     [function: savePlot, line: 296, file: ../python/plot_info.py]
 %%     [function: showAndSave, line: 306, file: ../python/plot_info.py]
-%%     [function: plot_statistics_convergence, line: 133, file: ../python/convergence.py]
+%%     [function: plot_statistics_convergence, line: 139, file: ../python/convergence.py]
 %%     [function: <module>, line: 11, file: <ipython-input-2-438462767ed9>]
 %%     [function: run_code, line: 3296, file: /users/klye/.local/lib/python3.6/site-packages/IPython/core/interactiveshell.py]
 %%     [function: run_ast_nodes, line: 3214, file: /users/klye/.local/lib/python3.6/site-packages/IPython/core/interactiveshell.py]
