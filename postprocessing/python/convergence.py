@@ -28,11 +28,11 @@ def single_sample_convergence(filename_per_resolution, sample, variable, setup):
 
     plt.loglog(resolutions[1:], np.exp(poly[1])*resolutions[1:]**poly[0],
                '--', label='$\\mathcal{{O}}(N^{{{:.2f}}})$'.format(poly[0]),
-               color=p[0].get_color())
+               color=p[0].get_color(), basex=2, basey=2)
 
     plt.xlabel("Resolution ($N^3$)")
     
-    plt.xticks(resolutions, ["${}^{{3}}$".format(r) for r in resolutions])
+    plt.xticks(resolutions[1:], ["${}^{{3}}$".format(r) for r in resolutions[1:]])
     plt.ylabel("Error ($||\\cdot||_{L^1(D)}$")
     plt.title("Convergence of {variable} (sample {sample}, {setup})".format(variable = variable, sample = sample, setup = setup))
     plt.legend()
@@ -58,11 +58,12 @@ def statistics_convergence(filename_per_resolution, statistics_name, variable, s
 
     plt.loglog(resolutions[1:], np.exp(poly[1])*resolutions[1:]**poly[0],
                '--', label='$\\mathcal{{O}}(N^{{{:.2f}}})$'.format(poly[0]),
-               color=p[0].get_color())
+               color=p[0].get_color(),
+               basex=2, basey=2)
 
     plt.xlabel("Resolution ($N^3$)")
     
-    plt.xticks(resolutions, ["${}^{{3}}$".format(r) for r in resolutions])
+    plt.xticks(resolutions[1:], ["${}^{{3}}$".format(r) for r in resolutions[1:]])
     plt.ylabel("Error ($||\\cdot||_{L^1(D)}$")
     plt.title("Convergence of {variable} ({statistic}, {setup})".format(variable = variable, statistic = statistics_name, setup = setup))
     plt.legend()
