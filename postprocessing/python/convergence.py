@@ -27,7 +27,7 @@ def statistics_convergence(filename_per_resolution, statistics_name, variable, s
                    label='Error {}'.format(statistics_name))
     poly = np.polyfit(np.log(resolutions[1:]), np.log(errors), 1)
 
-    plt.loglog(resolutions[1:], np.exp(poly[1])*resolutions**poly[0],
+    plt.loglog(resolutions[1:], np.exp(poly[1])*resolutions[1:]**poly[0],
                '--', label='$\\mathcal{{O}}(N^{{{:.2f}}})$'.format(poly[0]),
                color=p[0].get_color())
 
