@@ -98,7 +98,7 @@ def plot_statistics_convergence(resolutions, basename, statistics, variable, set
 
         showAndSave("convergence_{setup}_{statistic}_{variable}".format(setup = setup, statistic = statistic, variable=variable))
 
-        for r in resolutions:
-            plot_single_statistics(filenames[r], statistic)
-            #showAndSave("single_level_{statistic}_{variable}".format(statistic = statistic, variable = variable))
+        #for r in resolutions:
+        #    #plot_single_statistics(filenames[r], statistic)
+        #    #showAndSave("single_level_{statistic}_{variable}".format(statistic = statistic, variable = variable))
             
