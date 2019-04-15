@@ -13,6 +13,7 @@ def plot_3d(filename, variable, title):
     
     x, y = np.mgrid[0:1:N*1j, 0:1:N*1j]
     Q = 3
+    plt.figure(figsize=(16,16))
     for i in range(Q+1):
         
         plt.subplot(Q+1, 3, i*3+1)
@@ -140,7 +141,7 @@ def plot_statistics_convergence(resolutions, basename, statistics, variable, set
 
         for r in resolutions:
             plot_3d(filenames[r], variable, "{} at ${}^{{3}}$".format(statistic, r))
-            showAndSave("single_level_statistics_{setup}_{statistic}_{variable}".format(statistic = statistic, 
+            showAndSave("single_level_statistics_{setup}_{statistic}_{variable}_{r}".format(statistic = statistic, 
                         setup = setup,
-                        variable = variable))
+                        variable = variable, r=r))
             
