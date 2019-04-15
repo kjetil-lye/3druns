@@ -6,6 +6,39 @@ def load(filename, variable):
     with netCDF4.Dataset(filename) as f:
         return f.variables[variable][:,:,:]
 
+
+def plot_3d(filename, variable, title):
+    d = load(filename, variable)
+    N = d.shape[0]
+    
+    x, y = np.mgrid[0:1:N*1j, 0:1:N*1j]
+    Q = 3
+    for i in range(Q+1):
+        
+        plt.subplot(Q+1, 3, i*3+1)
+        plt.pcolormesh(x, y, d[:,:, int((i/float(Q))*N)])
+        plt.title("$z=\\frac{{{}}}{{{}}}$".format(i, Q))
+        
+        
+        
+        
+        plt.subplot(Q+1, 3, i*3+2)
+        plt.pcolormesh(x, y, d[:,int((i/float(Q))*N),:])
+        plt.title("$y=\\frac{{{}}}{{{}}}$".format(i, Q))
+        
+        
+        
+        
+        plt.subplot(Q+1, 3, i*3+3)
+        plt.pcolormesh(x, y, d[int((i/float(Q))*N),:, :])
+        plt.title("$x=\\frac{{{}}}{{{}}}$".format(i, Q))
+        
+        
+        
+    plt.suptitle(title)
+            
+            
+            
 def single_sample_convergence(filename_per_resolution, sample, variable, setup):
     errors = []
 
@@ -99,7 +132,9 @@ def plot_statistics_convergence(resolutions, basename, statistics, variable, set
 
         showAndSave("convergence_{setup}_{statistic}_{variable}".format(setup = setup, statistic = statistic, variable=variable))
 
-        #for r in resolutions:
-        #    #plot_single_statistics(filenames[r], statistic)
-        #    #showAndSave("single_level_{statistic}_{variable}".format(statistic = statistic, variable = variable))
+        for r in resolutions:
+            plot_3d(filenames[r], variable, "{} at ${}^{{3}}$".format(statistic, r))
+            showAndSave("single_level_statistics_{setup}_{statistic}_{variable}".format(statistic = statistic, 
+                        setup = setup,
+                        variable = variable))
             
