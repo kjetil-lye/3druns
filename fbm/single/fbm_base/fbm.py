@@ -24,7 +24,6 @@ def set_value(vector, index, value):
     
 def fBm(N, H, rand):
     n = log2(N)
-    print(n)
     d = zeros((N+1,N+1, N+1))
     if N==1:
         return d
