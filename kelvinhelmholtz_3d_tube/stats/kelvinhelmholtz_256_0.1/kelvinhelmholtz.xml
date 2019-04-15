@@ -37,6 +37,11 @@
     <name>none</name>
     <reconstruction>none</reconstruction>
   </diffusion>
+  <writer>
+    <type>netcdf</type>
+    <basename>kh</basename>
+    <numberOfSaves>1</numberOfSaves>
+  </writer>
 </fvm>
 <uq>
   <samples>512</samples>

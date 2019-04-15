@@ -11,4 +11,4 @@
 #SBATCH --constraint=gpu
 
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
-srun  $HOME/alsvinn/build_float/alsuqcli/alsuqcli --multi-z 2 --multi-x 2 --multi-y 2 --multi-sample 128 kelvinhelmholtz.xml
+srun  $HOME/alsvinn/build/alsuqcli/alsuqcli --multi-z 2 --multi-x 2 --multi-y 2 --multi-sample 128 kelvinhelmholtz.xml
