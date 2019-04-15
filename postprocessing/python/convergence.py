@@ -23,7 +23,7 @@ def single_sample_convergence(filename_per_resolution, sample, variable, setup):
         
 
     p = plt.loglog(resolutions[1:], errors, '-o', basex=2, basey=2,
-                   label='Error {}'.format(statistics_name))
+                   label='Error {}'.format(variable))
     poly = np.polyfit(np.log(resolutions[1:]), np.log(errors), 1)
 
     plt.loglog(resolutions[1:], np.exp(poly[1])*resolutions[1:]**poly[0],
