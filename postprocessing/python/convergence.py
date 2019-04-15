@@ -16,6 +16,7 @@ def plot_3d(filename, variable, title):
     for i in range(Q+1):
         
         plt.subplot(Q+1, 3, i*3+1)
+        plt.colorbar()
         plt.pcolormesh(x, y, d[:,:, min(N-1, int((i/float(Q))*N))])
         plt.title("$z=\\frac{{{}}}{{{}}}$".format(i, Q))
         
@@ -23,6 +24,7 @@ def plot_3d(filename, variable, title):
         
         
         plt.subplot(Q+1, 3, i*3+2)
+        plt.colorbar()
         plt.pcolormesh(x, y, d[:,min(N-1, int((i/float(Q))*N)),:])
         plt.title("$y=\\frac{{{}}}{{{}}}$".format(i, Q))
         
@@ -31,8 +33,10 @@ def plot_3d(filename, variable, title):
         
         plt.subplot(Q+1, 3, i*3+3)
         plt.pcolormesh(x, y, d[min(N-1, int((i/float(Q))*N)),:, :])
+        plt.colorbar()
         plt.title("$x=\\frac{{{}}}{{{}}}$".format(i, Q))
         
+    plt.tight_layout()
         
         
     plt.suptitle(title)
