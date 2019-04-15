@@ -18,9 +18,10 @@ def statistics_convergence(filename_per_resolution, statistics_name, variable, s
 
         if resolution > resolutions[0]:
             error = np.sum(np.abs(d - d_prev)/resolution**3)
+            errors.append(error)
         d_prev = np.repeat(np.repeat(np.repeat(d, 2, 0), 2, 1), 2, 2)
         
-        errors.append(error)
+        
 
     p = plt.loglog(resolutions[1:], errors, '-o', basex=2, basey=2,
                    label='Error {}'.format(statistics_name))
@@ -32,7 +33,7 @@ def statistics_convergence(filename_per_resolution, statistics_name, variable, s
 
     plt.xlabel("Resolution ($N^3$)")
     
-    plt.xticks(resolutions, ["${}^{{3}}$"])
+    plt.xticks(resolutions, ["${}^{{3}}$".format(r) for r in resolutions])
     plt.ylabel("Error ($||\\cdot||_{L^1(D)}$")
     plt.title("Convergence of {variable} ({statistic}, {setup})".format(variable = variable, statistic = statistics_name, setup = setup))
     plt.legend()
