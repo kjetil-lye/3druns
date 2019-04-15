@@ -9,6 +9,7 @@
 #SBATCH --cpus-per-task=1
 #SBATCH --partition=normal
 #SBATCH --constraint=gpu
+#SBATCH --account=s913
 
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 srun  $HOME/alsvinn/build/alsuqcli/alsuqcli --multi-z 1 --multi-x 1 --multi-y 1 --multi-sample 128 cloudshock.xml
