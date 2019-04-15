@@ -68,7 +68,7 @@ def statistics_convergence(filename_per_resolution, statistics_name, variable, s
     plt.legend()
 
 def plot_single_sample_convergence(resolutions, basename, sample, variable, setup):
-     filenames = {}
+    filenames = {}
 
     for r in resolutions:
         filename = basename.format(resolution = r)
