@@ -11,3 +11,5 @@ fi
 
 $HOME/.local/bin/jupyter nbconvert --ExecutePreprocessor.timeout=-1 --to notebook --execute kelvin_helmholtz.ipynb --output kelvin_helmholtz_output.ipynb
 
+$HOME/.local/bin/jupyter nbconvert --ExecutePreprocessor.timeout=-1 --to notebook --execute cloudshock.ipynb --output cloudshock_output.ipynb
+
