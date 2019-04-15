@@ -7,29 +7,25 @@
 height=\figureheight,
 legend cell align={left},
 legend style={draw=white!80.0!black},
-log basis x={10},
-log basis y={10},
-minor xtick={2,3,4,5,6,7,8,9,20,30,40,50,60,70,80,90,200,300,400,500,600,700,800,900,2000,3000,4000,5000,6000,7000,8000,9000,20000,30000,40000,50000,60000,70000,80000,90000},
-minor xticklabels={\(\displaystyle {2\times10^{0}}\),\(\displaystyle {3\times10^{0}}\),\(\displaystyle {4\times10^{0}}\),,\(\displaystyle {6\times10^{0}}\),,,,\(\displaystyle {2\times10^{1}}\),\(\displaystyle {3\times10^{1}}\),\(\displaystyle {4\times10^{1}}\),,\(\displaystyle {6\times10^{1}}\),,,,\(\displaystyle {2\times10^{2}}\),\(\displaystyle {3\times10^{2}}\),\(\displaystyle {4\times10^{2}}\),,\(\displaystyle {6\times10^{2}}\),,,,\(\displaystyle {2\times10^{3}}\),\(\displaystyle {3\times10^{3}}\),\(\displaystyle {4\times10^{3}}\),,\(\displaystyle {6\times10^{3}}\),,,,\(\displaystyle {2\times10^{4}}\),\(\displaystyle {3\times10^{4}}\),\(\displaystyle {4\times10^{4}}\),,\(\displaystyle {6\times10^{4}}\),,,},
-minor ytick={0.02,0.03,0.04,0.05,0.06,0.07,0.08,0.09,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,2,3,4,5,6,7,8,9,20,30,40,50,60,70,80,90},
-minor yticklabels={\(\displaystyle {2\times10^{-2}}\),\(\displaystyle {3\times10^{-2}}\),\(\displaystyle {4\times10^{-2}}\),\(\displaystyle {5\times10^{-2}}\),\(\displaystyle {6\times10^{-2}}\),\(\displaystyle {7\times10^{-2}}\),\(\displaystyle {8\times10^{-2}}\),\(\displaystyle {9\times10^{-2}}\),\(\displaystyle {2\times10^{-1}}\),\(\displaystyle {3\times10^{-1}}\),\(\displaystyle {4\times10^{-1}}\),\(\displaystyle {5\times10^{-1}}\),\(\displaystyle {6\times10^{-1}}\),\(\displaystyle {7\times10^{-1}}\),\(\displaystyle {8\times10^{-1}}\),\(\displaystyle {9\times10^{-1}}\),\(\displaystyle {2\times10^{0}}\),\(\displaystyle {3\times10^{0}}\),\(\displaystyle {4\times10^{0}}\),\(\displaystyle {5\times10^{0}}\),\(\displaystyle {6\times10^{0}}\),\(\displaystyle {7\times10^{0}}\),\(\displaystyle {8\times10^{0}}\),\(\displaystyle {9\times10^{0}}\),\(\displaystyle {2\times10^{1}}\),\(\displaystyle {3\times10^{1}}\),\(\displaystyle {4\times10^{1}}\),\(\displaystyle {5\times10^{1}}\),\(\displaystyle {6\times10^{1}}\),\(\displaystyle {7\times10^{1}}\),\(\displaystyle {8\times10^{1}}\),\(\displaystyle {9\times10^{1}}\)},
+log basis x={2},
+log basis y={2},
 tick align=outside,
 tick pos=left,
 width=\figurewidth,
 x grid style={white!69.01960784313725!black},
 xlabel={Resolution (\(\displaystyle N^3\))},
-xmin=64, xmax=548.748012818581,
+xmin=119.428222916711, xmax=548.748012818582,
 xmode=log,
 xtick style={color=black},
-xtick={64,128,256,512},
-xticklabels={\(\displaystyle 64^{3}\),\(\displaystyle 128^{3}\),\(\displaystyle 256^{3}\),\(\displaystyle 512^{3}\)},
+xtick={128,256,512},
+xticklabels={\(\displaystyle 128^{3}\),\(\displaystyle 256^{3}\),\(\displaystyle 512^{3}\)},
 y grid style={white!69.01960784313725!black},
 ylabel={Error (\(\displaystyle ||\cdot||_{L^1(D)}\)},
 ymin=0.100516381084694, ymax=0.117063677261835,
 ymode=log,
 ytick style={color=black},
-ytick={0.01,0.1,1,10},
-yticklabels={\(\displaystyle {10^{-2}}\),\(\displaystyle {10^{-1}}\),\(\displaystyle {10^{0}}\),\(\displaystyle {10^{1}}\)}
+ytick={0.03125,0.0625,0.125,0.25},
+yticklabels={\(\displaystyle {2^{-5}}\),\(\displaystyle {2^{-4}}\),\(\displaystyle {2^{-3}}\),\(\displaystyle {2^{-2}}\)}
 ]
 \addplot [semithick, color0, mark=*, mark size=3, mark options={solid}]
 table {%
@@ -52,7 +48,7 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 638a33f99566b22f0dc4b2d6017f3c76a0c261c2
+Commit: 519c11c3858480e3e45ecfe18709a106da69c426
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint107};
 \node at (axis cs:0.2,0.93)[
@@ -60,7 +56,7 @@ Hostname: daint107};
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@638a};
+]{@519c};
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -68,7 +64,7 @@ Hostname: daint107};
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 638a33f99566b22f0dc4b2d6017f3c76a0c261c2
+Commit: 519c11c3858480e3e45ecfe18709a106da69c426
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint107};
 \end{axis}
@@ -82,14 +78,14 @@ Hostname: daint107};
 %% script name: /users/klye/.local/lib/python3.6/site-packages/ipykernel_launcher.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : 638a33f99566b22f0dc4b2d6017f3c76a0c261c2
-%% GIT git_repo_modified : True
+%% GIT git_commit : 519c11c3858480e3e45ecfe18709a106da69c426
+%% GIT git_repo_modified : False
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : 638a
+%% GIT git_short_commit : 519c
 %% working_directory : /scratch/snx3000/klye/3drunscloud/postprocessing/notebooks
 %% hostname : daint107
-%% generated_on_date : 2019-04-15 09:50:50.877822
+%% generated_on_date : 2019-04-15 10:01:47.221421
 %% accessed_environment:
 %%    THREEDIMS_PATH=/scratch/snx3000/klye/3drunscloud/
 %% python_version: 
@@ -1158,7 +1154,7 @@ Hostname: daint107};
 %%     [function: savePlot, line: 263, file: ../python/plot_info.py]
 %%     [function: savePlot, line: 296, file: ../python/plot_info.py]
 %%     [function: showAndSave, line: 306, file: ../python/plot_info.py]
-%%     [function: plot_single_sample_convergence, line: 80, file: ../python/convergence.py]
+%%     [function: plot_single_sample_convergence, line: 81, file: ../python/convergence.py]
 %%     [function: <module>, line: 14, file: <ipython-input-2-f81029b547b7>]
 %%     [function: run_code, line: 3296, file: /users/klye/.local/lib/python3.6/site-packages/IPython/core/interactiveshell.py]
 %%     [function: run_ast_nodes, line: 3214, file: /users/klye/.local/lib/python3.6/site-packages/IPython/core/interactiveshell.py]

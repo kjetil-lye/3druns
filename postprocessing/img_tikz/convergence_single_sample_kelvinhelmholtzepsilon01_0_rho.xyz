@@ -7,19 +7,19 @@
 height=\figureheight,
 legend cell align={left},
 legend style={draw=white!80.0!black},
-log basis x={10},
-log basis y={10},
+log basis x={2},
+log basis y={2},
 tick align=outside,
 tick pos=left,
 title={Convergence of rho (sample 0, Kelvin-Helmholtz $\epsilon=0.1$)},
 width=\figurewidth,
 x grid style={white!69.01960784313725!black},
 xlabel={Resolution (\(\displaystyle N^3\))},
-xmin=64, xmax=548.748012818581,
+xmin=119.428222916711, xmax=548.748012818582,
 xmode=log,
 xtick style={color=black},
-xtick={64,128,256,512},
-xticklabels={\(\displaystyle 64^{3}\),\(\displaystyle 128^{3}\),\(\displaystyle 256^{3}\),\(\displaystyle 512^{3}\)},
+xtick={128,256,512},
+xticklabels={\(\displaystyle 128^{3}\),\(\displaystyle 256^{3}\),\(\displaystyle 512^{3}\)},
 y grid style={white!69.01960784313725!black},
 ylabel={Error (\(\displaystyle ||\cdot||_{L^1(D)}\)},
 ymin=0.100516381084694, ymax=0.117063677261835,
@@ -47,7 +47,7 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 638a33f99566b22f0dc4b2d6017f3c76a0c261c2
+Commit: 519c11c3858480e3e45ecfe18709a106da69c426
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint107};
 \node at (axis cs:0.2,0.93)[
@@ -55,7 +55,7 @@ Hostname: daint107};
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@638a};
+]{@519c};
 \end{axis}
 
 \end{tikzpicture}
@@ -67,14 +67,14 @@ Hostname: daint107};
 %% script name: /users/klye/.local/lib/python3.6/site-packages/ipykernel_launcher.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : 638a33f99566b22f0dc4b2d6017f3c76a0c261c2
-%% GIT git_repo_modified : True
+%% GIT git_commit : 519c11c3858480e3e45ecfe18709a106da69c426
+%% GIT git_repo_modified : False
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : 638a
+%% GIT git_short_commit : 519c
 %% working_directory : /scratch/snx3000/klye/3drunscloud/postprocessing/notebooks
 %% hostname : daint107
-%% generated_on_date : 2019-04-15 09:50:49.505742
+%% generated_on_date : 2019-04-15 10:01:46.009416
 %% accessed_environment:
 %%    THREEDIMS_PATH=/scratch/snx3000/klye/3drunscloud/
 %% python_version: 
@@ -1142,7 +1142,7 @@ Hostname: daint107};
 %% stacktrace:
 %%     [function: savePlot, line: 263, file: ../python/plot_info.py]
 %%     [function: showAndSave, line: 306, file: ../python/plot_info.py]
-%%     [function: plot_single_sample_convergence, line: 80, file: ../python/convergence.py]
+%%     [function: plot_single_sample_convergence, line: 81, file: ../python/convergence.py]
 %%     [function: <module>, line: 14, file: <ipython-input-2-f81029b547b7>]
 %%     [function: run_code, line: 3296, file: /users/klye/.local/lib/python3.6/site-packages/IPython/core/interactiveshell.py]
 %%     [function: run_ast_nodes, line: 3214, file: /users/klye/.local/lib/python3.6/site-packages/IPython/core/interactiveshell.py]
