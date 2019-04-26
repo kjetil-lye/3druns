@@ -16,8 +16,8 @@
     <equationParameters>
       <gamma>1.4</gamma>
     </equationParameters>
-    <reconstruction>wenof2</reconstruction>
-    <cfl>auto</cfl>
+    <reconstruction>mm</reconstruction>
+    <cfl>0.25</cfl>
     <integrator>auto</integrator>
     <functionals>
 
@@ -37,6 +37,11 @@
       <name>none</name>
       <reconstruction>none</reconstruction>
     </diffusion>
+    <writer>
+      <type>netcdf</type>
+      <basename>cloudshock</basename>
+      <numberOfSaves>1</numberOfSaves>
+    </writer>
   </fvm>
   <uq>
     <samples>128</samples>
