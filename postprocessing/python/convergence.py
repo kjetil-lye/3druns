@@ -179,7 +179,7 @@ def plot_wasserstein_convergence(resolutions, basename, variable, setup):
     filenames = {}
 
     for r in resolutions:
-        filenames[r] = basename.format(r=r)
+        filenames[r] = basename.format(resolution=r)
     
     wasserstein_1pt(filenames, variable, setup)
     showAndSave("wasserstein_1pt_{setup}_{variable}".format(setup=setup, variable=variable))
