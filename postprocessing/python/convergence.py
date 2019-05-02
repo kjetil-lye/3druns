@@ -145,6 +145,37 @@ def plot_statistics_convergence(resolutions, basename, statistics, variable, set
                         setup = setup,
                         variable = variable, r=r))
 
+def get_number_of_samples(filename, variable):
+    samples = 0
+    with netCDF4.Dataset(filename) as f:
+        for k in f.variables.keys():
+            if variable in k:
+                samples += 1
+
+    return samples
+
+def load_samples_point(filename, variable, i, j, k):
+    samples = []
+
+    with netCDF4.Dataset(filename) as f:
+        for key in f.variables.keys():
+            if variable in key:
+                d = f.variables[key][:,:,:])
+                samples.append(d[i,j,k])
+    return np.array(samples)
+
+def progress(part, total):
+    message = "Computing done: {:.2f}%\r".format(part/total*100.)
+    sys.stdout.write(message)
+    sys.stdout.flush()
+    if isnotebook():
+        try:
+            with open("/dev/stdout", "w") as f:
+                f.write(message)
+                f.flush()
+        except:
+            pass
+    
 
 def wasserstein_1pt(filenames, variable, setup):
     # don't judge me for the next line
@@ -152,18 +183,23 @@ def wasserstein_1pt(filenames, variable, setup):
 
     errors = []
     for r in resolutions[1:]:
-        d1 = load_samples(filenames[r], r, variable)
-        d2 = load_samples(filenames[r//2], r, variable)
 
         wasserstein_error = 0.0
 
         for i in range(r):
             for j in range(r):
-                wasserstein_error += scipy.stats.wasserstein_distance(d1[i,j,:], d2[i,j,:])
-        wasserstein_error /= r**2
+                for k in range(r):
+                    progress(i*r**2 + j*r +  k, r**3)
+                    d1 = load_samples_point(filenames[r], variable, i, j, k)
+                    d2 = load_samples_point(filenames[r//2], variable, i//2, j//2, k//2)
+
+                    wasserstein_error += scipy.stats.wasserstein_distance(d1, d2)
+        wasserstein_error /= r**3
 
         errors.append(wasserstein_error)
-
+        print()
+        console_log("")
+        console_log("Done with {}".format(r))
     plt.loglog(errors, wasserstein_error, '-o')
     plt.xlabel("Resolution ($N^3$)")
     
