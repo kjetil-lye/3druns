@@ -167,7 +167,7 @@ def load_samples_point(filename, variable, i, j, k):
     return np.array(samples)
 
 def progress(part, total):
-    message = "Computing done: {:.2f}%\r".format(float(part)/total*100.)
+    message = "Computing done: {:.10f}%\r".format(float(part)/total*100.)
     sys.stdout.write(message)
     sys.stdout.flush()
     if isnotebook():
