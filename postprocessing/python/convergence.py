@@ -208,7 +208,7 @@ def wasserstein_1pt(filenames, variable, setup):
 #                    d1 = load_samples_point(filenames[r], variable, i, j, k)
 #                    d2 = load_samples_point(filenames[r//2], variable, i//2, j//2, k//2)
 
-                    wasserstein_error += scipy.stats.wasserstein_distance(d1[:,j,k], d2[:,j,k])
+                    wasserstein_error += scipy.stats.wasserstein_distance(d1[:,j,k], d2[:,j//2,k//2])
         wasserstein_error /= r**3
 
         errors.append(wasserstein_error)
