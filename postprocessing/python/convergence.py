@@ -2,6 +2,7 @@ import numpy as np
 from plot_info import *
 import netCDF4
 import scipy
+import scipy.stats
 
 def load(filename, variable):
     with netCDF4.Dataset(filename) as f:
