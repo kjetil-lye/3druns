@@ -78,6 +78,7 @@ def single_sample_convergence(filename_per_resolution, sample, variable, setup):
     plt.ylabel("Error ($||\\cdot||_{L^1(D)}$")
     plt.title("Convergence of {variable} (sample {sample}, {setup})".format(variable = variable, sample = sample, setup = setup))
     plt.legend()
+    
 def statistics_convergence(filename_per_resolution, statistics_name, variable, setup):
     errors = []
 
@@ -166,6 +167,16 @@ def load_samples_point(filename, variable, i, j, k):
                 samples.append(f.variables[key][i,j,k])
     return np.array(samples)
 
+def load_plane(filename, variable, k):
+    samples = []
+    with netCDF4.Dataset(filename) as f:
+        for key in f.variables.keys():
+            if variable in key:
+
+                samples.append(f.variables[key][k,:,:])
+    return np.array(samples)
+
+
 def progress(part, total):
     message = "Computing done: {:.10f}%\r".format(float(part)/total*100.)
     sys.stdout.write(message)
@@ -189,13 +200,15 @@ def wasserstein_1pt(filenames, variable, setup):
         wasserstein_error = 0.0
 
         for i in range(r):
+            d1 = load_plane(filenames[r], variable, i)
+            d2 = load_plane(filenames[r//2], variable, i//2)
             for j in range(r):
                 for k in range(r):
                     progress(i*r**2 + j*r +  k, r**3)
-                    d1 = load_samples_point(filenames[r], variable, i, j, k)
-                    d2 = load_samples_point(filenames[r//2], variable, i//2, j//2, k//2)
+#                    d1 = load_samples_point(filenames[r], variable, i, j, k)
+#                    d2 = load_samples_point(filenames[r//2], variable, i//2, j//2, k//2)
 
-                    wasserstein_error += scipy.stats.wasserstein_distance(d1, d2)
+                    wasserstein_error += scipy.stats.wasserstein_distance(d1[:,j,k], d2[:,j,k])
         wasserstein_error /= r**3
 
         errors.append(wasserstein_error)
