@@ -160,7 +160,7 @@ def load_samples_point(filename, variable, i, j, k):
     with netCDF4.Dataset(filename) as f:
         for key in f.variables.keys():
             if variable in key:
-                d = f.variables[key][:,:,:])
+                d = f.variables[key][:,:,:]
                 samples.append(d[i,j,k])
     return np.array(samples)
 
