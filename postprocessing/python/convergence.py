@@ -162,12 +162,12 @@ def load_samples_point(filename, variable, i, j, k):
     with netCDF4.Dataset(filename) as f:
         for key in f.variables.keys():
             if variable in key:
-                d = f.variables[key][:,:,:]
-                samples.append(d[i,j,k])
+
+                samples.append(f.variables[key][i,j,k])
     return np.array(samples)
 
 def progress(part, total):
-    message = "Computing done: {:.2f}%\r".format(part/total*100.)
+    message = "Computing done: {:.2f}%\r".format(float(part)/total*100.)
     sys.stdout.write(message)
     sys.stdout.flush()
     if isnotebook():
