@@ -144,4 +144,43 @@ def plot_statistics_convergence(resolutions, basename, statistics, variable, set
             showAndSave("single_level_statistics_{setup}_{statistic}_{variable}_{r}".format(statistic = statistic, 
                         setup = setup,
                         variable = variable, r=r))
-            
+
+
+def wasserstein_1pt(filenames, variable, setup):
+    # don't judge me for the next line
+    resolutions = np.array(sorted(list([k for k in filenames.keys()])))
+
+    errors = []
+    for r in resolutions[1:]:
+        d1 = load_samples(filenames[r], r, variable)
+        d2 = load_samples(filenames[r//2], r, variable)
+
+        wasserstein_error = 0.0
+
+        for i in range(r):
+            for j in range(r):
+                wasserstein_error += scipy.stats.wasserstein_distance(d1[i,j,:], d2[i,j,:])
+        wasserstein_error /= r**2
+
+        errors.append(wasserstein_error)
+
+    plt.loglog(errors, wasserstein_error, '-o')
+    plt.xlabel("Resolution ($N^3$)")
+    
+    plt.xticks(resolutions[1:], ["${}^{{3}}$".format(r) for r in resolutions[1:]])
+    plt.ylabel("Error ($||W_1(\\nu^{1,N}, \\nu^{1,2\\cdot N })||_{L^1(D)}$")
+    plt.title("One point $W_1$-convergence of {variable} ({setup})".format(variable = variable, setup = setup))
+
+        
+        
+
+
+def plot_wasserstein_convergence(resolutions, basename, variable, setup):
+    filenames = {}
+
+    for r in resolutions:
+        filenames[r] = basename.format(r=r)
+    
+    wasserstein_1pt(filenames, variable, setup)
+    showAndSave("wasserstein_1pt_{setup}_{variable}".format(setup=setup, variable=variable))
+    
