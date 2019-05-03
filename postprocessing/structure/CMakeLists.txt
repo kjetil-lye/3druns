@@ -21,4 +21,13 @@ project (structure_functions LANGUAGES C CXX CUDA)
 find_package(Alsvinn REQUIRED)
 add_executable(structure_functions src/main.cpp)
 
-target_link_libraries(structure_functions alsvinn::alsuq)
+target_link_libraries(structure_functions
+	alsvinn::alsutils
+	alsvinn::alsuq
+	Boost::program_options
+	Boost::date_time
+	Boost::system
+	Boost::chrono
+	Boost::thread
+  
+)
