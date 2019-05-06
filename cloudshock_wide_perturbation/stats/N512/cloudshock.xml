@@ -17,7 +17,7 @@
       <gamma>1.4</gamma>
     </equationParameters>
     <reconstruction>mm</reconstruction>
-    <cfl>0.25</cfl>
+    <cfl>0.1</cfl>
     <integrator>auto</integrator>
     <functionals>
 

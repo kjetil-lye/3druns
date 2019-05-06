@@ -200,11 +200,12 @@ def wasserstein_1pt(filenames, variable, setup):
         wasserstein_error = 0.0
 
         for i in range(r):
+            progress(i, r)
             d1 = load_plane(filenames[r], variable, i)
             d2 = load_plane(filenames[r//2], variable, i//2)
             for j in range(r):
                 for k in range(r):
-                    progress(i*r**2 + j*r +  k, r**3)
+
 #                    d1 = load_samples_point(filenames[r], variable, i, j, k)
 #                    d2 = load_samples_point(filenames[r//2], variable, i//2, j//2, k//2)
 
@@ -215,7 +216,7 @@ def wasserstein_1pt(filenames, variable, setup):
         print()
         console_log("")
         console_log("Done with {}".format(r))
-    plt.loglog(errors, wasserstein_error, '-o')
+    plt.loglog(resolutions[1:], errors, '-o')
     plt.xlabel("Resolution ($N^3$)")
     
     plt.xticks(resolutions[1:], ["${}^{{3}}$".format(r) for r in resolutions[1:]])
