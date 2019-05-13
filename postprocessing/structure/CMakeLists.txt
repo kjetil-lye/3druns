@@ -1,4 +1,4 @@
-cmake_minimum_required (VERSION 3.12.0)
+cmake_minimum_required (VERSION 3.10.0)
 
 SET(USE_HUNTER ON CACHE BOOL "Use Hunter for installation of packages")
 SET(HUNTER_ROOT ${CMAKE_BINARY_DIR}/hunter_root)
@@ -16,7 +16,7 @@ ELSE()
 	# do nothing
 	ENDMACRO()
 ENDIF()
-project (structure_functions LANGUAGES C CXX CUDA)
+project (structure_functions LANGUAGES C CXX)
 
 find_package(Alsvinn REQUIRED)
 add_executable(structure_functions src/main.cpp)

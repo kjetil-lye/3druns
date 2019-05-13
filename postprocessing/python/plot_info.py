@@ -17,8 +17,15 @@ import datetime
 import traceback
 import inspect
 import copy
+try:
+    from IPython.core.display import display, HTML
+except:
+    def display(x):
+        print(x)
 
-from IPython.core.display import display, HTML
+    def HTML(x):
+        return x
+
 try:
     import git
     def get_git_metadata():
