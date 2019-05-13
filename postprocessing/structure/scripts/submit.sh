@@ -1,9 +1,9 @@
 #!/bin/bash -l
-#SBATCH --job-name=cloudshock_512
+#SBATCH --job-name=postprocess
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=kjetil.lye@sam.math.ethz.ch
 #SBATCH --time=24:00:00
-#SBATCH --nodes=1024
+#SBATCH --nodes=1
 #SBATCH --ntasks-per-core=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=1
@@ -12,4 +12,4 @@
 #SBATCH --account=s913
 
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
-srun  $HOME/alsvinn/build/alsuqcli/alsuqcli --multi-z 2 --multi-x 2 --multi-y 2 --multi-sample 128 cloudshock.xml
+srun ../../build/structure_functions -i ${THREEDIMS_PATH}/INFILE -o OUTFILE --samples SAMPLES --equation euler3 --number-of-h NUMBEROFH --nx NX --ny NX --nz NX
