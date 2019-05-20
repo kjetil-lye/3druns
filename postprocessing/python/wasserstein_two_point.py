@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 matplotlib.rcParams['savefig.dpi'] = 600
-%matplotlib inline
+
 import matplotlib.pyplot as plt
 
 import sys
