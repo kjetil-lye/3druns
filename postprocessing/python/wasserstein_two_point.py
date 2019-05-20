@@ -86,7 +86,7 @@ def get_points_per_node(points_base):
     
     points = get_integration_points(points_base)
     
-    points_per_rank = (len(points) + number_of_ranks - 1)/number_of_ranks
+    points_per_rank = (len(points) + number_of_ranks - 1)//number_of_ranks
     
     points_start = rank * points_per_rank
     
