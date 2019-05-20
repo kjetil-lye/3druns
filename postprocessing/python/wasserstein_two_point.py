@@ -69,7 +69,7 @@ def wasserstein2pt_fast(filename_a, filename_b, N):
                         for nzp, zp in enumerate(points):
                             for sample in range(N):
                                 
-                                sys.stdout.write(str(nx*N**2 + ny*N + nz))
+                                sys.stdout.write(str(nxp*N**2 + nyp*N + nzp))
                                 sys.stdout.flush()
                                 
                                 i = int(x*N)
