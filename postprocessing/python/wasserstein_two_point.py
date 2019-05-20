@@ -100,7 +100,8 @@ def wasserstein2pt_fast(filename_a, filename_b, N):
                         for nyp, yp in enumerate(points):
                         
                            
-                            
+                            ip = int(xp*N)
+                            jp = int(yp*N)
                                 
                                 
                                 
