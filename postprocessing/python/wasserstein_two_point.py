@@ -45,7 +45,7 @@ def load_sample(filename, sample, i,j,k):
 def load_samples(filename, N, i, j, k):
     data = np.zeros(N)
     for k in range(N):
-        data[k] = load_sample(fileanme, N, i, j, k)
+        data[k] = load_sample(filename, N, i, j, k)
     return data
     
     
