@@ -63,14 +63,15 @@ def wasserstein2pt_fast(filename_a, filename_b, N):
         for ny, y in enumerate(points):
             
             for nz, z in enumerate(points):
-                sys.stdout.write(str(nx*N**2 + ny*N + nz))
-                sys.stdout.flush()
-                for xp in points:
-                    for yp in points:
-                        for zp in points:
+
+                for nxp, xp in enumerate(points:)
+                    for nyp, yp in enumerate(points):
+                        for nzp, zp in enumerate(points):
                             for sample in range(N):
                                 
-                        
+                                sys.stdout.write(str(nx*N**2 + ny*N + nz))
+                                sys.stdout.flush()
+                                
                                 i = int(x*N)
                                 j = int(y*N)
                                 k = int(z*N)
@@ -80,12 +81,12 @@ def wasserstein2pt_fast(filename_a, filename_b, N):
                                 kp = int(zp*N)
                                 
                                 xs[sample, 0] = load_sample(filename_a, sample, i, j, k)
-                                xs[sample, 1] = load_sample(filename_a, sample,ip, jp, kp)
+                                xs[sample, 1] = load_sample(filename_a, sample, ip, jp, kp)
                                 
-                                xt[sample, 0] = load_sample(filename_a, sample, i//2, j//2, k//2)
-                                xt[sample, 1] = load_sample(filename_a, sample, ip//2, jp//2, kp//2)
+                                xt[sample, 0] = load_sample(filename_b, sample, i//2, j//2, k//2)
+                                xt[sample, 1] = load_sample(filename_b, sample, ip//2, jp//2, kp//2)
                                 
-                                distance += wasserstein_point2_fast(a, b, xs, xt)
+                            distance += wasserstein_point2_fast(a, b, xs, xt)
 
     print("Done")
     
