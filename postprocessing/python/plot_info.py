@@ -258,6 +258,14 @@ def savePlot(name):
                         environment_value = environment_value.replace("\n", "")
                         environment_value = environment_value.replace("\r", "")
                         f.write("%%    {}={}\n".format(k, environment_value))
+                    f.write("%% additional_parameters:\n")
+
+                    for k in get_additional_plot_parameters():
+                        environment_value = get_additional_plot_parameters()[k]
+                        environment_value = environment_value.replace("\n", "")
+                        environment_value = environment_value.replace("\r", "")
+                        f.write("%%    {}={}\n".format(k, environment_value))
+
                     f.write("%% python_version: \n")
                     for l in get_python_description().splitlines():
                         f.write("%%    {}\n".format(l))
@@ -284,6 +292,7 @@ def savePlot(name):
                                 'generated_on_date': str(datetime.datetime.now()),
                                 **gitMetadata,
                                 **get_environment.accessed_environments,
+                                **get_additional_plot_parameters(),
                                 "modules_loaded": get_loaded_python_modules_formatted(),
                                 "python_version": get_python_description(),
                                 'stacktrace': get_stacktrace_str(),
@@ -393,7 +402,15 @@ def get_environment(name, filenames):
 
 get_environment.accessed_environments = {}
 
+def add_additional_plot_parameters(parameter, name):
+    add_additional_plot_parameters.par_name[parameter] =  name
+    
+def get_additional_plot_parameters():
+    return add_additional_plot_parameters.par_name
 
+add_additional_plot_parameters.par_name = {}
+
+    
 def get_notebook_name():
     return get_notebook_name.name
 
