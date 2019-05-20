@@ -21,7 +21,7 @@ import plot_info
 
 def load_samples_plane(filename, N, kp, upscale_resolution):
     data = np.zeros((upscale_resolution, upscale_resolution, N))
-    with netCDF.Dataset(filename) as f:
+    with netCDF4.Dataset(filename) as f:
         for k in range(N):
             d = f.variables['sample_{}_rho'.format(k)][kp,:,:]
             
