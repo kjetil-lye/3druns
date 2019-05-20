@@ -77,7 +77,7 @@ def wasserstein2pt_fast(filename_a, filename_b, N):
     
     N_points = 10
     
-    points = np.linspace(0, 1, N_points)
+    points = 1.0/N_points * np.arange(0,N_points)
 
    
     for nx, x in enumerate(points):
