@@ -44,7 +44,7 @@ def load_sample(filename, sample, i,j,k):
     
 def load_samples(filename, N, i, j, k):
     data = np.zeros(N)
-    for k in range(N);:
+    for k in range(N):
         data[k] = load_sample(fileanme, N, i, j, k)
     return data
     
@@ -109,7 +109,7 @@ def wasserstein2pt_fast(filename_a, filename_b, N):
                             xs[:, 1] = samples_plane_a[ip, jp,:]
                                 
                             
-                            xt[:, 1] = samples_plane_b[ip, jp, ;]
+                            xt[:, 1] = samples_plane_b[ip, jp, :]
                             
                             
                             sys.stdout.write('{}\r'.format(str(nxp*N**2 + nyp*N + nzp)))
