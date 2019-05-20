@@ -119,6 +119,7 @@ if __name__ == '__main__':
     import sys
     if len(sys.argv) != 3:
         print("Usage\n\tpython{} basename name\n".format(sys.argv[0]))
+        exit(0)
     basename = sys.argv[1]
     name = sys.argv[2]
     plot_info.set_additional_plot_parameters("basename", basename)
