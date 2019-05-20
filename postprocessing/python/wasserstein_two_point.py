@@ -122,6 +122,6 @@ if __name__ == '__main__':
         exit(0)
     basename = sys.argv[1]
     name = sys.argv[2]
-    plot_info.set_additional_plot_parameters("basename", basename)
+    plot_info.add_additional_plot_parameters("basename", basename)
     resolutions [64, 128, 256, 512]
     plotWassersteinConvergence(name, basename, resolutions)
