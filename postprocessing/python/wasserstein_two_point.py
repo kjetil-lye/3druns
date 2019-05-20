@@ -19,6 +19,21 @@ import scipy
 import scipy.stats
 import plot_info
 
+def load_samples_plane(filename, N, kp, upscale_resolution):
+    data = np.zeros((upscale_resolution, upscale_resolution, N))
+    with netCDF.Dataset(filename) as f:
+        for k in range(N):
+            d = f.variables['sample_{}_rho'.format(k)][kp,:,:]
+            
+            while d.shape[1] < upscale_resolution:
+                d = np.repeat(np.repeat(d,2,0), 2, 1)
+            
+            data[:,:,k] = d
+            
+    return data
+            
+      
+
 def load_sample(filename, sample, i,j,k):
     with netCDF4.Dataset(filename) as f:
         d = f.variables['sample_{}_rho'.format(sample)]
@@ -26,6 +41,12 @@ def load_sample(filename, sample, i,j,k):
         
 
         return d[i,j,k]
+    
+def load_samples(filename, N, i, j, k):
+    data = np.zeros(N)
+    for k in range(N);:
+        data[k] = load_sample(fileanme, N, i, j, k)
+    return data
     
     
 
@@ -63,27 +84,34 @@ def wasserstein2pt_fast(filename_a, filename_b, N):
         for ny, y in enumerate(points):
             
             for nz, z in enumerate(points):
-
-                for nxp, xp in enumerate(points):
-                    for nyp, yp in enumerate(points):
-                        for nzp, zp in enumerate(points):
-                            for sample in range(N):
+                i = int(x*N)
+                j = int(y*N)
+                k = int(z*N)
+                
+                xs[:, 0] = load_samples(filename_a, N, i, j, k)
+                xt[:, 0] = load_samples(filename_b, N, i//2, j//2, k//2)
+                
+                for nzp, zp in enumerate(points):
+                    kp = int(zp*N)
+                    samples_plane_a = load_samples_plane(filename_a, N, kp, N)
+                    samples_plane_b = load_samples_plane(filename_a, N, kp//2, N)
+                    
+                    for nxp, xp in enumerate(points):
+                        for nyp, yp in enumerate(points):
+                        
+                           
+                            
                                 
                                 
                                 
-                                i = int(x*N)
-                                j = int(y*N)
-                                k = int(z*N)
                                 
-                                ip = int(xp*N)
-                                jp = int(yp*N)
-                                kp = int(zp*N)
+                           
+                            xs[:, 1] = samples_plane_a[ip, jp,:]
                                 
-                                xs[sample, 0] = load_sample(filename_a, sample, i, j, k)
-                                xs[sample, 1] = load_sample(filename_a, sample, ip, jp, kp)
-                                
-                                xt[sample, 0] = load_sample(filename_b, sample, i//2, j//2, k//2)
-                                xt[sample, 1] = load_sample(filename_b, sample, ip//2, jp//2, kp//2)
+                            
+                            xt[:, 1] = samples_plane_b[ip, jp, ;]
+                            
+                            
                             sys.stdout.write('{}\r'.format(str(nxp*N**2 + nyp*N + nzp)))
                             sys.stdout.flush()
                                 
