@@ -89,12 +89,12 @@ def wasserstein2pt_fast(filename_a, filename_b, N):
                 k = int(z*N)
                 
                 xs[:, 0] = load_samples(filename_a, N, i, j, k)
-                xt[:, 0] = load_samples(filename_b, N, i//2, j//2, k//2)
+                xt[:, 0] = np.repeat(load_samples(filename_b, N//2, i//2, j//2, k//2), 2, 0)
                 
                 for nzp, zp in enumerate(points):
                     kp = int(zp*N)
                     samples_plane_a = load_samples_plane(filename_a, N, kp, N)
-                    samples_plane_b = load_samples_plane(filename_a, N, kp//2, N)
+                    samples_plane_b = np.repeat(load_samples_plane(filename_a, N//2, kp//2, N), 2, 2)
                     
                     for nxp, xp in enumerate(points):
                         for nyp, yp in enumerate(points):
