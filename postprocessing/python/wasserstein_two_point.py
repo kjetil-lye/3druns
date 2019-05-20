@@ -19,29 +19,22 @@ import scipy
 import scipy.stats
 import plot_info
 
-def load_plane(filename, sample, plane):
+def load_sample(filename, sample, i,j,k):
     with netCDF4.Dataset(filename) as f:
         d = f.variables['sample_{}_rho'.format(sample)]
 
-        N = d.shape[0]
+        
 
-        k = int(plane*N)
-
-        return d[:,:,k]
+        return d[i,j,k]
     
     
 
-def wasserstein_point2_fast(data1, data2, i, j, ip, jp, a, b, xs, xt):
+def wasserstein_point2_fast(a, b, xs, xt):
     """
     Computes the Wasserstein distance for a single point in the spatain domain
     """
     
 
-    xs[:,0] = data1[i,j,:]
-    xs[:,1] = data1[ip, jp, :]
-
-    xt[:,0] = data2[i,j, :]
-    xt[:,1] = data2[ip, jp, :]
 
 
     M = ot.dist(xs, xt, metric='euclidean')
@@ -62,28 +55,39 @@ def wasserstein2pt_fast(filename_a, filename_b, N):
     distance = 0
     
     N_points = 10
-    length = 1.0/N_points
+    
     points = np.linspace(0, 1, N_points)
 
-    data1 = np.zeros((N,N,N))
-    data2 = np.zeros((N,N,N))
-    for plane in points:
-        for sample in range(N):
-            data1[:,:,sample] = load_plane(filename_a, sample, plane)
-            data2[:,:,sample] = np.repeat(np.repeat(load_plane(filename_b, sample, plane), 2, 0), 2, 1)
-        
-        for x in points:
-            for y in points:
+   
+    for nx, x in enumerate(points):
+        for ny, y in enumerate(points):
+            
+            for nz, z in enumerate(points):
+                sys.stdout.write(nx*N**2 + ny*N + nz)
+                sys.stdout.flush()
                 for xp in points:
                     for yp in points:
+                        for zp in points:
+                            for sample in range(N):
+                                
                         
-                        i = int(x*N)
-                        j = int(y*N)
-                        ip = int(xp*N)
-                        jp = int(yp*N)
-                        distance += wasserstein_point2_fast(data1, data2, i,j, ip, jp, a, b, xs, xt)
+                                i = int(x*N)
+                                j = int(y*N)
+                                k = int(z*N)
+                                
+                                ip = int(xp*N)
+                                jp = int(yp*N)
+                                kp = int(zp*N)
+                                
+                                xs[sample, 0] = load_sample(filename_a, sample, i, j, k)
+                                xs[sample, 1] = load_sample(filename_a, sample,ip, jp, kp)
+                                
+                                xt[sample, 0] = load_sample(filename_a, sample, i//2, j//2, k//2)
+                                xt[sample, 1] = load_sample(filename_a, sample, ip//2, jp//2, kp//2)
+                                
+                                distance += wasserstein_point2_fast(a, b, xs, xt)
 
-
+    print("Done")
     
     return distance / len(points)**6
 
@@ -94,11 +98,12 @@ def wasserstein2pt_fast(filename_a, filename_b, N):
 def plotWassersteinConvergence(name, basename, resolutions):
     wasserstein2pterrors = []
     for r in resolutions[1:]:
+        print(r)
         filename = basename % r
         filename_coarse = basename % int(r/2)
         
 
-        wasserstein2pterrors.append(wasserstein2pt_fast(filename, filename_course, r))
+        wasserstein2pterrors.append(wasserstein2pt_fast(filename, filename_coarse, r))
         print("wasserstein2pterrors=%s" % wasserstein2pterrors)
     
 
