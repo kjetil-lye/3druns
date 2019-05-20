@@ -64,7 +64,7 @@ def wasserstein2pt_fast(filename_a, filename_b, N):
             
             for nz, z in enumerate(points):
 
-                for nxp, xp in enumerate(points:)
+                for nxp, xp in enumerate(points):
                     for nyp, yp in enumerate(points):
                         for nzp, zp in enumerate(points):
                             for sample in range(N):
