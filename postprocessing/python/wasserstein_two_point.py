@@ -69,8 +69,7 @@ def wasserstein2pt_fast(filename_a, filename_b, N):
                         for nzp, zp in enumerate(points):
                             for sample in range(N):
                                 
-                                sys.stdout.write('{}\r'.format(str(nxp*N**2 + nyp*N + nzp)))
-                                sys.stdout.flush()
+                                
                                 
                                 i = int(x*N)
                                 j = int(y*N)
@@ -85,6 +84,8 @@ def wasserstein2pt_fast(filename_a, filename_b, N):
                                 
                                 xt[sample, 0] = load_sample(filename_b, sample, i//2, j//2, k//2)
                                 xt[sample, 1] = load_sample(filename_b, sample, ip//2, jp//2, kp//2)
+                            sys.stdout.write('{}\r'.format(str(nxp*N**2 + nyp*N + nzp)))
+                            sys.stdout.flush()
                                 
                             distance += wasserstein_point2_fast(a, b, xs, xt)
 
