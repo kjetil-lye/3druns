@@ -266,6 +266,6 @@ int main(int argc, char** argv) {
 
       statistics->writeStatistics(grid);
     }
-
+    MPI_Finalize();
 
 }
