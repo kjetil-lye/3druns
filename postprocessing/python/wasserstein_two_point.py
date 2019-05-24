@@ -164,15 +164,20 @@ def wasserstein2pt_fast(filename_a, filename_b, N):
 
 
 def plotWassersteinConvergence(name, basename, resolutions):
+    comm = MPI.COMM_WORLD
+    rank = comm.Get_rank()
+
     wasserstein2pterrors = []
     for r in resolutions[1:]:
-        print(r)
+        if rank == 0:
+            print(r)
         filename = basename % r
         filename_coarse = basename % int(r/2)
         
 
         wasserstein2pterrors.append(wasserstein2pt_fast(filename, filename_coarse, r))
-        print("wasserstein2pterrors=%s" % wasserstein2pterrors)
+        if rank == 0:
+            print("wasserstein2pterrors=%s" % wasserstein2pterrors)
     
     comm = MPI.COMM_WORLD
     rank = comm.Get_rank()
@@ -180,7 +185,8 @@ def plotWassersteinConvergence(name, basename, resolutions):
     if rank == 0:
         plt.loglog(resolutions[1:], wasserstein2pterrors, '-o', basex=2, basey=2)
         plt.xlabel("Resolution")
-        plt.xticks(resolutions[1:], ['${r} \\times {r}$'.format(r=r) for r in resolutions[1:]])
+        plt.ylim([2**-5, 2**-3])
+        plt.xticks(resolutions[1:], ['${r}^3$'.format(r=r) for r in resolutions[1:]])
         plt.ylabel('$||W_1(\\nu^{2, \\Delta x}, \\nu^{2,\\Delta x/2})||_{L^1(D\\times D)}$')
         plt.title("Wasserstein convergence for %s\nfor second correlation marginal"%name)
         showAndSave('%s_wasserstein_convergence_2pt' % name)
