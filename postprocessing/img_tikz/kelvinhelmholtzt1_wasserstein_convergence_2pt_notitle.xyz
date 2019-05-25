@@ -38,15 +38,15 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 7affd18b6509e60d7d0d1138fd82b208a9d3d506
+Commit: fc7ca032e17f966d3b043a3654a5ce73df1d0654
 Repo: git@github.com:kjetil-lye/3druns.git
-Hostname: eu-c7-059-01};
+Hostname: eu-c7-063-14};
 \node at (axis cs:0.2,0.93)[
   scale=0.5,
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@7aff};
+]{@fc7c};
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -54,9 +54,9 @@ Hostname: eu-c7-059-01};
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 7affd18b6509e60d7d0d1138fd82b208a9d3d506
+Commit: fc7ca032e17f966d3b043a3654a5ce73df1d0654
 Repo: git@github.com:kjetil-lye/3druns.git
-Hostname: eu-c7-059-01};
+Hostname: eu-c7-063-14};
 \end{axis}
 
 \end{tikzpicture}
@@ -68,14 +68,14 @@ Hostname: eu-c7-059-01};
 %% script name: ../python/wasserstein_two_point.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : 7affd18b6509e60d7d0d1138fd82b208a9d3d506
-%% GIT git_repo_modified : True
+%% GIT git_commit : fc7ca032e17f966d3b043a3654a5ce73df1d0654
+%% GIT git_repo_modified : False
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : 7aff
+%% GIT git_short_commit : fc7c
 %% working_directory : /cluster/scratch/klye/3druns/postprocessing/notebooks
-%% hostname : eu-c7-059-01
-%% generated_on_date : 2019-05-24 13:19:57.044798
+%% hostname : eu-c7-063-14
+%% generated_on_date : 2019-05-24 14:58:36.715252
 %% accessed_environment:
 %% additional_parameters:
 %%    basename=/cluster/project/sam/klye/3druns_kh_tube/kelvinhelmholtz_3d_tube/stats/kelvinhelmholtz_%d_0.1/kh_1.nc

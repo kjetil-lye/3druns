@@ -161,13 +161,14 @@ def plotWassersteinConvergence(name, basename, resolutions, number_of_integratio
         min_value_log = np.floor(np.log2(np.min(wasserstein2pterrors)))
         max_value_log = np.ceil(np.log2(np.max(wasserstein2pterrors)))
 
-        plt.ylim([2 ** min_value_log, 2**max_value_log])
+        plt.ylim([2 ** min_value_log, 2 ** max_value_log])
         plt.xticks(resolutions[1:], ['${r}^3$'.format(r=r) for r in resolutions[1:]])
         plt.ylabel('$||W_1(\\nu^{2, \\Delta x}, \\nu^{2,\\Delta x/2})||_{L^1(D\\times D)}$')
         plt.title("""Wasserstein convergence for {title}
 for second correlation marginal
-Using ${number_of_integration_points}^6$ equidistant integration points
-        """.format(title=name, number_of_integration_points=number_of_integration_points))
+Using ${number_of_integration_points}^6={total_integration_points}$ equidistant integration points
+        """.format(title=name, number_of_integration_points=number_of_integration_points,
+                   total_integration_points=number_of_integration_points ** 6))
         showAndSave('%s_wasserstein_convergence_2pt' % name)
 
         saveData('%s_wasserstein_convergence_2pt_resolutions' % name, resolutions)
