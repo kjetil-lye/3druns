@@ -55,8 +55,8 @@ Plot the NetCDF file
                  ax.set_ylabel('$y$')
             except:
                  pass
-                 fig.colorbar(im, ax=ax)
-                 ax.set_title("Fixing $z={}$".format(j/M), fontsize=20)
+            fig.colorbar(im, ax=ax)
+            ax.set_title("Fixing $z={}$".format(j/M), fontsize=20)
                  
             ax = axes[j, 1]
             d = f.variables[sample_key][:,(j*N)//M,:]
@@ -67,8 +67,8 @@ Plot the NetCDF file
                  ax.set_ylabel('$y$')
             except:
                  pass
-                 fig.colorbar(im, ax=ax)
-                 ax.set_title("Fixing $y={}$".format(j/M), fontsize=20)
+            fig.colorbar(im, ax=ax)
+            ax.set_title("Fixing $y={}$".format(j/M), fontsize=20)
 
             ax = axes[j, 2]
             d = f.variables[sample_key][(j*N)//M, :, :]
@@ -79,7 +79,8 @@ Plot the NetCDF file
                  ax.set_ylabel('$y$')
             except:
                  pass
-                 fig.colorbar(im, ax=ax)
-                 ax.set_title("Fixing $x={}$".format(j/M), fontsize=20)
+            fig.colorbar(im, ax=ax)
+            ax.set_title("Fixing $x={}$".format(j/M), fontsize=20)
 
-        plot_info.savePlot(os.path.splitext(os.path.basename(inname))[0] + "_" + sample_key)
+        plot_info.savePlot(os.path.splitext(os.path.basename(inname))[0] + "_" + \
+                           sample_key + "_resolution_" + str(N))
