@@ -82,4 +82,4 @@ Plot the NetCDF file
                  fig.colorbar(im, ax=ax)
                  ax.set_title("Fixing $x={}$".format(j/M), fontsize=20)
 
-        plot_info.savePlot(os.path.splitext(os.path.basename(inname))[0] + sample_key)
+        plot_info.savePlot(os.path.splitext(os.path.basename(inname))[0] + "_" + sample_key)
