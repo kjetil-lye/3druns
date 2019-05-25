@@ -10,7 +10,7 @@ if __name__ == '__main__':
     inname = sys.argv[1]
     M = 4
     fig, axes = plt.subplots(M, 3, sharex='all', sharey='all', figsize=(32,32))
-    
+    fig.suptitle(inname, fontsize=30)
     with netCDF4.Dataset(inname) as f:
         
         N = f.variables['sample_0_rho'].shape[0]
@@ -27,7 +27,7 @@ if __name__ == '__main__':
             except:
                 pass
             fig.colorbar(im, ax=ax)
-            ax.set_title("Fixing $z={}$".format(j/M))
+            ax.set_title("Fixing $z={}$".format(j/M), fontsize=20)
             
             ax = axes[j, 1]
             d = f.variables['sample_0_rho'][:,(j*N)//M,:]
@@ -39,7 +39,7 @@ if __name__ == '__main__':
             except:
                 pass
             fig.colorbar(im, ax=ax)
-            ax.set_title("Fixing $y={}$".format(j/M))
+            ax.set_title("Fixing $y={}$".format(j/M), fontsize=20)
 
             ax = axes[j, 2]
             d = f.variables['sample_0_rho'][(j*N)//M, :, :]
@@ -51,6 +51,6 @@ if __name__ == '__main__':
             except:
                 pass
             fig.colorbar(im, ax=ax)
-            ax.set_title("Fixing $z={}$".format(j/M))
+            ax.set_title("Fixing $z={}$".format(j/M), fontsize=20)
 
         plt.savefig(inname.replace('.nc', '.png'))
