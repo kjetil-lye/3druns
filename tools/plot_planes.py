@@ -51,6 +51,6 @@ if __name__ == '__main__':
             except:
                 pass
             fig.colorbar(im, ax=ax)
-            ax.set_title("Fixing $z={}$".format(j/M), fontsize=20)
+            ax.set_title("Fixing $x={}$".format(j/M), fontsize=20)
 
         plt.savefig(inname.replace('.nc', '.png'))
