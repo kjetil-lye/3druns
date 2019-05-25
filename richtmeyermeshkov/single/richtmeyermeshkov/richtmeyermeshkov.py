@@ -1,52 +1,49 @@
-epsilon = 6e-2
-xc = x - 0.5
-yc = y - 0.5
-zc = z - 0.5
-phi = atan2(yc, xc) if abs(xc) > 0 else 0
-psi = atan2(zc, xc) if abs(xc) > 0 else 0
+def init_global(rho, ux, uy, uz, p, nx, ny, nz, ax, ay, az, bx, by, bz):
+    x = linspace(ax, bx, nx)
+    y = linspace(ay, by, ny)
+    z = linspace(az, bz, nz)
+    Y, X, Z = meshgrid(y, x, z)
+    epsilon = 6e-2
 
-if phi < 0:
-    phi += 2*pi
+    XC = X - 0.5
+    YC = Y - 0.5
+    ZC = Z - 0.5
 
-N = int(len(a)/4)
+    R = sqrt(XC**2+YC**2+ZC**2)
 
-a1 = a[:N]
+    Theta = arctan2(ZC, YC)
+    Phi = arctan2(XC, YC)
 
-b1 = a[N:2*N]
+    N = int(len(a)/4)
 
-a2 = a[2*N:3*N]
+    a1 = a[:N]
+    b1 = a[N:2*N]
+    a2 = a[2*N:3*N]
+    b2 = a[3*N:4*N]
 
-b2 = a[3*N:4*N]
+    normalization1 = sum(a1)
+    if abs(normalization1) < 1e-8:
+        normalization1 = N
 
-normalization1 = sum(a1)
+    normalization2 = sum(a2)
+    if abs(normalization2) < 1e-8:
+        normalization2 = N
 
-if abs(normalization1) < 1e-8:
-    normalization1 = N
+    perturbation = epsilon * sum([a1[n] * cos(Phi+2*pi*b1[n]) for n in range(N)], 0) / normalization1
+    
+    perturbation += epsilon * sum([a2[n] * cos(Theta+2*pi*b2[n]) for n in range(N)], 0) / normalization2
 
+    inner_01 = (R < 0.1)
 
-normalization2 = sum(a2)
+    inner_025 = (R < 0.25 + perturbation)
+    
+    p[:,:,:] = 20.0 * inner_01 + 1.0 * (1-inner_01)
 
-if abs(normalization2) < 1e-8:
-    normalization2 = N
+    rho[:,:,:] = 2.0 * inner_025 + 1.0 * (1-inner_025)
+    ux[:,:,:] = zeros_like(X)
+    uy[:,:,:] = zeros_like(X)
+    uz[:,:,:] = zeros_like(X)
 
-perturbation = epsilon * sum([a1[n] * cos(phi+2*pi*b1[n]) for n in range(N)]) / normalization1
-
-perturbation += epsilon * sum([a2[n] * cos(phi+2*pi*b2[n]) for n in range(N)]) / normalization2
-
-
-r = sqrt((xc)**2+(yc)**2 + (zc)**2)
-if r < 0.1:
-    p = 20
-else:
-    p = 1
-
-if r < 0.25 + perturbation:
-    rho = 2
-else:
-    rho = 1
-ux = 0
-uy = 0
-uz = 0
 
 
 
