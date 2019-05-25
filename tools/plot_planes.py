@@ -64,7 +64,7 @@ Plot the NetCDF file
             im = ax.pcolormesh(x, y, d)
             try:
                  ax.set_xlabel('$x$')
-                 ax.set_ylabel('$y$')
+                 ax.set_ylabel('$z$')
             except:
                  pass
             fig.colorbar(im, ax=ax)
@@ -75,8 +75,8 @@ Plot the NetCDF file
 
             img = ax.pcolormesh(x, y, d)
             try:
-                 ax.set_xlabel('$x$')
-                 ax.set_ylabel('$y$')
+                 ax.set_xlabel('$y$')
+                 ax.set_ylabel('$z$')
             except:
                  pass
             fig.colorbar(im, ax=ax)
