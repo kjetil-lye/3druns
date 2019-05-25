@@ -8,20 +8,26 @@ psi = atan2(zc, xc) if abs(xc) > 0 else 0
 if phi < 0:
     phi += 2*pi
 
-N = len(a)/4
+N = int(len(a)/4)
 
 a1 = a[:N]
 
 b1 = a[N:2*N]
 
-a2 = a[2*N, 3*N]
+a2 = a[2*N:3*N]
 
-b2 = a[3*N, 4*N]
+b2 = a[3*N:4*N]
 
 normalization1 = sum(a1)
 
 if abs(normalization1) < 1e-8:
     normalization1 = N
+
+
+normalization2 = sum(a2)
+
+if abs(normalization2) < 1e-8:
+    normalization2 = N
 
 perturbation = epsilon * sum([a1[n] * cos(phi+2*pi*b1[n]) for n in range(N)]) / normalization1
 
