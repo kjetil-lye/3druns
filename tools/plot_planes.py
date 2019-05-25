@@ -1,10 +1,13 @@
 import netCDF4
+
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 import numpy as np
 import sys
+import os
+import plot_info
 
 if __name__ == '__main__':
     inname = sys.argv[1]
@@ -53,4 +56,4 @@ if __name__ == '__main__':
             fig.colorbar(im, ax=ax)
             ax.set_title("Fixing $x={}$".format(j/M), fontsize=20)
 
-        plt.savefig(inname.replace('.nc', '.png'))
+        plot_info.savePlot(os.path.splitext(os.path.basename(inname))[0])
