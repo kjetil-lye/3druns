@@ -12,7 +12,7 @@ Submits the configuration file leonhard. NOTE: Will run in folder of configurati
 """)
 
 
-    parser.add_argument('--alsuqcli_path', type=str, default=os.path.join(str(Path.home()), '/build/alsuqcli/alsuqcli'),
+    parser.add_argument('--alsuqcli_path', type=str, default=str(os.path.join(str(Path.home()), 'build/alsuqcli/alsuqcli')),
                         help="path to alsuqlci")
     parser.add_argument('--config', type=str, required=True,
                         help="Path to configuration file")
