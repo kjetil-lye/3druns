@@ -38,7 +38,7 @@ Submits the configuration file leonhard. NOTE: Will run in folder of configurati
 
 
 
-    r_command_append = "'rusage[ngpus_excl_p=8,mem=8000] span[ptile=8]'"
+    r_command_append = "rusage[ngpus_excl_p=8,mem=8000] span[ptile=8]"
 
     command_to_run = [
 
