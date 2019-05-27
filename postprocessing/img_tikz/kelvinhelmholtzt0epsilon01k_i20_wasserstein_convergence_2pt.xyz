@@ -11,7 +11,7 @@ tick align=outside,
 tick pos=left,
 title={Wasserstein convergence for Kelvin-Helmholtz $T=0$ $\epsilon=0.1$ $K_I=20$
 for second correlation marginal
-Using $10^6$ equidistant integration points
+Using $20^6=64000000$ equidistant integration points
         },
 width=\figurewidth,
 x grid style={white!69.01960784313725!black},
@@ -23,15 +23,15 @@ xtick={128,256,512},
 xticklabels={\(\displaystyle 128^3\),\(\displaystyle 256^3\),\(\displaystyle 512^3\)},
 y grid style={white!69.01960784313725!black},
 ylabel={\(\displaystyle ||W_1(\nu^{2, \Delta x}, \nu^{2,\Delta x/2})||_{L^1(D\times D)}\)},
-ymin=0.00390625, ymax=0.0078125,
+ymin=0.00390625, ymax=0.015625,
 ymode=log,
 ytick style={color=black}
 ]
 \addplot [semithick, color0, mark=*, mark size=3, mark options={solid}]
 table {%
-128 0.00683195988363052
-256 0.00687112537435342
-512 0.0049823776247955
+128 0.0125537598677596
+256 0.00762050766422248
+512 0.00645013212909716
 };
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
@@ -40,15 +40,15 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 19bcd95f8a60643d3235d1dedacdc77ac114ebdd
+Commit: ec5dc52235e4d30149fa94cca0463a43e2832956
 Repo: git@github.com:kjetil-lye/3druns.git
-Hostname: eu-c7-059-06};
+Hostname: eu-c7-076-15};
 \node at (axis cs:0.2,0.93)[
   scale=0.5,
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@19bc};
+]{@ec5d};
 \end{axis}
 
 \end{tikzpicture}
@@ -57,20 +57,20 @@ Hostname: eu-c7-059-06};
 %%%%%%%%%%%%%TITLE%%%%%%%%%%%%%%%%%
 %% Wasserstein convergence for Kelvin-Helmholtz $T=0$ $\epsilon=0.1$ $K_I=20$
 %% for second correlation marginal
-%% Using $10^6$ equidistant integration points
+%% Using $20^6=64000000$ equidistant integration points
 %%         
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% script name: ../python/wasserstein_two_point.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : 19bcd95f8a60643d3235d1dedacdc77ac114ebdd
+%% GIT git_commit : ec5dc52235e4d30149fa94cca0463a43e2832956
 %% GIT git_repo_modified : True
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : 19bc
+%% GIT git_short_commit : ec5d
 %% working_directory : /cluster/scratch/klye/3druns/postprocessing/notebooks
-%% hostname : eu-c7-059-06
-%% generated_on_date : 2019-05-24 21:08:14.852242
+%% hostname : eu-c7-076-15
+%% generated_on_date : 2019-05-26 11:33:58.609634
 %% accessed_environment:
 %% additional_parameters:
 %%    basename=/cluster/project/sam/klye/3druns_kh_tube/kelvinhelmholtz_3d_tube/stats/kelvinhelmholtz_{resolution}_0.1/kh_0.nc
