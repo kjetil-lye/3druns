@@ -26,7 +26,7 @@ Submits the configuration file leonhard. NOTE: Will run in folder of configurati
     args = parser.parse_args()
     configuration_file = args.config
 
-    configuration_path = os.path.dirname(configuration_file)
+    configuration_path = os.path.abspath(os.path.dirname(configuration_file))
 
     config = read_config(configuration_file)
 
@@ -67,6 +67,6 @@ Submits the configuration file leonhard. NOTE: Will run in folder of configurati
     if args.dry_run:
         command_to_run = ['echo', *command_to_run]
 
-
+    print(f'working_dir={configuration_path}')
     subprocess.run(command_to_run, check = True, cwd = configuration_path)
 
