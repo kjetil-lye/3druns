@@ -3,7 +3,7 @@ def init_global(rho, ux, uy, uz, p, nx, ny, nz, ax, ay, az, bx, by, bz):
     y = linspace(ay, by, ny)
     z = linspace(az, bz, nz)
     Y, X, Z = meshgrid(y, x, z)
-    epsilon = 6e-2
+
 
     XC = X - 0.5
     YC = Y - 0.5
