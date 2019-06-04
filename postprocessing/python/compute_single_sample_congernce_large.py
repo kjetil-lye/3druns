@@ -85,4 +85,6 @@ Computes the single sample convergence
     args = parser.parse_args()
 
 
+    plot_info.add_additional_plot_parameters("basename", args.input_basename)
+
     plot_convergence_single_sample(args.input_basename, args.title, args.variable)
