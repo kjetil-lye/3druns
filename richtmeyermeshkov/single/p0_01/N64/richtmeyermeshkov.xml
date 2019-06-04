@@ -1,4 +1,4 @@
-<config>
+<?xml version="1.0" ?><config>
 <fvm>
   <name>
     rm
@@ -7,7 +7,7 @@
   <grid>
     <lowerCorner>0 0 0</lowerCorner>
     <upperCorner>1 1 1</upperCorner>
-    <dimension>256 256 256</dimension>
+    <dimension>64 64 64</dimension>
   </grid>
   <boundary>periodic</boundary>
   <flux>HLL3</flux>
@@ -30,7 +30,7 @@
       <parameter>
         <name>epsilon</name>
         <length>1</length>
-        <value>0.1</value>
+        <value>0.01</value>
       </parameter>
     </parameters>
   </initialData>
