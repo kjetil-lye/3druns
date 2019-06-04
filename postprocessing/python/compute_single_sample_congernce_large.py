@@ -1,4 +1,5 @@
 import numpy as np
+import os
 import matplotlib
 matplotlib.use('Agg')
 matplotlib.rcParams['savefig.dpi'] = 600
