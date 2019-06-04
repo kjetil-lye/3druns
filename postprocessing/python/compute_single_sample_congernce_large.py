@@ -42,7 +42,7 @@ def plot_convergence_single_sample(basename, title, variable, starting_resolutio
         error = 0.0
         for plane in range(2*resolution):
             data_fine = load_plane(basename.format(resolution=2*resolution), plane, variable)
-            data_coarse = np.repeat(np.repeat(load_plane(basename.format(resolution=resolution), plane, variable), 2, 0), 2, 1)
+            data_coarse = np.repeat(np.repeat(load_plane(basename.format(resolution=resolution), plane//2, variable), 2, 0), 2, 1)
 
             error += np.sum(abs(data_coarse-data_fine))
         error /= resolution**3
