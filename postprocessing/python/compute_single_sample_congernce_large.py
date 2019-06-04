@@ -37,10 +37,10 @@ def plot_convergence_single_sample(basename, title, variable, starting_resolutio
     resolutions = []
     errors = []
     
-    while resolution_exists(basename, resolution):
+    while resolution_exists(basename, resolution) and resolution_exists(basename, 2*resolution):
         print(resolution)
         error = 0.0
-        for plane in range(resolution):
+        for plane in range(2*resolution):
             data_fine = load_plane(basename.format(resolution=2*resolution), plane, variable)
             data_coarse = np.repeat(np.repeat(load_plane(basename.format(resolution=resolution), plane, variable), 2, 0), 2, 1)
 
@@ -54,6 +54,9 @@ def plot_convergence_single_sample(basename, title, variable, starting_resolutio
 
     resolutions = 2*np.array(resolutions)
 
+    min_error = np.min(errors)
+    max_error = np.max(errors)
+    plt.ylim([2**np.floor(np.log2(min_error)), 2**np.ceil(np.log2(max_error))])
     plt.loglog(resolutions, errors, '-o', basex=2, basey=2)
     plt.xlabel('Resolution ($N^3$)')
     plt.ylabel(f'Error ($||{latex_variables[variable]}^{{N}}-{latex_variables[variable]}^{{N/2}}||_{{L^1(D)}}$)')
