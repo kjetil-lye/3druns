@@ -22,15 +22,15 @@ xtick={512,1024,2048},
 xticklabels={\(\displaystyle 512^3\),\(\displaystyle 1024^3\),\(\displaystyle 2048^3\)},
 y grid style={white!69.01960784313725!black},
 ylabel={Error (\(\displaystyle ||\rho^{N}-\rho^{N/2}||_{L^1(D)}\))},
-ymin=0.5, ymax=4,
+ymin=0.5, ymax=8,
 ymode=log,
 ytick style={color=black}
 ]
 \addplot [semithick, color0, mark=*, mark size=3, mark options={solid}]
 table {%
-512 1.97286934789177
-1024 1.97475134020304
-2048 1.78001814121309
+512 1.78734434762479
+1024 2.15027267965275
+2048 1.5238675712296
 };
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
@@ -39,15 +39,15 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: e4fe9e6c5e9bd9daa0a295bc8b7748c8ad6809ff
+Commit: 8c50362c3114491c4de6142cc77030b2197e1fae
 Repo: git@github.com:kjetil-lye/3druns.git
-Hostname: daint107};
+Hostname: daint102};
 \node at (axis cs:0.2,0.93)[
   scale=0.5,
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@e4fe};
+]{@8c50};
 \end{axis}
 
 \end{tikzpicture}
@@ -61,28 +61,28 @@ Hostname: daint107};
 %% script name: ../python/compute_single_sample_congvergence_large.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : e4fe9e6c5e9bd9daa0a295bc8b7748c8ad6809ff
+%% GIT git_commit : 8c50362c3114491c4de6142cc77030b2197e1fae
 %% GIT git_repo_modified : False
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : e4fe
+%% GIT git_short_commit : 8c50
 %% working_directory : /scratch/snx3000/klye/3druns/postprocessing/notebooks
-%% hostname : daint107
-%% generated_on_date : 2019-06-04 12:12:24.846614
+%% hostname : daint102
+%% generated_on_date : 2019-06-04 16:37:32.071328
 %% accessed_environment:
 %% additional_parameters:
-%%    basename=/project/s839/klye/alsvinn_scalings_2018-12-17/runs/base_256_3d_multixmultiymultiz/3d/weak_scaling/kelvinhelmholtz_{resolution}/kh_{resolution}_1.nc
+%%    basename=/project/s839/klye/alsvinn_scaling_new/runs/base_256_3d_multixmultiymultiz/3d/weak_scaling/kelvinhelmholtz_{resolution}/kh_{resolution}_1.nc
 %%    alsvinn_report.software=alsvinn https://github.com/alsvinn
 %%    alsvinn_report.softwareVersion=0.2.1
 %%    alsvinn_report.currentWorkingDirectory=/scratch/snx3000/klye/alsvinn_scalings/runs/base_256_3d_multixmultiymultiz/3d/weak_scaling/kelvinhelmholtz_2048
 %%    alsvinn_report.operatingSystem=Linux: Linux 4.4.103-6.38_4.0.151-cray_ari_c #1 SMP Mon Sep 17 13:39:48 UTC 2018 (e3ad914) x86_64
 %%    alsvinn_report.username=klye
-%%    alsvinn_report.host=nid02015
+%%    alsvinn_report.host=nid01928
 %%    alsvinn_report.standardCLibrary=GNU libc 2.22 stable
-%%    alsvinn_report.generatedAt=20181202T161509
+%%    alsvinn_report.generatedAt=20181231T154017
 %%    alsvinn_report.CPU=Intel(R) Xeon(R) CPU E5-2690 v3 @ 2.60GHz
-%%    alsvinn_report.revision=a1864525e52f1f03fd2f72a7bda5d2a22a5a2a86
-%%    alsvinn_report.versionControlStatus=DIRTY
+%%    alsvinn_report.revision=6fd806b037689cb1b74db956d1e65b8a92c69e78
+%%    alsvinn_report.versionControlStatus=CLEAN
 %%    alsvinn_report.buildType=Release
 %%    alsvinn_report.cxxFlags=
 %%    alsvinn_report.cxxFlagsDebug=-g
