@@ -26,7 +26,7 @@ def resolution_exists(basename, resolution):
 
 def load_plane(filename, plane, variable):
     with netCDF4.Dataset(filename) as f:
-        return f.variables[f'sample_0_{variable}'][:,:,plane]
+        return f.variables[f'sample_0_{variable}'][plane,:,:]
 
 def plot_convergence_single_sample(basename, title, variable):
     resolution = 64
@@ -37,8 +37,8 @@ def plot_convergence_single_sample(basename, title, variable):
         print(resolution)
         error = 0.0
         for plane in range(resolution):
-            data_coarse = load_plane(basename.format(resolution=resolution))
-            data_fine = np.repeat(np.repeat(load_plane(basename.format(resolution=2*resolution)), 2, 0), 2, 1)
+            data_coarse = load_plane(basename.format(resolution=resolution), plane, variable)
+            data_fine = np.repeat(np.repeat(load_plane(basename.format(resolution=2*resolution), plane, variable), 2, 0), 2, 1)
 
             error += np.sum(abs(data_coarse-data_fine))
         error /= resolution**3
@@ -84,3 +84,5 @@ Computes the single sample convergence
 
     args = parser.parse_args()
 
+
+    plot_convergence_single_sample(args.input_basename, args.title, args.variable)
