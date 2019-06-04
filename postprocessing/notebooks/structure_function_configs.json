@@ -1,0 +1,25 @@
+{
+    "kh_tube": {
+        "name": "Kelvin-Helmholtz tube",
+        "Tarray": [
+            1
+        ],
+        "maxT": 2,
+        "perturbations": [
+            0.1
+        ],
+        "resolutions": [
+	    64,
+            128,
+            256
+        ],
+        "variables": [
+            "rho",
+            "mx",
+            "my",
+	    "mz",
+            "E"
+        ],
+        "cube_filename": "../structure/scripts/kh_N{resolution}_{perturbation}/structure_t_{t}_p_{p}_structure_cube_{p}.000000_0.nc"
+    }
+}
