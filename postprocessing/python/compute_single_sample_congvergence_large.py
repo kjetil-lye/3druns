@@ -56,7 +56,7 @@ def plot_convergence_single_sample(basename, title, variable, starting_resolutio
 
     min_error = np.min(errors)
     max_error = np.max(errors)
-    plt.ylim([2**np.floor(np.log2(min_error)), 2**np.ceil(np.log2(max_error))])
+    plt.ylim([2**np.floor(np.log2(min_error)-1), 2**np.ceil(np.log2(max_error)+1)])
     plt.loglog(resolutions, errors, '-o', basex=2, basey=2)
     plt.xlabel('Resolution ($N^3$)')
     plt.ylabel(f'Error ($||{latex_variables[variable]}^{{N}}-{latex_variables[variable]}^{{N/2}}||_{{L^1(D)}}$)')
