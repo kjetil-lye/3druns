@@ -11,7 +11,7 @@ tick align=outside,
 tick pos=left,
 title={Wasserstein convergence for Kelvin-Helmholtz $T=2$ $\epsilon=0.1$ $K_I=20$
 for second correlation marginal
-Using $10^6$ equidistant integration points
+Using $20^6=64000000$ equidistant integration points
         },
 width=\figurewidth,
 x grid style={white!69.01960784313725!black},
@@ -29,9 +29,9 @@ ytick style={color=black}
 ]
 \addplot [semithick, color0, mark=*, mark size=3, mark options={solid}]
 table {%
-128 0.114646600128773
-256 0.0615170839936922
-512 0.0364986049380136
+128 0.118284448797823
+256 0.0583290555587745
+512 0.0367954991053027
 };
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
@@ -40,15 +40,15 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 19bcd95f8a60643d3235d1dedacdc77ac114ebdd
+Commit: 7df580033eb88cdcb061f3bd32a6a4386a9e0981
 Repo: git@github.com:kjetil-lye/3druns.git
-Hostname: eu-c7-059-14};
+Hostname: eu-c7-063-03};
 \node at (axis cs:0.2,0.93)[
   scale=0.5,
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@19bc};
+]{@7df5};
 \end{axis}
 
 \end{tikzpicture}
@@ -57,20 +57,20 @@ Hostname: eu-c7-059-14};
 %%%%%%%%%%%%%TITLE%%%%%%%%%%%%%%%%%
 %% Wasserstein convergence for Kelvin-Helmholtz $T=2$ $\epsilon=0.1$ $K_I=20$
 %% for second correlation marginal
-%% Using $10^6$ equidistant integration points
+%% Using $20^6=64000000$ equidistant integration points
 %%         
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% script name: ../python/wasserstein_two_point.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : 19bcd95f8a60643d3235d1dedacdc77ac114ebdd
+%% GIT git_commit : 7df580033eb88cdcb061f3bd32a6a4386a9e0981
 %% GIT git_repo_modified : True
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : 19bc
+%% GIT git_short_commit : 7df5
 %% working_directory : /cluster/scratch/klye/3druns/postprocessing/notebooks
-%% hostname : eu-c7-059-14
-%% generated_on_date : 2019-05-24 22:19:13.910355
+%% hostname : eu-c7-063-03
+%% generated_on_date : 2019-05-30 21:03:38.250826
 %% accessed_environment:
 %% additional_parameters:
 %%    basename=/cluster/project/sam/klye/3druns_kh_tube/kelvinhelmholtz_3d_tube/stats/kelvinhelmholtz_{resolution}_0.1/kh_1.nc

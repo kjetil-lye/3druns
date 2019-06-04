@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import sys
 
 sys.path.append('../python')
-from plot_info import showAndSave, savePlot
+from plot_info import showAndSave, savePlot, saveData
 
 import netCDF4
 import matplotlib2tikz
