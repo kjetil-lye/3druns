@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 export OMP_NUM_THREADS=1
-for t in 0 1;
+for t in 1;
 do
     for x in 64 128 256 512; 
     do
