@@ -27,6 +27,8 @@
 // logging
 #include "alsutils/log.hpp"
 
+#include <chrono>
+
 void addWriters(alsuq::stats::StatisticsFactory::StatisticsPointer
     statisticsPointer,
     const std::string& outputName,
@@ -93,6 +95,7 @@ alsfvm::volume::VolumePair getSample(const std::string& platform,
 				     int sample,
 				     const std::string& filename,
 				     int nx, int ny, int nz) {
+  auto start = std::chrono::high_resolution_clock::now();
   using namespace alsfvm;
   netcdf_raw_ptr file;
 
@@ -137,6 +140,9 @@ alsfvm::volume::VolumePair getSample(const std::string& platform,
 
   std::cout << "Read sample" << std::endl;
 
+  auto end = std::chrono::high_resolution_clock::now();
+
+  std::cout << "Reading sample took: " << (end-start).count() << " s" << std::endl;
   return alsfvm::volume::VolumePair(conservedVolume, extraVolume);
 
 }
@@ -250,13 +256,17 @@ int main(int argc, char** argv) {
     const auto sampleStart = rank * samplesPerProcessor;
     const auto sampleEnd = (rank + 1) * samplesPerProcessor;
     for (int sample = sampleStart; sample < sampleEnd; ++sample) {
+      auto start = std::chrono::high_resolution_clock::now();
       std::cout << sample << std::endl;
       //ALSVINN_LOG(INFO, "Computing for sample: " << sample);
       auto volumes = getSample(platform, equation, sample, filenameInput, nx, ny, nz);
+
       statistics->write(*volumes.getConservedVolume(),
 			  *volumes.getExtraVolume(),
 			  grid,
-			  timestepInformation);
+			timestepInformation);
+      auto end = std::chrono::high_resolution_clock::now();
+      std::cout << "Computing sample took: " << (end-start).count() << " s" << std::endl;
     }
 
     statistics->combineStatistics();
