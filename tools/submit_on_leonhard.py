@@ -100,6 +100,8 @@ Submits the configuration file leonhard. NOTE: Will run in folder of configurati
 
         command_to_sync = [
             'bsub',
+            '-R',
+            'light',
             '-w',
             f'done({job_chain})',
             '-W',
