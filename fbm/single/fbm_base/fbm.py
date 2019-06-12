@@ -89,11 +89,11 @@ def fBm(N, H, rand):
 #  http://doi.org/http://dx.doi.org/10.18637/jss.v023.i01
 # in the section 2.3
 
-def init_global(rho, ux, uy, p, nx, ny, nz, ax, ay, az, bx, by, bz):
+def init_global(rho, ux, uy, uz, p, nx, ny, nz, ax, ay, az, bx, by, bz):
     
-    dux = fBm(nx, HURST, RandomVariable(X[:4*nx*nx*nx]))
-    duy= fBm(nx, HURST, RandomVariable(X[4*nx*nx*nx:]))
-    duz= fBm(nx, HURST, RandomVariable(X[8*nx*nx*nx:]))
+    dux = fBm(nx, hurst_index, RandomVariable(X[:4*nx*nx*nx]))
+    duy= fBm(nx, hurst_index, RandomVariable(X[4*nx*nx*nx:8*nx*nx*nx]))
+    duz= fBm(nx, hurst_index, RandomVariable(X[8*nx*nx*nx:]))
     
     rho[:,:,:] = 4*ones_like(rho[:,:,:])
     ux[:,:,:] = dux[:-1,:-1,:-1]
