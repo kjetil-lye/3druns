@@ -14,7 +14,7 @@ do
 
 
 		
-		bsub -W 120:00 -n ${x} -N -B   mpirun -np ${x} $STRUCTURE_BIN_DIR/structure_standalone -i /cluster/project/klye/3druns_kh_tube/kelvinhelmholtz_3d_tube/stats/kelvinhelmholtz_${x}_${pert}/kh_${t}.nc -o structure_t_${t}_p_${p} --samples ${x} --number-of-h  $(( ($x*32)/1024 )) --nx $x --ny $x --nz $x --platform cpu --p ${p}
+		bsub -W 120:00 -n ${x} -N -B   mpirun -np ${x} $STRUCTURE_BIN_DIR/structure_standalone -i /cluster/project/sam/klye/3druns_kh_tube/kelvinhelmholtz_3d_tube/stats/kelvinhelmholtz_${x}_${pert}/kh_${t}.nc -o structure_t_${t}_p_${p} --samples ${x} --number-of-h  $(( ($x*32)/1024 )) --nx $x --ny $x --nz $x --platform cpu --p ${p}
 	    done
 	cd ..;
 	done
