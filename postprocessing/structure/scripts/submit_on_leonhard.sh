@@ -13,7 +13,7 @@ do
 	    do
 
 
-		bsub -W 120:00 -n 8 -R "rusage[ngpus_excl_p=8,mem=8000] span[ptile=8]" -N -B   mpirun -np 8 ../../build/structure_functions -i /cluster/work/math/klye/3druns_kh_tube/kelvinhelmholtz_3d_tube/stats/kelvinhelmholtz_${x}_${pert}/kh_${t}.nc -o structure_cuda_t_${t}_p_${p} --samples ${x} --number-of-h  $(( ($x*32)/1024 )) --nx $x --ny $x --nz $x --platform cuda --p ${p}
+		bsub -W 120:00 -n 8 -R "rusage[ngpus_excl_p=8,mem=8000] span[ptile=8]" -N -B   mpirun -np 8 $STRUCTURE_BIN_DIR/structure_standalone -i /cluster/work/math/klye/3druns_kh_tube/kelvinhelmholtz_3d_tube/stats/kelvinhelmholtz_${x}_${pert}/kh_${t}.nc -o structure_cuda_t_${t}_p_${p} --samples ${x} --number-of-h  $(( ($x*32)/1024 )) --nx $x --ny $x --nz $x --platform cuda --p ${p}
 	    done
 	cd ..;
 	done
