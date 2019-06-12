@@ -3,7 +3,7 @@ set -e
 export OMP_NUM_THREADS=1
 for t in 1;
 do
-    for x in 64 128 256 512; 
+    for x in 64 128 256; 
     do
 	for pert in 0.1;
 	do
@@ -13,7 +13,8 @@ do
 	    do
 
 
-		bsub -W 120:00 -n 8 -R "rusage[ngpus_excl_p=8,mem=8000] span[ptile=8]" -N -B   mpirun -np 8 $STRUCTURE_BIN_DIR/structure_standalone -i /cluster/project/klye/3druns_kh_tube/kelvinhelmholtz_3d_tube/stats/kelvinhelmholtz_${x}_${pert}/kh_${t}.nc -o structure_t_${t}_p_${p} --samples ${x} --number-of-h  $(( ($x*32)/1024 )) --nx $x --ny $x --nz $x --platform cuda --p ${p}
+		
+		bsub -W 120:00 -n ${x} -N -B   mpirun -np ${x} $STRUCTURE_BIN_DIR/structure_standalone -i /cluster/project/klye/3druns_kh_tube/kelvinhelmholtz_3d_tube/stats/kelvinhelmholtz_${x}_${pert}/kh_${t}.nc -o structure_t_${t}_p_${p} --samples ${x} --number-of-h  $(( ($x*32)/1024 )) --nx $x --ny $x --nz $x --platform cpu --p ${p}
 	    done
 	cd ..;
 	done
