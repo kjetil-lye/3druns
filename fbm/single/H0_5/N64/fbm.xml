@@ -1,4 +1,4 @@
-<config>
+<?xml version="1.0" ?><config>
 <fvm>
   <name>
     fbm
@@ -55,6 +55,6 @@
       <type>normal</type>
     </parameter>
   </parameters>
-<stats></stats>
+<stats/>
 </uq>
 </config>

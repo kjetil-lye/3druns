@@ -1,4 +1,4 @@
-<config>
+<?xml version="1.0" ?><config>
 <fvm>
   <name>
     fbm
@@ -7,7 +7,7 @@
   <grid>
     <lowerCorner>0 0 0</lowerCorner>
     <upperCorner>1 1 1</upperCorner>
-    <dimension>64 64 64</dimension>
+    <dimension>512 512 512</dimension>
   </grid>
   <boundary>periodic</boundary>
   <flux>hll3</flux>
@@ -26,11 +26,11 @@
       <parameter>
 	<name>hurst_index</name>
 	<length>1</length>
-	<value>0.5</value>
+	<value>0.1</value>
       </parameter>
       <parameter>
         <name>X</name>
-        <length>3145728</length>
+        <length>1610612736</length>
         <values><value>0</value></values>
       </parameter>
     </parameters>
@@ -51,10 +51,10 @@
   <parameters>
     <parameter>
       <name>X</name>
-      <length>3145728</length>
+      <length>1610612736</length>
       <type>normal</type>
     </parameter>
   </parameters>
-<stats></stats>
+<stats/>
 </uq>
 </config>

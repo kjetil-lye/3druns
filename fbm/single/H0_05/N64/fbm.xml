@@ -1,4 +1,4 @@
-<config>
+<?xml version="1.0" ?><config>
 <fvm>
   <name>
     fbm
@@ -26,7 +26,7 @@
       <parameter>
 	<name>hurst_index</name>
 	<length>1</length>
-	<value>0.5</value>
+	<value>0.05</value>
       </parameter>
       <parameter>
         <name>X</name>
@@ -55,6 +55,6 @@
       <type>normal</type>
     </parameter>
   </parameters>
-<stats></stats>
+<stats/>
 </uq>
 </config>
