@@ -90,16 +90,43 @@ def fBm(N, H, rand):
 # in the section 2.3
 
 def init_global(rho, ux, uy, uz, p, nx, ny, nz, ax, ay, az, bx, by, bz):
+
+    ### WARNING:
+    ### THE CURRENT IMPLEMENTATION IS SUBOPTIMAL!!!
+    ### WE GENERATE THE WHOLE FIELD FOR EVERY NODE.
+    ### THIS IS SIMPLY DONE FOR SIMPLICITY (AT MOST
+    ### WE RUN 8 NODES FOR THIS CONFIG, HENCE NOT A BIG ISSUE)
+    total_nx = int(nx/(bx-ax))
+    total_ny = int(ny/(by-ay))
+    total_nz = int(nz/(bz-az))
     
-    dux = fBm(nx, hurst_index, RandomVariable(X[:4*nx*nx*nx]))
-    duy= fBm(nx, hurst_index, RandomVariable(X[4*nx*nx*nx:8*nx*nx*nx]))
-    duz= fBm(nx, hurst_index, RandomVariable(X[8*nx*nx*nx:]))
+    dux = fBm(total_nx, hurst_index, RandomVariable(X[:4*total_nx**3]))
+    duy= fBm(total_nx, hurst_index, RandomVariable(X[4*total_nx**3:8*total_nx**3]))
+    duz= fBm(total_nx, hurst_index, RandomVariable(X[8*total_nx**3:]))
+
+    start_x = int(ax*total_nx)
+    end_x = int(bx*total_nx)
     
-    rho[:,:,:] = 4*ones_like(rho[:,:,:])
-    ux[:,:,:] = dux[:-1,:-1,:-1]
-    uy[:,:,:] = duy[:-1,:-1,:-1]
-    uz[:,:,:] = duz[:-1,:-1,:-1]
+    start_y = int(ay*total_ny)
+    end_y = int(by*total_ny)
+
+    start_z = int(az*total_nz)
+    end_z = int(bz*total_nz)
+
+    output = False
+    if output:
+        print("total_x={total_x}\ntotal_y={total_y}\ntotal_z={total_z}".format(
+            total_x=total_nx, total_y=total_ny, total_z=total_nz))
+        print("start_x={start_x}\nstart_y={start_y}\nstart_z={start_z}".format(
+            start_x=start_x, start_y=start_y, start_z=start_z))
+        print("end_x={end_x}\nend_y={end_y}\nend_z={end_z}".format(
+            end_x=end_x, end_y=end_y, end_z=end_z))
+    rho[:,:,:] = 4*ones_like(rho)
+    ux[:,:,:] = dux[start_x:end_x,start_y:end_y,start_z:end_z]
+    uy[:,:,:] = duy[start_x:end_x,start_y:end_y,start_z:end_z]
+    uz[:,:,:] = duz[start_x:end_x,start_y:end_y,start_z:end_z]
     p[:,:,:] = 2.5*ones_like(rho[:,:,:])
+
 
 
 
