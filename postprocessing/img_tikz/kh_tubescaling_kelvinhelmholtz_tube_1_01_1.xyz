@@ -8,7 +8,7 @@
 \begin{axis}[
 height=\figureheight,
 legend cell align={left},
-legend entries={{$N=64$},{$\mathcal{O}(h^{0.45})$},{$N=128$},{$\mathcal{O}(h^{1.23})$},{$N=256$},{$\mathcal{O}(h^{1.04})$}},
+legend entries={{$N=64$},{$\mathcal{O}(h^{0.41})$},{$N=128$},{$\mathcal{O}(h^{1.09})$},{$N=256$},{$\mathcal{O}(h^{1.04})$}},
 legend style={at={(1,0.5)}, anchor=west, draw=white!80.0!black},
 tick align=outside,
 tick pos=left,
@@ -33,23 +33,23 @@ ymode=log
 \addlegendimage{no markers, color2}
 \addplot [semithick, color0]
 table [row sep=\\]{%
-0.03125	0.0447288829130514 \\
+0.03125	0.0571902241653891 \\
 };
 \addplot [semithick, color0, dashed]
 table [row sep=\\]{%
-0.03125	0.0447288829130514 \\
+0.03125	0.0571902241653891 \\
 };
 \addplot [semithick, color1]
 table [row sep=\\]{%
-0.0104166666666667	0.0451684421509046 \\
-0.0208333333333333	0.113176479536491 \\
-0.03125	0.173081268449276 \\
+0.0104166666666667	0.0568789727943393 \\
+0.0208333333333333	0.127603589283762 \\
+0.03125	0.187501472877975 \\
 };
 \addplot [semithick, color1, dashed]
 table [row sep=\\]{%
-0.0104166666666667	0.0459463013750078 \\
-0.0208333333333333	0.108059747700629 \\
-0.03125	0.178207860383599 \\
+0.0104166666666667	0.0576419169188808 \\
+0.0208333333333333	0.123078966721898 \\
+0.03125	0.191821402539043 \\
 };
 \addplot [semithick, color2]
 table [row sep=\\]{%
@@ -78,7 +78,7 @@ table [row sep=\\]{%
   rotate=0.0,
   align=right
 ]{ By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 866a072f683b2ad8eff7e2ce0aca0628ceebc8f0
+Commit: 23cc0c5a10d525a075e9619572d7e32995b586ae
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: lyelaptop};
 \node at (axis cs:0.2,0.93)[
@@ -86,7 +86,7 @@ Hostname: lyelaptop};
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{ @866a};
+]{ @23cc};
 \end{axis}
 
 \end{tikzpicture}
@@ -98,14 +98,14 @@ Hostname: lyelaptop};
 %% script name: structure_postprocess.ipynb
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : 866a072f683b2ad8eff7e2ce0aca0628ceebc8f0
-%% GIT git_repo_modified : False
+%% GIT git_commit : 23cc0c5a10d525a075e9619572d7e32995b586ae
+%% GIT git_repo_modified : True
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : 866a
+%% GIT git_short_commit : 23cc
 %% working_directory : /home/kjetil/projects/3druns/postprocessing/notebooks
 %% hostname : lyelaptop
-%% generated_on_date : 2019-06-04 22:53:47.619061
+%% generated_on_date : 2019-06-11 11:49:59.507892
 %% accessed_environment:
 %% additional_parameters:
 %% python_version: 
@@ -1160,12 +1160,29 @@ Hostname: lyelaptop};
 %%     cftime: 1.0.3.4 (/usr/lib/python3.7/site-packages/cftime/__init__.py)
 %%     cftime._cftime: 1.0.3.4 (/usr/lib/python3.7/site-packages/cftime/_cftime.cpython-37m-x86_64-linux-gnu.so)
 %%     _cython_0_29_1: Unknown (Unknown)
+%%     matplotlib._png: Unknown (/usr/lib/python3.7/site-packages/matplotlib/_png.cpython-37m-x86_64-linux-gnu.so)
+%%     PIL.BmpImagePlugin: 0.7 (/usr/lib/python3.7/site-packages/PIL/BmpImagePlugin.py)
+%%     PIL.ImageFile: Unknown (/usr/lib/python3.7/site-packages/PIL/ImageFile.py)
+%%     PIL.ImagePalette: Unknown (/usr/lib/python3.7/site-packages/PIL/ImagePalette.py)
+%%     PIL.ImageColor: Unknown (/usr/lib/python3.7/site-packages/PIL/ImageColor.py)
+%%     PIL.GimpPaletteFile: Unknown (/usr/lib/python3.7/site-packages/PIL/GimpPaletteFile.py)
+%%     PIL.GimpGradientFile: Unknown (/usr/lib/python3.7/site-packages/PIL/GimpGradientFile.py)
+%%     PIL.PaletteFile: Unknown (/usr/lib/python3.7/site-packages/PIL/PaletteFile.py)
+%%     PIL.GifImagePlugin: 0.9 (/usr/lib/python3.7/site-packages/PIL/GifImagePlugin.py)
+%%     PIL.ImageChops: Unknown (/usr/lib/python3.7/site-packages/PIL/ImageChops.py)
+%%     PIL.ImageSequence: Unknown (/usr/lib/python3.7/site-packages/PIL/ImageSequence.py)
+%%     PIL.JpegImagePlugin: 0.6 (/usr/lib/python3.7/site-packages/PIL/JpegImagePlugin.py)
+%%     PIL.TiffImagePlugin: 1.3.5 (/usr/lib/python3.7/site-packages/PIL/TiffImagePlugin.py)
+%%     fractions: Unknown (/usr/lib/python3.7/fractions.py)
+%%     PIL.JpegPresets: Unknown (/usr/lib/python3.7/site-packages/PIL/JpegPresets.py)
+%%     PIL.PpmImagePlugin: 0.2 (/usr/lib/python3.7/site-packages/PIL/PpmImagePlugin.py)
+%%     PIL.PngImagePlugin: 0.9 (/usr/lib/python3.7/site-packages/PIL/PngImagePlugin.py)
 %% stacktrace:
 %%     [function: savePlot, line: 301, file: ../python/plot_info.py]
 %%     [function: showAndSave, line: 335, file: ../python/plot_info.py]
-%%     [function: convergence_structure_functions, line: 58, file: <ipython-input-4-65bb3c28d040>]
+%%     [function: convergence_structure_functions, line: 58, file: <ipython-input-9-65bb3c28d040>]
 %%     [function: for_each_config, line: 33, file: <ipython-input-1-2f06f042b968>]
-%%     [function: <module>, line: 76, file: <ipython-input-4-65bb3c28d040>]
+%%     [function: <module>, line: 76, file: <ipython-input-9-65bb3c28d040>]
 %%     [function: run_code, line: 3296, file: /usr/lib/python3.7/site-packages/IPython/core/interactiveshell.py]
 %%     [function: run_ast_nodes, line: 3220, file: /usr/lib/python3.7/site-packages/IPython/core/interactiveshell.py]
 %%     [function: run_cell_async, line: 3049, file: /usr/lib/python3.7/site-packages/IPython/core/interactiveshell.py]

@@ -8,7 +8,7 @@
 \begin{axis}[
 height=\figureheight,
 legend cell align={left},
-legend entries={{$N=64$},{$\mathcal{O}(h^{0.38})$},{$N=128$},{$\mathcal{O}(h^{0.91})$},{$N=256$},{$\mathcal{O}(h^{0.81})$}},
+legend entries={{$N=64$},{$\mathcal{O}(h^{0.35})$},{$N=128$},{$\mathcal{O}(h^{0.80})$},{$N=256$},{$\mathcal{O}(h^{0.81})$}},
 legend style={at={(1,0.5)}, anchor=west, draw=white!80.0!black},
 tick align=outside,
 tick pos=left,
@@ -33,23 +33,23 @@ ymode=log
 \addlegendimage{no markers, color2}
 \addplot [semithick, color0]
 table [row sep=\\]{%
-0.03125	0.0731071958444088 \\
+0.03125	0.0897028383808009 \\
 };
 \addplot [semithick, color0, dashed]
 table [row sep=\\]{%
-0.03125	0.0731071958444089 \\
+0.03125	0.0897028383808009 \\
 };
 \addplot [semithick, color1]
 table [row sep=\\]{%
-0.0104166666666667	0.0670720043734343 \\
-0.0208333333333333	0.129883138053152 \\
-0.03125	0.180928250059565 \\
+0.0104166666666667	0.0808601036534584 \\
+0.0208333333333333	0.144352579851736 \\
+0.03125	0.194119730573957 \\
 };
 \addplot [semithick, color1, dashed]
 table [row sep=\\]{%
-0.0104166666666667	0.0676354275351684 \\
-0.0208333333333333	0.126972374446661 \\
-0.03125	0.183534181665934 \\
+0.0104166666666667	0.0813869567826986 \\
+0.0208333333333333	0.141834646343106 \\
+0.03125	0.19628693053858 \\
 };
 \addplot [semithick, color2]
 table [row sep=\\]{%
@@ -78,7 +78,7 @@ table [row sep=\\]{%
   rotate=0.0,
   align=right
 ]{ By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 866a072f683b2ad8eff7e2ce0aca0628ceebc8f0
+Commit: 23cc0c5a10d525a075e9619572d7e32995b586ae
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: lyelaptop};
 \node at (axis cs:0.2,0.93)[
@@ -86,7 +86,7 @@ Hostname: lyelaptop};
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{ @866a};
+]{ @23cc};
 \end{axis}
 
 \end{tikzpicture}
@@ -98,14 +98,14 @@ Hostname: lyelaptop};
 %% script name: structure_postprocess.ipynb
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : 866a072f683b2ad8eff7e2ce0aca0628ceebc8f0
-%% GIT git_repo_modified : False
+%% GIT git_commit : 23cc0c5a10d525a075e9619572d7e32995b586ae
+%% GIT git_repo_modified : True
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : 866a
+%% GIT git_short_commit : 23cc
 %% working_directory : /home/kjetil/projects/3druns/postprocessing/notebooks
 %% hostname : lyelaptop
-%% generated_on_date : 2019-06-04 22:53:51.962860
+%% generated_on_date : 2019-06-11 11:50:03.133977
 %% accessed_environment:
 %% additional_parameters:
 %% python_version: 
@@ -1180,9 +1180,9 @@ Hostname: lyelaptop};
 %% stacktrace:
 %%     [function: savePlot, line: 301, file: ../python/plot_info.py]
 %%     [function: showAndSave, line: 335, file: ../python/plot_info.py]
-%%     [function: convergence_structure_functions, line: 58, file: <ipython-input-4-65bb3c28d040>]
+%%     [function: convergence_structure_functions, line: 58, file: <ipython-input-9-65bb3c28d040>]
 %%     [function: for_each_config, line: 33, file: <ipython-input-1-2f06f042b968>]
-%%     [function: <module>, line: 76, file: <ipython-input-4-65bb3c28d040>]
+%%     [function: <module>, line: 76, file: <ipython-input-9-65bb3c28d040>]
 %%     [function: run_code, line: 3296, file: /usr/lib/python3.7/site-packages/IPython/core/interactiveshell.py]
 %%     [function: run_ast_nodes, line: 3220, file: /usr/lib/python3.7/site-packages/IPython/core/interactiveshell.py]
 %%     [function: run_cell_async, line: 3049, file: /usr/lib/python3.7/site-packages/IPython/core/interactiveshell.py]
