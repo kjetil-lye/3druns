@@ -19,7 +19,7 @@ latex_variables = {
     'uy' : 'u_y',
     'uz' : 'u_z',
     'p'  : 'p'
-}}
+}
 
 def resolution_exists(basename, resolution):
     print(basename.format(resolution=resolution))
