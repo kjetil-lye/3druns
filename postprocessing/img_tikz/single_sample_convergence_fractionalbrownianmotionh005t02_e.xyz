@@ -9,6 +9,9 @@ log basis x={2},
 log basis y={2},
 tick align=outside,
 tick pos=left,
+title={Convergence of single sample,
+Fractional Brownian motion $H=0.05$ T=0.2
+Variable: $E$},
 width=\figurewidth,
 x grid style={white!69.01960784313725!black},
 xlabel={Resolution (\(\displaystyle N^3\))},
@@ -18,19 +21,17 @@ xtick style={color=black},
 xtick={64,128,256,512},
 xticklabels={\(\displaystyle 64^3\),\(\displaystyle 128^3\),\(\displaystyle 256^3\),\(\displaystyle 512^3\)},
 y grid style={white!69.01960784313725!black},
-ylabel={Error (\(\displaystyle ||\rho^{N}-\rho^{N/2}||_{L^1(D)}\))},
-ymin=2, ymax=32,
+ylabel={Error (\(\displaystyle ||E^{N}-E^{N/2}||_{L^1(D)}\))},
+ymin=8, ymax=128,
 ymode=log,
-ytick style={color=black},
-ytick={1,2,4,8,16,32,64},
-yticklabels={\(\displaystyle {2^{0}}\),\(\displaystyle {2^{1}}\),\(\displaystyle {2^{2}}\),\(\displaystyle {2^{3}}\),\(\displaystyle {2^{4}}\),\(\displaystyle {2^{5}}\),\(\displaystyle {2^{6}}\)}
+ytick style={color=black}
 ]
 \addplot [semithick, color0, mark=*, mark size=3, mark options={solid}]
 table {%
-64 7.49496413172636
-128 8.49953298135852
-256 9.19449348509456
-512 9.54951869307315
+64 28.6785427318352
+128 34.3328469528126
+256 38.3368081600939
+512 41.6351910147714
 };
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
@@ -48,23 +49,15 @@ Hostname: daint106};
   text=white!50.19607843137255!black,
   rotate=0.0
 ]{@603e};
-\node at (axis cs:0.95,0.01)[
-  scale=0.15,
-  anchor=south east,
-  text=white!50.19607843137255!black,
-  rotate=0.0,
-  align=right
-]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 603e8ea9b910d3ec9207ce3f2c2bf321b174099f
-Repo: git@github.com:kjetil-lye/3druns.git
-Hostname: daint106};
 \end{axis}
 
 \end{tikzpicture}
 
 %% INCLUDE THE COMMENTS AT THE END WHEN COPYING
 %%%%%%%%%%%%%TITLE%%%%%%%%%%%%%%%%%
-%% None
+%% Convergence of single sample,
+%% Fractional Brownian motion $H=0.05$ T=0.2
+%% Variable: $E$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% script name: ../python/compute_single_sample_congvergence_large.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
@@ -76,18 +69,18 @@ Hostname: daint106};
 %% GIT git_short_commit : 603e
 %% working_directory : /scratch/snx3000/klye/3druns/postprocessing/notebooks
 %% hostname : daint106
-%% generated_on_date : 2019-06-14 22:58:53.374695
+%% generated_on_date : 2019-06-14 23:05:26.011016
 %% accessed_environment:
 %% additional_parameters:
-%%    basename=/scratch/snx3000/klye/3druns/fbm/single/H0_1/N{resolution}/fbm_1.nc
+%%    basename=/scratch/snx3000/klye/3druns/fbm/single/H0_05/N{resolution}/fbm_1.nc
 %%    alsvinn_report.software=alsvinn https://github.com/alsvinn
 %%    alsvinn_report.softwareVersion=0.4.2
-%%    alsvinn_report.currentWorkingDirectory=/scratch/snx3000/klye/3druns/fbm/single/H0_1/N512
+%%    alsvinn_report.currentWorkingDirectory=/scratch/snx3000/klye/3druns/fbm/single/H0_05/N512
 %%    alsvinn_report.operatingSystem=Linux: Linux 4.4.103-6.38_4.0.153-cray_ari_c #1 SMP Thu Nov 1 16:05:05 UTC 2018 (6ef8fef) x86_64
 %%    alsvinn_report.username=klye
-%%    alsvinn_report.host=nid01960
+%%    alsvinn_report.host=nid02038
 %%    alsvinn_report.standardCLibrary=GNU libc 2.22 stable
-%%    alsvinn_report.generatedAt=20190614T223047
+%%    alsvinn_report.generatedAt=20190614T223019
 %%    alsvinn_report.CPU=Intel(R) Xeon(R) CPU E5-2690 v3 @ 2.60GHz
 %%    alsvinn_report.revision=0cc595555572f590fbe5065ef148753c14fd23bb
 %%    alsvinn_report.versionControlStatus=DIRTY
@@ -161,7 +154,7 @@ Hostname: daint106};
 %%    fvm_configuration.fvm.initialData.python=fbm.py
 %%    fvm_configuration.fvm.initialData.parameters.parameter.name=X
 %%    fvm_configuration.fvm.initialData.parameters.parameter.length=402653184
-%%    fvm_configuration.fvm.initialData.parameters.parameter.value=0.1
+%%    fvm_configuration.fvm.initialData.parameters.parameter.value=0.05
 %%    fvm_configuration.fvm.initialData.parameters.parameter.values.value=0
 %%    fvm_configuration.fvm.diffusion.name=none
 %%    fvm_configuration.fvm.diffusion.reconstruction=none
@@ -634,24 +627,7 @@ Hostname: daint106};
 %%     git.index.util: Unknown (/scratch/snx3000/klye/3druns/postprocessing/.venv/lib/python3.6/site-packages/git/index/util.py)
 %%     git.remote: Unknown (/scratch/snx3000/klye/3druns/postprocessing/.venv/lib/python3.6/site-packages/git/remote.py)
 %%     git.repo.fun: Unknown (/scratch/snx3000/klye/3druns/postprocessing/.venv/lib/python3.6/site-packages/git/repo/fun.py)
-%%     PIL.BmpImagePlugin: 0.7 (/scratch/snx3000/klye/3druns/postprocessing/.venv/lib/python3.6/site-packages/PIL/BmpImagePlugin.py)
-%%     PIL.ImageFile: Unknown (/scratch/snx3000/klye/3druns/postprocessing/.venv/lib/python3.6/site-packages/PIL/ImageFile.py)
-%%     PIL.ImagePalette: Unknown (/scratch/snx3000/klye/3druns/postprocessing/.venv/lib/python3.6/site-packages/PIL/ImagePalette.py)
-%%     PIL.ImageColor: Unknown (/scratch/snx3000/klye/3druns/postprocessing/.venv/lib/python3.6/site-packages/PIL/ImageColor.py)
-%%     PIL.GimpPaletteFile: Unknown (/scratch/snx3000/klye/3druns/postprocessing/.venv/lib/python3.6/site-packages/PIL/GimpPaletteFile.py)
-%%     PIL.GimpGradientFile: Unknown (/scratch/snx3000/klye/3druns/postprocessing/.venv/lib/python3.6/site-packages/PIL/GimpGradientFile.py)
-%%     PIL.PaletteFile: Unknown (/scratch/snx3000/klye/3druns/postprocessing/.venv/lib/python3.6/site-packages/PIL/PaletteFile.py)
-%%     PIL.GifImagePlugin: 0.9 (/scratch/snx3000/klye/3druns/postprocessing/.venv/lib/python3.6/site-packages/PIL/GifImagePlugin.py)
-%%     PIL.ImageChops: Unknown (/scratch/snx3000/klye/3druns/postprocessing/.venv/lib/python3.6/site-packages/PIL/ImageChops.py)
-%%     PIL.ImageSequence: Unknown (/scratch/snx3000/klye/3druns/postprocessing/.venv/lib/python3.6/site-packages/PIL/ImageSequence.py)
-%%     PIL.JpegImagePlugin: 0.6 (/scratch/snx3000/klye/3druns/postprocessing/.venv/lib/python3.6/site-packages/PIL/JpegImagePlugin.py)
-%%     PIL.TiffImagePlugin: 1.3.5 (/scratch/snx3000/klye/3druns/postprocessing/.venv/lib/python3.6/site-packages/PIL/TiffImagePlugin.py)
-%%     fractions: Unknown (/opt/python/3.6.5.1/lib/python3.6/fractions.py)
-%%     PIL.JpegPresets: Unknown (/scratch/snx3000/klye/3druns/postprocessing/.venv/lib/python3.6/site-packages/PIL/JpegPresets.py)
-%%     PIL.PpmImagePlugin: 0.2 (/scratch/snx3000/klye/3druns/postprocessing/.venv/lib/python3.6/site-packages/PIL/PpmImagePlugin.py)
-%%     PIL.PngImagePlugin: 0.9 (/scratch/snx3000/klye/3druns/postprocessing/.venv/lib/python3.6/site-packages/PIL/PngImagePlugin.py)
 %% stacktrace:
 %%     [function: savePlot, line: 301, file: /scratch/snx3000/klye/3druns/postprocessing/python/plot_info.py]
-%%     [function: savePlot, line: 323, file: /scratch/snx3000/klye/3druns/postprocessing/python/plot_info.py]
 %%     [function: plot_convergence_single_sample, line: 73, file: ../python/compute_single_sample_congvergence_large.py]
 %%     [function: <module>, line: 102, file: ../python/compute_single_sample_congvergence_large.py]

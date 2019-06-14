@@ -18,19 +18,19 @@ xtick style={color=black},
 xtick={64,128,256,512},
 xticklabels={\(\displaystyle 64^3\),\(\displaystyle 128^3\),\(\displaystyle 256^3\),\(\displaystyle 512^3\)},
 y grid style={white!69.01960784313725!black},
-ylabel={Error (\(\displaystyle ||\rho^{N}-\rho^{N/2}||_{L^1(D)}\))},
-ymin=2, ymax=32,
+ylabel={Error (\(\displaystyle ||E^{N}-E^{N/2}||_{L^1(D)}\))},
+ymin=8, ymax=128,
 ymode=log,
 ytick style={color=black},
-ytick={1,2,4,8,16,32,64},
-yticklabels={\(\displaystyle {2^{0}}\),\(\displaystyle {2^{1}}\),\(\displaystyle {2^{2}}\),\(\displaystyle {2^{3}}\),\(\displaystyle {2^{4}}\),\(\displaystyle {2^{5}}\),\(\displaystyle {2^{6}}\)}
+ytick={4,8,16,32,64,128,256},
+yticklabels={\(\displaystyle {2^{2}}\),\(\displaystyle {2^{3}}\),\(\displaystyle {2^{4}}\),\(\displaystyle {2^{5}}\),\(\displaystyle {2^{6}}\),\(\displaystyle {2^{7}}\),\(\displaystyle {2^{8}}\)}
 ]
 \addplot [semithick, color0, mark=*, mark size=3, mark options={solid}]
 table {%
-64 7.49496413172636
-128 8.49953298135852
-256 9.19449348509456
-512 9.54951869307315
+64 24.6615464829568
+128 29.1003180163201
+256 31.9692898660663
+512 34.8046335041537
 };
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
@@ -76,7 +76,7 @@ Hostname: daint106};
 %% GIT git_short_commit : 603e
 %% working_directory : /scratch/snx3000/klye/3druns/postprocessing/notebooks
 %% hostname : daint106
-%% generated_on_date : 2019-06-14 22:58:53.374695
+%% generated_on_date : 2019-06-14 23:05:01.801057
 %% accessed_environment:
 %% additional_parameters:
 %%    basename=/scratch/snx3000/klye/3druns/fbm/single/H0_1/N{resolution}/fbm_1.nc

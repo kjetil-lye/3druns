@@ -18,19 +18,19 @@ xtick style={color=black},
 xtick={64,128,256,512},
 xticklabels={\(\displaystyle 64^3\),\(\displaystyle 128^3\),\(\displaystyle 256^3\),\(\displaystyle 512^3\)},
 y grid style={white!69.01960784313725!black},
-ylabel={Error (\(\displaystyle ||\rho^{N}-\rho^{N/2}||_{L^1(D)}\))},
-ymin=2, ymax=32,
+ylabel={Error (\(\displaystyle ||E^{N}-E^{N/2}||_{L^1(D)}\))},
+ymin=1, ymax=16,
 ymode=log,
 ytick style={color=black},
-ytick={1,2,4,8,16,32,64},
-yticklabels={\(\displaystyle {2^{0}}\),\(\displaystyle {2^{1}}\),\(\displaystyle {2^{2}}\),\(\displaystyle {2^{3}}\),\(\displaystyle {2^{4}}\),\(\displaystyle {2^{5}}\),\(\displaystyle {2^{6}}\)}
+ytick={0.5,1,2,4,8,16,32},
+yticklabels={\(\displaystyle {2^{-1}}\),\(\displaystyle {2^{0}}\),\(\displaystyle {2^{1}}\),\(\displaystyle {2^{2}}\),\(\displaystyle {2^{3}}\),\(\displaystyle {2^{4}}\),\(\displaystyle {2^{5}}\)}
 ]
 \addplot [semithick, color0, mark=*, mark size=3, mark options={solid}]
 table {%
-64 7.49496413172636
-128 8.49953298135852
-256 9.19449348509456
-512 9.54951869307315
+64 3.79986190449682
+128 4.39309534367543
+256 4.80980044516149
+512 5.32506587001404
 };
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
@@ -76,18 +76,18 @@ Hostname: daint106};
 %% GIT git_short_commit : 603e
 %% working_directory : /scratch/snx3000/klye/3druns/postprocessing/notebooks
 %% hostname : daint106
-%% generated_on_date : 2019-06-14 22:58:53.374695
+%% generated_on_date : 2019-06-14 23:04:13.365506
 %% accessed_environment:
 %% additional_parameters:
-%%    basename=/scratch/snx3000/klye/3druns/fbm/single/H0_1/N{resolution}/fbm_1.nc
+%%    basename=/scratch/snx3000/klye/3druns/fbm/single/H0_75/N{resolution}/fbm_1.nc
 %%    alsvinn_report.software=alsvinn https://github.com/alsvinn
 %%    alsvinn_report.softwareVersion=0.4.2
-%%    alsvinn_report.currentWorkingDirectory=/scratch/snx3000/klye/3druns/fbm/single/H0_1/N512
+%%    alsvinn_report.currentWorkingDirectory=/scratch/snx3000/klye/3druns/fbm/single/H0_75/N512
 %%    alsvinn_report.operatingSystem=Linux: Linux 4.4.103-6.38_4.0.153-cray_ari_c #1 SMP Thu Nov 1 16:05:05 UTC 2018 (6ef8fef) x86_64
 %%    alsvinn_report.username=klye
-%%    alsvinn_report.host=nid01960
+%%    alsvinn_report.host=nid02725
 %%    alsvinn_report.standardCLibrary=GNU libc 2.22 stable
-%%    alsvinn_report.generatedAt=20190614T223047
+%%    alsvinn_report.generatedAt=20190614T223446
 %%    alsvinn_report.CPU=Intel(R) Xeon(R) CPU E5-2690 v3 @ 2.60GHz
 %%    alsvinn_report.revision=0cc595555572f590fbe5065ef148753c14fd23bb
 %%    alsvinn_report.versionControlStatus=DIRTY
@@ -161,7 +161,7 @@ Hostname: daint106};
 %%    fvm_configuration.fvm.initialData.python=fbm.py
 %%    fvm_configuration.fvm.initialData.parameters.parameter.name=X
 %%    fvm_configuration.fvm.initialData.parameters.parameter.length=402653184
-%%    fvm_configuration.fvm.initialData.parameters.parameter.value=0.1
+%%    fvm_configuration.fvm.initialData.parameters.parameter.value=0.75
 %%    fvm_configuration.fvm.initialData.parameters.parameter.values.value=0
 %%    fvm_configuration.fvm.diffusion.name=none
 %%    fvm_configuration.fvm.diffusion.reconstruction=none
