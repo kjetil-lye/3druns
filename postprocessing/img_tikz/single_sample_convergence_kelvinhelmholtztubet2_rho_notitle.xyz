@@ -12,11 +12,11 @@ tick pos=left,
 width=\figurewidth,
 x grid style={white!69.01960784313725!black},
 xlabel={Resolution (\(\displaystyle N^3\))},
-xmin=119.428222916711, xmax=548.748012818582,
+xmin=115.360059214186, xmax=1136.19913939747,
 xmode=log,
 xtick style={color=black},
-xtick={128,256,512},
-xticklabels={\(\displaystyle 128^3\),\(\displaystyle 256^3\),\(\displaystyle 512^3\)},
+xtick={128,256,512,1024},
+xticklabels={\(\displaystyle 128^3\),\(\displaystyle 256^3\),\(\displaystyle 512^3\),\(\displaystyle 1024^3\)},
 y grid style={white!69.01960784313725!black},
 ylabel={Error (\(\displaystyle ||\rho^{N}-\rho^{N/2}||_{L^1(D)}\))},
 ymin=0.25, ymax=2,
@@ -30,6 +30,7 @@ table {%
 128 0.930044493347299
 256 0.809720723960745
 512 0.839746519702685
+1024 0.706282973772889
 };
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
@@ -38,7 +39,7 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 28f66f6a78f1e4d52b5e3af495d5ea7833296f81
+Commit: 5e27a19b1b8354d3b8400a5dc4cea3cf4b07ddf0
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint101};
 \node at (axis cs:0.2,0.93)[
@@ -46,7 +47,7 @@ Hostname: daint101};
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@28f6};
+]{@5e27};
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -54,7 +55,7 @@ Hostname: daint101};
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 28f66f6a78f1e4d52b5e3af495d5ea7833296f81
+Commit: 5e27a19b1b8354d3b8400a5dc4cea3cf4b07ddf0
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint101};
 \end{axis}
@@ -68,27 +69,27 @@ Hostname: daint101};
 %% script name: ../python/compute_single_sample_congvergence_large.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : 28f66f6a78f1e4d52b5e3af495d5ea7833296f81
+%% GIT git_commit : 5e27a19b1b8354d3b8400a5dc4cea3cf4b07ddf0
 %% GIT git_repo_modified : False
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : 28f6
+%% GIT git_short_commit : 5e27
 %% working_directory : /scratch/snx3000/klye/3druns/postprocessing/notebooks
 %% hostname : daint101
-%% generated_on_date : 2019-06-04 22:29:41.797129
+%% generated_on_date : 2019-06-12 11:28:07.023248
 %% accessed_environment:
 %% additional_parameters:
-%%    basename=/project/s913/klye/3druns_s839/3drunscloud/kelvinhelmholtz_3d_tube/stats/kelvinhelmholtz_{resolution}_0.1/kh_1.nc
+%%    basename=/project/s913/klye/kh_3d_tube_1024/kelvinhelmholtz_{resolution}_0.1/kh_1.nc
 %%    alsvinn_report.software=alsvinn https://github.com/alsvinn
-%%    alsvinn_report.softwareVersion=0.2.1
-%%    alsvinn_report.currentWorkingDirectory=/scratch/snx3000/klye/3drunscloud/kelvinhelmholtz_3d_tube/stats/kelvinhelmholtz_512_0.1
+%%    alsvinn_report.softwareVersion=0.4.1
+%%    alsvinn_report.currentWorkingDirectory=/scratch/snx3000/klye/3druns/kelvinhelmholtz_3d_tube/single/kelvinhelmholtz_1024_0.1
 %%    alsvinn_report.operatingSystem=Linux: Linux 4.4.103-6.38_4.0.153-cray_ari_c #1 SMP Thu Nov 1 16:05:05 UTC 2018 (6ef8fef) x86_64
 %%    alsvinn_report.username=klye
-%%    alsvinn_report.host=nid03008
+%%    alsvinn_report.host=nid04344
 %%    alsvinn_report.standardCLibrary=GNU libc 2.22 stable
-%%    alsvinn_report.generatedAt=20190331T224152
+%%    alsvinn_report.generatedAt=20190605T113230
 %%    alsvinn_report.CPU=Intel(R) Xeon(R) CPU E5-2690 v3 @ 2.60GHz
-%%    alsvinn_report.revision=8adf34e41b048b19e31251c144fac8362628a899
+%%    alsvinn_report.revision=385f40654532260362330f6d0924c28cc043b39d
 %%    alsvinn_report.versionControlStatus=DIRTY
 %%    alsvinn_report.buildType=Release
 %%    alsvinn_report.cxxFlags=
@@ -140,15 +141,15 @@ Hostname: daint101};
 %%    alsvinn_report.cudaProperties.pciDeviceID=0
 %%    alsvinn_report.cudaProperties.tccDriver=0
 %%    alsvinn_report.mpiEnabled=true
-%%    alsvinn_report.mpiProcesses=1024
+%%    alsvinn_report.mpiProcesses=64
 %%    alsvinn_report.mpiVersion=MPI VERSION    : CRAY MPICH version 7.7.2 (ANL base 3.2)MPI BUILD INFO : Built Thu Jul 19 20:01:04 2018 (git hash 5d705bad2) MT-G
 %%    alsvinn_report.ompEnabled=true
 %%    alsvinn_report.ompThreads=1
-%%    fvm_configuration.fvm.name=    kh_512  
+%%    fvm_configuration.fvm.name=    kh_1024  
 %%    fvm_configuration.fvm.platform=cuda
 %%    fvm_configuration.fvm.grid.lowerCorner=0 0 0
 %%    fvm_configuration.fvm.grid.upperCorner=1 1 1
-%%    fvm_configuration.fvm.grid.dimension=512 512 512
+%%    fvm_configuration.fvm.grid.dimension=1024 1024 1024
 %%    fvm_configuration.fvm.boundary=periodic
 %%    fvm_configuration.fvm.flux=hll3
 %%    fvm_configuration.fvm.endTime=2
@@ -165,21 +166,19 @@ Hostname: daint101};
 %%    fvm_configuration.fvm.diffusion.name=none
 %%    fvm_configuration.fvm.diffusion.reconstruction=none
 %%    fvm_configuration.fvm.writer.type=netcdf
-%%    fvm_configuration.fvm.writer.numberOfSaves=1
 %%    fvm_configuration.fvm.writer.basename=kh
-%%    fvm_configuration.uq.samples=512
+%%    fvm_configuration.fvm.writer.numberOfSaves=1
+%%    fvm_configuration.uq.samples=1
 %%    fvm_configuration.uq.generator=auto
 %%    fvm_configuration.uq.parameters.parameter.name=a
 %%    fvm_configuration.uq.parameters.parameter.length=60
 %%    fvm_configuration.uq.parameters.parameter.type=uniform
-%%    fvm_configuration.uq.stats.stat.name=    structure_cube  
+%%    fvm_configuration.uq.stats.stat.name=      meanvar    
 %%    fvm_configuration.uq.stats.stat.numberOfSaves=1
 %%    fvm_configuration.uq.stats.stat.writer.type=netcdf
-%%    fvm_configuration.uq.stats.stat.writer.basename=kh_cube
-%%    fvm_configuration.uq.stats.stat.numberOfH=16
-%%    fvm_configuration.uq.stats.stat.p=3
+%%    fvm_configuration.uq.stats.stat.writer.basename=kh
 %% python_version: 
-%%    /scratch/snx3000/klye/3druns/postprocessing/.venv/bin/python (Version: 3.6.5 (default, Jul 23 2018, 02:50:29) 
+%%    /scratch/snx3000/klye/3druns/postprocessing/.venv/bin/python3 (Version: 3.6.5 (default, Jul 23 2018, 02:50:29) 
 %%    [GCC 6.1.0 20160427 (Cray Inc.)])
 %% python modules:
 %%     builtins: Unknown (Unknown)

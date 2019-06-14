@@ -1,0 +1,60 @@
+<?xml version="1.0" ?><config>
+<fvm>
+  <name>
+    fbm
+  </name>
+  <platform>cuda</platform>
+  <grid>
+    <lowerCorner>0 0 0</lowerCorner>
+    <upperCorner>1 1 1</upperCorner>
+    <dimension>512 512 512</dimension>
+  </grid>
+  <boundary>periodic</boundary>
+  <flux>hll3</flux>
+  <endTime>.2</endTime>
+  <equation>euler3</equation>
+  <equationParameters>
+    <gamma>1.4</gamma>
+  </equationParameters>
+  <reconstruction>wenof2</reconstruction>
+  <cfl>auto</cfl>
+  <integrator>auto</integrator>
+
+  <initialData>
+    <python>fbm.py</python>
+    <parameters>
+      <parameter>
+	<name>hurst_index</name>
+	<length>1</length>
+	<value>0.05</value>
+      </parameter>
+      <parameter>
+        <name>X</name>
+        <length>402653184</length>
+        <values><value>0</value></values>
+      </parameter>
+    </parameters>
+  </initialData>
+  <diffusion>
+    <name>none</name>
+    <reconstruction>none</reconstruction>
+  </diffusion>
+  <writer>
+    <type>netcdf</type>
+    <basename>fbm</basename>
+    <numberOfSaves>1</numberOfSaves>
+  </writer>
+</fvm>
+<uq>
+  <samples>1</samples>
+  <generator>auto</generator>
+  <parameters>
+    <parameter>
+      <name>X</name>
+      <length>402653184</length>
+      <type>normal</type>
+    </parameter>
+  </parameters>
+<stats/>
+</uq>
+</config>
