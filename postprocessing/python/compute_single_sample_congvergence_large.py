@@ -12,7 +12,14 @@ import plot_info
 latex_variables = {
     'rho' : '\\rho',
     'E'   : 'E',
-}
+    'mx' : 'm_x',
+    'my' : 'm_y',
+    'mz' : 'm_z',
+    'ux' : 'u_x',
+    'uy' : 'u_y',
+    'uz' : 'u_z',
+    'p'  : 'p'
+}}
 
 def resolution_exists(basename, resolution):
     print(basename.format(resolution=resolution))
