@@ -10,7 +10,7 @@ log basis y={2},
 tick align=outside,
 tick pos=left,
 title={Convergence of single sample,
-Fractional Brownian motion $H=0.75, T=0.2$
+Fractional Brownian motion $H=0.75$ T=0.2
 Variable: $\rho$},
 width=\figurewidth,
 x grid style={white!69.01960784313725!black},
@@ -22,16 +22,16 @@ xtick={64,128,256,512},
 xticklabels={\(\displaystyle 64^3\),\(\displaystyle 128^3\),\(\displaystyle 256^3\),\(\displaystyle 512^3\)},
 y grid style={white!69.01960784313725!black},
 ylabel={Error (\(\displaystyle ||\rho^{N}-\rho^{N/2}||_{L^1(D)}\))},
-ymin=0.25, ymax=4,
+ymin=0.5, ymax=8,
 ymode=log,
 ytick style={color=black}
 ]
 \addplot [semithick, color0, mark=*, mark size=3, mark options={solid}]
 table {%
-64 1.12979768678452
-128 0.987370690284768
-256 1.01488381666193
-512 0.674532173169722
+64 1.71758452219173
+128 1.9892216148888
+256 2.18742991030958
+512 2.43719473426966
 };
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
@@ -40,15 +40,15 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: c5353496710d1744c96f260363095795d50130b1
+Commit: 603e8ea9b910d3ec9207ce3f2c2bf321b174099f
 Repo: git@github.com:kjetil-lye/3druns.git
-Hostname: daint102};
+Hostname: daint106};
 \node at (axis cs:0.2,0.93)[
   scale=0.5,
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@c535};
+]{@603e};
 \end{axis}
 
 \end{tikzpicture}
@@ -56,20 +56,20 @@ Hostname: daint102};
 %% INCLUDE THE COMMENTS AT THE END WHEN COPYING
 %%%%%%%%%%%%%TITLE%%%%%%%%%%%%%%%%%
 %% Convergence of single sample,
-%% Fractional Brownian motion $H=0.75, T=0.2$
+%% Fractional Brownian motion $H=0.75$ T=0.2
 %% Variable: $\rho$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% script name: ../python/compute_single_sample_congvergence_large.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : c5353496710d1744c96f260363095795d50130b1
+%% GIT git_commit : 603e8ea9b910d3ec9207ce3f2c2bf321b174099f
 %% GIT git_repo_modified : True
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : c535
+%% GIT git_short_commit : 603e
 %% working_directory : /scratch/snx3000/klye/3druns/postprocessing/notebooks
-%% hostname : daint102
-%% generated_on_date : 2019-06-13 09:00:14.298957
+%% hostname : daint106
+%% generated_on_date : 2019-06-14 22:58:01.763341
 %% accessed_environment:
 %% additional_parameters:
 %%    basename=/scratch/snx3000/klye/3druns/fbm/single/H0_75/N{resolution}/fbm_1.nc
@@ -78,11 +78,11 @@ Hostname: daint102};
 %%    alsvinn_report.currentWorkingDirectory=/scratch/snx3000/klye/3druns/fbm/single/H0_75/N512
 %%    alsvinn_report.operatingSystem=Linux: Linux 4.4.103-6.38_4.0.153-cray_ari_c #1 SMP Thu Nov 1 16:05:05 UTC 2018 (6ef8fef) x86_64
 %%    alsvinn_report.username=klye
-%%    alsvinn_report.host=nid06132
+%%    alsvinn_report.host=nid02725
 %%    alsvinn_report.standardCLibrary=GNU libc 2.22 stable
-%%    alsvinn_report.generatedAt=20190613T021251
+%%    alsvinn_report.generatedAt=20190614T223446
 %%    alsvinn_report.CPU=Intel(R) Xeon(R) CPU E5-2690 v3 @ 2.60GHz
-%%    alsvinn_report.revision=37ff3c741ba84397f65bb1e887c2ae641844c782
+%%    alsvinn_report.revision=0cc595555572f590fbe5065ef148753c14fd23bb
 %%    alsvinn_report.versionControlStatus=DIRTY
 %%    alsvinn_report.buildType=Release
 %%    alsvinn_report.cxxFlags=
@@ -153,7 +153,7 @@ Hostname: daint102};
 %%    fvm_configuration.fvm.integrator=auto
 %%    fvm_configuration.fvm.initialData.python=fbm.py
 %%    fvm_configuration.fvm.initialData.parameters.parameter.name=X
-%%    fvm_configuration.fvm.initialData.parameters.parameter.length=1610612736
+%%    fvm_configuration.fvm.initialData.parameters.parameter.length=402653184
 %%    fvm_configuration.fvm.initialData.parameters.parameter.value=0.75
 %%    fvm_configuration.fvm.initialData.parameters.parameter.values.value=0
 %%    fvm_configuration.fvm.diffusion.name=none
@@ -164,7 +164,7 @@ Hostname: daint102};
 %%    fvm_configuration.uq.samples=1
 %%    fvm_configuration.uq.generator=auto
 %%    fvm_configuration.uq.parameters.parameter.name=X
-%%    fvm_configuration.uq.parameters.parameter.length=1610612736
+%%    fvm_configuration.uq.parameters.parameter.length=402653184
 %%    fvm_configuration.uq.parameters.parameter.type=normal
 %%    fvm_configuration.uq.stats=
 %% python_version: 
@@ -187,9 +187,10 @@ Hostname: daint102};
 %%     codecs: Unknown (/opt/python/3.6.5.1/lib/python3.6/codecs.py)
 %%     _codecs: Unknown (Unknown)
 %%     encodings.aliases: Unknown (/opt/python/3.6.5.1/lib/python3.6/encodings/aliases.py)
-%%     encodings.utf_8: Unknown (/opt/python/3.6.5.1/lib/python3.6/encodings/utf_8.py)
+%%     encodings.ascii: Unknown (/opt/python/3.6.5.1/lib/python3.6/encodings/ascii.py)
 %%     _signal: Unknown (Unknown)
 %%     __main__: Unknown (../python/compute_single_sample_congvergence_large.py)
+%%     encodings.utf_8: Unknown (/opt/python/3.6.5.1/lib/python3.6/encodings/utf_8.py)
 %%     encodings.latin_1: Unknown (/opt/python/3.6.5.1/lib/python3.6/encodings/latin_1.py)
 %%     io: Unknown (/opt/python/3.6.5.1/lib/python3.6/io.py)
 %%     abc: Unknown (/opt/python/3.6.5.1/lib/python3.6/abc.py)
@@ -588,7 +589,6 @@ Hostname: daint102};
 %%     gitdb.db.ref: Unknown (/scratch/snx3000/klye/3druns/postprocessing/.venv/lib/python3.6/site-packages/gitdb/db/ref.py)
 %%     git.exc: Unknown (/scratch/snx3000/klye/3druns/postprocessing/.venv/lib/python3.6/site-packages/git/exc.py)
 %%     git.compat: Unknown (/scratch/snx3000/klye/3druns/postprocessing/.venv/lib/python3.6/site-packages/git/compat.py)
-%%     encodings.ascii: Unknown (/opt/python/3.6.5.1/lib/python3.6/encodings/ascii.py)
 %%     git.config: Unknown (/scratch/snx3000/klye/3druns/postprocessing/.venv/lib/python3.6/site-packages/git/config.py)
 %%     git.util: Unknown (/scratch/snx3000/klye/3druns/postprocessing/.venv/lib/python3.6/site-packages/git/util.py)
 %%     getpass: Unknown (/opt/python/3.6.5.1/lib/python3.6/getpass.py)
