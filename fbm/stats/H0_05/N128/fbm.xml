@@ -55,6 +55,17 @@
       <type>normal</type>
     </parameter>
   </parameters>
-<stats/>
+  <stats>
+    <stat>
+    <name>
+      meanvar
+    </name>
+    <numberOfSaves>1</numberOfSaves>
+    <writer>
+      <type>netcdf</type>
+      <basename>fbm</basename>
+    </writer>
+    </stat>
+</stats>
 </uq>
 </config>
