@@ -43,8 +43,7 @@ Submits the configuration file CSCS Daint. NOTE: Will run in folder of configura
     total_number_of_nodes = number_of_nodes_per_direction**3*args.multi_sample
 
 
-    submit_file=f"""
-#!/bin/bash -l
+    submit_file=f"""#!/bin/bash -l
 #SBATCH --job-name="{name}_{resolution}"
 #SBATCH --time=24:00:00
 #SBATCH --nodes={total_number_of_nodes}
