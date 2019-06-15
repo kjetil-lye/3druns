@@ -1,4 +1,4 @@
-n
+
 # This is found in the paper
 # Brouste, A., Istas, J., & Lambert-Lacroix, S. (2007).
 #  On Fractional Gaussian Random Fields Simulations. Journal of Statistical Software, 23(1), 1–23.
