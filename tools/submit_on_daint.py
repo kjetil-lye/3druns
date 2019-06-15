@@ -13,7 +13,7 @@ if __name__ == '__main__':
     import argparse
 
     parser = argparse.ArgumentParser(description="""
-Submits the configuration file leonhard. NOTE: Will run in folder of configuration file!
+Submits the configuration file CSCS Daint. NOTE: Will run in folder of configuration file!
 """)
 
 
@@ -58,7 +58,7 @@ Submits the configuration file leonhard. NOTE: Will run in folder of configurati
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 export CRAY_CUDA_MPS=1
 
-srun {args.alsuqcli_path} --multi-x {number_of_nodes_per_direction} --multi-y {number_of_nodes_per_direction} --multi-z {number_of_nodes_per_direction} {os.path.basename(configuration_file)}
+srun {args.alsuqcli_path} --multi-sample {args.multi_sample} --multi-x {number_of_nodes_per_direction} --multi-y {number_of_nodes_per_direction} --multi-z {number_of_nodes_per_direction} {os.path.basename(configuration_file)}
 """
 
     if args.dry_run:
