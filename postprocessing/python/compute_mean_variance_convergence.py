@@ -73,7 +73,7 @@ def plot_convergence(basename, title, variable, starting_resolution, stat):
     plt.ylim([2**np.floor(np.log2(min_error)-1), 2**np.ceil(np.log2(max_error)+1)])
     plt.loglog(resolutions, errors, '-o', basex=2, basey=2)
     plt.xlabel('Resolution ($N^3$)')
-    plt.ylabel(f'Error ($||{latex_stat[stat]}({latex_variables[variable]}^{{N}})-{latex_stat[stat}}({latex_variables[variable]}^{{N/2}})||_{{L^1(D)}}$)')
+    plt.ylabel(f'Error ($||{latex_stat[stat]}({latex_variables[variable]}^{{N}})-{latex_stat[stat]}({latex_variables[variable]}^{{N/2}})||_{{L^1(D)}}$)')
     plt.xticks(resolutions, [f"${r}^3$" for r in resolutions])
     plt.title(f"Convergence of {stat},\n"
               f"{title}\n"
