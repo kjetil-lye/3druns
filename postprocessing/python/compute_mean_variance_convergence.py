@@ -26,13 +26,13 @@ latex_variables = {
     'p'  : 'p'
 }
 
-def resolution_exists(basename, resolution):
-    print(basename.format(resolution=resolution))
-    if not os.path.exists(basename.format(resolution=resolution)):
+def resolution_exists(basename, resolution, stat):
+    print(basename.format(resolution=resolution, stat=stat))
+    if not os.path.exists(basename.format(resolution=resolution,stat=stat)):
         return False
 
     try:
-        load_plane(basename.format(resolution=resolution), 0, 'rho')
+        load_plane(basename.format(resolution=resolution,stat=stat), 0, 'rho')
     except Exception as e:
         return False
 
@@ -51,7 +51,7 @@ def plot_convergence(basename, title, variable, starting_resolution, stat):
     resolutions = []
     errors = []
     
-    while resolution_exists(basename, resolution) and resolution_exists(basename, 2*resolution):
+    while resolution_exists(basename, resolution,stat) and resolution_exists(basename, 2*resolution,stat):
         print(resolution)
         error = 0.0
         for plane in range(2*resolution):
