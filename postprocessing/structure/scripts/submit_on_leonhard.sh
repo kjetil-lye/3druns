@@ -1,5 +1,18 @@
 #!/bin/bash
 set -e
+if [ -z "${STRUCTURE_BIN_DIR}" ]
+then
+    echo "STRUCTURE_BIN_DIR needs to be exported to a folder containint structure_standalone"
+    exit 1
+fi
+
+if [ ! -f "${STRUCTURE_BIN_DIR}/structure_standalone" ]
+then
+    echo "STRUCTURE_BIN_DIR does not contain structure_standalone"
+    exit 1
+fi
+
+
 export OMP_NUM_THREADS=1
 for t in 1;
 do
