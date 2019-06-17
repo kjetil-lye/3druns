@@ -19,7 +19,9 @@ def init_global(rho, ux, uy, uz, p, nx, ny, nz, ax, ay, az, bx, by, bz):
     # X is uniform, ppf is the inverse of the normal pdf, so that means Y will uniform
     Y = scipy.stats.norm.ppf(X)
 
-    number_of_parameters=(total_nx-1)**3
+    # This looks a bit weird, but this was the fastest and easiest way to ensure we get the same parameter for every resolution.
+    # We fix the highest resolution to 512
+    number_of_parameters=(512-1)**3
     # uses fbmpy at https://github.com/alsvinn/fractional_brownian_motion
     # Needs to have a newer version of alsvinn (at or after 2019-06-17)
     dux = fbmpy.fractional_brownian_bridge_3d(hurst_index, total_nx, Y[:number_of_parameters]).reshape(total_nx+1,total_nx+1,total_nx+1)
