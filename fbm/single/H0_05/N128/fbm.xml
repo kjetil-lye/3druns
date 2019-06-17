@@ -30,7 +30,7 @@
       </parameter>
       <parameter>
         <name>X</name>
-        <length>6291456</length>
+        <length>6145149</length>
         <values><value>0</value></values>
       </parameter>
     </parameters>
@@ -51,8 +51,8 @@
   <parameters>
     <parameter>
       <name>X</name>
-      <length>6291456</length>
-      <type>normal</type>
+      <length>6145149</length>
+      <type>uniform</type>
     </parameter>
   </parameters>
 <stats/>

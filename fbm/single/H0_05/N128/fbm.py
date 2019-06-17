@@ -1,4 +1,4 @@
-
+import scipy.stats
 # This is found in the paper
 # Brouste, A., Istas, J., & Lambert-Lacroix, S. (2007).
 #  On Fractional Gaussian Random Fields Simulations. Journal of Statistical Software, 23(1), 1–23.
@@ -16,10 +16,13 @@ def init_global(rho, ux, uy, uz, p, nx, ny, nz, ax, ay, az, bx, by, bz):
     total_ny = int(ny/(by-ay))
     total_nz = int(nz/(bz-az))
 
+    # X is uniform, ppf is the inverse of the normal pdf, so that means Y will uniform
+    Y = scipy.stats.norm.ppf(X)
+
     # uses fbmpy at https://github.com/alsvinn/fractional_brownian_motion
-    dux = fbmpy.fractional_brownian_bridge_3d(hurst_index, total_nx, X[:(total_nx-1)**3]).reshape(total_nx+1,total_nx+1,total_nx+1)
-    duy = fbmpy.fractional_brownian_bridge_3d(hurst_index, total_nx, X[(total_nx)**3:2*(total_nx-1)**3]).reshape(total_nx+1,total_nx+1,total_nx+1)
-    duz = fbmpy.fractional_brownian_bridge_3d(hurst_index, total_nx, X[2*(total_nx)**3:3*(total_nx-1)**3]).reshape(total_nx+1,total_nx+1,total_nx+1)
+    dux = fbmpy.fractional_brownian_bridge_3d(hurst_index, total_nx, Y[:(total_nx-1)**3]).reshape(total_nx+1,total_nx+1,total_nx+1)
+    duy = fbmpy.fractional_brownian_bridge_3d(hurst_index, total_nx, Y[(total_nx)**3:2*(total_nx-1)**3]).reshape(total_nx+1,total_nx+1,total_nx+1)
+    duz = fbmpy.fractional_brownian_bridge_3d(hurst_index, total_nx, Y[2*(total_nx)**3:3*(total_nx-1)**3]).reshape(total_nx+1,total_nx+1,total_nx+1)
 
     start_x = int(ax*total_nx)
     end_x = int(bx*total_nx)

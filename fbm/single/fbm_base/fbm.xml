@@ -52,7 +52,7 @@
     <parameter>
       <name>X</name>
       <length>3145728</length>
-      <type>normal</type>
+      <type>uniform</type>
     </parameter>
   </parameters>
 <stats></stats>

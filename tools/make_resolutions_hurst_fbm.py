@@ -56,15 +56,15 @@ Makes an instance of the configuration file for each resolution and each perturb
 
                 elif name == "X":
                     # We need a total of nx**3*3 random samples
-                    set_in_xml(initial_data_parameter, "length", 3*resolution**3)
+                    set_in_xml(initial_data_parameter, "length", 3*(resolution-1)**3)
 
             uq_parameters = get_xml_node(config, "config.uq.parameters")
             for uq_parameter in uq_parameters.getElementsByTagName("parameter"):
                 name = get_in_xml(uq_parameter, "name")
 
                 if name == "X":
-                    # We need a total of nx**3*3 random samples
-                    set_in_xml(uq_parameter, "length", 3*resolution**3)
+                    # We need a total of (nx-1)**3*3 random samples
+                    set_in_xml(uq_parameter, "length", 3*(resolution-1)**3)
 
             shutil.copyfile(os.path.join(os.path.dirname(args.config), python_file),
                              os.path.join(resolution_folder, python_file))
