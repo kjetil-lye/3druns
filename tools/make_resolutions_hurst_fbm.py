@@ -8,9 +8,9 @@ if __name__ == '__main__':
     import argparse
 
     parser = argparse.ArgumentParser(description="""
-Makes an instance of the configuration file for each resolution and each perturbation. Folder layout will be
+Makes an instance of the configuration file for each resolution and each Hurst index. Folder layout will be
 
-    pEPSILON/NRESOLUTION/configname.xml
+    H{HURST INDEX}/NRESOLUTION/configname.xml
             """)
 
     parser.add_argument('--resolutions', type=int, nargs='+', required=True,
@@ -33,11 +33,11 @@ Makes an instance of the configuration file for each resolution and each perturb
 
     for n, hurst_index in enumerate(args.hurst_indices):
         perturbation_folder = "H{}".format(hurst_index.replace(".","_"))
-        os.mkdir(perturbation_folder)
+        os.makedirs(perturbation_folder, exist_ok=True)
 
         for m, resolution in enumerate(args.resolutions):
             resolution_folder = f"{perturbation_folder}/N{resolution}"
-            os.mkdir(resolution_folder)
+            os.makedirs(resolution_folder, exist_ok=True)
 
             samples = args.samples[m]
 
