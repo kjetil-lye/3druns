@@ -75,6 +75,7 @@ def plot_convergence_single_sample(basename, title, variable, starting_resolutio
                    label=f'$\\mathcal{{O}}(N^{{{poly[0]:.1f}}})$',
                    basex=2,
                    basey=2)
+        plt.legend()
     plt.xlabel('Resolution ($N^3$)')
     plt.ylabel(f'Error ($||{latex_variables[variable]}^{{N}}-{latex_variables[variable]}^{{N/2}}||_{{L^1(D)}}$)')
     plt.xticks(resolutions, [f"${r}^3$" for r in resolutions])

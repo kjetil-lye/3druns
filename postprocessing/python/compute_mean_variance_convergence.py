@@ -80,6 +80,7 @@ def plot_convergence(basename, title, variable, starting_resolution, stat, zoom,
                    label=f'$\\mathcal{{O}}(N^{{{poly[0]:.1f}}})$',
                    basex=2,
                    basey=2)
+        plt.legend()
 
     plt.xlabel('Resolution ($N^3$)')
     plt.ylabel(f'Error ($||{latex_stat[stat]}({latex_variables[variable]}^{{N}})-{latex_stat[stat]}({latex_variables[variable]}^{{N/2}})||_{{L^1(D)}}$)')
