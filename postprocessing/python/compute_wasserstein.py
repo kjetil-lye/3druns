@@ -12,7 +12,8 @@ if __name__ == '__main__':
     else:
         starting_resolution = 64
 
-    resolutions = 2**np.arange(int(np.log2(starting_starting)), 10)
+    resolutions = 2**np.arange(int(np.log2(starting_resolution)), 10)
+    print(resolutions)
     variable = 'rho'
     setup = basename.format(resolution='res')
 
