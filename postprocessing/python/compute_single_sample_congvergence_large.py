@@ -40,7 +40,7 @@ def load_plane(filename, plane, variable):
             plot_info.add_additional_plot_parameters(attr, f.getncattr(attr))
         return f.variables[f'sample_0_{variable}'][plane,:,:]
 
-def plot_convergence_single_sample(basename, title, variable, starting_resolution):
+def plot_convergence_single_sample(basename, title, variable, starting_resolution, zoom=True, compute_rate=False):
     resolution = starting_resolution
 
     resolutions = []
@@ -65,8 +65,14 @@ def plot_convergence_single_sample(basename, title, variable, starting_resolutio
 
     min_error = np.min(errors)
     max_error = np.max(errors)
-    plt.ylim([2**np.floor(np.log2(min_error)-1), 2**np.ceil(np.log2(max_error)+1)])
-    plt.loglog(resolutions, errors, '-o', basex=2, basey=2)
+    if zoom:
+        plt.ylim([2**np.floor(np.log2(min_error)-1), 2**np.ceil(np.log2(max_error)+1)])
+    p = plt.loglog(resolutions, errors, '-o', basex=2, basey=2)
+    if compute_rate:
+        poly = np.polyfit(np.log(resolutions), np.log(errors), 1)
+        plt.loglog(resolutions, np.exp(poly[1])*resolutions**poly[0], '--',
+                   color=p[0].get_color(),
+                   label=f'$\\mathcal{{O}}(N^{{{poly[0]:.1f}}})$')
     plt.xlabel('Resolution ($N^3$)')
     plt.ylabel(f'Error ($||{latex_variables[variable]}^{{N}}-{latex_variables[variable]}^{{N/2}}||_{{L^1(D)}}$)')
     plt.xticks(resolutions, [f"${r}^3$" for r in resolutions])
@@ -93,6 +99,12 @@ Computes the single sample convergence
     parser.add_argument('--title', type=str, required=True,
                         help='Title of plot')
 
+    parser.add_argument('--not_zoom', action='store_true',
+                        help='Disable zooming out of plot. We typically zoom out of plots because matplotlib zooms in so much it seems like it is converging. For fBm with low H, it is usually a good idea to disable this so that we actually see the slow convergence')
+
+    parser.add_argumetn('--compute_rate', action='store_true',
+                        help='Compute the convergence rate')
+
 
     parser.add_argument('--variable', type=str, default='rho',
                         help='Variable')
@@ -106,4 +118,4 @@ Computes the single sample convergence
 
     plot_info.add_additional_plot_parameters("basename", args.input_basename)
 
-    plot_convergence_single_sample(args.input_basename, args.title, args.variable, args.starting_resolution)
+    plot_convergence_single_sample(args.input_basename, args.title, args.variable, args.starting_resolution, not args.not_zoom, args.compute_rate)
