@@ -19,11 +19,11 @@ xtick={64,128,256,512},
 xticklabels={\(\displaystyle 64^3\),\(\displaystyle 128^3\),\(\displaystyle 256^3\),\(\displaystyle 512^3\)},
 y grid style={white!69.01960784313725!black},
 ylabel={Error (\(\displaystyle ||m_z^{N}-m_z^{N/2}||_{L^1(D)}\))},
-ymin=0.25, ymax=4,
+ymin=0.655479936653393, ymax=1.33071333695792,
 ymode=log,
 ytick style={color=black},
-ytick={0.125,0.25,0.5,1,2,4,8},
-yticklabels={\(\displaystyle {2^{-3}}\),\(\displaystyle {2^{-2}}\),\(\displaystyle {2^{-1}}\),\(\displaystyle {2^{0}}\),\(\displaystyle {2^{1}}\),\(\displaystyle {2^{2}}\),\(\displaystyle {2^{3}}\)}
+ytick={0.25,0.5,1,2,4},
+yticklabels={\(\displaystyle {2^{-2}}\),\(\displaystyle {2^{-1}}\),\(\displaystyle {2^{0}}\),\(\displaystyle {2^{1}}\),\(\displaystyle {2^{2}}\)}
 ]
 \addplot [semithick, color0, mark=*, mark size=3, mark options={solid}]
 table {%
@@ -32,6 +32,13 @@ table {%
 256 0.830747027120823
 512 0.681379278797059
 };
+\addplot [semithick, color0, dashed]
+table {%
+64 1.28215476594347
+128 1.03626995427408
+256 0.83753962209158
+512 0.67692073448631
+};
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -39,7 +46,7 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 46116e4c2c9618f9884399a02d4e1b9b4caecb52
+Commit: f556a15ef2e7f6fef287da92624a881e317e5715
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint102};
 \node at (axis cs:0.2,0.93)[
@@ -47,7 +54,7 @@ Hostname: daint102};
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@4611};
+]{@f556};
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -55,7 +62,7 @@ Hostname: daint102};
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 46116e4c2c9618f9884399a02d4e1b9b4caecb52
+Commit: f556a15ef2e7f6fef287da92624a881e317e5715
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint102};
 \end{axis}
@@ -69,14 +76,14 @@ Hostname: daint102};
 %% script name: ../python/compute_single_sample_congvergence_large.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : 46116e4c2c9618f9884399a02d4e1b9b4caecb52
+%% GIT git_commit : f556a15ef2e7f6fef287da92624a881e317e5715
 %% GIT git_repo_modified : True
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : 4611
+%% GIT git_short_commit : f556
 %% working_directory : /scratch/snx3000/klye/3druns/postprocessing/notebooks
 %% hostname : daint102
-%% generated_on_date : 2019-06-18 07:52:47.564691
+%% generated_on_date : 2019-06-18 11:24:38.551284
 %% accessed_environment:
 %% additional_parameters:
 %%    basename=/scratch/snx3000/klye/3druns/fbm/single/H0_5/N{resolution}/fbm_1.nc
@@ -653,5 +660,5 @@ Hostname: daint102};
 %% stacktrace:
 %%     [function: savePlot, line: 301, file: /scratch/snx3000/klye/3druns/postprocessing/python/plot_info.py]
 %%     [function: savePlot, line: 323, file: /scratch/snx3000/klye/3druns/postprocessing/python/plot_info.py]
-%%     [function: plot_convergence_single_sample, line: 80, file: ../python/compute_single_sample_congvergence_large.py]
-%%     [function: <module>, line: 109, file: ../python/compute_single_sample_congvergence_large.py]
+%%     [function: plot_convergence_single_sample, line: 88, file: ../python/compute_single_sample_congvergence_large.py]
+%%     [function: <module>, line: 123, file: ../python/compute_single_sample_congvergence_large.py]

@@ -19,18 +19,25 @@ xtick={64,128,256,512},
 xticklabels={\(\displaystyle 64^3\),\(\displaystyle 128^3\),\(\displaystyle 256^3\),\(\displaystyle 512^3\)},
 y grid style={white!69.01960784313725!black},
 ylabel={Error (\(\displaystyle ||E^{N}-E^{N/2}||_{L^1(D)}\))},
-ymin=8, ymax=128,
+ymin=12.4106412080762, ymax=16.7204920620489,
 ymode=log,
 ytick style={color=black},
-ytick={4,8,16,32,64,128,256},
-yticklabels={\(\displaystyle {2^{2}}\),\(\displaystyle {2^{3}}\),\(\displaystyle {2^{4}}\),\(\displaystyle {2^{5}}\),\(\displaystyle {2^{6}}\),\(\displaystyle {2^{7}}\),\(\displaystyle {2^{8}}\)}
+ytick={4,8,16,32,64},
+yticklabels={\(\displaystyle {2^{2}}\),\(\displaystyle {2^{3}}\),\(\displaystyle {2^{4}}\),\(\displaystyle {2^{5}}\),\(\displaystyle {2^{6}}\)}
 ]
 \addplot [semithick, color0, mark=*, mark size=3, mark options={solid}]
 table {%
-64 31.8185651077682
-128 36.6321675168111
-256 39.2689404761411
-512 41.0732384782797
+64 13.0883464613457
+128 12.9952825425244
+256 14.393897714696
+512 16.4954718655532
+};
+\addplot [semithick, color0, dashed]
+table {%
+64 12.5799388763115
+128 13.6226559315839
+256 14.7518009789194
+512 15.9745378004527
 };
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
@@ -39,7 +46,7 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: ed98adccd137160904498ab14a60d6cd74e00020
+Commit: f556a15ef2e7f6fef287da92624a881e317e5715
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint102};
 \node at (axis cs:0.2,0.93)[
@@ -47,7 +54,7 @@ Hostname: daint102};
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@ed98};
+]{@f556};
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -55,7 +62,7 @@ Hostname: daint102};
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: ed98adccd137160904498ab14a60d6cd74e00020
+Commit: f556a15ef2e7f6fef287da92624a881e317e5715
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint102};
 \end{axis}
@@ -69,14 +76,14 @@ Hostname: daint102};
 %% script name: ../python/compute_single_sample_congvergence_large.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : ed98adccd137160904498ab14a60d6cd74e00020
+%% GIT git_commit : f556a15ef2e7f6fef287da92624a881e317e5715
 %% GIT git_repo_modified : True
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : ed98
+%% GIT git_short_commit : f556
 %% working_directory : /scratch/snx3000/klye/3druns/postprocessing/notebooks
 %% hostname : daint102
-%% generated_on_date : 2019-06-17 23:52:29.674714
+%% generated_on_date : 2019-06-18 11:25:29.680309
 %% accessed_environment:
 %% additional_parameters:
 %%    basename=/scratch/snx3000/klye/3druns/fbm/single/H0_05/N{resolution}/fbm_1.nc
@@ -85,9 +92,9 @@ Hostname: daint102};
 %%    alsvinn_report.currentWorkingDirectory=/scratch/snx3000/klye/3druns/fbm/single/H0_05/N512
 %%    alsvinn_report.operatingSystem=Linux: Linux 4.4.103-6.38_4.0.153-cray_ari_c #1 SMP Thu Nov 1 16:05:05 UTC 2018 (6ef8fef) x86_64
 %%    alsvinn_report.username=klye
-%%    alsvinn_report.host=nid03687
+%%    alsvinn_report.host=nid05001
 %%    alsvinn_report.standardCLibrary=GNU libc 2.22 stable
-%%    alsvinn_report.generatedAt=20190617T145651
+%%    alsvinn_report.generatedAt=20190618T092121
 %%    alsvinn_report.CPU=Intel(R) Xeon(R) CPU E5-2690 v3 @ 2.60GHz
 %%    alsvinn_report.revision=ace845d81bbce8cf30948a6e12d477d9bf8cbfa4
 %%    alsvinn_report.versionControlStatus=DIRTY
@@ -653,5 +660,5 @@ Hostname: daint102};
 %% stacktrace:
 %%     [function: savePlot, line: 301, file: /scratch/snx3000/klye/3druns/postprocessing/python/plot_info.py]
 %%     [function: savePlot, line: 323, file: /scratch/snx3000/klye/3druns/postprocessing/python/plot_info.py]
-%%     [function: plot_convergence_single_sample, line: 80, file: ../python/compute_single_sample_congvergence_large.py]
-%%     [function: <module>, line: 109, file: ../python/compute_single_sample_congvergence_large.py]
+%%     [function: plot_convergence_single_sample, line: 88, file: ../python/compute_single_sample_congvergence_large.py]
+%%     [function: <module>, line: 123, file: ../python/compute_single_sample_congvergence_large.py]
