@@ -18,8 +18,6 @@ Submits the configuration file CSCS Daint. NOTE: Will run in folder of configura
 
 
 
-    parser.add_argument('--alsuqcli_path', type=str, default=str(os.path.join(str(Path.home()), 'alsvinn/build/alsuqcli/alsuqcli')),
-                        help="path to alsuqlci")
     parser.add_argument('--command', type=str, required=True,
                         help="command to run")
     parser.add_argument('--wait_time', type=int, default=24,
