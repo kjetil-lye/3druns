@@ -72,7 +72,7 @@ def plot_convergence_single_sample(basename, title, variable, starting_resolutio
         poly = np.polyfit(np.log(resolutions), np.log(errors), 1)
         plt.loglog(resolutions, np.exp(poly[1])*resolutions**poly[0], '--',
                    color=p[0].get_color(),
-                   label=f'$\\mathcal{{O}}(N^{{{poly[0]:.1f}}})$',
+                   label=f'$\\mathcal{{O}}(N^{{{poly[0]:.2f}}})$',
                    basex=2,
                    basey=2)
         plt.legend()
