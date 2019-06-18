@@ -40,7 +40,7 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 3c23577fef0d23c26757ed218378baa5e4a00178
+Commit: 46116e4c2c9618f9884399a02d4e1b9b4caecb52
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint102};
 \node at (axis cs:0.2,0.93)[
@@ -48,7 +48,7 @@ Hostname: daint102};
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@3c23};
+]{@4611};
 \end{axis}
 
 \end{tikzpicture}
@@ -62,14 +62,14 @@ Hostname: daint102};
 %% script name: ../python/compute_single_sample_congvergence_large.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : 3c23577fef0d23c26757ed218378baa5e4a00178
+%% GIT git_commit : 46116e4c2c9618f9884399a02d4e1b9b4caecb52
 %% GIT git_repo_modified : True
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : 3c23
+%% GIT git_short_commit : 4611
 %% working_directory : /scratch/snx3000/klye/3druns/postprocessing/notebooks
 %% hostname : daint102
-%% generated_on_date : 2019-06-17 23:37:46.723179
+%% generated_on_date : 2019-06-18 07:49:22.655926
 %% accessed_environment:
 %% additional_parameters:
 %%    basename=/scratch/snx3000/klye/3druns/fbm/single/H0_5/N{resolution}/fbm_0.nc
@@ -78,9 +78,9 @@ Hostname: daint102};
 %%    alsvinn_report.currentWorkingDirectory=/scratch/snx3000/klye/3druns/fbm/single/H0_5/N512
 %%    alsvinn_report.operatingSystem=Linux: Linux 4.4.103-6.38_4.0.153-cray_ari_c #1 SMP Thu Nov 1 16:05:05 UTC 2018 (6ef8fef) x86_64
 %%    alsvinn_report.username=klye
-%%    alsvinn_report.host=nid02219
+%%    alsvinn_report.host=nid04760
 %%    alsvinn_report.standardCLibrary=GNU libc 2.22 stable
-%%    alsvinn_report.generatedAt=20190617T144738
+%%    alsvinn_report.generatedAt=20190618T001734
 %%    alsvinn_report.CPU=Intel(R) Xeon(R) CPU E5-2690 v3 @ 2.60GHz
 %%    alsvinn_report.revision=ace845d81bbce8cf30948a6e12d477d9bf8cbfa4
 %%    alsvinn_report.versionControlStatus=DIRTY

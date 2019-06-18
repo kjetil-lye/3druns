@@ -22,16 +22,16 @@ xtick={64,128,256,512},
 xticklabels={\(\displaystyle 64^3\),\(\displaystyle 128^3\),\(\displaystyle 256^3\),\(\displaystyle 512^3\)},
 y grid style={white!69.01960784313725!black},
 ylabel={Error (\(\displaystyle ||m_z^{N}-m_z^{N/2}||_{L^1(D)}\))},
-ymin=2, ymax=16,
+ymin=0.25, ymax=4,
 ymode=log,
 ytick style={color=black}
 ]
 \addplot [semithick, color0, mark=*, mark size=3, mark options={solid}]
 table {%
-64 4.96943856378397
-128 5.38599350631925
-256 5.88089200171457
-512 5.90625160639548
+64 1.28856430210388
+128 1.03274409954388
+256 0.830747027120823
+512 0.681379278797059
 };
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
@@ -40,7 +40,7 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: ed98adccd137160904498ab14a60d6cd74e00020
+Commit: 46116e4c2c9618f9884399a02d4e1b9b4caecb52
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint102};
 \node at (axis cs:0.2,0.93)[
@@ -48,7 +48,7 @@ Hostname: daint102};
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@ed98};
+]{@4611};
 \end{axis}
 
 \end{tikzpicture}
@@ -62,14 +62,14 @@ Hostname: daint102};
 %% script name: ../python/compute_single_sample_congvergence_large.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : ed98adccd137160904498ab14a60d6cd74e00020
+%% GIT git_commit : 46116e4c2c9618f9884399a02d4e1b9b4caecb52
 %% GIT git_repo_modified : True
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : ed98
+%% GIT git_short_commit : 4611
 %% working_directory : /scratch/snx3000/klye/3druns/postprocessing/notebooks
 %% hostname : daint102
-%% generated_on_date : 2019-06-17 23:51:41.195761
+%% generated_on_date : 2019-06-18 07:52:46.026725
 %% accessed_environment:
 %% additional_parameters:
 %%    basename=/scratch/snx3000/klye/3druns/fbm/single/H0_5/N{resolution}/fbm_1.nc
@@ -78,9 +78,9 @@ Hostname: daint102};
 %%    alsvinn_report.currentWorkingDirectory=/scratch/snx3000/klye/3druns/fbm/single/H0_5/N512
 %%    alsvinn_report.operatingSystem=Linux: Linux 4.4.103-6.38_4.0.153-cray_ari_c #1 SMP Thu Nov 1 16:05:05 UTC 2018 (6ef8fef) x86_64
 %%    alsvinn_report.username=klye
-%%    alsvinn_report.host=nid02219
+%%    alsvinn_report.host=nid04760
 %%    alsvinn_report.standardCLibrary=GNU libc 2.22 stable
-%%    alsvinn_report.generatedAt=20190617T145154
+%%    alsvinn_report.generatedAt=20190618T002151
 %%    alsvinn_report.CPU=Intel(R) Xeon(R) CPU E5-2690 v3 @ 2.60GHz
 %%    alsvinn_report.revision=ace845d81bbce8cf30948a6e12d477d9bf8cbfa4
 %%    alsvinn_report.versionControlStatus=DIRTY

@@ -19,18 +19,18 @@ xtick={64,128,256,512},
 xticklabels={\(\displaystyle 64^3\),\(\displaystyle 128^3\),\(\displaystyle 256^3\),\(\displaystyle 512^3\)},
 y grid style={white!69.01960784313725!black},
 ylabel={Error (\(\displaystyle ||E^{N}-E^{N/2}||_{L^1(D)}\))},
-ymin=4, ymax=32,
+ymin=0.5, ymax=8,
 ymode=log,
 ytick style={color=black},
-ytick={2,4,8,16,32,64},
-yticklabels={\(\displaystyle {2^{1}}\),\(\displaystyle {2^{2}}\),\(\displaystyle {2^{3}}\),\(\displaystyle {2^{4}}\),\(\displaystyle {2^{5}}\),\(\displaystyle {2^{6}}\)}
+ytick={0.25,0.5,1,2,4,8,16},
+yticklabels={\(\displaystyle {2^{-2}}\),\(\displaystyle {2^{-1}}\),\(\displaystyle {2^{0}}\),\(\displaystyle {2^{1}}\),\(\displaystyle {2^{2}}\),\(\displaystyle {2^{3}}\),\(\displaystyle {2^{4}}\)}
 ]
 \addplot [semithick, color0, mark=*, mark size=3, mark options={solid}]
 table {%
-64 8.4009757957689
-128 10.2531532396772
-256 10.5167712644707
-512 10.834926519271
+64 2.34696685070441
+128 1.82203688901502
+256 1.41229491800261
+512 1.09094252089198
 };
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
@@ -39,7 +39,7 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: ed98adccd137160904498ab14a60d6cd74e00020
+Commit: 46116e4c2c9618f9884399a02d4e1b9b4caecb52
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint102};
 \node at (axis cs:0.2,0.93)[
@@ -47,7 +47,7 @@ Hostname: daint102};
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@ed98};
+]{@4611};
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -55,7 +55,7 @@ Hostname: daint102};
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: ed98adccd137160904498ab14a60d6cd74e00020
+Commit: 46116e4c2c9618f9884399a02d4e1b9b4caecb52
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint102};
 \end{axis}
@@ -69,14 +69,14 @@ Hostname: daint102};
 %% script name: ../python/compute_single_sample_congvergence_large.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : ed98adccd137160904498ab14a60d6cd74e00020
+%% GIT git_commit : 46116e4c2c9618f9884399a02d4e1b9b4caecb52
 %% GIT git_repo_modified : True
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : ed98
+%% GIT git_short_commit : 4611
 %% working_directory : /scratch/snx3000/klye/3druns/postprocessing/notebooks
 %% hostname : daint102
-%% generated_on_date : 2019-06-17 23:53:16.866360
+%% generated_on_date : 2019-06-18 07:53:10.729437
 %% accessed_environment:
 %% additional_parameters:
 %%    basename=/scratch/snx3000/klye/3druns/fbm/single/H0_5/N{resolution}/fbm_1.nc
@@ -85,9 +85,9 @@ Hostname: daint102};
 %%    alsvinn_report.currentWorkingDirectory=/scratch/snx3000/klye/3druns/fbm/single/H0_5/N512
 %%    alsvinn_report.operatingSystem=Linux: Linux 4.4.103-6.38_4.0.153-cray_ari_c #1 SMP Thu Nov 1 16:05:05 UTC 2018 (6ef8fef) x86_64
 %%    alsvinn_report.username=klye
-%%    alsvinn_report.host=nid02219
+%%    alsvinn_report.host=nid04760
 %%    alsvinn_report.standardCLibrary=GNU libc 2.22 stable
-%%    alsvinn_report.generatedAt=20190617T145154
+%%    alsvinn_report.generatedAt=20190618T002151
 %%    alsvinn_report.CPU=Intel(R) Xeon(R) CPU E5-2690 v3 @ 2.60GHz
 %%    alsvinn_report.revision=ace845d81bbce8cf30948a6e12d477d9bf8cbfa4
 %%    alsvinn_report.versionControlStatus=DIRTY
