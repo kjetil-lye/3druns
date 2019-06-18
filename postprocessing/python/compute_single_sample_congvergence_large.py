@@ -72,7 +72,9 @@ def plot_convergence_single_sample(basename, title, variable, starting_resolutio
         poly = np.polyfit(np.log(resolutions), np.log(errors), 1)
         plt.loglog(resolutions, np.exp(poly[1])*resolutions**poly[0], '--',
                    color=p[0].get_color(),
-                   label=f'$\\mathcal{{O}}(N^{{{poly[0]:.1f}}})$')
+                   label=f'$\\mathcal{{O}}(N^{{{poly[0]:.1f}}})$',
+                   basex=2,
+                   basey=2)
     plt.xlabel('Resolution ($N^3$)')
     plt.ylabel(f'Error ($||{latex_variables[variable]}^{{N}}-{latex_variables[variable]}^{{N/2}}||_{{L^1(D)}}$)')
     plt.xticks(resolutions, [f"${r}^3$" for r in resolutions])
