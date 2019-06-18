@@ -72,7 +72,7 @@ def plot_convergence(basename, title, variable, starting_resolution, stat, zoom,
     max_error = np.max(errors)
     if zoom:
         plt.ylim([2**np.floor(np.log2(min_error)-1), 2**np.ceil(np.log2(max_error)+1)])
-    plt.loglog(resolutions, errors, '-o', basex=2, basey=2)
+    p = plt.loglog(resolutions, errors, '-o', basex=2, basey=2)
     if compute_rate:
         poly = np.polyfit(np.log(resolutions), np.log(errors), 1)
         plt.loglog(resolutions, np.exp(poly[1])*resolutions**poly[0], '--',
