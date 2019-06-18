@@ -5,6 +5,8 @@
 
 \begin{axis}[
 height=\figureheight,
+legend cell align={left},
+legend style={draw=white!80.0!black},
 log basis x={2},
 log basis y={2},
 tick align=outside,
@@ -26,7 +28,7 @@ ymin=1.10818807235808, ymax=3.21747264501071,
 ymode=log,
 ytick style={color=black}
 ]
-\addplot [semithick, color0, mark=*, mark size=3, mark options={solid}]
+\addplot [semithick, color0, mark=*, mark size=3, mark options={solid}, forget plot]
 table {%
 64 3.04013511597069
 128 2.24534064011392
@@ -40,6 +42,7 @@ table {%
 256 1.61438869480512
 512 1.17158881270107
 };
+\addlegendentry{$\mathcal{O}(N^{-0.5})$}
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -47,7 +50,7 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: f556a15ef2e7f6fef287da92624a881e317e5715
+Commit: cf5489281271a91ea62e373901fceac71fb0e788
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint102};
 \node at (axis cs:0.2,0.93)[
@@ -55,7 +58,7 @@ Hostname: daint102};
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@f556};
+]{@cf54};
 \end{axis}
 
 \end{tikzpicture}
@@ -69,14 +72,14 @@ Hostname: daint102};
 %% script name: ../python/compute_single_sample_congvergence_large.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : f556a15ef2e7f6fef287da92624a881e317e5715
+%% GIT git_commit : cf5489281271a91ea62e373901fceac71fb0e788
 %% GIT git_repo_modified : True
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : f556
+%% GIT git_short_commit : cf54
 %% working_directory : /scratch/snx3000/klye/3druns/postprocessing/notebooks
 %% hostname : daint102
-%% generated_on_date : 2019-06-18 11:29:25.365251
+%% generated_on_date : 2019-06-18 11:52:32.212121
 %% accessed_environment:
 %% additional_parameters:
 %%    basename=/scratch/snx3000/klye/3druns/fbm/single/H0_5/N{resolution}/fbm_0.nc
@@ -636,5 +639,5 @@ Hostname: daint102};
 %%     git.repo.fun: Unknown (/scratch/snx3000/klye/3druns/tools/.venv/lib/python3.6/site-packages/git/repo/fun.py)
 %% stacktrace:
 %%     [function: savePlot, line: 301, file: /scratch/snx3000/klye/3druns/postprocessing/python/plot_info.py]
-%%     [function: plot_convergence_single_sample, line: 88, file: ../python/compute_single_sample_congvergence_large.py]
-%%     [function: <module>, line: 123, file: ../python/compute_single_sample_congvergence_large.py]
+%%     [function: plot_convergence_single_sample, line: 89, file: ../python/compute_single_sample_congvergence_large.py]
+%%     [function: <module>, line: 124, file: ../python/compute_single_sample_congvergence_large.py]
