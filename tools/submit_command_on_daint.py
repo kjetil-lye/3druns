@@ -16,7 +16,9 @@ if __name__ == '__main__':
 Submits the configuration file CSCS Daint. NOTE: Will run in folder of configuration file!
 """)
 
-
+    parser.add_argument('-w', '--working_directory', type=str,
+                        default=os.getcwd(),
+                        help='Working directory')
 
     parser.add_argument('--command', type=str, required=True,
                         help="command to run")
@@ -56,5 +58,5 @@ srun {args.command}
     if args.dry_run:
         print(submit_file)
     else:
-        subprocess.run(['sbatch'], check = True, cwd = configuration_path,
+        subprocess.run(['sbatch'], check = True, cwd = args.working_directory,
                        input=submit_file, encoding='ascii')
