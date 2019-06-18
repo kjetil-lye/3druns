@@ -42,7 +42,7 @@ table {%
 256 0.248670460801627
 512 0.172396312326801
 };
-\addlegendentry{$\mathcal{O}(N^{-0.5})$}
+\addlegendentry{$\mathcal{O}(N^{-0.53})$}
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -50,7 +50,7 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: cf5489281271a91ea62e373901fceac71fb0e788
+Commit: ce7a7df85ce3d3d9e0290d1ab880266f705c5112
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint102};
 \node at (axis cs:0.2,0.93)[
@@ -58,7 +58,7 @@ Hostname: daint102};
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@cf54};
+]{@ce7a};
 \end{axis}
 
 \end{tikzpicture}
@@ -72,14 +72,14 @@ Hostname: daint102};
 %% script name: ../python/compute_single_sample_congvergence_large.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : cf5489281271a91ea62e373901fceac71fb0e788
+%% GIT git_commit : ce7a7df85ce3d3d9e0290d1ab880266f705c5112
 %% GIT git_repo_modified : True
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : cf54
+%% GIT git_short_commit : ce7a
 %% working_directory : /scratch/snx3000/klye/3druns/postprocessing/notebooks
 %% hostname : daint102
-%% generated_on_date : 2019-06-18 11:45:14.505260
+%% generated_on_date : 2019-06-18 12:07:00.740145
 %% accessed_environment:
 %% additional_parameters:
 %%    basename=/scratch/snx3000/klye/3druns/fbm/single/H0_75/N{resolution}/fbm_1.nc
