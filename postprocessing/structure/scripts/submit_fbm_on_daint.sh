@@ -20,7 +20,7 @@ do
     do
 	for H in 0.5;
 	do
-	    old_folder=$(
+
 	    folder="fbm/H${H//./_}/N${x}"
 	    mkdir -p ${folder}
 
