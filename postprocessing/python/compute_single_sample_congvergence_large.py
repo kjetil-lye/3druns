@@ -102,7 +102,7 @@ Computes the single sample convergence
     parser.add_argument('--not_zoom', action='store_true',
                         help='Disable zooming out of plot. We typically zoom out of plots because matplotlib zooms in so much it seems like it is converging. For fBm with low H, it is usually a good idea to disable this so that we actually see the slow convergence')
 
-    parser.add_argumetn('--compute_rate', action='store_true',
+    parser.add_argument('--compute_rate', action='store_true',
                         help='Compute the convergence rate')
 
 
