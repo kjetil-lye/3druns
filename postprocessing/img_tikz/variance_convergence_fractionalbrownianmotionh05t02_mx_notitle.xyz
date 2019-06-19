@@ -49,7 +49,7 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 5efda4b2c9b13d70a3fa8a9a348d983717f8c3e4
+Commit: ecf0e755bf4c84ef78ef8e8673a13c1f65f345b9
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint102};
 \node at (axis cs:0.2,0.93)[
@@ -57,7 +57,7 @@ Hostname: daint102};
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@5efd};
+]{@ecf0};
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -65,7 +65,7 @@ Hostname: daint102};
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 5efda4b2c9b13d70a3fa8a9a348d983717f8c3e4
+Commit: ecf0e755bf4c84ef78ef8e8673a13c1f65f345b9
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint102};
 \end{axis}
@@ -79,14 +79,14 @@ Hostname: daint102};
 %% script name: ../python/compute_mean_variance_convergence.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : 5efda4b2c9b13d70a3fa8a9a348d983717f8c3e4
+%% GIT git_commit : ecf0e755bf4c84ef78ef8e8673a13c1f65f345b9
 %% GIT git_repo_modified : True
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : 5efd
+%% GIT git_short_commit : ecf0
 %% working_directory : /scratch/snx3000/klye/3druns/postprocessing/notebooks
 %% hostname : daint102
-%% generated_on_date : 2019-06-18 17:18:19.332978
+%% generated_on_date : 2019-06-18 17:40:08.205409
 %% accessed_environment:
 %% additional_parameters:
 %%    basename=/scratch/snx3000/klye/3druns/fbm/stats/H0_5/N{resolution}/fbm_{stat}_1.nc
