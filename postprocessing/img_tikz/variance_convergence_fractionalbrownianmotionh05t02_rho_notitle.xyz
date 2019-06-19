@@ -49,7 +49,7 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 7eecf17b623b93382a2e6a42959c0bd7546c2274
+Commit: 85cbef0f91fe041fe50d5c54065195f48d7b67e1
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint102};
 \node at (axis cs:0.2,0.93)[
@@ -57,7 +57,7 @@ Hostname: daint102};
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@7eec};
+]{@85cb};
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -65,7 +65,7 @@ Hostname: daint102};
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 7eecf17b623b93382a2e6a42959c0bd7546c2274
+Commit: 85cbef0f91fe041fe50d5c54065195f48d7b67e1
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint102};
 \end{axis}
@@ -79,14 +79,14 @@ Hostname: daint102};
 %% script name: ../python/compute_mean_variance_convergence.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : 7eecf17b623b93382a2e6a42959c0bd7546c2274
+%% GIT git_commit : 85cbef0f91fe041fe50d5c54065195f48d7b67e1
 %% GIT git_repo_modified : True
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : 7eec
+%% GIT git_short_commit : 85cb
 %% working_directory : /scratch/snx3000/klye/3druns/postprocessing/notebooks
 %% hostname : daint102
-%% generated_on_date : 2019-06-19 13:57:55.502703
+%% generated_on_date : 2019-06-19 18:49:24.681263
 %% accessed_environment:
 %% additional_parameters:
 %%    commandrun=/scratch/snx3000/klye/3druns/tools/.venv/bin/python ../python/compute_mean_variance_convergence.py --input /scratch/snx3000/klye/3druns/fbm/stats/H0_5/N{resolution}/fbm_{stat}_1.nc --title Fractional Brownian motion $H=0.5, T=0.2$ --starting_resolution 32 --stat variance --variable rho --not_zoom --compute_rate
@@ -666,7 +666,7 @@ Hostname: daint102};
 %%     PIL.PpmImagePlugin: 0.2 (/scratch/snx3000/klye/3druns/tools/.venv/lib/python3.6/site-packages/PIL/PpmImagePlugin.py)
 %%     PIL.PngImagePlugin: 0.9 (/scratch/snx3000/klye/3druns/tools/.venv/lib/python3.6/site-packages/PIL/PngImagePlugin.py)
 %% stacktrace:
-%%     [function: savePlot, line: 302, file: /scratch/snx3000/klye/3druns/postprocessing/python/plot_info.py]
-%%     [function: savePlot, line: 324, file: /scratch/snx3000/klye/3druns/postprocessing/python/plot_info.py]
+%%     [function: savePlot, line: 304, file: /scratch/snx3000/klye/3druns/postprocessing/python/plot_info.py]
+%%     [function: savePlot, line: 326, file: /scratch/snx3000/klye/3druns/postprocessing/python/plot_info.py]
 %%     [function: plot_convergence, line: 97, file: ../python/compute_mean_variance_convergence.py]
 %%     [function: <module>, line: 135, file: ../python/compute_mean_variance_convergence.py]
