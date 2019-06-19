@@ -9,7 +9,7 @@ matplotlib.rcParams['savefig.dpi'] = 600
 matplotlib.rcParams['text.usetex'] = True
 matplotlib.rcParams['text.latex.preamble'] = [r'\usepackage{amsmath}'] #for \text command
 import matplotlib.pyplot as plt
-plt.rcParams.update(params)
+
 import sys
 sys.path.append('../python')
 import plot_info
