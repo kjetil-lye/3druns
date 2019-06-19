@@ -4,9 +4,11 @@ import netCDF4
 import matplotlib
 matplotlib.use('Agg')
 matplotlib.rcParams['savefig.dpi'] = 600
-import matplotlib.pyplot as plt
 # see https://stackoverflow.com/a/46262952 (for norm symbol)
-params= {'text.latex.preamble' : [r'\usepackage{amsmath}']}
+# and https://stackoverflow.com/a/23856968
+matplotlib.rcParams['text.usetex'] = True
+matplotlib.rcParams['text.latex.preamble'] = [r'\usepackage{amsmath}'] #for \text command
+import matplotlib.pyplot as plt
 plt.rcParams.update(params)
 import sys
 sys.path.append('../python')

@@ -4,10 +4,11 @@ import netCDF4
 import matplotlib
 matplotlib.use('Agg')
 matplotlib.rcParams['savefig.dpi'] = 600
-import matplotlib.pyplot as plt
 # see https://stackoverflow.com/a/46262952 (for norm symbol)
-params= {'text.latex.preamble' : [r'\usepackage{amsmath}']}
-plt.rcParams.update(params)
+# and https://stackoverflow.com/a/23856968
+matplotlib.rcParams['text.usetex'] = True
+matplotlib.rcParams['text.latex.preamble'] = [r'\usepackage{amsmath}'] #for \text command
+import matplotlib.pyplot as plt
 import sys
 sys.path.append('../python')
 import plot_info
