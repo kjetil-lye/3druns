@@ -234,6 +234,7 @@ def savePlot(name):
     try:
 
         text_function(0.95, 0.01, informationText,
+                      family='monospace',
                       fontsize=3, color=textcolor,
                       ha='right', va='bottom', alpha=0.5, transform=ax.transAxes)
     except:
@@ -243,7 +244,8 @@ def savePlot(name):
     if gitMetadata['git_short_commit'] != "unkown":
         try:
             if not name.endswith("_notitle"):
-                text_function(0.2, 0.93, "@" + gitMetadata['git_short_commit'], fontsize=10,
+                text_function(0.2, 0.93, "@" + gitMetadata['git_short_commit'],
+                              fontsize=10, family='monospace',
                               ha='right', va='bottom', color=textcolor, alpha=0.5, transform=ax.transAxes)
         except:
             # 3d plots had some issues with the text attribute

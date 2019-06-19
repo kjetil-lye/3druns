@@ -240,6 +240,7 @@ def savePlot(name):
 
         text_function(0.95, 0.01, informationText,
                       fontsize=3, color=textcolor,
+                      family='monospace',
                       ha='right', va='bottom', alpha=0.5, transform=ax.transAxes)
     except:
         # This doesn't always work for 3d plots
@@ -249,7 +250,8 @@ def savePlot(name):
         try:
             if not name.endswith("_notitle"):
                 text_function(0.2, 0.93, "@" + gitMetadata['git_short_commit'], fontsize=10,
-                              ha='right', va='bottom', color=textcolor, alpha=0.5, transform=ax.transAxes)
+                              ha='right', va='bottom', family='monospace',
+                              color=textcolor, alpha=0.5, transform=ax.transAxes)
         except:
             # 3d plots had some issues with the text attribute
             pass
