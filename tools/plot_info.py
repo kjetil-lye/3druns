@@ -462,8 +462,10 @@ get_notebook_name.name = sys.argv[0]
 def set_notebook_name(name):
     get_notebook_name.name = name
 
-add_additional_plot_parameters("command_run",
+
+add_additional_plot_parameters("commandrun",
                                " ".join([
                                    sys.executable,
                                    *sys.argv]))
                                    
+

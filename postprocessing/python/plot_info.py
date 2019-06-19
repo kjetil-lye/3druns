@@ -283,6 +283,7 @@ def savePlot(name):
                         f.write("%%    {}={}\n".format(k, environment_value))
                     f.write("%% additional_parameters:\n")
 
+
                     for k in get_additional_plot_parameters():
                         environment_value = get_additional_plot_parameters()[k]
                         environment_value = environment_value.replace("\n", "")
@@ -458,7 +459,7 @@ def set_notebook_name(name):
     get_notebook_name.name = name
 
 
-add_additional_plot_parameters("command_run",
+add_additional_plot_parameters("commandrun",
                                " ".join([
                                    sys.executable,
                                    *sys.argv]))

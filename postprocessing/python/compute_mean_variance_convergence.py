@@ -86,7 +86,7 @@ def plot_convergence(basename, title, variable, starting_resolution, stat, zoom,
         plt.legend()
 
     plt.xlabel('Resolution ($N^3$)')
-    plt.ylabel(f'Error ($\|{latex_stat[stat]}({latex_variables[variable]}^{{N}})-{latex_stat[stat]}({latex_variables[variable]}^{{N/2}})\|_{{L^1(D)}}$)')
+    plt.ylabel(f'Error ($\\lVert{latex_stat[stat]}({latex_variables[variable]}^{{N}})-{latex_stat[stat]}({latex_variables[variable]}^{{N/2}})\\rVert_{{L^1(D)}}$)')
     plt.xticks(resolutions, [f"${r}^3$" for r in resolutions])
     plt.title(f"Convergence of {stat},\n"
               f"{title}\n"
@@ -105,7 +105,8 @@ if __name__ == '__main__':
 Computes the stat convergence
             """)
 
-    parser.add_argument('--input_basename', type=str, required=True,                        help='Input filename (should have a format string {resolution})')
+    parser.add_argument('--input_basename', type=str, required=True,     
+                        help='Input filename (should have a format string {resolution})')
 
     parser.add_argument('--title', type=str, required=True,
                         help='Title of plot')

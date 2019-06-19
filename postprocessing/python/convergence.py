@@ -239,7 +239,7 @@ def wasserstein_1pt(filenames, variable, setup, title):
     
     saveData(f"wasserstein_1pt_{title}_{variable}_errors", errors)
     saveData(f"wasserstein_1pt_{title}_{variable}_resolutions", resolutions)
-    plt.ylabel("Error ($\|W_1(\\nu^{1,N}, \\nu^{1,2\\cdot N })\|_{L^1(D)}$")
+    plt.ylabel("Error ($\\lVert W_1(\\nu^{1,N}, \\nu^{1,2\\cdot N })\\rVert_{L^1(D)}$")
     plt.title(f"One point $W_1$-convergence\n{setup}\nVariable: ${variable}$")
 
         
