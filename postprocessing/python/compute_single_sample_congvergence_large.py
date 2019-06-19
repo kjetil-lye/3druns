@@ -80,7 +80,7 @@ def plot_convergence_single_sample(basename, title, variable, starting_resolutio
                    basey=2)
         plt.legend()
     plt.xlabel('Resolution ($N^3$)')
-    plt.ylabel(f'Error ($\\lVert{latex_variables[variable]}^{{N}}-{latex_variables[variable]}^{{N/2}}\\rVert_{{L^1(D)}}$)')
+    plt.ylabel(f'Error ($\\lVert {latex_variables[variable]}^{{N}}-{latex_variables[variable]}^{{N/2}}\\rVert_{{L^1(D)}}$)')
     plt.xticks(resolutions, [f"${r}^3$" for r in resolutions])
     plt.title(f"Convergence of single sample,\n"
               f"{title}\n"
