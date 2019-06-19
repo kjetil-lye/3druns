@@ -132,7 +132,7 @@ table [row sep=\\]{%
   rotate=0.0,
   align=right
 ]{ By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 9e10a5352e5d999283bf0f23e708e6f1cf85f066
+Commit: 944ab372e7ed095ee69ba83795cb0457736b5f7b
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: galerkin};
 \node at (axis cs:0.2,0.93)[
@@ -140,7 +140,7 @@ Hostname: galerkin};
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{ @9e10};
+]{ @944ab};
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -148,7 +148,7 @@ Hostname: galerkin};
   rotate=0.0,
   align=right
 ]{ By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 9e10a5352e5d999283bf0f23e708e6f1cf85f066
+Commit: 944ab372e7ed095ee69ba83795cb0457736b5f7b
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: galerkin};
 \end{axis}
@@ -162,14 +162,14 @@ Hostname: galerkin};
 %% script name: structure_postprocess.ipynb
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : 9e10a5352e5d999283bf0f23e708e6f1cf85f066
-%% GIT git_repo_modified : True
+%% GIT git_commit : 944ab372e7ed095ee69ba83795cb0457736b5f7b
+%% GIT git_repo_modified : False
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : 9e10
+%% GIT git_short_commit : 944ab
 %% working_directory : /home/kjetil/projects/3druns/postprocessing/notebooks
 %% hostname : galerkin
-%% generated_on_date : 2019-06-19 09:37:45.120805
+%% generated_on_date : 2019-06-19 09:39:15.985479
 %% accessed_environment:
 %% additional_parameters:
 %%    command_run=/usr/bin/python3 /usr/lib/python3.7/site-packages/ipykernel_launcher.py -f /run/user/1000/jupyter/kernel-1b02059f-1b4e-4504-ab10-77d0e032f00c.json
