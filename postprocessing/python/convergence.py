@@ -1,8 +1,14 @@
 import numpy as np
+import matplotlib.pyplot as plt
+# see https://stackoverflow.com/a/46262952 (for norm symbol)
+params= {'text.latex.preamble' : [r'\usepackage{amsmath}']}
+plt.rcParams.update(params)
+
 from plot_info import *
 import netCDF4
 import scipy
 import scipy.stats
+
 
 def load(filename, variable):
     with netCDF4.Dataset(filename) as f:
@@ -190,7 +196,7 @@ def progress(part, total):
             pass
     
 
-def wasserstein_1pt(filenames, variable, setup):
+def wasserstein_1pt(filenames, variable, setup, title):
     # don't judge me for the next line
     resolutions = np.array(sorted(list([k for k in filenames.keys()])))
 
@@ -216,23 +222,27 @@ def wasserstein_1pt(filenames, variable, setup):
         print()
         console_log("")
         console_log("Done with {}".format(r))
-    plt.loglog(resolutions[1:], errors, '-o')
+    plt.loglog(resolutions[1:], errors, '-o', basex=2, basey=2)
     plt.xlabel("Resolution ($N^3$)")
     
     plt.xticks(resolutions[1:], ["${}^{{3}}$".format(r) for r in resolutions[1:]])
-    plt.ylabel("Error ($||W_1(\\nu^{1,N}, \\nu^{1,2\\cdot N })||_{L^1(D)}$")
+    
+    saveData(f"wasserstein_1pt_{title}_{variable}_errors", errors)
+    saveData(f"wasserstein_1pt_{title}_{variable}_resolutions", resolutions)
+    plt.ylabel("Error ($\|W_1(\\nu^{1,N}, \\nu^{1,2\\cdot N })\|_{L^1(D)}$")
     plt.title("One point $W_1$-convergence of {variable} ({setup})".format(variable = variable, setup = setup))
 
         
         
 
 
-def plot_wasserstein_convergence(resolutions, basename, variable, setup):
+def plot_wasserstein_convergence(resolutions, basename, variable, title):
     filenames = {}
 
     for r in resolutions:
         filenames[r] = basename.format(resolution=r)
     
     wasserstein_1pt(filenames, variable, setup)
-    showAndSave("wasserstein_1pt_{setup}_{variable}".format(setup=setup, variable=variable))
+    
+    showAndSave(f"wasserstein_1pt_{title}_{variable}")
     

@@ -4,17 +4,32 @@ import numpy as np
 import convergence
 if __name__ == '__main__':
 
+    import argparse
+
+    parser = argparse.ArgumentParser(description="""
+Computes the 1 pt wasserstein convergence
+            """)
+
+    parser.add_argument('--input_basename', type=str, required=True,                        help='Input filename (should have a format string {resolution})')
+
+    parser.add_argument('--title', type=str, required=True,
+                        help='Title of plot')
+
+
+    parser.add_argument('--variable', type=str, default='rho',
+                        help='Variable')
+
+    parser.add_argument('--starting_resolution', type=int, default=32,
+                        help='Starting resolution (smallest resolution)')
+
+    args = parser.parse_args()
+
+
+    basename = args.input_basename
+    starting_resolution = args.starting_resolution
     
-
-    basename = sys.argv[1]
-    if len(sys.argv) > 2:
-        starting_resolution = int(sys.argv[2])
-    else:
-        starting_resolution = 64
-
     resolutions = 2**np.arange(int(np.log2(starting_resolution)), 10)
     print(resolutions)
-    variable = 'rho'
-    setup = basename.format(resolution='res')
+    variable = args.variable
 
-    convergence.plot_wasserstein_convergence(resolutions, basename, variable, setup)
+    convergence.plot_wasserstein_convergence(resolutions, basename, variable, args.title)

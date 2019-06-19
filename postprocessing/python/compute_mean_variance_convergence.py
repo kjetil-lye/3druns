@@ -5,6 +5,9 @@ import matplotlib
 matplotlib.use('Agg')
 matplotlib.rcParams['savefig.dpi'] = 600
 import matplotlib.pyplot as plt
+# see https://stackoverflow.com/a/46262952 (for norm symbol)
+params= {'text.latex.preamble' : [r'\usepackage{amsmath}']}
+plt.rcParams.update(params)
 import sys
 sys.path.append('../python')
 import plot_info
@@ -83,7 +86,7 @@ def plot_convergence(basename, title, variable, starting_resolution, stat, zoom,
         plt.legend()
 
     plt.xlabel('Resolution ($N^3$)')
-    plt.ylabel(f'Error ($||{latex_stat[stat]}({latex_variables[variable]}^{{N}})-{latex_stat[stat]}({latex_variables[variable]}^{{N/2}})||_{{L^1(D)}}$)')
+    plt.ylabel(f'Error ($\|{latex_stat[stat]}({latex_variables[variable]}^{{N}})-{latex_stat[stat]}({latex_variables[variable]}^{{N/2}})\|_{{L^1(D)}}$)')
     plt.xticks(resolutions, [f"${r}^3$" for r in resolutions])
     plt.title(f"Convergence of {stat},\n"
               f"{title}\n"
