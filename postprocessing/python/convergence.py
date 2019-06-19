@@ -205,7 +205,7 @@ def progress(part, total):
             pass
     
 
-def wasserstein_1pt(filenames, variable, setup, title):
+def wasserstein_1pt(filenames, variable, title):
     # don't judge me for the next line
     resolutions = np.array(sorted(list([k for k in filenames.keys()])))
 
@@ -239,7 +239,7 @@ def wasserstein_1pt(filenames, variable, setup, title):
     saveData(f"wasserstein_1pt_{title}_{variable}_errors", errors)
     saveData(f"wasserstein_1pt_{title}_{variable}_resolutions", resolutions)
     plt.ylabel("Error ($\\lVert W_1(\\nu^{1,N}, \\nu^{1,2\\cdot N })\\rVert_{L^1(D)}$")
-    plt.title(f"One point $W_1$-convergence\n{setup}\nVariable: ${variable}$")
+    plt.title(f"One point $W_1$-convergence\n{title}\nVariable: ${variable}$")
 
         
         
