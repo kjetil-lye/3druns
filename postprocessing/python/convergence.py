@@ -8,7 +8,17 @@ from plot_info import *
 import netCDF4
 import scipy
 import scipy.stats
-
+latex_variables = {
+    'rho' : '\\rho',
+    'E'   : 'E',
+    'mx' : 'm_x',
+    'my' : 'm_y',
+    'mz' : 'm_z',
+    'ux' : 'u_x',
+    'uy' : 'u_y',
+    'uz' : 'u_z',
+    'p'  : 'p'
+}
 
 def load(filename, variable):
     with netCDF4.Dataset(filename) as f:
@@ -230,7 +240,7 @@ def wasserstein_1pt(filenames, variable, setup, title):
     saveData(f"wasserstein_1pt_{title}_{variable}_errors", errors)
     saveData(f"wasserstein_1pt_{title}_{variable}_resolutions", resolutions)
     plt.ylabel("Error ($\|W_1(\\nu^{1,N}, \\nu^{1,2\\cdot N })\|_{L^1(D)}$")
-    plt.title("One point $W_1$-convergence of {variable} ({setup})".format(variable = variable, setup = setup))
+    plt.title(f"One point $W_1$-convergence\n{setup}\nVariable: ${variable}$")
 
         
         
