@@ -18,7 +18,7 @@ for t in 1;
 do
     for x in 32 64 128 256 512; 
     do
-	for H in 0.5;
+	for H in 0.1 0.5 0.75;
 	do
 
 	    folder="fbm/H${H//./_}/N${x}"
