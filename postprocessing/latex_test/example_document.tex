@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+\usepackage{etoolbox}
+\newlength\figureheight
+\newlength\figurewidth
+
+\newtoggle{usetikz}
+\toggletrue{usetikz}
+\newcommand{\InputImage}[3]{}
+\iftoggle{usetikz}{%
+	\renewcommand{\InputImage}[3]{%
+		\setlength\figureheight{#2}%
+		\setlength\figurewidth{#1}%
+		\input{../img_tikz/#3.xyz}%
+	}%
+} { %
+  \renewcommand{\InputImage}[3]{%
+		%%% THIS DISABLES PICTURES: VERY USEFUL TO AVOID HOUR LONG COMPILES
+		\includegraphics[width=#1]{../img/#3_notitle}%
+	}%
+}
+\pgfplotsset{every tick label/.append style={font=\tiny}}
+\pgfplotsset{
+	tick label style = {font = {\fontsize{6 pt}{12 pt}\selectfont}},
+	label style = {font = {\fontsize{6 pt}{12 pt}\selectfont}},
+	legend style = {font = {\fontsize{6 pt}{12 pt}\selectfont}},  
+}
+\begin{document}
+hello, world
+\begin{figure}
+
+  \InputImage{0.7\textwidth}{0.6\textwidth}{single_sample_convergence_fractionalbrownianmotionh05t02_rho}
+    \caption{A very nice convergence}
+\end{figure}
+
+\end{document}
