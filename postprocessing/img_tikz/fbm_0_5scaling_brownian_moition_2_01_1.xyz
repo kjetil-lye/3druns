@@ -4,29 +4,27 @@
 \definecolor{color0}{rgb}{0.12156862745098,0.466666666666667,0.705882352941177}
 \definecolor{color1}{rgb}{1,0.498039215686275,0.0549019607843137}
 \definecolor{color2}{rgb}{0.172549019607843,0.627450980392157,0.172549019607843}
+\definecolor{color3}{rgb}{0.83921568627451,0.152941176470588,0.156862745098039}
 
 \begin{axis}[
 height=\figureheight,
 legend cell align={left},
-legend entries={{$N=64$},{$\mathcal{O}(h^{0.41})$},{$N=128$},{$\mathcal{O}(h^{1.09})$},{$N=256$},{$\mathcal{O}(h^{0.95})$}},
+legend entries={{$N=64$},{$\mathcal{O}(h^{0.12})$},{$N=128$},{$\mathcal{O}(h^{0.84})$},{$N=256$},{$\mathcal{O}(h^{0.78})$},{$N=512$},{$\mathcal{O}(h^{0.72})$}},
 legend style={at={(1,0.5)}, anchor=west, draw=white!80.0!black},
 tick align=outside,
 tick pos=left,
+title={Scaling for Brownian moition, $t=0.2,p=2$},
 width=\figurewidth,
 x grid style={white!69.01960784313725!black},
 xlabel={$h$},
 xmajorgrids,
-xmin=0.00405039221514179, xmax=0.0344433134277453,
+xmin=0.00181950896461673, xmax=0.0357811738951122,
 xmode=log,
-xtick={0.001953125,0.00390625,0.0078125,0.015625,0.03125,0.0625,0.125},
-xticklabels={$\mathdefault{2^{-9}}$,$\mathdefault{2^{-8}}$,$\mathdefault{2^{-7}}$,$\mathdefault{2^{-6}}$,$\mathdefault{2^{-5}}$,$\mathdefault{2^{-4}}$,$\mathdefault{2^{-3}}$},
 y grid style={white!69.01960784313725!black},
-ylabel={$\left(\bar{S}^{1}_{1/N,N}(h)\right)^{\frac{1}{1}}$},
+ylabel={$\left(\bar{S}^{2}_{1/N,N}(h)\right)^{\frac{1}{2}}$},
 ymajorgrids,
-ymin=0.0463285995683511, ymax=0.382824541199955,
-ymode=log,
-ytick={0.015625,0.03125,0.0625,0.125,0.25,0.5,1},
-yticklabels={$\mathdefault{2^{-6}}$,$\mathdefault{2^{-5}}$,$\mathdefault{2^{-4}}$,$\mathdefault{2^{-3}}$,$\mathdefault{2^{-2}}$,$\mathdefault{2^{-1}}$,$\mathdefault{2^{0}}$}
+ymin=0.150533778513716, ymax=1.46959232837441,
+ymode=log
 ]
 \addlegendimage{no markers, color0}
 \addlegendimage{no markers, color0}
@@ -34,58 +32,84 @@ yticklabels={$\mathdefault{2^{-6}}$,$\mathdefault{2^{-5}}$,$\mathdefault{2^{-4}}
 \addlegendimage{no markers, color1}
 \addlegendimage{no markers, color2}
 \addlegendimage{no markers, color2}
+\addlegendimage{no markers, color3}
+\addlegendimage{no markers, color3}
 \addplot [semithick, color0]
 table [row sep=\\]{%
-0.03125	0.0571902241653902 \\
+0.03125	0.448949228313223 \\
 };
 \addplot [semithick, color0, dashed]
 table [row sep=\\]{%
-0.03125	0.0571902241653902 \\
+0.03125	0.448949228313223 \\
 };
 \addplot [semithick, color1]
 table [row sep=\\]{%
-0.0104166666666667	0.0568789727943304 \\
-0.0208333333333333	0.127603589283775 \\
-0.03125	0.187501472877967 \\
+0.0104166666666667	0.325518971578936 \\
+0.0208333333333333	0.5984878973259 \\
+0.03125	0.815434450501597 \\
 };
 \addplot [semithick, color1, dashed]
 table [row sep=\\]{%
-0.0104166666666667	0.0576419169188743 \\
-0.0208333333333333	0.123078966721896 \\
-0.03125	0.19182140253905 \\
+0.0104166666666667	0.327845219506551 \\
+0.0208333333333333	0.587051323832525 \\
+0.03125	0.825421554848113 \\
 };
 \addplot [semithick, color2]
 table [row sep=\\]{%
-0.00446428571428571	0.0509962023847437 \\
-0.00892857142857143	0.113826673629547 \\
-0.0133928571428571	0.166494653796692 \\
-0.0178571428571429	0.212866757751134 \\
-0.0223214285714286	0.254403966396653 \\
-0.0267857142857143	0.291930800853854 \\
-0.03125	0.326030941434823 \\
+0.00446428571428571	0.233263057163677 \\
+0.00892857142857143	0.433006982796214 \\
+0.0133928571428571	0.596527307233008 \\
+0.0178571428571429	0.738317639266626 \\
+0.0223214285714286	0.862657013892197 \\
+0.0267857142857143	0.972454889878616 \\
+0.03125	1.07015711094552 \\
 };
 \addplot [semithick, color2, dashed]
 table [row sep=\\]{%
-0.00446428571428571	0.0552814600797451 \\
-0.00892857142857143	0.106437200252379 \\
-0.0133928571428571	0.156143326169715 \\
-0.0178571428571429	0.204930867984002 \\
-0.0223214285714286	0.253046543430449 \\
-0.0267857142857143	0.30063349360933 \\
-0.03125	0.347785208403996 \\
+0.00446428571428571	0.243808067203718 \\
+0.00892857142857143	0.418974753554608 \\
+0.0133928571428571	0.575089991411989 \\
+0.0178571428571429	0.719991943373511 \\
+0.0223214285714286	0.857088640124912 \\
+0.0267857142857143	0.988269954259682 \\
+0.03125	1.11472796820063 \\
 };
-\path [draw=black, fill opacity=0] (axis cs:0,0.0463285995683511)
---(axis cs:0,0.382824541199955);
-
-\path [draw=black, fill opacity=0] (axis cs:1,0.0463285995683511)
---(axis cs:1,0.382824541199955);
-
-\path [draw=black, fill opacity=0] (axis cs:0.00405039221514179,0)
---(axis cs:0.0344433134277453,0);
-
-\path [draw=black, fill opacity=0] (axis cs:0.00405039221514179,1)
---(axis cs:0.0344433134277453,1);
-
+\addplot [semithick, color3]
+table [row sep=\\]{%
+0.00208333333333333	0.166960637886002 \\
+0.00416666666666667	0.311731349942213 \\
+0.00625	0.432455860721679 \\
+0.00833333333333333	0.53928463668654 \\
+0.0104166666666667	0.634857361008536 \\
+0.0125	0.720807692485202 \\
+0.0145833333333333	0.798515307701751 \\
+0.0166666666666667	0.869191919558402 \\
+0.01875	0.933881266447815 \\
+0.0208333333333333	0.993462974025551 \\
+0.0229166666666667	1.04866761406918 \\
+0.025	1.10009743562484 \\
+0.0270833333333333	1.14824792020339 \\
+0.0291666666666667	1.19352750348574 \\
+0.03125	1.23627442408053 \\
+};
+\addplot [semithick, color3, dashed]
+table [row sep=\\]{%
+0.00208333333333333	0.187556361159835 \\
+0.00416666666666667	0.3093583935228 \\
+0.00625	0.414564267083877 \\
+0.00833333333333333	0.510260569415987 \\
+0.0104166666666667	0.599455123169892 \\
+0.0125	0.683788781590469 \\
+0.0145833333333333	0.764283598564264 \\
+0.0166666666666667	0.841631758349358 \\
+0.01875	0.916330059295247 \\
+0.0208333333333333	0.988750649383806 \\
+0.0229166666666667	1.05918162299382 \\
+0.025	1.12785190368174 \\
+0.0270833333333333	1.19494730131111 \\
+0.0291666666666667	1.26062131289791 \\
+0.03125	1.32500264053865 \\
+};
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -102,23 +126,13 @@ Hostname: galerkin};
   text=white!50.19607843137255!black,
   rotate=0.0
 ]{ @9e10};
-\node at (axis cs:0.95,0.01)[
-  scale=0.15,
-  anchor=south east,
-  text=white!50.19607843137255!black,
-  rotate=0.0,
-  align=right
-]{ By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 9e10a5352e5d999283bf0f23e708e6f1cf85f066
-Repo: git@github.com:kjetil-lye/3druns.git
-Hostname: galerkin};
 \end{axis}
 
 \end{tikzpicture}
 
 %% INCLUDE THE COMMENTS AT THE END WHEN COPYING
 %%%%%%%%%%%%%TITLE%%%%%%%%%%%%%%%%%
-%% None
+%% Scaling for Brownian moition, $t=0.2,p=2$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% script name: structure_postprocess.ipynb
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
@@ -130,7 +144,7 @@ Hostname: galerkin};
 %% GIT git_short_commit : 9e10
 %% working_directory : /home/kjetil/projects/3druns/postprocessing/notebooks
 %% hostname : galerkin
-%% generated_on_date : 2019-06-19 09:37:27.607881
+%% generated_on_date : 2019-06-19 09:37:44.421441
 %% accessed_environment:
 %% additional_parameters:
 %%    command_run=/usr/bin/python3 /usr/lib/python3.7/site-packages/ipykernel_launcher.py -f /run/user/1000/jupyter/kernel-1b02059f-1b4e-4504-ab10-77d0e032f00c.json
@@ -1207,7 +1221,6 @@ Hostname: galerkin};
 %%     PIL.PngImagePlugin: 0.9 (/usr/lib/python3.7/site-packages/PIL/PngImagePlugin.py)
 %% stacktrace:
 %%     [function: savePlot, line: 301, file: ../python/plot_info.py]
-%%     [function: savePlot, line: 323, file: ../python/plot_info.py]
 %%     [function: showAndSave, line: 335, file: ../python/plot_info.py]
 %%     [function: convergence_structure_functions, line: 58, file: <ipython-input-4-65bb3c28d040>]
 %%     [function: for_each_config, line: 33, file: <ipython-input-1-2f06f042b968>]

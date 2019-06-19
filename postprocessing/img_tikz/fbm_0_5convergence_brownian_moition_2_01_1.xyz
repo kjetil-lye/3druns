@@ -2,90 +2,32 @@
 \begin{tikzpicture}
 
 \definecolor{color0}{rgb}{0.12156862745098,0.466666666666667,0.705882352941177}
-\definecolor{color1}{rgb}{1,0.498039215686275,0.0549019607843137}
-\definecolor{color2}{rgb}{0.172549019607843,0.627450980392157,0.172549019607843}
 
 \begin{axis}[
 height=\figureheight,
-legend cell align={left},
-legend entries={{$N=64$},{$\mathcal{O}(h^{0.41})$},{$N=128$},{$\mathcal{O}(h^{1.09})$},{$N=256$},{$\mathcal{O}(h^{0.95})$}},
-legend style={at={(1,0.5)}, anchor=west, draw=white!80.0!black},
 tick align=outside,
 tick pos=left,
+title={Brownian moition, $p=2, t=0.2$},
 width=\figurewidth,
 x grid style={white!69.01960784313725!black},
-xlabel={$h$},
+xlabel={Resolution},
 xmajorgrids,
-xmin=0.00405039221514179, xmax=0.0344433134277453,
+xmin=119.428222916711, xmax=548.748012818582,
 xmode=log,
-xtick={0.001953125,0.00390625,0.0078125,0.015625,0.03125,0.0625,0.125},
-xticklabels={$\mathdefault{2^{-9}}$,$\mathdefault{2^{-8}}$,$\mathdefault{2^{-7}}$,$\mathdefault{2^{-6}}$,$\mathdefault{2^{-5}}$,$\mathdefault{2^{-4}}$,$\mathdefault{2^{-3}}$},
+xtick={128,256,512},
+xticklabels={$128 \times 128$,$256 \times 256$,$512 \times 512$},
 y grid style={white!69.01960784313725!black},
-ylabel={$\left(\bar{S}^{1}_{1/N,N}(h)\right)^{\frac{1}{1}}$},
+ylabel={$|S^{2}_{\Delta x,M}(h_{\max})-S^{2}_{2\Delta x,M}(h_{\max})|$},
 ymajorgrids,
-ymin=0.0463285995683511, ymax=0.382824541199955,
-ymode=log,
-ytick={0.015625,0.03125,0.0625,0.125,0.25,0.5,1},
-yticklabels={$\mathdefault{2^{-6}}$,$\mathdefault{2^{-5}}$,$\mathdefault{2^{-4}}$,$\mathdefault{2^{-3}}$,$\mathdefault{2^{-2}}$,$\mathdefault{2^{-1}}$,$\mathdefault{2^{0}}$}
+ymin=0.113636363636364, ymax=0.55,
+ymode=log
 ]
-\addlegendimage{no markers, color0}
-\addlegendimage{no markers, color0}
-\addlegendimage{no markers, color1}
-\addlegendimage{no markers, color1}
-\addlegendimage{no markers, color2}
-\addlegendimage{no markers, color2}
-\addplot [semithick, color0]
+\addplot [semithick, color0, mark=*, mark size=3, mark options={solid}, forget plot]
 table [row sep=\\]{%
-0.03125	0.0571902241653902 \\
+128	0.366485222188374 \\
+256	0.254722660443922 \\
+512	0.166117313135012 \\
 };
-\addplot [semithick, color0, dashed]
-table [row sep=\\]{%
-0.03125	0.0571902241653902 \\
-};
-\addplot [semithick, color1]
-table [row sep=\\]{%
-0.0104166666666667	0.0568789727943304 \\
-0.0208333333333333	0.127603589283775 \\
-0.03125	0.187501472877967 \\
-};
-\addplot [semithick, color1, dashed]
-table [row sep=\\]{%
-0.0104166666666667	0.0576419169188743 \\
-0.0208333333333333	0.123078966721896 \\
-0.03125	0.19182140253905 \\
-};
-\addplot [semithick, color2]
-table [row sep=\\]{%
-0.00446428571428571	0.0509962023847437 \\
-0.00892857142857143	0.113826673629547 \\
-0.0133928571428571	0.166494653796692 \\
-0.0178571428571429	0.212866757751134 \\
-0.0223214285714286	0.254403966396653 \\
-0.0267857142857143	0.291930800853854 \\
-0.03125	0.326030941434823 \\
-};
-\addplot [semithick, color2, dashed]
-table [row sep=\\]{%
-0.00446428571428571	0.0552814600797451 \\
-0.00892857142857143	0.106437200252379 \\
-0.0133928571428571	0.156143326169715 \\
-0.0178571428571429	0.204930867984002 \\
-0.0223214285714286	0.253046543430449 \\
-0.0267857142857143	0.30063349360933 \\
-0.03125	0.347785208403996 \\
-};
-\path [draw=black, fill opacity=0] (axis cs:0,0.0463285995683511)
---(axis cs:0,0.382824541199955);
-
-\path [draw=black, fill opacity=0] (axis cs:1,0.0463285995683511)
---(axis cs:1,0.382824541199955);
-
-\path [draw=black, fill opacity=0] (axis cs:0.00405039221514179,0)
---(axis cs:0.0344433134277453,0);
-
-\path [draw=black, fill opacity=0] (axis cs:0.00405039221514179,1)
---(axis cs:0.0344433134277453,1);
-
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -102,23 +44,13 @@ Hostname: galerkin};
   text=white!50.19607843137255!black,
   rotate=0.0
 ]{ @9e10};
-\node at (axis cs:0.95,0.01)[
-  scale=0.15,
-  anchor=south east,
-  text=white!50.19607843137255!black,
-  rotate=0.0,
-  align=right
-]{ By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 9e10a5352e5d999283bf0f23e708e6f1cf85f066
-Repo: git@github.com:kjetil-lye/3druns.git
-Hostname: galerkin};
 \end{axis}
 
 \end{tikzpicture}
 
 %% INCLUDE THE COMMENTS AT THE END WHEN COPYING
 %%%%%%%%%%%%%TITLE%%%%%%%%%%%%%%%%%
-%% None
+%% Brownian moition, $p=2, t=0.2$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% script name: structure_postprocess.ipynb
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
@@ -130,7 +62,7 @@ Hostname: galerkin};
 %% GIT git_short_commit : 9e10
 %% working_directory : /home/kjetil/projects/3druns/postprocessing/notebooks
 %% hostname : galerkin
-%% generated_on_date : 2019-06-19 09:37:27.607881
+%% generated_on_date : 2019-06-19 09:37:45.946955
 %% accessed_environment:
 %% additional_parameters:
 %%    command_run=/usr/bin/python3 /usr/lib/python3.7/site-packages/ipykernel_launcher.py -f /run/user/1000/jupyter/kernel-1b02059f-1b4e-4504-ab10-77d0e032f00c.json
@@ -1207,9 +1139,8 @@ Hostname: galerkin};
 %%     PIL.PngImagePlugin: 0.9 (/usr/lib/python3.7/site-packages/PIL/PngImagePlugin.py)
 %% stacktrace:
 %%     [function: savePlot, line: 301, file: ../python/plot_info.py]
-%%     [function: savePlot, line: 323, file: ../python/plot_info.py]
 %%     [function: showAndSave, line: 335, file: ../python/plot_info.py]
-%%     [function: convergence_structure_functions, line: 58, file: <ipython-input-4-65bb3c28d040>]
+%%     [function: convergence_structure_functions, line: 74, file: <ipython-input-4-65bb3c28d040>]
 %%     [function: for_each_config, line: 33, file: <ipython-input-1-2f06f042b968>]
 %%     [function: <module>, line: 76, file: <ipython-input-4-65bb3c28d040>]
 %%     [function: run_code, line: 3296, file: /usr/lib/python3.7/site-packages/IPython/core/interactiveshell.py]

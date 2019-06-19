@@ -46,5 +46,30 @@
             "E"
         ],
         "cube_filename": "../structure/scripts/kh_N{resolution}_{perturbation}/structure_cuda_t_{t}_p_{p}_structure_cube_{p}.000000_0.nc"
+    },
+
+    "fbm_0_5": {
+        "name": "Brownian moition",
+        "Tarray": [
+            1
+        ],
+        "maxT": 0.2,
+        "perturbations": [
+            0.1
+        ],
+        "resolutions": [
+	    64,
+            128,
+            256,
+	    512
+        ],
+        "variables": [
+            "rho",
+            "mx",
+            "my",
+	    "mz",
+            "E"
+        ],
+        "cube_filename": "../structure/scripts/fbm/H0_5/N{resolution}/structure_fbm_cuda_t_{t}_p_{p}_structure_cube_{p}.000000_0.nc"
     }
 }
