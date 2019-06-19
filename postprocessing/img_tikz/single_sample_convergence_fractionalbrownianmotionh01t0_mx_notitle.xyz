@@ -20,12 +20,12 @@ xtick style={color=black},
 xtick={64,128,256,512},
 xticklabels={\(\displaystyle 64^3\),\(\displaystyle 128^3\),\(\displaystyle 256^3\),\(\displaystyle 512^3\)},
 y grid style={white!69.01960784313725!black},
-ylabel={Error (\(\displaystyle \|m_x^{N}-m_x^{N/2}\|_{L^1(D)}\))},
+ylabel={Error (\(\displaystyle \lVert m_x^{N}-m_x^{N/2}\rVert_{L^1(D)}\))},
 ymin=13.4616197827344, ymax=16.0935013067259,
 ymode=log,
 ytick style={color=black},
 ytick={4,8,16,32,64},
-yticklabels={\(\displaystyle {2^{2}}\),\(\displaystyle {2^{3}}\),\(\displaystyle {2^{4}}\),\(\displaystyle {2^{5}}\),\(\displaystyle {2^{6}}\)}
+yticklabels={\(\displaystyle 2^{2}\),\(\displaystyle 2^{3}\),\(\displaystyle 2^{4}\),\(\displaystyle 2^{5}\),\(\displaystyle 2^{6}\)}
 ]
 \addplot [semithick, color0, mark=*, mark size=3, mark options={solid}, forget plot]
 table {%
@@ -49,7 +49,7 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: b4973f13ce2aba934063ab753f58167538d85c7a
+Commit: d037d1cd65001a90a88d3d156ee35186ff04a239
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint102};
 \node at (axis cs:0.2,0.93)[
@@ -57,7 +57,7 @@ Hostname: daint102};
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@b497};
+]{@d037};
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -65,7 +65,7 @@ Hostname: daint102};
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: b4973f13ce2aba934063ab753f58167538d85c7a
+Commit: d037d1cd65001a90a88d3d156ee35186ff04a239
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint102};
 \end{axis}
@@ -79,17 +79,17 @@ Hostname: daint102};
 %% script name: ../python/compute_single_sample_congvergence_large.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : b4973f13ce2aba934063ab753f58167538d85c7a
+%% GIT git_commit : d037d1cd65001a90a88d3d156ee35186ff04a239
 %% GIT git_repo_modified : True
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : b497
+%% GIT git_short_commit : d037
 %% working_directory : /scratch/snx3000/klye/3druns/postprocessing/notebooks
 %% hostname : daint102
-%% generated_on_date : 2019-06-19 10:20:30.649546
+%% generated_on_date : 2019-06-19 13:14:58.715557
 %% accessed_environment:
 %% additional_parameters:
-%%    command_run=/scratch/snx3000/klye/3druns/tools/.venv/bin/python ../python/compute_single_sample_congvergence_large.py --input /scratch/snx3000/klye/3druns/fbm/single/H0_1/N{resolution}/fbm_0.nc --title Fractional Brownian motion $H=0.1, T=0$ --starting_resolution 32 --variable mx --not_zoom --compute_rate
+%%    commandrun=/scratch/snx3000/klye/3druns/tools/.venv/bin/python ../python/compute_single_sample_congvergence_large.py --input /scratch/snx3000/klye/3druns/fbm/single/H0_1/N{resolution}/fbm_0.nc --title Fractional Brownian motion $H=0.1, T=0$ --starting_resolution 32 --variable mx --not_zoom --compute_rate
 %%    basename=/scratch/snx3000/klye/3druns/fbm/single/H0_1/N{resolution}/fbm_0.nc
 %%    alsvinn_report.software=alsvinn https://github.com/alsvinn
 %%    alsvinn_report.softwareVersion=0.4.2
@@ -662,7 +662,7 @@ Hostname: daint102};
 %%     PIL.PpmImagePlugin: 0.2 (/scratch/snx3000/klye/3druns/tools/.venv/lib/python3.6/site-packages/PIL/PpmImagePlugin.py)
 %%     PIL.PngImagePlugin: 0.9 (/scratch/snx3000/klye/3druns/tools/.venv/lib/python3.6/site-packages/PIL/PngImagePlugin.py)
 %% stacktrace:
-%%     [function: savePlot, line: 301, file: /scratch/snx3000/klye/3druns/postprocessing/python/plot_info.py]
-%%     [function: savePlot, line: 323, file: /scratch/snx3000/klye/3druns/postprocessing/python/plot_info.py]
-%%     [function: plot_convergence_single_sample, line: 92, file: ../python/compute_single_sample_congvergence_large.py]
-%%     [function: <module>, line: 127, file: ../python/compute_single_sample_congvergence_large.py]
+%%     [function: savePlot, line: 302, file: /scratch/snx3000/klye/3druns/postprocessing/python/plot_info.py]
+%%     [function: savePlot, line: 324, file: /scratch/snx3000/klye/3druns/postprocessing/python/plot_info.py]
+%%     [function: plot_convergence_single_sample, line: 93, file: ../python/compute_single_sample_congvergence_large.py]
+%%     [function: <module>, line: 128, file: ../python/compute_single_sample_congvergence_large.py]
