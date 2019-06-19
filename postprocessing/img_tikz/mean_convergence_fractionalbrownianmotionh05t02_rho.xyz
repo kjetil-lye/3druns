@@ -23,7 +23,7 @@ xtick style={color=black},
 xtick={64,128,256,512},
 xticklabels={\(\displaystyle 64^3\),\(\displaystyle 128^3\),\(\displaystyle 256^3\),\(\displaystyle 512^3\)},
 y grid style={white!69.01960784313725!black},
-ylabel={Error (\(\displaystyle ||\mathbb{E}(\rho^{N})-\mathbb{E}(\rho^{N/2})||_{L^1(D)}\))},
+ylabel={Error (\(\displaystyle \lVert \mathbb{E}(\rho^{N})-\mathbb{E}(\rho^{N/2})\rVert_{L^1(D)}\))},
 ymin=0.0228972207167159, ymax=0.129499381516589,
 ymode=log,
 ytick style={color=black}
@@ -50,7 +50,7 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: ecf0e755bf4c84ef78ef8e8673a13c1f65f345b9
+Commit: 7eecf17b623b93382a2e6a42959c0bd7546c2274
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint102};
 \node at (axis cs:0.2,0.93)[
@@ -58,7 +58,7 @@ Hostname: daint102};
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@ecf0};
+]{@7eec};
 \end{axis}
 
 \end{tikzpicture}
@@ -72,16 +72,17 @@ Hostname: daint102};
 %% script name: ../python/compute_mean_variance_convergence.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : ecf0e755bf4c84ef78ef8e8673a13c1f65f345b9
+%% GIT git_commit : 7eecf17b623b93382a2e6a42959c0bd7546c2274
 %% GIT git_repo_modified : True
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : ecf0
+%% GIT git_short_commit : 7eec
 %% working_directory : /scratch/snx3000/klye/3druns/postprocessing/notebooks
 %% hostname : daint102
-%% generated_on_date : 2019-06-18 17:39:46.212089
+%% generated_on_date : 2019-06-19 13:55:01.446984
 %% accessed_environment:
 %% additional_parameters:
+%%    commandrun=/scratch/snx3000/klye/3druns/tools/.venv/bin/python ../python/compute_mean_variance_convergence.py --input /scratch/snx3000/klye/3druns/fbm/stats/H0_5/N{resolution}/fbm_{stat}_1.nc --title Fractional Brownian motion $H=0.5, T=0.2$ --starting_resolution 32 --stat mean --variable rho --not_zoom --compute_rate
 %%    basename=/scratch/snx3000/klye/3druns/fbm/stats/H0_5/N{resolution}/fbm_{stat}_1.nc
 %%    alsvinn_report.software=alsvinn https://github.com/alsvinn
 %%    alsvinn_report.softwareVersion=0.4.2
@@ -421,6 +422,7 @@ Hostname: daint102};
 %%     cftime._cftime: 1.0.3.4 (/scratch/snx3000/klye/3druns/tools/.venv/lib/python3.6/site-packages/cftime/_cftime.cpython-36m-x86_64-linux-gnu.so)
 %%     _cython_0_29_1: Unknown (Unknown)
 %%     glob: Unknown (/opt/python/3.6.5.1/lib/python3.6/glob.py)
+%%     latex_plots: Unknown (/scratch/snx3000/klye/3druns/postprocessing/python/latex_plots.py)
 %%     matplotlib: 3.1.0 (/scratch/snx3000/klye/3druns/tools/.venv/lib/python3.6/site-packages/matplotlib/__init__.py)
 %%     distutils: 3.6.5 (/opt/python/3.6.5.1/lib/python3.6/distutils/__init__.py)
 %%     distutils.version: Unknown (/opt/python/3.6.5.1/lib/python3.6/distutils/version.py)
@@ -641,6 +643,6 @@ Hostname: daint102};
 %%     git.remote: Unknown (/scratch/snx3000/klye/3druns/tools/.venv/lib/python3.6/site-packages/git/remote.py)
 %%     git.repo.fun: Unknown (/scratch/snx3000/klye/3druns/tools/.venv/lib/python3.6/site-packages/git/repo/fun.py)
 %% stacktrace:
-%%     [function: savePlot, line: 301, file: /scratch/snx3000/klye/3druns/postprocessing/python/plot_info.py]
-%%     [function: plot_convergence, line: 95, file: ../python/compute_mean_variance_convergence.py]
-%%     [function: <module>, line: 132, file: ../python/compute_mean_variance_convergence.py]
+%%     [function: savePlot, line: 302, file: /scratch/snx3000/klye/3druns/postprocessing/python/plot_info.py]
+%%     [function: plot_convergence, line: 97, file: ../python/compute_mean_variance_convergence.py]
+%%     [function: <module>, line: 135, file: ../python/compute_mean_variance_convergence.py]

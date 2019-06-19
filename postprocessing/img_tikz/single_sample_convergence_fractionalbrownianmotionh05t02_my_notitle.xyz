@@ -49,7 +49,7 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: d037d1cd65001a90a88d3d156ee35186ff04a239
+Commit: 7eecf17b623b93382a2e6a42959c0bd7546c2274
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint102};
 \node at (axis cs:0.2,0.93)[
@@ -57,7 +57,7 @@ Hostname: daint102};
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@d037};
+]{@7eec};
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -65,7 +65,7 @@ Hostname: daint102};
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: d037d1cd65001a90a88d3d156ee35186ff04a239
+Commit: 7eecf17b623b93382a2e6a42959c0bd7546c2274
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint102};
 \end{axis}
@@ -79,14 +79,14 @@ Hostname: daint102};
 %% script name: ../python/compute_single_sample_congvergence_large.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : d037d1cd65001a90a88d3d156ee35186ff04a239
+%% GIT git_commit : 7eecf17b623b93382a2e6a42959c0bd7546c2274
 %% GIT git_repo_modified : True
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : d037
+%% GIT git_short_commit : 7eec
 %% working_directory : /scratch/snx3000/klye/3druns/postprocessing/notebooks
 %% hostname : daint102
-%% generated_on_date : 2019-06-19 13:07:00.188825
+%% generated_on_date : 2019-06-19 13:37:16.250730
 %% accessed_environment:
 %% additional_parameters:
 %%    commandrun=/scratch/snx3000/klye/3druns/tools/.venv/bin/python ../python/compute_single_sample_congvergence_large.py --input /scratch/snx3000/klye/3druns/fbm/single/H0_5/N{resolution}/fbm_1.nc --title Fractional Brownian motion $H=0.5, T=0.2$ --starting_resolution 32 --variable my --not_zoom --compute_rate
@@ -426,6 +426,7 @@ Hostname: daint102};
 %%     cftime._cftime: 1.0.3.4 (/scratch/snx3000/klye/3druns/tools/.venv/lib/python3.6/site-packages/cftime/_cftime.cpython-36m-x86_64-linux-gnu.so)
 %%     _cython_0_29_1: Unknown (Unknown)
 %%     glob: Unknown (/opt/python/3.6.5.1/lib/python3.6/glob.py)
+%%     latex_plots: Unknown (/scratch/snx3000/klye/3druns/postprocessing/python/latex_plots.py)
 %%     matplotlib: 3.1.0 (/scratch/snx3000/klye/3druns/tools/.venv/lib/python3.6/site-packages/matplotlib/__init__.py)
 %%     distutils: 3.6.5 (/opt/python/3.6.5.1/lib/python3.6/distutils/__init__.py)
 %%     distutils.version: Unknown (/opt/python/3.6.5.1/lib/python3.6/distutils/version.py)
@@ -664,5 +665,5 @@ Hostname: daint102};
 %% stacktrace:
 %%     [function: savePlot, line: 302, file: /scratch/snx3000/klye/3druns/postprocessing/python/plot_info.py]
 %%     [function: savePlot, line: 324, file: /scratch/snx3000/klye/3druns/postprocessing/python/plot_info.py]
-%%     [function: plot_convergence_single_sample, line: 93, file: ../python/compute_single_sample_congvergence_large.py]
-%%     [function: <module>, line: 128, file: ../python/compute_single_sample_congvergence_large.py]
+%%     [function: plot_convergence_single_sample, line: 90, file: ../python/compute_single_sample_congvergence_large.py]
+%%     [function: <module>, line: 125, file: ../python/compute_single_sample_congvergence_large.py]
