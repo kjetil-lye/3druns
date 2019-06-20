@@ -4,25 +4,26 @@
 \definecolor{color0}{rgb}{0.12156862745098,0.466666666666667,0.705882352941177}
 \definecolor{color1}{rgb}{1,0.498039215686275,0.0549019607843137}
 \definecolor{color2}{rgb}{0.172549019607843,0.627450980392157,0.172549019607843}
+\definecolor{color3}{rgb}{0.83921568627451,0.152941176470588,0.156862745098039}
 
 \begin{axis}[
 height=\figureheight,
 legend cell align={left},
-legend entries={{$N=64$},{$\mathcal{O}(h^{0.41})$},{$N=128$},{$\mathcal{O}(h^{1.09})$},{$N=256$},{$\mathcal{O}(h^{0.95})$}},
+legend entries={{$N=64$},{$\mathcal{O}(h^{-0.06})$},{$N=128$},{$\mathcal{O}(h^{0.77})$},{$N=256$},{$\mathcal{O}(h^{0.68})$},{$N=512$},{$\mathcal{O}(h^{0.60})$}},
 legend style={at={(1,0.5)}, anchor=west, draw=white!80.0!black},
 tick align=outside,
 tick pos=left,
-title={Scaling for Kelvin-Helmholtz tube, $t=2.0,p=1$},
+title={Scaling for Fractional Brownian motion with $H=0.1$, $t=0.2,p=2$},
 width=\figurewidth,
 x grid style={white!69.01960784313725!black},
 xlabel={$h$},
 xmajorgrids,
-xmin=0.00405039221514179, xmax=0.0344433134277453,
+xmin=0.00181950896461673, xmax=0.0357811738951122,
 xmode=log,
 y grid style={white!69.01960784313725!black},
-ylabel={$\left(\bar{S}^{1}_{1/N,N}(h)\right)^{\frac{1}{1}}$},
+ylabel={$\left(\bar{S}^{2}_{1/N,N}(h)\right)^{\frac{1}{2}}$},
 ymajorgrids,
-ymin=0.0463285995683511, ymax=0.382824541199955,
+ymin=0.765846012306785, ymax=5.39123597218721,
 ymode=log
 ]
 \addlegendimage{no markers, color0}
@@ -31,45 +32,83 @@ ymode=log
 \addlegendimage{no markers, color1}
 \addlegendimage{no markers, color2}
 \addlegendimage{no markers, color2}
+\addlegendimage{no markers, color3}
+\addlegendimage{no markers, color3}
 \addplot [semithick, color0]
 table [row sep=\\]{%
-0.03125	0.0571902241653902 \\
+0.03125	1.55522135040926 \\
 };
 \addplot [semithick, color0, dashed]
 table [row sep=\\]{%
-0.03125	0.0571902241653902 \\
+0.03125	1.55522135040926 \\
 };
 \addplot [semithick, color1]
 table [row sep=\\]{%
-0.0104166666666667	0.0568789727943304 \\
-0.0208333333333333	0.127603589283775 \\
-0.03125	0.187501472877967 \\
+0.0104166666666667	1.29114821913412 \\
+0.0208333333333333	2.27815371151366 \\
+0.03125	2.98486596572059 \\
 };
 \addplot [semithick, color1, dashed]
 table [row sep=\\]{%
-0.0104166666666667	0.0576419169188743 \\
-0.0208333333333333	0.123078966721896 \\
-0.03125	0.19182140253905 \\
+0.0104166666666667	1.30334928607178 \\
+0.0208333333333333	2.22083060798225 \\
+0.03125	3.03324650121669 \\
 };
 \addplot [semithick, color2]
 table [row sep=\\]{%
-0.00446428571428571	0.0509962023847437 \\
-0.00892857142857143	0.113826673629547 \\
-0.0133928571428571	0.166494653796692 \\
-0.0178571428571429	0.212866757751134 \\
-0.0223214285714286	0.254403966396653 \\
-0.0267857142857143	0.291930800853854 \\
-0.03125	0.326030941434823 \\
+0.00446428571428571	1.04765293452606 \\
+0.00892857142857143	1.87129617592517 \\
+0.0133928571428571	2.4823707647145 \\
+0.0178571428571429	2.96793389941149 \\
+0.0223214285714286	3.36360115947049 \\
+0.0267857142857143	3.69239295895323 \\
+0.03125	3.97047576450059 \\
 };
 \addplot [semithick, color2, dashed]
 table [row sep=\\]{%
-0.00446428571428571	0.0552814600797451 \\
-0.00892857142857143	0.106437200252379 \\
-0.0133928571428571	0.156143326169715 \\
-0.0178571428571429	0.204930867984002 \\
-0.0223214285714286	0.253046543430449 \\
-0.0267857142857143	0.30063349360933 \\
-0.03125	0.347785208403996 \\
+0.00446428571428571	1.11440172399992 \\
+0.00892857142857143	1.78733044309457 \\
+0.0133928571428571	2.35622933928844 \\
+0.0178571428571429	2.86660550142228 \\
+0.0223214285714286	3.33745707464707 \\
+0.0267857142857143	3.77903258611896 \\
+0.03125	4.19766088384357 \\
+};
+\addplot [semithick, color3]
+table [row sep=\\]{%
+0.00208333333333333	0.836886021322333 \\
+0.00416666666666667	1.50726256246248 \\
+0.00625	2.01634865538209 \\
+0.00833333333333333	2.42960178593277 \\
+0.0104166666666667	2.7725928082354 \\
+0.0125	3.06207773524666 \\
+0.0145833333333333	3.31017162728677 \\
+0.0166666666666667	3.52580324767961 \\
+0.01875	3.71561521594483 \\
+0.0208333333333333	3.88460011360223 \\
+0.0229166666666667	4.03655433106923 \\
+0.025	4.17440054836127 \\
+0.0270833333333333	4.30041698168114 \\
+0.0291666666666667	4.41640120143989 \\
+0.03125	4.52378819950784 \\
+};
+\addplot [semithick, color3, dashed]
+table [row sep=\\]{%
+0.00208333333333333	0.983385926462654 \\
+0.00416666666666667	1.48595992846356 \\
+0.00625	1.89182514725405 \\
+0.00833333333333333	2.24538184814391 \\
+0.0104166666666667	2.56452228489516 \\
+0.0125	2.85867052276343 \\
+0.0145833333333333	3.13354047162724 \\
+0.0166666666666667	3.39291763351061 \\
+0.01875	3.639468789895 \\
+0.0208333333333333	3.87515953651463 \\
+0.0229166666666667	4.10148989573045 \\
+0.025	4.31963660572862 \\
+0.0270833333333333	4.53054373790967 \\
+0.0291666666666667	4.73498292964814 \\
+0.03125	4.93359485701602 \\
 };
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
@@ -93,7 +132,7 @@ Hostname: lyelaptop};
 
 %% INCLUDE THE COMMENTS AT THE END WHEN COPYING
 %%%%%%%%%%%%%TITLE%%%%%%%%%%%%%%%%%
-%% Scaling for Kelvin-Helmholtz tube, $t=2.0,p=1$
+%% Scaling for Fractional Brownian motion with $H=0.1$, $t=0.2,p=2$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% script name: structure_postprocess.ipynb
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
@@ -105,7 +144,7 @@ Hostname: lyelaptop};
 %% GIT git_short_commit : 1d68
 %% working_directory : /home/kjetil/projects/3druns/postprocessing/notebooks
 %% hostname : lyelaptop
-%% generated_on_date : 2019-06-20 09:33:25.110306
+%% generated_on_date : 2019-06-20 09:34:00.301847
 %% accessed_environment:
 %% additional_parameters:
 %%    commandrun=/usr/bin/python3 /usr/lib/python3.7/site-packages/ipykernel_launcher.py -f /run/user/1000/jupyter/kernel-c8e45399-a32a-4172-a27d-fdf2f7f33c89.json
@@ -1162,6 +1201,23 @@ Hostname: lyelaptop};
 %%     cftime: 1.0.3.4 (/usr/lib/python3.7/site-packages/cftime/__init__.py)
 %%     cftime._cftime: 1.0.3.4 (/usr/lib/python3.7/site-packages/cftime/_cftime.cpython-37m-x86_64-linux-gnu.so)
 %%     _cython_0_29_1: Unknown (Unknown)
+%%     matplotlib._png: Unknown (/usr/lib/python3.7/site-packages/matplotlib/_png.cpython-37m-x86_64-linux-gnu.so)
+%%     PIL.BmpImagePlugin: 0.7 (/usr/lib/python3.7/site-packages/PIL/BmpImagePlugin.py)
+%%     PIL.ImageFile: Unknown (/usr/lib/python3.7/site-packages/PIL/ImageFile.py)
+%%     PIL.ImagePalette: Unknown (/usr/lib/python3.7/site-packages/PIL/ImagePalette.py)
+%%     PIL.ImageColor: Unknown (/usr/lib/python3.7/site-packages/PIL/ImageColor.py)
+%%     PIL.GimpPaletteFile: Unknown (/usr/lib/python3.7/site-packages/PIL/GimpPaletteFile.py)
+%%     PIL.GimpGradientFile: Unknown (/usr/lib/python3.7/site-packages/PIL/GimpGradientFile.py)
+%%     PIL.PaletteFile: Unknown (/usr/lib/python3.7/site-packages/PIL/PaletteFile.py)
+%%     PIL.GifImagePlugin: 0.9 (/usr/lib/python3.7/site-packages/PIL/GifImagePlugin.py)
+%%     PIL.ImageChops: Unknown (/usr/lib/python3.7/site-packages/PIL/ImageChops.py)
+%%     PIL.ImageSequence: Unknown (/usr/lib/python3.7/site-packages/PIL/ImageSequence.py)
+%%     PIL.JpegImagePlugin: 0.6 (/usr/lib/python3.7/site-packages/PIL/JpegImagePlugin.py)
+%%     PIL.TiffImagePlugin: 1.3.5 (/usr/lib/python3.7/site-packages/PIL/TiffImagePlugin.py)
+%%     fractions: Unknown (/usr/lib/python3.7/fractions.py)
+%%     PIL.JpegPresets: Unknown (/usr/lib/python3.7/site-packages/PIL/JpegPresets.py)
+%%     PIL.PpmImagePlugin: 0.2 (/usr/lib/python3.7/site-packages/PIL/PpmImagePlugin.py)
+%%     PIL.PngImagePlugin: 0.9 (/usr/lib/python3.7/site-packages/PIL/PngImagePlugin.py)
 %% stacktrace:
 %%     [function: savePlot, line: 304, file: ../python/plot_info.py]
 %%     [function: showAndSave, line: 338, file: ../python/plot_info.py]

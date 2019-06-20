@@ -78,7 +78,7 @@ table [row sep=\\]{%
   rotate=0.0,
   align=right
 ]{ By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 13949c1096ac8dec7b9698023fec3e0904173b07
+Commit: 1d68491ce1753288023ff83ebb9fac584d4bae4e
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: lyelaptop};
 \node at (axis cs:0.2,0.93)[
@@ -86,7 +86,7 @@ Hostname: lyelaptop};
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{ @1394};
+]{ @1d68};
 \end{axis}
 
 \end{tikzpicture}
@@ -98,14 +98,14 @@ Hostname: lyelaptop};
 %% script name: structure_postprocess.ipynb
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : 13949c1096ac8dec7b9698023fec3e0904173b07
+%% GIT git_commit : 1d68491ce1753288023ff83ebb9fac584d4bae4e
 %% GIT git_repo_modified : True
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : 1394
+%% GIT git_short_commit : 1d68
 %% working_directory : /home/kjetil/projects/3druns/postprocessing/notebooks
 %% hostname : lyelaptop
-%% generated_on_date : 2019-06-20 09:29:32.700215
+%% generated_on_date : 2019-06-20 09:33:28.887882
 %% accessed_environment:
 %% additional_parameters:
 %%    commandrun=/usr/bin/python3 /usr/lib/python3.7/site-packages/ipykernel_launcher.py -f /run/user/1000/jupyter/kernel-c8e45399-a32a-4172-a27d-fdf2f7f33c89.json

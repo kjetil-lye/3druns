@@ -4,26 +4,30 @@
 \definecolor{color0}{rgb}{0.12156862745098,0.466666666666667,0.705882352941177}
 \definecolor{color1}{rgb}{1,0.498039215686275,0.0549019607843137}
 \definecolor{color2}{rgb}{0.172549019607843,0.627450980392157,0.172549019607843}
+\definecolor{color3}{rgb}{0.83921568627451,0.152941176470588,0.156862745098039}
 
 \begin{axis}[
 height=\figureheight,
 legend cell align={left},
-legend entries={{$N=64$},{$\mathcal{O}(h^{0.41})$},{$N=128$},{$\mathcal{O}(h^{1.09})$},{$N=256$},{$\mathcal{O}(h^{0.95})$}},
+legend entries={{$N=64$},{$\mathcal{O}(h^{-0.10})$},{$N=128$},{$\mathcal{O}(h^{0.65})$},{$N=256$},{$\mathcal{O}(h^{0.58})$},{$N=512$},{$\mathcal{O}(h^{0.51})$}},
 legend style={at={(1,0.5)}, anchor=west, draw=white!80.0!black},
 tick align=outside,
 tick pos=left,
-title={Scaling for Kelvin-Helmholtz tube, $t=2.0,p=1$},
 width=\figurewidth,
 x grid style={white!69.01960784313725!black},
 xlabel={$h$},
 xmajorgrids,
-xmin=0.00405039221514179, xmax=0.0344433134277453,
+xmin=0.00181950896461673, xmax=0.0357811738951122,
 xmode=log,
+xtick={0.00048828125,0.0009765625,0.001953125,0.00390625,0.0078125,0.015625,0.03125,0.0625,0.125},
+xticklabels={$2^{-11}$,$2^{-10}$,$2^{-9}$,$2^{-8}$,$2^{-7}$,$2^{-6}$,$2^{-5}$,$2^{-4}$,$2^{-3}$},
 y grid style={white!69.01960784313725!black},
-ylabel={$\left(\bar{S}^{1}_{1/N,N}(h)\right)^{\frac{1}{1}}$},
+ylabel={$\left(\bar{S}^{3}_{1/N,N}(h)\right)^{\frac{1}{3}}$},
 ymajorgrids,
-ymin=0.0463285995683511, ymax=0.382824541199955,
-ymode=log
+ymin=1.11517834577629, ymax=5.81815741061939,
+ymode=log,
+ytick={0.5,1,2,4,8,16},
+yticklabels={$2^{-1}$,$2^{0}$,$2^{1}$,$2^{2}$,$2^{3}$,$2^{4}$}
 ]
 \addlegendimage{no markers, color0}
 \addlegendimage{no markers, color0}
@@ -31,46 +35,96 @@ ymode=log
 \addlegendimage{no markers, color1}
 \addlegendimage{no markers, color2}
 \addlegendimage{no markers, color2}
+\addlegendimage{no markers, color3}
+\addlegendimage{no markers, color3}
 \addplot [semithick, color0]
 table [row sep=\\]{%
-0.03125	0.0571902241653902 \\
+0.03125	1.95581437610067 \\
 };
 \addplot [semithick, color0, dashed]
 table [row sep=\\]{%
-0.03125	0.0571902241653902 \\
+0.03125	1.95581437610067 \\
 };
 \addplot [semithick, color1]
 table [row sep=\\]{%
-0.0104166666666667	0.0568789727943304 \\
-0.0208333333333333	0.127603589283775 \\
-0.03125	0.187501472877967 \\
+0.0104166666666667	1.70185917209997 \\
+0.0208333333333333	2.73940632573294 \\
+0.03125	3.4534178609334 \\
 };
 \addplot [semithick, color1, dashed]
 table [row sep=\\]{%
-0.0104166666666667	0.0576419169188743 \\
-0.0208333333333333	0.123078966721896 \\
-0.03125	0.19182140253905 \\
+0.0104166666666667	1.71399813942168 \\
+0.0208333333333333	2.68715633527537 \\
+0.03125	3.49563375760346 \\
 };
 \addplot [semithick, color2]
 table [row sep=\\]{%
-0.00446428571428571	0.0509962023847437 \\
-0.00892857142857143	0.113826673629547 \\
-0.0133928571428571	0.166494653796692 \\
-0.0178571428571429	0.212866757751134 \\
-0.0223214285714286	0.254403966396653 \\
-0.0267857142857143	0.291930800853854 \\
-0.03125	0.326030941434823 \\
+0.00446428571428571	1.44519920500363 \\
+0.00892857142857143	2.34612816160164 \\
+0.0133928571428571	2.98488368505485 \\
+0.0178571428571429	3.47742422458006 \\
+0.0223214285714286	3.87122781348404 \\
+0.0267857142857143	4.19479914642066 \\
+0.03125	4.46670742957821 \\
 };
 \addplot [semithick, color2, dashed]
 table [row sep=\\]{%
-0.00446428571428571	0.0552814600797451 \\
-0.00892857142857143	0.106437200252379 \\
-0.0133928571428571	0.156143326169715 \\
-0.0178571428571429	0.204930867984002 \\
-0.0223214285714286	0.253046543430449 \\
-0.0267857142857143	0.30063349360933 \\
-0.03125	0.347785208403996 \\
+0.00446428571428571	1.51733639764454 \\
+0.00892857142857143	2.26480695922458 \\
+0.0133928571428571	2.8627605063494 \\
+0.0178571428571429	3.38049661928277 \\
+0.0223214285714286	3.84573785829061 \\
+0.0267857142857143	4.27301416313369 \\
+0.03125	4.67110190183595 \\
 };
+\addplot [semithick, color3]
+table [row sep=\\]{%
+0.00208333333333333	1.20214066595921 \\
+0.00416666666666667	1.96182832361619 \\
+0.00625	2.51066678988219 \\
+0.00833333333333333	2.94160903733786 \\
+0.0104166666666667	3.29169211135552 \\
+0.0125	3.58333230905044 \\
+0.0145833333333333	3.83137929252336 \\
+0.0166666666666667	4.04605496378618 \\
+0.01875	4.23459732442771 \\
+0.0208333333333333	4.40225968823759 \\
+0.0229166666666667	4.55294078969543 \\
+0.025	4.68959288565426 \\
+0.0270833333333333	4.81449230571338 \\
+0.0291666666666667	4.92942281039769 \\
+0.03125	5.03580262537113 \\
+};
+\addplot [semithick, color3, dashed]
+table [row sep=\\]{%
+0.00208333333333333	1.36666827141593 \\
+0.00416666666666667	1.94242827011209 \\
+0.00625	2.3859325576949 \\
+0.00833333333333333	2.7607486494302 \\
+0.0104166666666667	3.09157263545587 \\
+0.0125	3.39109566496766 \\
+0.0145833333333333	3.66686848773359 \\
+0.0166666666666667	3.92381701945208 \\
+0.01875	4.1653664528047 \\
+0.0208333333333333	4.39401295238441 \\
+0.0229166666666667	4.61164245895492 \\
+0.025	4.81972123305632 \\
+0.0270833333333333	5.01941608819731 \\
+0.0291666666666667	5.21167364628836 \\
+0.03125	5.39727449571256 \\
+};
+\path [draw=black, fill opacity=0] (axis cs:0,1.11517834577629)
+--(axis cs:0,5.81815741061939);
+
+\path [draw=black, fill opacity=0] (axis cs:1,1.11517834577629)
+--(axis cs:1,5.81815741061939);
+
+\path [draw=black, fill opacity=0] (axis cs:0.00181950896461673,0)
+--(axis cs:0.0357811738951122,0);
+
+\path [draw=black, fill opacity=0] (axis cs:0.00181950896461673,1)
+--(axis cs:0.0357811738951122,1);
+
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -87,13 +141,23 @@ Hostname: lyelaptop};
   text=white!50.19607843137255!black,
   rotate=0.0
 ]{ @1d68};
+\node at (axis cs:0.95,0.01)[
+  scale=0.15,
+  anchor=south east,
+  text=white!50.19607843137255!black,
+  rotate=0.0,
+  align=right
+]{ By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
+Commit: 1d68491ce1753288023ff83ebb9fac584d4bae4e
+Repo: git@github.com:kjetil-lye/3druns.git
+Hostname: lyelaptop};
 \end{axis}
 
 \end{tikzpicture}
 
 %% INCLUDE THE COMMENTS AT THE END WHEN COPYING
 %%%%%%%%%%%%%TITLE%%%%%%%%%%%%%%%%%
-%% Scaling for Kelvin-Helmholtz tube, $t=2.0,p=1$
+%% None
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% script name: structure_postprocess.ipynb
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
@@ -105,7 +169,7 @@ Hostname: lyelaptop};
 %% GIT git_short_commit : 1d68
 %% working_directory : /home/kjetil/projects/3druns/postprocessing/notebooks
 %% hostname : lyelaptop
-%% generated_on_date : 2019-06-20 09:33:25.110306
+%% generated_on_date : 2019-06-20 09:34:03.603791
 %% accessed_environment:
 %% additional_parameters:
 %%    commandrun=/usr/bin/python3 /usr/lib/python3.7/site-packages/ipykernel_launcher.py -f /run/user/1000/jupyter/kernel-c8e45399-a32a-4172-a27d-fdf2f7f33c89.json
@@ -1162,8 +1226,26 @@ Hostname: lyelaptop};
 %%     cftime: 1.0.3.4 (/usr/lib/python3.7/site-packages/cftime/__init__.py)
 %%     cftime._cftime: 1.0.3.4 (/usr/lib/python3.7/site-packages/cftime/_cftime.cpython-37m-x86_64-linux-gnu.so)
 %%     _cython_0_29_1: Unknown (Unknown)
+%%     matplotlib._png: Unknown (/usr/lib/python3.7/site-packages/matplotlib/_png.cpython-37m-x86_64-linux-gnu.so)
+%%     PIL.BmpImagePlugin: 0.7 (/usr/lib/python3.7/site-packages/PIL/BmpImagePlugin.py)
+%%     PIL.ImageFile: Unknown (/usr/lib/python3.7/site-packages/PIL/ImageFile.py)
+%%     PIL.ImagePalette: Unknown (/usr/lib/python3.7/site-packages/PIL/ImagePalette.py)
+%%     PIL.ImageColor: Unknown (/usr/lib/python3.7/site-packages/PIL/ImageColor.py)
+%%     PIL.GimpPaletteFile: Unknown (/usr/lib/python3.7/site-packages/PIL/GimpPaletteFile.py)
+%%     PIL.GimpGradientFile: Unknown (/usr/lib/python3.7/site-packages/PIL/GimpGradientFile.py)
+%%     PIL.PaletteFile: Unknown (/usr/lib/python3.7/site-packages/PIL/PaletteFile.py)
+%%     PIL.GifImagePlugin: 0.9 (/usr/lib/python3.7/site-packages/PIL/GifImagePlugin.py)
+%%     PIL.ImageChops: Unknown (/usr/lib/python3.7/site-packages/PIL/ImageChops.py)
+%%     PIL.ImageSequence: Unknown (/usr/lib/python3.7/site-packages/PIL/ImageSequence.py)
+%%     PIL.JpegImagePlugin: 0.6 (/usr/lib/python3.7/site-packages/PIL/JpegImagePlugin.py)
+%%     PIL.TiffImagePlugin: 1.3.5 (/usr/lib/python3.7/site-packages/PIL/TiffImagePlugin.py)
+%%     fractions: Unknown (/usr/lib/python3.7/fractions.py)
+%%     PIL.JpegPresets: Unknown (/usr/lib/python3.7/site-packages/PIL/JpegPresets.py)
+%%     PIL.PpmImagePlugin: 0.2 (/usr/lib/python3.7/site-packages/PIL/PpmImagePlugin.py)
+%%     PIL.PngImagePlugin: 0.9 (/usr/lib/python3.7/site-packages/PIL/PngImagePlugin.py)
 %% stacktrace:
 %%     [function: savePlot, line: 304, file: ../python/plot_info.py]
+%%     [function: savePlot, line: 326, file: ../python/plot_info.py]
 %%     [function: showAndSave, line: 338, file: ../python/plot_info.py]
 %%     [function: convergence_structure_functions, line: 58, file: <ipython-input-4-0cf1134ae3ca>]
 %%     [function: for_each_config, line: 36, file: <ipython-input-1-1a492057066a>]
