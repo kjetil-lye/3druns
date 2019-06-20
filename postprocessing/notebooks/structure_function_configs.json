@@ -71,5 +71,57 @@
             "E"
         ],
         "cube_filename": "../structure/scripts/fbm/H0_5/N{resolution}/structure_fbm_cuda_t_{t}_p_{p}_structure_cube_{p}.000000_0.nc"
+    },
+
+
+    "fbm_0_75": {
+        "name": "Fractional Brownian motion with $H=0.75$",
+        "Tarray": [
+            1
+        ],
+        "maxT": 0.2,
+        "perturbations": [
+            0.1
+        ],
+        "resolutions": [
+	    64,
+            128,
+            256,
+	    512
+        ],
+        "variables": [
+            "rho",
+            "mx",
+            "my",
+	    "mz",
+            "E"
+        ],
+        "cube_filename": "../structure/scripts/fbm/H0_75/N{resolution}/structure_fbm_cuda_t_{t}_p_{p}_structure_cube_{p}.000000_0.nc"
+    },
+
+
+    "fbm_0_1": {
+        "name": "Fractional Brownian motion with $H=0.1$",
+        "Tarray": [
+            1
+        ],
+        "maxT": 0.2,
+        "perturbations": [
+            0.1
+        ],
+        "resolutions": [
+	    64,
+            128,
+            256,
+	    512
+        ],
+        "variables": [
+            "rho",
+            "mx",
+            "my",
+	    "mz",
+            "E"
+        ],
+        "cube_filename": "../structure/scripts/fbm/H0_1/N{resolution}/structure_fbm_cuda_t_{t}_p_{p}_structure_cube_{p}.000000_0.nc"
     }
 }
