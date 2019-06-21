@@ -48,7 +48,7 @@ table [row sep=\\]{%
   rotate=0.0,
   align=right
 ]{ By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 4aa4f44162b1b96138e0d40554a9cba0afc4437e
+Commit: 8740b4c435907b8df4b72de055165ffe12f7507a
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: lyelaptop};
 \node at (axis cs:0.2,0.93)[
@@ -56,7 +56,7 @@ Hostname: lyelaptop};
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{ @4aa4f};
+]{ @8740};
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -64,7 +64,7 @@ Hostname: lyelaptop};
   rotate=0.0,
   align=right
 ]{ By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 4aa4f44162b1b96138e0d40554a9cba0afc4437e
+Commit: 8740b4c435907b8df4b72de055165ffe12f7507a
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: lyelaptop};
 \end{axis}
@@ -78,14 +78,14 @@ Hostname: lyelaptop};
 %% script name: structure_postprocess.ipynb
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : 4aa4f44162b1b96138e0d40554a9cba0afc4437e
-%% GIT git_repo_modified : False
+%% GIT git_commit : 8740b4c435907b8df4b72de055165ffe12f7507a
+%% GIT git_repo_modified : True
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : 4aa4f
+%% GIT git_short_commit : 8740
 %% working_directory : /home/kjetil/projects/3druns/postprocessing/notebooks
 %% hostname : lyelaptop
-%% generated_on_date : 2019-06-21 12:05:15.667594
+%% generated_on_date : 2019-06-21 12:10:04.330400
 %% accessed_environment:
 %% additional_parameters:
 %%    commandrun=/usr/bin/python3 /usr/lib/python3.7/site-packages/ipykernel_launcher.py -f /run/user/1000/jupyter/kernel-02407304-09c4-4afd-bc92-f6239e0ad68b.json
@@ -1163,9 +1163,9 @@ Hostname: lyelaptop};
 %%     [function: savePlot, line: 304, file: ../python/plot_info.py]
 %%     [function: savePlot, line: 326, file: ../python/plot_info.py]
 %%     [function: showAndSave, line: 338, file: ../python/plot_info.py]
-%%     [function: convergence_structure_functions, line: 67, file: <ipython-input-4-f8a7bc8b6779>]
+%%     [function: convergence_structure_functions, line: 71, file: <ipython-input-4-2ac81ecfdf14>]
 %%     [function: for_each_config, line: 36, file: <ipython-input-1-1a492057066a>]
-%%     [function: <module>, line: 69, file: <ipython-input-4-f8a7bc8b6779>]
+%%     [function: <module>, line: 73, file: <ipython-input-4-2ac81ecfdf14>]
 %%     [function: run_code, line: 3296, file: /usr/lib/python3.7/site-packages/IPython/core/interactiveshell.py]
 %%     [function: run_ast_nodes, line: 3220, file: /usr/lib/python3.7/site-packages/IPython/core/interactiveshell.py]
 %%     [function: run_cell_async, line: 3049, file: /usr/lib/python3.7/site-packages/IPython/core/interactiveshell.py]
