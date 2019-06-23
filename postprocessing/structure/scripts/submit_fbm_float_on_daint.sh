@@ -14,7 +14,7 @@ fi
 
 
 export OMP_NUM_THREADS=1
-for t in 0 1;
+for t in 0;
 do
     for x in 32 64 128 256 512; 
     do
@@ -37,8 +37,8 @@ do
 		python -m submit_command_on_daint \
 		       -w ${folder} \
 		       --nodes ${NODES} \
-		       --name "fbm_${t}_${H}_${x}_${p}" \
-		       --command "$STRUCTURE_BIN_DIR/structure_standalone -i $SCRATCH/3druns/fbm/stats/H${H//./_}/N${x}/fbm_${t}.nc -o structure_fbm_cuda_t_${t}_p_${p} --samples ${x} --number-of-h  $(( ($x*32)/1024 )) --nx $x --ny $x --nz $x --platform cuda --p ${p}" \
+		       --name "fbm_float_${t}_${H}_${x}_${p}" \
+		       --command "$STRUCTURE_BIN_DIR/structure_standalone -i $SCRATCH/3druns/fbm/stats_float/H${H//./_}/N${x}/fbm_${t}.nc -o structure_fbm_float_cuda_t_${t}_p_${p} --samples ${x} --number-of-h  $(( ($x*32)/1024 )) --nx $x --ny $x --nz $x --platform cuda --p ${p}" \
 		       "$@"
 	    done
 	done
