@@ -2,7 +2,7 @@ import numpy as np
 import latex_plots
 import matplotlib
 import matplotlib.pyplot as plt
-
+import plot_info
 from plot_info import *
 import netCDF4
 import scipy
