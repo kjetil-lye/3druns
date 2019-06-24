@@ -13,7 +13,6 @@ do
 		   --title "Fractional Brownian motion \$H=${H//_/.}, T=0.2\$" --starting_resolution 32 \
 		   --stat ${stat}\
 		   --variable ${var}\
-		   --not_zoom \
 		   --compute_rate; 
 	done; 
     done; 
