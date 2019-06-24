@@ -5,7 +5,7 @@ do
     do 
 	for H in 0_1 0_5 0_75; 
 	do 
-	    python ../python/compute_mean_variance_convergence.py \
+	    python ../python/compute_mean_variance_convergence_comparison.py \
 		   --input_basename_a $SCRATCH/3druns/fbm/stats/H${H}/N{resolution}/fbm_{stat}_1.nc \
 		   --name_a "double"\
 		   --input_basename_b $SCRATCH/3druns/fbm/stats_float/H${H}/N{resolution}/fbm_{stat}_0.nc \
