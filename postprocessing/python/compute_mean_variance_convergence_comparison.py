@@ -100,7 +100,7 @@ def plot_convergence(basename_a,
         plt.legend()
 
     plt.xlabel('Resolution ($N^3$)')
-    plt.ylabel(f'Error ($\\lVert {latex_stat[stat]}({latex_variables[variable]}^{{N}}_{\\mathrm{{{name_a}}}})-{latex_stat[stat]}({latex_variables[variable]}^{{N/2}}_{\\mathrm{{{name_a}}}})\\rVert_{{L^1(D)}}$)')
+    plt.ylabel(f'Error ($\\lVert {latex_stat[stat]}({latex_variables[variable]}^{{N}}_{{\\mathrm{{{name_a}}}}})-{latex_stat[stat]}({latex_variables[variable]}^{{N/2}}_{{\\mathrm{{{name_a}}}}})\\rVert_{{L^1(D)}}$)')
     plt.xticks(resolutions, [f"${r}^3$" for r in resolutions])
     plt.title(f"Convergence of {stat},\n"
               f"Comparing {name_a} and {name_b}\n"
