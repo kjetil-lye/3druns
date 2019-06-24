@@ -20,7 +20,7 @@ xtick style={color=black},
 xtick={64,128,256,512,1024},
 xticklabels={\(\displaystyle 64^3\),\(\displaystyle 128^3\),\(\displaystyle 256^3\),\(\displaystyle 512^3\),\(\displaystyle 1024^3\)},
 y grid style={white!69.01960784313725!black},
-ylabel={Error (\(\displaystyle \lVert \mathrm{Var}(m_{x, \mathrm{double}}^{N})-\mathrm{Var}(m_{x, \mathrm{float}}^{N/2})\rVert_{L^1(D)}\))},
+ylabel={Error (\(\displaystyle \lVert \mathrm{Var}(m_{x, \mathrm{double}}^{N})-\mathrm{Var}(m_{x, \mathrm{float}}^{N})\rVert_{L^1(D)}\))},
 ymin=0.015625, ymax=0.125,
 ymode=log,
 ytick style={color=black},
@@ -51,7 +51,7 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: fc28cf3bea7ea6fb28a4a7e51bb7ea0d107803ac
+Commit: f4e34ad42aab22f13e90bef37b40f36e1cea12aa
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint102};
 \node at (axis cs:0.2,0.93)[
@@ -59,7 +59,7 @@ Hostname: daint102};
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@fc28};
+]{@f4e3};
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -67,7 +67,7 @@ Hostname: daint102};
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: fc28cf3bea7ea6fb28a4a7e51bb7ea0d107803ac
+Commit: f4e34ad42aab22f13e90bef37b40f36e1cea12aa
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint102};
 \end{axis}
@@ -81,14 +81,14 @@ Hostname: daint102};
 %% script name: ../python/compute_mean_variance_convergence_comparison.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : fc28cf3bea7ea6fb28a4a7e51bb7ea0d107803ac
+%% GIT git_commit : f4e34ad42aab22f13e90bef37b40f36e1cea12aa
 %% GIT git_repo_modified : True
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : fc28
+%% GIT git_short_commit : f4e3
 %% working_directory : /scratch/snx3000/klye/3druns/postprocessing/notebooks
 %% hostname : daint102
-%% generated_on_date : 2019-06-24 10:47:38.569625
+%% generated_on_date : 2019-06-24 11:36:12.324685
 %% accessed_environment:
 %% additional_parameters:
 %%    commandrun=/scratch/snx3000/klye/3druns/tools/.venv/bin/python ../python/compute_mean_variance_convergence_comparison.py --input_basename_a /scratch/snx3000/klye/3druns/fbm/stats/H0_5/N{resolution}/fbm_{stat}_1.nc --name_a double --input_basename_b /scratch/snx3000/klye/3druns/fbm/stats_float/H0_5/N{resolution}/fbm_{stat}_0.nc --name_b float --title Fractional Brownian motion $H=0.5, T=0.2$ --starting_resolution 32 --stat variance --variable mx --compute_rate

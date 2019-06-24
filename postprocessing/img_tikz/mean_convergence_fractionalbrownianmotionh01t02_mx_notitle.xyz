@@ -21,25 +21,25 @@ xtick={64,128,256,512},
 xticklabels={\(\displaystyle 64^3\),\(\displaystyle 128^3\),\(\displaystyle 256^3\),\(\displaystyle 512^3\)},
 y grid style={white!69.01960784313725!black},
 ylabel={Error (\(\displaystyle \lVert \mathbb{E}(m_x^{N})-\mathbb{E}(m_x^{N/2})\rVert_{L^1(D)}\))},
-ymin=0.240837363640454, ymax=0.305116431291773,
+ymin=0.0301046704550568, ymax=0.0381395539114717,
 ymode=log,
 ytick style={color=black},
-ytick={0.0625,0.125,0.25,0.5,1},
-yticklabels={\(\displaystyle 2^{-4}\),\(\displaystyle 2^{-3}\),\(\displaystyle 2^{-2}\),\(\displaystyle 2^{-1}\),\(\displaystyle 2^{0}\)}
+ytick={0.0078125,0.015625,0.03125,0.0625,0.125},
+yticklabels={\(\displaystyle 2^{-7}\),\(\displaystyle 2^{-6}\),\(\displaystyle 2^{-5}\),\(\displaystyle 2^{-4}\),\(\displaystyle 2^{-3}\)}
 ]
 \addplot [semithick, color0, mark=*, mark size=3, mark options={solid}, forget plot]
 table {%
-64 0.30185301454218
-128 0.243941949707867
-256 0.243441123247176
-512 0.288063125802676
+64 0.0377316268177725
+128 0.0304927437134833
+256 0.0304301404058971
+512 0.0360078907253345
 };
 \addplot [semithick, color0, dashed]
 table {%
-64 0.273850361752248
-128 0.26998007253262
-256 0.26616448157429
-512 0.262402815834309
+64 0.0342312952190309
+128 0.0337475090665775
+256 0.0332705601967863
+512 0.0328003519792887
 };
 \addlegendentry{$\mathcal{O}(N^{-0.02})$}
 \node at (axis cs:0.95,0.01)[
@@ -49,7 +49,7 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: bb306c9a818f9c862fbfcb1427075e07ef25e5c4
+Commit: 90ce6fb98a01e9195a80892322a092d3140cb329
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint102};
 \node at (axis cs:0.2,0.93)[
@@ -57,7 +57,7 @@ Hostname: daint102};
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@bb30};
+]{@90ce};
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -65,7 +65,7 @@ Hostname: daint102};
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: bb306c9a818f9c862fbfcb1427075e07ef25e5c4
+Commit: 90ce6fb98a01e9195a80892322a092d3140cb329
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint102};
 \end{axis}
@@ -79,17 +79,17 @@ Hostname: daint102};
 %% script name: ../python/compute_mean_variance_convergence.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : bb306c9a818f9c862fbfcb1427075e07ef25e5c4
+%% GIT git_commit : 90ce6fb98a01e9195a80892322a092d3140cb329
 %% GIT git_repo_modified : True
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : bb30
+%% GIT git_short_commit : 90ce
 %% working_directory : /scratch/snx3000/klye/3druns/postprocessing/notebooks
 %% hostname : daint102
-%% generated_on_date : 2019-06-20 09:46:59.014968
+%% generated_on_date : 2019-06-24 09:17:21.266263
 %% accessed_environment:
 %% additional_parameters:
-%%    commandrun=/scratch/snx3000/klye/3druns/tools/.venv/bin/python ../python/compute_mean_variance_convergence.py --input /scratch/snx3000/klye/3druns/fbm/stats/H0_1/N{resolution}/fbm_{stat}_1.nc --title Fractional Brownian motion $H=0.1, T=0.2$ --starting_resolution 32 --stat mean --variable mx --not_zoom --compute_rate
+%%    commandrun=/scratch/snx3000/klye/3druns/tools/.venv/bin/python ../python/compute_mean_variance_convergence.py --input_basename /scratch/snx3000/klye/3druns/fbm/stats/H0_1/N{resolution}/fbm_{stat}_1.nc --title Fractional Brownian motion $H=0.1, T=0.2$ --starting_resolution 32 --stat mean --variable mx --not_zoom --compute_rate
 %%    basename=/scratch/snx3000/klye/3druns/fbm/stats/H0_1/N{resolution}/fbm_{stat}_1.nc
 %%    alsvinn_report.software=alsvinn https://github.com/alsvinn
 %%    alsvinn_report.softwareVersion=0.4.2
