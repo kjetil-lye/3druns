@@ -7,6 +7,7 @@ import numpy as np
 import os
 import netCDF4
 import latex_plots
+import copy
 import matplotlib
 matplotlib.use('Agg')
 matplotlib.rcParams['savefig.dpi'] = 600
@@ -75,7 +76,10 @@ def plot_convergence(basename_a,
             data_a = load_plane(basename_a.format(resolution=resolution, stat=stat), plane, variable)
             data_b = load_plane(basename_b.format(resolution=resolution, stat=stat), plane, variable)
 
-            error += np.sum(abs(data_a-data_b))
+            data_a_relative = copy.deepcopy(data_a)
+            
+            data_a_relative[data_a_relative==0] = 1
+            error += np.sum(abs(data_a-data_b)/abs(data_a_relative))
         error /= resolution**3
 
         errors.append(error)
@@ -101,11 +105,11 @@ def plot_convergence(basename_a,
 
     plt.xlabel('Resolution ($N^3$)')
     if "_" not in latex_variables[variable]:
-        plt.ylabel(f'Error ($\\lVert {latex_stat[stat]}({latex_variables[variable]}^{{N}}_{{\\mathrm{{{name_a}}}}})-{latex_stat[stat]}({latex_variables[variable]}^{{N}}_{{\\mathrm{{{name_b}}}}})\\rVert_{{L^1(D)}}$)')
+        plt.ylabel(f'Error ($\\lVert \\left({latex_stat[stat]}({latex_variables[variable]}^{{N}}_{{\\mathrm{{{name_a}}}}})-{latex_stat[stat]}({latex_variables[variable]}^{{N}}_{{\\mathrm{{{name_b}}}}})\\right)/{latex_stat[stat]}({latex_variables[variable]}^{{N}}_{{\\mathrm{{{name_a}}}}})\\rVert_{{L^1(D)}}$)')
     else:
         latex_variable_with_subscript_a = f"{latex_variables[variable][:-2]}_{{{latex_variables[variable][-1]}, \\mathrm{{{name_a}}}}}"
         latex_variable_with_subscript_b = f"{latex_variables[variable][:-2]}_{{{latex_variables[variable][-1]}, \\mathrm{{{name_b}}}}}"
-        plt.ylabel(f'Error ($\\lVert {latex_stat[stat]}({latex_variable_with_subscript_a}^{{N}})-{latex_stat[stat]}({latex_variable_with_subscript_b}^{{N}})\\rVert_{{L^1(D)}}$)')
+        plt.ylabel(f'Error ($\\lVert \\left({latex_stat[stat]}({latex_variable_with_subscript_a}^{{N}})-{latex_stat[stat]}({latex_variable_with_subscript_b}^{{N}})\\right)/{latex_stat[stat]}({latex_variable_with_subscript_a}^{{N}})\\rVert_{{L^1(D)}}$)')
     plt.xticks(resolutions, [f"${r}^3$" for r in resolutions])
     plt.title(f"Convergence of {stat},\n"
               f"Comparing {name_a} and {name_b}\n"
