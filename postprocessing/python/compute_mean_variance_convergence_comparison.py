@@ -71,7 +71,7 @@ def plot_convergence(basename_a,
     while resolution_exists(basename_a, resolution,stat) and resolution_exists(basename_b, resolution,stat):
         print(resolution)
         error = 0.0
-        for plane in range(2*resolution):
+        for plane in range(resolution):
             data_a = load_plane(basename_a.format(resolution=resolution, stat=stat), plane, variable)
             data_b = load_plane(basename_b.format(resolution=resolution, stat=stat), plane, variable)
 
