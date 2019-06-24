@@ -1,5 +1,6 @@
 import sys
 sys.path.append('../python')
+import plot_info
 import numpy as np
 import convergence
 if __name__ == '__main__':
