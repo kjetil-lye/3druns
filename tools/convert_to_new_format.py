@@ -11,6 +11,7 @@ Converts the netcdf to a single precision file. It also throws away auxillary va
 
 import netCDF4
 import numpy as np
+import argparse
 
 def is_not_auxillary(v):
     for k in ['p', 'ux', 'uy', 'uz']:
