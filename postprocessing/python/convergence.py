@@ -21,6 +21,8 @@ latex_variables = {
 
 def load(filename, variable):
     with netCDF4.Dataset(filename) as f:
+        for attr in f.ncattrs():
+            plot_info.add_additional_plot_parameters(filename.replace("/", "_") + "_" + attr, f.getncattr(attr))
         return f.variables[variable][:,:,:]
 
 
@@ -130,6 +132,7 @@ def plot_single_sample_convergence(resolutions, basename, sample, variable, setu
     filenames = {}
 
     for r in resolutions:
+        
         filename = basename.format(resolution = r)
 
         filenames[r] = filename
@@ -185,6 +188,8 @@ def load_samples_point(filename, variable, i, j, k):
 def load_plane(filename, variable, k):
     samples = []
     with netCDF4.Dataset(filename) as f:
+        for attr in f.ncattrs():
+            plot_info.add_additional_plot_parameters(filename.replace("/", "_") + "_" + attr, f.getncattr(attr))
         for key in f.variables.keys():
             if variable in key:
 
@@ -238,7 +243,7 @@ def wasserstein_1pt(filenames, variable, title):
     
     saveData(f"wasserstein_1pt_{title}_{variable}_errors", errors)
     saveData(f"wasserstein_1pt_{title}_{variable}_resolutions", resolutions)
-    plt.ylabel("Error ($\\lVert W_1(\\nu^{1,N}, \\nu^{1,2\\cdot N })\\rVert_{L^1(D)}$")
+    plt.ylabel("Error ($\\lVert W_1(\\nu^{1,N}, \\nu^{1,2 N })\\rVert_{L^1(D)}$")
     plt.title(f"One point $W_1$-convergence\n{title}\nVariable: ${variable}$")
 
         
@@ -254,4 +259,69 @@ def plot_wasserstein_convergence(resolutions, basename, variable, title):
     wasserstein_1pt(filenames, variable, title)
     
     showAndSave(f"wasserstein_1pt_{title}_{variable}")
+    
+
+
+
+
+def wasserstein_1pt_comparison(filenames_a,
+                               name_a,
+                               filenames_b,
+                               name_b,
+                               variable, title):
+    # don't judge me for the next line
+    resolutions = np.array(sorted(list([k for k in filenames_a.keys()])))
+
+    errors = []
+    for r in resolutions:
+
+        wasserstein_error = 0.0
+
+        for i in range(r):
+            progress(i, r)
+            d1 = load_plane(filenames_a[r], variable, i)
+            d2 = load_plane(filenames_b[r], variable, i)
+            for j in range(r):
+                for k in range(r):
+                    wasserstein_error += scipy.stats.wasserstein_distance(d1[:,j,k], d2[:,j,k])
+        wasserstein_error /= r**3
+
+        errors.append(wasserstein_error)
+        print()
+        console_log("")
+        console_log("Done with {}".format(r))
+    plt.loglog(resolutions, errors, '-o', basex=2, basey=2)
+    plt.xlabel("Resolution ($N^3$)")
+    
+    plt.xticks(resolutions, ["${}^{{3}}$".format(r) for r in resolutions])
+    
+    saveData(f"wasserstein_1pt_comparison_{title}_{name_a}_{name_b}_{variable}_errors", errors)
+    saveData(f"wasserstein_1pt_comparison_{title}_{name_a}_{name_b}__{variable}_resolutions", resolutions)
+    plt.ylabel(f"Error ($\\lVert W_1(\\nu^{{1,N}}_{{\\mathrm{{{name_a}}}}}, \\nu^{{1,2 N }}_{{\\mathrm{{{name_b}}}}})\\rVert_{L^1(D)}$")
+    plt.title(f"One point $W_1$-convergence\n{title}\n"
+              f"Comparing {name_a} and {name_b}\n"
+              f"Variable: ${variable}$")
+
+
+
+def plot_wasserstein_convergence_comparison(resolutions, 
+                                            basename_a,
+                                            name_a,
+                                            basename_b,
+                                            name_b, 
+                                            variable, title):
+    filenames_a = {}
+    filenames_b = {}
+
+    for r in resolutions:
+        filenames_a[r] = basename_a.format(resolution=r)
+        filenames_b[r] = basename_b.format(resolution=r)
+    
+    wasserstein_1pt_comparison(filenames_a,
+                               name_a,
+                               filenames_b, 
+                               name_b, 
+                               variable, title)
+    
+    showAndSave(f"wasserstein_1pt_comparison_{title}_{name_a}_{name_b}_{variable}")
     

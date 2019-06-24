@@ -44,7 +44,7 @@ def resolution_exists(basename, resolution, stat):
 def load_plane(filename, plane, variable):
     with netCDF4.Dataset(filename) as f:
         for attr in f.ncattrs():
-            plot_info.add_additional_plot_parameters(attr, f.getncattr(attr))
+            plot_info.add_additional_plot_parameters(filename.replace("/", "_") + "_" + attr, f.getncattr(attr))
         return f.variables[f'{variable}'][plane,:,:]
 
 def plot_convergence(basename, title, variable, starting_resolution, stat, zoom, compute_rate):

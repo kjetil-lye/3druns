@@ -1,5 +1,7 @@
 import sys
+
 sys.path.append('../python')
+import plot_info
 import numpy as np
 import convergence
 if __name__ == '__main__':
@@ -31,5 +33,8 @@ Computes the 1 pt wasserstein convergence
     resolutions = 2**np.arange(int(np.log2(starting_resolution)), 10)
     print(resolutions)
     variable = args.variable
+    
+    
+    plot_info.add_additional_plot_parameters("basename", args.input_basename)
 
     convergence.plot_wasserstein_convergence(resolutions, basename, variable, args.title)
