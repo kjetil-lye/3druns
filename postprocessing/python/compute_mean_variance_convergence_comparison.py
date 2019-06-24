@@ -72,8 +72,8 @@ def plot_convergence(basename_a,
         print(resolution)
         error = 0.0
         for plane in range(2*resolution):
-            data_a = load_plane(basename.format(resolution=resolution, stat=stat), plane, variable)
-            data_b = load_plane(basename.format(resolution=resolution, stat=stat), plane, variable)
+            data_a = load_plane(basename_a.format(resolution=resolution, stat=stat), plane, variable)
+            data_b = load_plane(basename_b.format(resolution=resolution, stat=stat), plane, variable)
 
             error += np.sum(abs(data_a-data_b))
         error /= resolution**3
