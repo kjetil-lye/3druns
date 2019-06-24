@@ -1,3 +1,8 @@
+"""
+This is used to make a comparison between two runs (eg. differening computational method,
+or varying float or double)
+"""
+
 import numpy as np
 import os
 import netCDF4
@@ -47,21 +52,31 @@ def load_plane(filename, plane, variable):
             plot_info.add_additional_plot_parameters(attr, f.getncattr(attr))
         return f.variables[f'{variable}'][plane,:,:]
 
-def plot_convergence(basename, title, variable, starting_resolution, stat, zoom, compute_rate):
+def plot_convergence(basename_a, 
+                     name_a, 
+                     basename_b, 
+                     name_b,
+                     title, 
+                     variable,
+                     starting_resolution, 
+                     stat,
+                     zoom,
+                     compute_rate):
+    
     resolution = starting_resolution
 
     resolutions = []
     errors = []
     
-    while resolution_exists(basename, resolution,stat) and resolution_exists(basename, 2*resolution,stat):
+    while resolution_exists(basename_a, resolution,stat) and resolution_exists(basename_b, resolution,stat):
         print(resolution)
         error = 0.0
         for plane in range(2*resolution):
-            data_fine = load_plane(basename.format(resolution=2*resolution, stat=stat), plane, variable)
-            data_coarse = np.repeat(np.repeat(load_plane(basename.format(resolution=resolution, stat=stat), plane//2, variable), 2, 0), 2, 1)
+            data_a = load_plane(basename.format(resolution=resolution, stat=stat), plane, variable)
+            data_b = load_plane(basename.format(resolution=resolution, stat=stat), plane, variable)
 
-            error += np.sum(abs(data_coarse-data_fine))
-        error /= (2*resolution)**3
+            error += np.sum(abs(data_a-data_b))
+        error /= resolution**3
 
         errors.append(error)
         resolutions.append(resolution)
@@ -85,31 +100,40 @@ def plot_convergence(basename, title, variable, starting_resolution, stat, zoom,
         plt.legend()
 
     plt.xlabel('Resolution ($N^3$)')
-    plt.ylabel(f'Error ($\\lVert {latex_stat[stat]}({latex_variables[variable]}^{{N}})-{latex_stat[stat]}({latex_variables[variable]}^{{N/2}})\\rVert_{{L^1(D)}}$)')
+    plt.ylabel(f'Error ($\\lVert {latex_stat[stat]}({latex_variables[variable]}^{{N}}_{\\mathrm{{{name_a}}}})-{latex_stat[stat]}({latex_variables[variable]}^{{N/2}}_{\\mathrm{{{name_a}}}})\\rVert_{{L^1(D)}}$)')
     plt.xticks(resolutions, [f"${r}^3$" for r in resolutions])
     plt.title(f"Convergence of {stat},\n"
+              f"Comparing {name_a} and {name_b}\n"
               f"{title}\n"
               f"Variable: ${latex_variables[variable]}$")
 
-    plot_info.saveData(f'{stat}_convergence_{title}_{variable}_errors', errors)
-    plot_info.saveData(f'{stat}_convergence_{title}_{variable}_resolutions', resolutions)
+    plot_info.saveData(f'{stat}_convergence_comparison_{name_a}_{name_b}_{title}_{variable}_errors', errors)
+    plot_info.saveData(f'{stat}_convergence_comparison_{name_a}_{name_b}_{title}_{variable}_resolutions', resolutions)
 
-    plot_info.savePlot(f'{stat}_convergence_{title}_{variable}')
+    plot_info.savePlot(f'{stat}_convergence_comparison_{name_a}_{name_b}_{title}_{variable}')
 
 if __name__ == '__main__':
 
     import argparse
 
     parser = argparse.ArgumentParser(description="""
-Computes the stat convergence
+Computes the stat convergence comparing two methods.
             """)
 
-    parser.add_argument('--input_basename', type=str, required=True,     
-                        help='Input filename (should have a format string {resolution})')
+    parser.add_argument('--input_basename_a', type=str, required=True,     
+                        help='Input filename first (should have a format string {resolution})')
+    
+    parser.add_argument('--input_basename_b', type=str, required=True,     
+                        help='Input filename first (should have a format string {resolution})')
+    
+    parser.add_argument('--name_b', type=str, required=True,     
+                        help='Short descriptive name of basename_b (eg. "float")')
+    
+    parser.add_argument('--name_a', type=str, required=True,     
+                        help='Short descriptive name of basename_a (eg. "double")')
 
     parser.add_argument('--title', type=str, required=True,
                         help='Title of plot')
-
 
     parser.add_argument('--variable', type=str, default='rho',
                         help='Variable')
@@ -130,6 +154,12 @@ Computes the stat convergence
     args = parser.parse_args()
 
 
-    plot_info.add_additional_plot_parameters("basename", args.input_basename)
+    plot_info.add_additional_plot_parameters("basename_a", args.input_basename_a)
+    plot_info.add_additional_plot_parameters("basename_b", args.input_basename_b)
 
-    plot_convergence(args.input_basename, args.title, args.variable, args.starting_resolution, args.stat, not args.not_zoom, args.compute_rate)
+    plot_convergence(args.input_basename_a, 
+                     args.name_a,
+                     args.input_basename_b, 
+                     args.name_b,
+                     args.title, args.variable, args.starting_resolution, 
+                     args.stat, not args.not_zoom, args.compute_rate)
