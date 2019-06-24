@@ -101,7 +101,7 @@ def plot_convergence(basename_a,
 
     plt.xlabel('Resolution ($N^3$)')
     if "_" not in latex_variables[variable]:
-        plt.ylabel(f'Error ($\\lVert {latex_stat[stat]}({latex_variables[variable]}^{{N}}_{{\\mathrm{{{name_a}}}}})-{latex_stat[stat]}({latex_variables[variable]}^{{N}}_{{\\mathrm{{{name_a}}}}})\\rVert_{{L^1(D)}}$)')
+        plt.ylabel(f'Error ($\\lVert {latex_stat[stat]}({latex_variables[variable]}^{{N}}_{{\\mathrm{{{name_a}}}}})-{latex_stat[stat]}({latex_variables[variable]}^{{N}}_{{\\mathrm{{{name_b}}}}})\\rVert_{{L^1(D)}}$)')
     else:
         latex_variable_with_subscript_a = f"{latex_variables[variable][:-2]}_{{{latex_variables[variable][-1]}, \\mathrm{{{name_a}}}}}"
         latex_variable_with_subscript_b = f"{latex_variables[variable][:-2]}_{{{latex_variables[variable][-1]}, \\mathrm{{{name_b}}}}}"
