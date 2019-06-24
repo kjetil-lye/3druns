@@ -21,25 +21,25 @@ xtick={64,128,256,512},
 xticklabels={\(\displaystyle 64^3\),\(\displaystyle 128^3\),\(\displaystyle 256^3\),\(\displaystyle 512^3\)},
 y grid style={white!69.01960784313725!black},
 ylabel={Error (\(\displaystyle \lVert \mathrm{Var}(E^{N})-\mathrm{Var}(E^{N/2})\rVert_{L^1(D)}\))},
-ymin=0.00125432479958079, ymax=0.0125681950248191,
+ymin=0.000156790599947598, ymax=0.00157102437810238,
 ymode=log,
 ytick style={color=black},
-ytick={0.00048828125,0.0009765625,0.001953125,0.00390625,0.0078125,0.015625,0.03125},
-yticklabels={\(\displaystyle 2^{-11}\),\(\displaystyle 2^{-10}\),\(\displaystyle 2^{-9}\),\(\displaystyle 2^{-8}\),\(\displaystyle 2^{-7}\),\(\displaystyle 2^{-6}\),\(\displaystyle 2^{-5}\)}
+ytick={6.103515625e-05,0.0001220703125,0.000244140625,0.00048828125,0.0009765625,0.001953125,0.00390625},
+yticklabels={\(\displaystyle 2^{-14}\),\(\displaystyle 2^{-13}\),\(\displaystyle 2^{-12}\),\(\displaystyle 2^{-11}\),\(\displaystyle 2^{-10}\),\(\displaystyle 2^{-9}\),\(\displaystyle 2^{-8}\)}
 ]
 \addplot [semithick, color0, mark=*, mark size=3, mark options={solid}, forget plot]
 table {%
-64 0.011318246361647
-128 0.00554286321285828
-256 0.00277122982888488
-512 0.00140427803326324
+64 0.00141478079520588
+128 0.000692857901607286
+256 0.00034640372861061
+512 0.000175534754157905
 };
 \addplot [semithick, color0, dashed]
 table {%
-64 0.0112180067895434
-128 0.00559643836008526
-256 0.00279195073650947
-512 0.00139284816762942
+64 0.00140225084869292
+128 0.000699554795010658
+256 0.000348993842063684
+512 0.000174106020953678
 };
 \addlegendentry{$\mathcal{O}(N^{-1.00})$}
 \node at (axis cs:0.95,0.01)[
@@ -49,7 +49,7 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: bb306c9a818f9c862fbfcb1427075e07ef25e5c4
+Commit: 90ce6fb98a01e9195a80892322a092d3140cb329
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint102};
 \node at (axis cs:0.2,0.93)[
@@ -57,7 +57,7 @@ Hostname: daint102};
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@bb30};
+]{@90ce};
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -65,7 +65,7 @@ Hostname: daint102};
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: bb306c9a818f9c862fbfcb1427075e07ef25e5c4
+Commit: 90ce6fb98a01e9195a80892322a092d3140cb329
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint102};
 \end{axis}
@@ -79,17 +79,17 @@ Hostname: daint102};
 %% script name: ../python/compute_mean_variance_convergence.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : bb306c9a818f9c862fbfcb1427075e07ef25e5c4
+%% GIT git_commit : 90ce6fb98a01e9195a80892322a092d3140cb329
 %% GIT git_repo_modified : True
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : bb30
+%% GIT git_short_commit : 90ce
 %% working_directory : /scratch/snx3000/klye/3druns/postprocessing/notebooks
 %% hostname : daint102
-%% generated_on_date : 2019-06-20 10:16:49.265146
+%% generated_on_date : 2019-06-24 09:44:35.801338
 %% accessed_environment:
 %% additional_parameters:
-%%    commandrun=/scratch/snx3000/klye/3druns/tools/.venv/bin/python ../python/compute_mean_variance_convergence.py --input /scratch/snx3000/klye/3druns/fbm/stats/H0_75/N{resolution}/fbm_{stat}_0.nc --title Fractional Brownian motion $H=0.75, T=0.0$ --starting_resolution 32 --stat variance --variable E --not_zoom --compute_rate
+%%    commandrun=/scratch/snx3000/klye/3druns/tools/.venv/bin/python ../python/compute_mean_variance_convergence.py --input_basename /scratch/snx3000/klye/3druns/fbm/stats/H0_75/N{resolution}/fbm_{stat}_0.nc --title Fractional Brownian motion $H=0.75, T=0.0$ --starting_resolution 32 --stat variance --variable E --not_zoom --compute_rate
 %%    basename=/scratch/snx3000/klye/3druns/fbm/stats/H0_75/N{resolution}/fbm_{stat}_0.nc
 %%    alsvinn_report.software=alsvinn https://github.com/alsvinn
 %%    alsvinn_report.softwareVersion=0.4.2
