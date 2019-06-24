@@ -297,7 +297,7 @@ def wasserstein_1pt_comparison(filenames_a,
     
     saveData(f"wasserstein_1pt_comparison_{title}_{name_a}_{name_b}_{variable}_errors", errors)
     saveData(f"wasserstein_1pt_comparison_{title}_{name_a}_{name_b}__{variable}_resolutions", resolutions)
-    plt.ylabel(f"Error ($\\lVert W_1(\\nu^{{1,N}}_{{\\mathrm{{{name_a}}}}}, \\nu^{{1,2 N }}_{{\\mathrm{{{name_b}}}}})\\rVert_{L^1(D)}$")
+    plt.ylabel(f"Error ($\\lVert W_1(\\nu^{{1,N}}_{{\\mathrm{{{name_a}}}}}, \\nu^{{1,N }}_{{\\mathrm{{{name_b}}}}})\\rVert_{L^1(D)}$")
     plt.title(f"One point $W_1$-convergence\n{title}\n"
               f"Comparing {name_a} and {name_b}\n"
               f"Variable: ${variable}$")
