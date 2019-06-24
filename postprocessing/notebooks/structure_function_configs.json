@@ -123,5 +123,89 @@
             "E"
         ],
         "cube_filename": "../structure/scripts/fbm/H0_1/N{resolution}/structure_fbm_cuda_t_{t}_p_{p}_structure_cube_{p}.000000_0.nc"
+    },
+
+
+
+
+    "fbm_float_0_5": {
+	"t_start" : 0.2,
+        "name": "Brownian motion (single precision)",
+        "Tarray": [
+            0
+        ],
+        "maxT": 0.2,
+        "perturbations": [
+            0.1
+        ],
+        "resolutions": [
+	    64,
+            128,
+            256,
+	    512
+        ],
+        "variables": [
+            "rho",
+            "mx",
+            "my",
+	    "mz",
+            "E"
+        ],
+        "cube_filename": "../structure/scripts/fbm/H0_5/N{resolution}/structure_fbm_float_cuda_t_{t}_p_{p}_structure_cube_{p}.000000_0.nc"
+    },
+
+
+    "fbm_float_0_75": {
+        "name": "Fractional Brownian motion with $H=0.75$ (single precision)",
+	"t_start" : 0.2,
+        "Tarray": [
+            0
+        ],
+        "maxT": 0.2,
+        "perturbations": [
+            0.1
+        ],
+        "resolutions": [
+	    64,
+            128,
+            256,
+	    512
+        ],
+        "variables": [
+            "rho",
+            "mx",
+            "my",
+	    "mz",
+            "E"
+        ],
+        "cube_filename": "../structure/scripts/fbm/H0_75/N{resolution}/structure_fbm_float_cuda_t_{t}_p_{p}_structure_cube_{p}.000000_0.nc"
+    },
+
+
+    "fbm_float_0_1": {
+        "name": "Fractional Brownian motion with $H=0.1$ (single precision)",
+	"t_start" : 0.2,
+        "Tarray": [
+            0
+        ],
+        "maxT": 0.2,
+        "perturbations": [
+            0.1
+        ],
+        "resolutions": [
+	    64,
+            128,
+            256,
+	    512
+        ],
+        "variables": [
+            "rho",
+            "mx",
+            "my",
+	    "mz",
+            "E"
+        ],
+        "cube_filename": "../structure/scripts/fbm/H0_1/N{resolution}/structure_fbm_float_cuda_t_{t}_p_{p}_structure_cube_{p}.000000_0.nc"
     }
+    
 }

@@ -132,15 +132,15 @@ table [row sep=\\]{%
   rotate=0.0,
   align=right
 ]{ By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 8740b4c435907b8df4b72de055165ffe12f7507a
+Commit: c126e17a859f07df00ca1df51ea26d8363068ba3
 Repo: git@github.com:kjetil-lye/3druns.git
-Hostname: lyelaptop};
+Hostname: galerkin};
 \node at (axis cs:0.2,0.93)[
   scale=0.5,
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{ @8740};
+]{ @c126};
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -148,9 +148,9 @@ Hostname: lyelaptop};
   rotate=0.0,
   align=right
 ]{ By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 8740b4c435907b8df4b72de055165ffe12f7507a
+Commit: c126e17a859f07df00ca1df51ea26d8363068ba3
 Repo: git@github.com:kjetil-lye/3druns.git
-Hostname: lyelaptop};
+Hostname: galerkin};
 \end{axis}
 
 \end{tikzpicture}
@@ -162,17 +162,17 @@ Hostname: lyelaptop};
 %% script name: structure_postprocess.ipynb
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : 8740b4c435907b8df4b72de055165ffe12f7507a
-%% GIT git_repo_modified : True
+%% GIT git_commit : c126e17a859f07df00ca1df51ea26d8363068ba3
+%% GIT git_repo_modified : False
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : 8740
+%% GIT git_short_commit : c126
 %% working_directory : /home/kjetil/projects/3druns/postprocessing/notebooks
-%% hostname : lyelaptop
-%% generated_on_date : 2019-06-21 12:10:08.581836
+%% hostname : galerkin
+%% generated_on_date : 2019-06-24 11:42:52.007394
 %% accessed_environment:
 %% additional_parameters:
-%%    commandrun=/usr/bin/python3 /usr/lib/python3.7/site-packages/ipykernel_launcher.py -f /run/user/1000/jupyter/kernel-02407304-09c4-4afd-bc92-f6239e0ad68b.json
+%%    commandrun=/usr/bin/python3 /usr/lib/python3.7/site-packages/ipykernel_launcher.py -f /run/user/1000/jupyter/kernel-643ea638-030a-4c37-8ad6-35f2db38b723.json
 %% python_version: 
 %%    /usr/bin/python3 (Version: 3.7.3 (default, Mar 26 2019, 21:43:19) 
 %%    [GCC 8.2.1 20181127])
@@ -232,6 +232,7 @@ Hostname: lyelaptop};
 %%     functools: Unknown (/usr/lib/python3.7/functools.py)
 %%     _functools: Unknown (Unknown)
 %%     mpl_toolkits: Unknown (None)
+%%     pdftools: Unknown (None)
 %%     google: Unknown (None)
 %%     sphinxcontrib: Unknown (None)
 %%     runpy: Unknown (/usr/lib/python3.7/runpy.py)
@@ -864,6 +865,7 @@ Hostname: lyelaptop};
 %%     tornado.platform.posix: Unknown (/usr/lib/python3.7/site-packages/tornado/platform/posix.py)
 %%     tornado.platform.common: Unknown (/usr/lib/python3.7/site-packages/tornado/platform/common.py)
 %%     tornado.platform.interface: Unknown (/usr/lib/python3.7/site-packages/tornado/platform/interface.py)
+%%     monotonic: Unknown (/usr/lib/python3.7/site-packages/monotonic.py)
 %%     concurrent.futures.thread: Unknown (/usr/lib/python3.7/concurrent/futures/thread.py)
 %%     zmq.eventloop: Unknown (/usr/lib/python3.7/site-packages/zmq/eventloop/__init__.py)
 %%     zmq.eventloop.ioloop: Unknown (/usr/lib/python3.7/site-packages/zmq/eventloop/ioloop.py)
@@ -1157,68 +1159,68 @@ Hostname: lyelaptop};
 %%     matplotlib2tikz.quadmesh: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/matplotlib2tikz/quadmesh.py)
 %%     matplotlib2tikz.patch: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/matplotlib2tikz/patch.py)
 %%     matplotlib2tikz.text: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/matplotlib2tikz/text.py)
-%%     git: 2.1.11 (/usr/lib/python3.7/site-packages/git/__init__.py)
-%%     gitdb: 2.0.5 (/usr/lib/python3.7/site-packages/gitdb/__init__.py)
-%%     smmap: 2.0.5 (/usr/lib/python3.7/site-packages/smmap/__init__.py)
-%%     smmap.mman: Unknown (/usr/lib/python3.7/site-packages/smmap/mman.py)
-%%     smmap.util: Unknown (/usr/lib/python3.7/site-packages/smmap/util.py)
+%%     git: 2.1.11 (/home/kjetil/.local/lib/python3.7/site-packages/git/__init__.py)
+%%     gitdb: 2.0.4 (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/__init__.py)
+%%     smmap: 2.0.4 (/home/kjetil/.local/lib/python3.7/site-packages/smmap/__init__.py)
+%%     smmap.mman: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/smmap/mman.py)
+%%     smmap.util: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/smmap/util.py)
 %%     mmap: Unknown (/usr/lib/python3.7/lib-dynload/mmap.cpython-37m-x86_64-linux-gnu.so)
-%%     smmap.buf: Unknown (/usr/lib/python3.7/site-packages/smmap/buf.py)
-%%     gitdb.base: Unknown (/usr/lib/python3.7/site-packages/gitdb/base.py)
-%%     gitdb.util: Unknown (/usr/lib/python3.7/site-packages/gitdb/util.py)
-%%     gitdb.const: Unknown (/usr/lib/python3.7/site-packages/gitdb/const.py)
-%%     gitdb.fun: Unknown (/usr/lib/python3.7/site-packages/gitdb/fun.py)
-%%     gitdb.utils: Unknown (/usr/lib/python3.7/site-packages/gitdb/utils/__init__.py)
-%%     gitdb.utils.encoding: Unknown (/usr/lib/python3.7/site-packages/gitdb/utils/encoding.py)
-%%     gitdb.utils.compat: Unknown (/usr/lib/python3.7/site-packages/gitdb/utils/compat.py)
-%%     gitdb.typ: Unknown (/usr/lib/python3.7/site-packages/gitdb/typ.py)
-%%     gitdb.db: Unknown (/usr/lib/python3.7/site-packages/gitdb/db/__init__.py)
-%%     gitdb.db.base: Unknown (/usr/lib/python3.7/site-packages/gitdb/db/base.py)
-%%     gitdb.exc: Unknown (/usr/lib/python3.7/site-packages/gitdb/exc.py)
-%%     gitdb.db.loose: Unknown (/usr/lib/python3.7/site-packages/gitdb/db/loose.py)
-%%     gitdb.stream: Unknown (/usr/lib/python3.7/site-packages/gitdb/stream.py)
-%%     gitdb.db.mem: Unknown (/usr/lib/python3.7/site-packages/gitdb/db/mem.py)
-%%     gitdb.db.pack: Unknown (/usr/lib/python3.7/site-packages/gitdb/db/pack.py)
-%%     gitdb.pack: Unknown (/usr/lib/python3.7/site-packages/gitdb/pack.py)
-%%     gitdb.db.git: Unknown (/usr/lib/python3.7/site-packages/gitdb/db/git.py)
-%%     gitdb.db.ref: Unknown (/usr/lib/python3.7/site-packages/gitdb/db/ref.py)
-%%     git.exc: Unknown (/usr/lib/python3.7/site-packages/git/exc.py)
-%%     git.compat: Unknown (/usr/lib/python3.7/site-packages/git/compat.py)
+%%     smmap.buf: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/smmap/buf.py)
+%%     gitdb.base: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/base.py)
+%%     gitdb.util: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/util.py)
+%%     gitdb.const: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/const.py)
+%%     gitdb.fun: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/fun.py)
+%%     gitdb.utils: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/utils/__init__.py)
+%%     gitdb.utils.encoding: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/utils/encoding.py)
+%%     gitdb.utils.compat: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/utils/compat.py)
+%%     gitdb.typ: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/typ.py)
+%%     gitdb.db: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/db/__init__.py)
+%%     gitdb.db.base: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/db/base.py)
+%%     gitdb.exc: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/exc.py)
+%%     gitdb.db.loose: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/db/loose.py)
+%%     gitdb.stream: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/stream.py)
+%%     gitdb.db.mem: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/db/mem.py)
+%%     gitdb.db.pack: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/db/pack.py)
+%%     gitdb.pack: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/pack.py)
+%%     gitdb.db.git: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/db/git.py)
+%%     gitdb.db.ref: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/db/ref.py)
+%%     git.exc: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/exc.py)
+%%     git.compat: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/compat.py)
 %%     encodings.ascii: Unknown (/usr/lib/python3.7/encodings/ascii.py)
-%%     git.config: Unknown (/usr/lib/python3.7/site-packages/git/config.py)
-%%     git.util: Unknown (/usr/lib/python3.7/site-packages/git/util.py)
+%%     git.config: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/config.py)
+%%     git.util: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/util.py)
 %%     configparser: Unknown (/usr/lib/python3.7/configparser.py)
-%%     git.objects: Unknown (/usr/lib/python3.7/site-packages/git/objects/__init__.py)
-%%     git.objects.base: Unknown (/usr/lib/python3.7/site-packages/git/objects/base.py)
-%%     git.objects.util: Unknown (/usr/lib/python3.7/site-packages/git/objects/util.py)
-%%     git.objects.blob: Unknown (/usr/lib/python3.7/site-packages/git/objects/blob.py)
-%%     git.objects.commit: Unknown (/usr/lib/python3.7/site-packages/git/objects/commit.py)
-%%     git.diff: Unknown (/usr/lib/python3.7/site-packages/git/diff.py)
-%%     git.cmd: Unknown (/usr/lib/python3.7/site-packages/git/cmd.py)
-%%     git.objects.tree: Unknown (/usr/lib/python3.7/site-packages/git/objects/tree.py)
-%%     git.objects.submodule: Unknown (/usr/lib/python3.7/site-packages/git/objects/submodule/__init__.py)
-%%     git.objects.submodule.base: Unknown (/usr/lib/python3.7/site-packages/git/objects/submodule/base.py)
-%%     git.objects.submodule.util: Unknown (/usr/lib/python3.7/site-packages/git/objects/submodule/util.py)
-%%     git.objects.fun: Unknown (/usr/lib/python3.7/site-packages/git/objects/fun.py)
-%%     git.objects.submodule.root: Unknown (/usr/lib/python3.7/site-packages/git/objects/submodule/root.py)
-%%     git.objects.tag: Unknown (/usr/lib/python3.7/site-packages/git/objects/tag.py)
-%%     git.refs: Unknown (/usr/lib/python3.7/site-packages/git/refs/__init__.py)
-%%     git.refs.symbolic: Unknown (/usr/lib/python3.7/site-packages/git/refs/symbolic.py)
-%%     git.refs.log: Unknown (/usr/lib/python3.7/site-packages/git/refs/log.py)
-%%     git.refs.reference: Unknown (/usr/lib/python3.7/site-packages/git/refs/reference.py)
-%%     git.refs.head: Unknown (/usr/lib/python3.7/site-packages/git/refs/head.py)
-%%     git.refs.tag: Unknown (/usr/lib/python3.7/site-packages/git/refs/tag.py)
-%%     git.refs.remote: Unknown (/usr/lib/python3.7/site-packages/git/refs/remote.py)
-%%     git.db: Unknown (/usr/lib/python3.7/site-packages/git/db.py)
-%%     git.repo: Unknown (/usr/lib/python3.7/site-packages/git/repo/__init__.py)
-%%     git.repo.base: Unknown (/usr/lib/python3.7/site-packages/git/repo/base.py)
-%%     git.index: Unknown (/usr/lib/python3.7/site-packages/git/index/__init__.py)
-%%     git.index.base: Unknown (/usr/lib/python3.7/site-packages/git/index/base.py)
-%%     git.index.fun: Unknown (/usr/lib/python3.7/site-packages/git/index/fun.py)
-%%     git.index.typ: Unknown (/usr/lib/python3.7/site-packages/git/index/typ.py)
-%%     git.index.util: Unknown (/usr/lib/python3.7/site-packages/git/index/util.py)
-%%     git.remote: Unknown (/usr/lib/python3.7/site-packages/git/remote.py)
-%%     git.repo.fun: Unknown (/usr/lib/python3.7/site-packages/git/repo/fun.py)
+%%     git.objects: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/objects/__init__.py)
+%%     git.objects.base: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/objects/base.py)
+%%     git.objects.util: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/objects/util.py)
+%%     git.objects.blob: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/objects/blob.py)
+%%     git.objects.commit: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/objects/commit.py)
+%%     git.diff: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/diff.py)
+%%     git.cmd: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/cmd.py)
+%%     git.objects.tree: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/objects/tree.py)
+%%     git.objects.submodule: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/objects/submodule/__init__.py)
+%%     git.objects.submodule.base: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/objects/submodule/base.py)
+%%     git.objects.submodule.util: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/objects/submodule/util.py)
+%%     git.objects.fun: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/objects/fun.py)
+%%     git.objects.submodule.root: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/objects/submodule/root.py)
+%%     git.objects.tag: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/objects/tag.py)
+%%     git.refs: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/refs/__init__.py)
+%%     git.refs.symbolic: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/refs/symbolic.py)
+%%     git.refs.log: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/refs/log.py)
+%%     git.refs.reference: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/refs/reference.py)
+%%     git.refs.head: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/refs/head.py)
+%%     git.refs.tag: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/refs/tag.py)
+%%     git.refs.remote: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/refs/remote.py)
+%%     git.db: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/db.py)
+%%     git.repo: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/repo/__init__.py)
+%%     git.repo.base: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/repo/base.py)
+%%     git.index: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/index/__init__.py)
+%%     git.index.base: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/index/base.py)
+%%     git.index.fun: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/index/fun.py)
+%%     git.index.typ: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/index/typ.py)
+%%     git.index.util: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/index/util.py)
+%%     git.remote: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/remote.py)
+%%     git.repo.fun: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/repo/fun.py)
 %%     netCDF4: 1.5.1.2 (/usr/lib/python3.7/site-packages/netCDF4/__init__.py)
 %%     netCDF4._netCDF4: 1.5.1.2 (/usr/lib/python3.7/site-packages/netCDF4/_netCDF4.cpython-37m-x86_64-linux-gnu.so)
 %%     _cython_0_29_7: Unknown (Unknown)
@@ -1247,9 +1249,9 @@ Hostname: lyelaptop};
 %%     [function: savePlot, line: 304, file: ../python/plot_info.py]
 %%     [function: savePlot, line: 326, file: ../python/plot_info.py]
 %%     [function: showAndSave, line: 338, file: ../python/plot_info.py]
-%%     [function: convergence_structure_functions, line: 55, file: <ipython-input-4-2ac81ecfdf14>]
+%%     [function: convergence_structure_functions, line: 57, file: <ipython-input-4-b70326ebfd0a>]
 %%     [function: for_each_config, line: 36, file: <ipython-input-1-1a492057066a>]
-%%     [function: <module>, line: 73, file: <ipython-input-4-2ac81ecfdf14>]
+%%     [function: <module>, line: 75, file: <ipython-input-4-b70326ebfd0a>]
 %%     [function: run_code, line: 3296, file: /usr/lib/python3.7/site-packages/IPython/core/interactiveshell.py]
 %%     [function: run_ast_nodes, line: 3220, file: /usr/lib/python3.7/site-packages/IPython/core/interactiveshell.py]
 %%     [function: run_cell_async, line: 3049, file: /usr/lib/python3.7/site-packages/IPython/core/interactiveshell.py]
