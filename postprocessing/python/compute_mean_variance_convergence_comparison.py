@@ -83,7 +83,7 @@ def plot_convergence(basename_a,
 
         resolution *= 2
 
-    resolutions = 2*np.array(resolutions)
+    resolutions = np.array(resolutions)
 
     min_error = np.min(errors)
     max_error = np.max(errors)
