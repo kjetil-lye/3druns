@@ -40,6 +40,7 @@ Converts the file to teh new file format
     with netCDF4.Dataset(args.input_file) as f:
         with netCDF4.Dataset(args.output_file, 'w', format='NETCDF4_CLASSIC') as outf:
             for v in f.variables.keys():
+                print(v)
                 if v == 'time':
                     tdim = outf.createDimension("t", 1)
                     t = outf.createVariable("time", np.float64, ("t",))
@@ -52,7 +53,7 @@ Converts the file to teh new file format
                         zdim = outf.createDimension("z", d.shape[2])
                         
                     newvar = outf.createVariable(v, np.float32, ("x", "y", "z"))
-                    newvar[:,:,:] = d[:,:,:]
+                    newvar[:,:,:] = d[:,:,:].astype(np.float32)
                     
             for attribute_name in f.ncattrs():
                 outf.setncattr(attribute_name, f.getncattr(attribute_name))
