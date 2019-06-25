@@ -20,30 +20,30 @@ xtick style={color=black},
 xtick={32,64,128,256,512},
 xticklabels={\(\displaystyle 32^3\),\(\displaystyle 64^3\),\(\displaystyle 128^3\),\(\displaystyle 256^3\),\(\displaystyle 512^3\)},
 y grid style={white!69.01960784313725!black},
-ylabel={Error (\(\displaystyle \lVert \left(\mathrm{Var}(m_{x, \mathrm{double}}^{N})-\mathrm{Var}(m_{x, \mathrm{float}}^{N})\right)/\mathrm{Var}(m_{x, \mathrm{double}}^{N})\rVert_{L^1(D)}\))},
-ymin=0.03125, ymax=0.25,
+ylabel={Error (\(\displaystyle \lVert \left(\mathrm{Var}(m_{x, \mathrm{double}}^{N})-\mathrm{Var}(m_{x, \mathrm{float}}^{N})\right)/(\max(\mathrm{Var}(m_{x, \mathrm{double}}^{N}))\rVert_{L^1(D)}\))},
+ymin=0.015625, ymax=0.125,
 ymode=log,
 ytick style={color=black},
-ytick={0.015625,0.03125,0.0625,0.125,0.25,0.5},
-yticklabels={\(\displaystyle 2^{-6}\),\(\displaystyle 2^{-5}\),\(\displaystyle 2^{-4}\),\(\displaystyle 2^{-3}\),\(\displaystyle 2^{-2}\),\(\displaystyle 2^{-1}\)}
+ytick={0.0078125,0.015625,0.03125,0.0625,0.125,0.25},
+yticklabels={\(\displaystyle 2^{-7}\),\(\displaystyle 2^{-6}\),\(\displaystyle 2^{-5}\),\(\displaystyle 2^{-4}\),\(\displaystyle 2^{-3}\),\(\displaystyle 2^{-2}\)}
 ]
 \addplot [semithick, color0, mark=*, mark size=3, mark options={solid}, forget plot]
 table {%
-32 0.0764922063313661
-64 0.0779921588480121
-128 0.0789104465608905
-256 0.0794253238535532
-512 0.0796982865047503
+32 0.0395038216564965
+64 0.0414484297010593
+128 0.0423761409945425
+256 0.0428612876087656
+512 0.0429976553943959
 };
 \addplot [semithick, color0, dashed]
 table {%
-32 0.0769356793204613
-64 0.0777114401451997
-128 0.0784950231515645
-256 0.0792865072124808
-512 0.0800859719961683
+32 0.0401533723277515
+64 0.0409768784624191
+128 0.0418172738971509
+256 0.0426749050148635
+512 0.0435501253024459
 };
-\addlegendentry{$\mathcal{O}(N^{0.01})$}
+\addlegendentry{$\mathcal{O}(N^{0.03})$}
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -51,7 +51,7 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: e2c451fb72fadfe26acec7739a60b8a5d6196d8f
+Commit: 4974713ffac06d91a0067732c8a2a8be38775d27
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint102};
 \node at (axis cs:0.2,0.93)[
@@ -59,7 +59,7 @@ Hostname: daint102};
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@e2c4};
+]{@49747};
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -67,7 +67,7 @@ Hostname: daint102};
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: e2c451fb72fadfe26acec7739a60b8a5d6196d8f
+Commit: 4974713ffac06d91a0067732c8a2a8be38775d27
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint102};
 \end{axis}
@@ -81,14 +81,14 @@ Hostname: daint102};
 %% script name: ../python/compute_mean_variance_convergence_comparison.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : e2c451fb72fadfe26acec7739a60b8a5d6196d8f
+%% GIT git_commit : 4974713ffac06d91a0067732c8a2a8be38775d27
 %% GIT git_repo_modified : True
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : e2c4
+%% GIT git_short_commit : 49747
 %% working_directory : /scratch/snx3000/klye/3druns/postprocessing/notebooks
 %% hostname : daint102
-%% generated_on_date : 2019-06-24 12:28:20.549884
+%% generated_on_date : 2019-06-25 08:18:57.291770
 %% accessed_environment:
 %% additional_parameters:
 %%    commandrun=/scratch/snx3000/klye/3druns/tools/.venv/bin/python ../python/compute_mean_variance_convergence_comparison.py --input_basename_a /scratch/snx3000/klye/3druns/fbm/stats/H0_5/N{resolution}/fbm_{stat}_1.nc --name_a double --input_basename_b /scratch/snx3000/klye/3druns/fbm/stats_float/H0_5/N{resolution}/fbm_{stat}_0.nc --name_b float --title Fractional Brownian motion $H=0.5, T=0.2$ --starting_resolution 32 --stat variance --variable mx --compute_rate
@@ -1569,5 +1569,5 @@ Hostname: daint102};
 %% stacktrace:
 %%     [function: savePlot, line: 304, file: /scratch/snx3000/klye/3druns/postprocessing/python/plot_info.py]
 %%     [function: savePlot, line: 326, file: /scratch/snx3000/klye/3druns/postprocessing/python/plot_info.py]
-%%     [function: plot_convergence, line: 122, file: ../python/compute_mean_variance_convergence_comparison.py]
-%%     [function: <module>, line: 174, file: ../python/compute_mean_variance_convergence_comparison.py]
+%%     [function: plot_convergence, line: 120, file: ../python/compute_mean_variance_convergence_comparison.py]
+%%     [function: <module>, line: 172, file: ../python/compute_mean_variance_convergence_comparison.py]

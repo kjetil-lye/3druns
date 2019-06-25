@@ -20,7 +20,7 @@ xtick style={color=black},
 xtick={32,64,128,256,512},
 xticklabels={\(\displaystyle 32^3\),\(\displaystyle 64^3\),\(\displaystyle 128^3\),\(\displaystyle 256^3\),\(\displaystyle 512^3\)},
 y grid style={white!69.01960784313725!black},
-ylabel={Error (\(\displaystyle \lVert \left(\mathbb{E}(\rho^{N}_{\mathrm{double}})-\mathbb{E}(\rho^{N}_{\mathrm{float}})\right)/\mathbb{E}(\rho^{N}_{\mathrm{double}})\rVert_{L^1(D)}\))},
+ylabel={Error (\(\displaystyle \lVert \left(\mathbb{E}(\rho^{N}_{\mathrm{double}})-\mathbb{E}(\rho^{N}_{\mathrm{float}})\right)/(\max(\mathbb{E}(\rho^{N}_{\mathrm{double}}))\rVert_{L^1(D)}\))},
 ymin=0.001953125, ymax=0.015625,
 ymode=log,
 ytick style={color=black},
@@ -29,19 +29,19 @@ yticklabels={\(\displaystyle 2^{-10}\),\(\displaystyle 2^{-9}\),\(\displaystyle 
 ]
 \addplot [semithick, color0, mark=*, mark size=3, mark options={solid}, forget plot]
 table {%
-32 0.00475557755173719
-64 0.00490276512267263
-128 0.00499382019848033
-256 0.00504653557559864
-512 0.00507491451274024
+32 0.0046697253564131
+64 0.00480911048982146
+128 0.0048930088698611
+256 0.00494200746966137
+512 0.00496809931290619
 };
 \addplot [semithick, color0, dashed]
 table {%
-32 0.00479843073659151
-64 0.00487527982653128
-128 0.00495335969022787
-256 0.00503269003909287
-512 0.00511329090022522
+32 0.00471061762001608
+64 0.00478235160031862
+128 0.00485517795625958
+256 0.0049291133226964
+512 0.00500417458780457
 };
 \addlegendentry{$\mathcal{O}(N^{0.02})$}
 \node at (axis cs:0.95,0.01)[
@@ -51,7 +51,7 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: e2c451fb72fadfe26acec7739a60b8a5d6196d8f
+Commit: 4974713ffac06d91a0067732c8a2a8be38775d27
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint102};
 \node at (axis cs:0.2,0.93)[
@@ -59,7 +59,7 @@ Hostname: daint102};
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@e2c4};
+]{@49747};
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -67,7 +67,7 @@ Hostname: daint102};
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: e2c451fb72fadfe26acec7739a60b8a5d6196d8f
+Commit: 4974713ffac06d91a0067732c8a2a8be38775d27
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint102};
 \end{axis}
@@ -81,14 +81,14 @@ Hostname: daint102};
 %% script name: ../python/compute_mean_variance_convergence_comparison.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : e2c451fb72fadfe26acec7739a60b8a5d6196d8f
+%% GIT git_commit : 4974713ffac06d91a0067732c8a2a8be38775d27
 %% GIT git_repo_modified : True
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : e2c4
+%% GIT git_short_commit : 49747
 %% working_directory : /scratch/snx3000/klye/3druns/postprocessing/notebooks
 %% hostname : daint102
-%% generated_on_date : 2019-06-24 12:27:16.591416
+%% generated_on_date : 2019-06-25 08:17:35.405854
 %% accessed_environment:
 %% additional_parameters:
 %%    commandrun=/scratch/snx3000/klye/3druns/tools/.venv/bin/python ../python/compute_mean_variance_convergence_comparison.py --input_basename_a /scratch/snx3000/klye/3druns/fbm/stats/H0_75/N{resolution}/fbm_{stat}_1.nc --name_a double --input_basename_b /scratch/snx3000/klye/3druns/fbm/stats_float/H0_75/N{resolution}/fbm_{stat}_0.nc --name_b float --title Fractional Brownian motion $H=0.75, T=0.2$ --starting_resolution 32 --stat mean --variable rho --compute_rate
@@ -1569,5 +1569,5 @@ Hostname: daint102};
 %% stacktrace:
 %%     [function: savePlot, line: 304, file: /scratch/snx3000/klye/3druns/postprocessing/python/plot_info.py]
 %%     [function: savePlot, line: 326, file: /scratch/snx3000/klye/3druns/postprocessing/python/plot_info.py]
-%%     [function: plot_convergence, line: 122, file: ../python/compute_mean_variance_convergence_comparison.py]
-%%     [function: <module>, line: 174, file: ../python/compute_mean_variance_convergence_comparison.py]
+%%     [function: plot_convergence, line: 120, file: ../python/compute_mean_variance_convergence_comparison.py]
+%%     [function: <module>, line: 172, file: ../python/compute_mean_variance_convergence_comparison.py]
