@@ -15,7 +15,7 @@ import argparse
 
 def is_not_auxillary(v):
     for k in ['p', 'ux', 'uy', 'uz']:
-        if f"_{k}_" in v:
+        if v.endswith(f"_{k}"):
             return False
     return True
 
