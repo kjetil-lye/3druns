@@ -12,6 +12,7 @@ Converts the netcdf to a single precision file. It also throws away auxillary va
 import netCDF4
 import numpy as np
 import argparse
+import os
 
 def is_not_auxillary(v):
     for k in ['p', 'ux', 'uy', 'uz']:
@@ -32,13 +33,18 @@ Converts the file to teh new file format
     parser.add_argument('--output_file', type=str, required=True,
                         help='Output file')
 
+
     args = parser.parse_args()
     
     xdim = None
     ydim = None
     zdim = None
+    output_file = args.output_file
+
+    if output_file == args.input_file:
+        output_file = f'{input_file}.temp'
     with netCDF4.Dataset(args.input_file) as f:
-        with netCDF4.Dataset(args.output_file, 'w', format='NETCDF4_CLASSIC') as outf:
+        with netCDF4.Dataset(output_file, 'w', format='NETCDF4_CLASSIC') as outf:
             for v in f.variables.keys():
                 print(v)
                 if v == 'time':
@@ -63,3 +69,6 @@ This file was converted with the script tools/convert_to_new_format.py
 in the 3druns repository. This was done to save space. It should be a raw copy of the original file, 
 except for two details: We now store single precision, and we remove aux variables (p, ux, uy, uz)
             """)
+
+    if args.input_file == args.output_file:
+        os.rename(output_file, args.output_file)
