@@ -42,7 +42,7 @@ Converts the file to teh new file format
     output_file = args.output_file
 
     if output_file == args.input_file:
-        output_file = f'{input_file}.temp'
+        output_file = f'{args.output_file}.temp'
     with netCDF4.Dataset(args.input_file) as f:
         with netCDF4.Dataset(output_file, 'w', format='NETCDF4_CLASSIC') as outf:
             for v in f.variables.keys():
