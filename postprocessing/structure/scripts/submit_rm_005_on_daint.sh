@@ -16,7 +16,7 @@ fi
 export OMP_NUM_THREADS=1
 for t in 0;
 do
-    for x in 32 64 128 256 512; 
+    for x in 64 128 256 512; 
     do
 	for H in 0.05
 	do
