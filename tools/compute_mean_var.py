@@ -111,7 +111,7 @@ Converts the file to teh new file format
                 newvar = outf.createVariable(variable, d.dtype, ("x", "y", "z"))
                 newvar[:,:,:] = d[:,:,:]
            
-                        
+            outf.setncattr("WORKING_DIR", os.getcwd())
             outf.setncattr("IMPORTANT_NODE", """
 This file was converted with the script tools/compute_mean_var.py
 in the 3druns repository. This was done as a postprocessing step
