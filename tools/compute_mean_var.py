@@ -128,7 +128,3 @@ in the 3druns repository. This was done as a postprocessing step
             for attr_name, attr_value in attributes.items():
                 outf.setncattr(attr_name, attr_value)
                 
-            
-
-    if args.input_file == args.output_file:
-        os.rename(output_file, args.output_file)
