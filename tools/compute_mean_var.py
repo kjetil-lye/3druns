@@ -125,6 +125,8 @@ in the 3druns repository. This was done as a postprocessing step
             with open(sys.argv[0]) as scriptfile:
                 outf.setncattr("SCRIPTFILE", scriptfile.read())
                 
+            outf.setncattr("NUMBER_OF_SAMPLES", mean_variance[variable].count)
+                
             for attr_name, attr_value in attributes.items():
                 outf.setncattr(attr_name, attr_value)
                 
