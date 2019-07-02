@@ -1,0 +1,169 @@
+{
+    "report": {
+        "software": "alsvinn https:\/\/github.com\/alsvinn",
+        "softwareVersion": "0.4.2",
+        "currentWorkingDirectory": "\/scratch\/snx3000\/klye\/3druns\/fbm\/single\/H0_05\/N128",
+        "operatingSystem": "Linux: Linux 4.4.103-6.38_4.0.153-cray_ari_c #1 SMP Thu Nov 1 16:05:05 UTC 2018 (6ef8fef) x86_64",
+        "username": "klye",
+        "host": "nid03763",
+        "standardCLibrary": "GNU libc 2.22 stable",
+        "generatedAt": "20190618T091149",
+        "CPU": "Intel(R) Xeon(R) CPU E5-2690 v3 @ 2.60GHz",
+        "revision": "ace845d81bbce8cf30948a6e12d477d9bf8cbfa4",
+        "versionControlStatus": "DIRTY",
+        "buildType": "Release",
+        "cxxFlags": "",
+        "cxxFlagsDebug": "-g",
+        "cxxFlagsRelease": "-O3 -DNDEBUG",
+        "cxxFlagsMinSizeRel": "-Os -DNDEBUG",
+        "cxxFlagsRelWithDebInfo": "-O2 -g -DNDEBUG",
+        "cudaFlags": "--use_fast_math -Xptxas -warn-spills -gencode arch=compute_50,code=sm_50 -gencode arch=compute_60,code=sm_60  -gencode arch=compute_61,code=sm_61",
+        "cudaVersion": "9.1",
+        "cxxCompiler": "GNU 6.2.0",
+        "cudaCompiler": "NVIDIA 9.1.85",
+        "boost": {
+            "BOOST_VERSION": "106700",
+            "BOOST_LIB_VERSION": "1_67",
+            "BOOST_PLATFORM": "linux",
+            "BOOST_PLATFORM_CONFIG": "boost\/config\/platform\/linux.hpp",
+            "BOOST_COMPILER": "GNU C++ version 6.2.0 20160822 (Cray Inc.)",
+            "BOOST_LIBSTDCXX_VERSION": "60200",
+            "C++11": "true",
+            "BOOST_STDLIB": "GNU libstdc++ version 20160822",
+            "BOOST_STDLIB_CONFIG": "boost\/config\/stdlib\/libstdcpp3.hpp"
+        },
+        "floatingPointPrecisionDescription": "double (double precision, 64 bits)",
+        "floatingPointType": "double",
+        "floatingPointMax": "1.79769e+308",
+        "floatingPointMin": "2.22507e-308",
+        "floatingPointEpsilon": "2.22045e-16",
+        "cudaProperties": {
+            "name": "Tesla P100-PCIE-16GB",
+            "totalGlobalMem": "17071734784",
+            "sharedMemPerBlock": "49152",
+            "regsPerBlock": "65536",
+            "warpSize": "32",
+            "memPitch": "2147483647",
+            "maxThreadsPerBlock": "1024",
+            "maxThreadsDim": "1024, 1024, 64",
+            "maxGridSize": "2147483647, 65535, 65535",
+            "totalConstMem": "65536",
+            "major": "6",
+            "minor": "0",
+            "clockRate": "1328500",
+            "textureAlignment": "512",
+            "deviceOverlap": "1",
+            "multiProcessorCount": "56",
+            "kernelExecTimeoutEnabled": "0",
+            "integrated": "0",
+            "canMapHostMemory": "1",
+            "computeMode": "3",
+            "concurrentKernels": "1",
+            "ECCEnabled": "1",
+            "pciBusID": "2",
+            "pciDeviceID": "0",
+            "tccDriver": "0"
+        },
+        "mpiEnabled": "true",
+        "mpiProcesses": "1",
+        "mpiVersion": "MPI VERSION    : CRAY MPICH version 7.7.2 (ANL base 3.2)\nMPI BUILD INFO : Built Thu Jul 19 20:01:04 2018 (git hash 5d705bad2) MT-G",
+        "ompEnabled": "true",
+        "ompThreads": "1",
+        "timings": {
+            "allTimedEvents": {
+                "totalTime": "103.709122237",
+                "percentOfProgramTotalTime": "101",
+                "hasIndividualTimeData": "false",
+                "alsvinn": {
+                    "totalTime": "103.709122237",
+                    "percentOfProgramTotalTime": "101",
+                    "hasIndividualTimeData": "true",
+                    "fvm": {
+                        "totalTime": "76.881311192999988",
+                        "percentOfProgramTotalTime": "75",
+                        "hasIndividualTimeData": "false",
+                        "init": {
+                            "totalTime": "62.233288610999999",
+                            "percentOfProgramTotalTime": "61",
+                            "hasIndividualTimeData": "false",
+                            "python": {
+                                "totalTime": "62.233288610999999",
+                                "percentOfProgramTotalTime": "61",
+                                "hasIndividualTimeData": "true",
+                                "evaluation": {
+                                    "totalTime": "0.97294677699999998",
+                                    "percentOfProgramTotalTime": "1",
+                                    "hasIndividualTimeData": "true"
+                                },
+                                "init_global": {
+                                    "totalTime": "58.078401331999999",
+                                    "percentOfProgramTotalTime": "57",
+                                    "hasIndividualTimeData": "true"
+                                }
+                            }
+                        },
+                        "io": {
+                            "totalTime": "1.1747500899999999",
+                            "percentOfProgramTotalTime": "2",
+                            "hasIndividualTimeData": "false",
+                            "netcdf": {
+                                "totalTime": "1.1747500899999999",
+                                "percentOfProgramTotalTime": "2",
+                                "hasIndividualTimeData": "true"
+                            }
+                        },
+                        "numflux": {
+                            "totalTime": "13.29637686699999",
+                            "percentOfProgramTotalTime": "13",
+                            "hasIndividualTimeData": "true"
+                        },
+                        "reconstruction": {
+                            "totalTime": "0.17689562500000164",
+                            "percentOfProgramTotalTime": "1",
+                            "hasIndividualTimeData": "true"
+                        }
+                    },
+                    "mpi": {
+                        "totalTime": "2.4904767090000011",
+                        "percentOfProgramTotalTime": "3",
+                        "hasIndividualTimeData": "false",
+                        "exchange": {
+                            "totalTime": "2.4904767090000011",
+                            "percentOfProgramTotalTime": "3",
+                            "hasIndividualTimeData": "true",
+                            "wait": {
+                                "totalTime": "0.0010654729999999989",
+                                "percentOfProgramTotalTime": "1",
+                                "hasIndividualTimeData": "true"
+                            }
+                        }
+                    },
+                    "uq": {
+                        "totalTime": "13.632498159000001",
+                        "percentOfProgramTotalTime": "14",
+                        "hasIndividualTimeData": "false",
+                        "generate": {
+                            "totalTime": "13.610340721",
+                            "percentOfProgramTotalTime": "14",
+                            "hasIndividualTimeData": "true"
+                        },
+                        "init": {
+                            "totalTime": "0.022157438000000002",
+                            "percentOfProgramTotalTime": "1",
+                            "hasIndividualTimeData": "true"
+                        }
+                    }
+                }
+            }
+        },
+        "executable": "alsuqcli",
+        "name": "fbm",
+        "endTime": "20190618T091149",
+        "cpuDuration": "102084",
+        "cpuDurationHuman": "00:01:42",
+        "wallTime": "105000",
+        "wallTimeHuman": "00:01:45",
+        "timesteps": "631",
+        "command": "\/users\/klye\/alsvinn\/build\/alsuqcli\/alsuqcli --multi-sample 1 --multi-x 1 --multi-y 1 --multi-z 1 fbm.xml "
+    }
+}
