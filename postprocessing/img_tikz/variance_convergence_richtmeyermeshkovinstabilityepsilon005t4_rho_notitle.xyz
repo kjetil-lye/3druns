@@ -21,11 +21,11 @@ xtick={128,256,512},
 xticklabels={\(\displaystyle 128^3\),\(\displaystyle 256^3\),\(\displaystyle 512^3\)},
 y grid style={white!69.01960784313725!black},
 ylabel={Error (\(\displaystyle \lVert \mathrm{Var}(\rho^{N})-\mathrm{Var}(\rho^{N/2})\rVert_{L^1(D)}\))},
-ymin=0.00653824100202079, ymax=0.0105693759836447,
+ymin=0.001953125, ymax=0.03125,
 ymode=log,
 ytick style={color=black},
-ytick={0.001953125,0.00390625,0.0078125,0.015625,0.03125},
-yticklabels={\(\displaystyle 2^{-9}\),\(\displaystyle 2^{-8}\),\(\displaystyle 2^{-7}\),\(\displaystyle 2^{-6}\),\(\displaystyle 2^{-5}\)}
+ytick={0.0009765625,0.001953125,0.00390625,0.0078125,0.015625,0.03125,0.0625},
+yticklabels={\(\displaystyle 2^{-10}\),\(\displaystyle 2^{-9}\),\(\displaystyle 2^{-8}\),\(\displaystyle 2^{-7}\),\(\displaystyle 2^{-6}\),\(\displaystyle 2^{-5}\),\(\displaystyle 2^{-4}\)}
 ]
 \addplot [semithick, color0, mark=*, mark size=3, mark options={solid}, forget plot]
 table {%
@@ -47,7 +47,7 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 3ae342be60160f2189b0186e674ad78358a88924
+Commit: 7b22b9cf20934a31ca424b414ad685b582a4a602
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint102};
 \node at (axis cs:0.2,0.93)[
@@ -55,7 +55,7 @@ Hostname: daint102};
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@3ae3};
+]{@7b22};
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -63,7 +63,7 @@ Hostname: daint102};
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 3ae342be60160f2189b0186e674ad78358a88924
+Commit: 7b22b9cf20934a31ca424b414ad685b582a4a602
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: daint102};
 \end{axis}
@@ -77,17 +77,17 @@ Hostname: daint102};
 %% script name: ../python/compute_mean_variance_convergence.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : 3ae342be60160f2189b0186e674ad78358a88924
-%% GIT git_repo_modified : False
+%% GIT git_commit : 7b22b9cf20934a31ca424b414ad685b582a4a602
+%% GIT git_repo_modified : True
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : 3ae3
+%% GIT git_short_commit : 7b22
 %% working_directory : /scratch/snx3000/klye/3druns/postprocessing/notebooks
 %% hostname : daint102
-%% generated_on_date : 2019-07-02 11:10:17.191058
+%% generated_on_date : 2019-07-02 17:41:09.572147
 %% accessed_environment:
 %% additional_parameters:
-%%    commandrun=/scratch/snx3000/klye/3druns/tools/.venv/bin/python ../python/compute_mean_variance_convergence.py --input_basename /scratch/snx3000/klye/3druns/richtmeyermeshkov/stats/p0_05/N{resolution}/richtmeyermeshkov_{stat}_0.nc --title Richtmeyer-Meshkov instability $\epsilon=0.05, T=4$ --starting_resolution 64 --stat variance --variable rho --not_zoom --compute_rate
+%%    commandrun=/scratch/snx3000/klye/3druns/tools/.venv/bin/python ../python/compute_mean_variance_convergence.py --input_basename /scratch/snx3000/klye/3druns/richtmeyermeshkov/stats/p0_05/N{resolution}/richtmeyermeshkov_{stat}_0.nc --title Richtmeyer-Meshkov instability $\epsilon=0.05, T=4$ --starting_resolution 64 --stat variance --variable rho --compute_rate
 %%    basename=/scratch/snx3000/klye/3druns/richtmeyermeshkov/stats/p0_05/N{resolution}/richtmeyermeshkov_{stat}_0.nc
 %%    _scratch_snx3000_klye_3druns_richtmeyermeshkov_stats_p0_05_N64_richtmeyermeshkov_variance_0.nc_WORKING_DIR=/scratch/snx3000/klye/3druns/richtmeyermeshkov/stats/p0_05/N64
 %%    _scratch_snx3000_klye_3druns_richtmeyermeshkov_stats_p0_05_N64_richtmeyermeshkov_variance_0.nc_IMPORTANT_NODE=This file was converted with the script tools/compute_mean_var.pyin the 3druns repository. This was done as a postprocessing step            
