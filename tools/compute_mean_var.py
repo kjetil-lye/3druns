@@ -63,6 +63,9 @@ Converts the file to teh new file format
     parser.add_argument('--output_file_base', type=str, required=True,
                         help='Output file')
 
+    parser.add_argument('--number_of_samples', type=int, default=-1,
+                        help='Number of samples to use. If -1, it will use all available samples')
+
 
     args = parser.parse_args()
     
@@ -78,15 +81,24 @@ Converts the file to teh new file format
     time = 0.0
     with netCDF4.Dataset(args.input_file) as f:
         
+        variables_to_use = []
+        
         for v in f.variables.keys():
             if v == 'time':
                 time = f.variables['time'][0]
             else:
-                d = f.variables[v][:,:,:]
-                
                 variable_match = re.match(r'sample_(\d+)_(.+)', v)
                 variable = str(variable_match.group(2))
-                mean_variance[variable].update(d)
+                sample = int(variable_match.group(1))
+                
+                if args.number_of_samples < 0 or sample < args.number_of_samples:
+                    variables_to_use.append(v)
+        for v in variables_to_use:
+            d = f.variables[v][:,:,:]
+            
+            variable_match = re.match(r'sample_(\d+)_(.+)', v)
+            variable = str(variable_match.group(2))
+            mean_variance[variable].update(d)
              
         for attribute_name in f.ncattrs():
             attributes[attribute_name] = f.getncattr(attribute_name)

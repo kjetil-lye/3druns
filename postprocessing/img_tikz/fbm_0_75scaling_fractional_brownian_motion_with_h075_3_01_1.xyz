@@ -117,7 +117,7 @@ table [row sep=\\]{%
   rotate=0.0,
   align=right
 ]{ By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 90725930d9ef90d266a291bdada52e6c63707408
+Commit: d16f518baaf9507f25a699eae6bb0c0adedf0f55
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: galerkin};
 \node at (axis cs:0.2,0.93)[
@@ -125,7 +125,7 @@ Hostname: galerkin};
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{ @9072};
+]{ @d16f};
 \end{axis}
 
 \end{tikzpicture}
@@ -137,20 +137,20 @@ Hostname: galerkin};
 %% script name: structure_postprocess.ipynb
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : 90725930d9ef90d266a291bdada52e6c63707408
-%% GIT git_repo_modified : False
+%% GIT git_commit : d16f518baaf9507f25a699eae6bb0c0adedf0f55
+%% GIT git_repo_modified : True
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : 9072
+%% GIT git_short_commit : d16f
 %% working_directory : /home/kjetil/projects/3druns/postprocessing/notebooks
 %% hostname : galerkin
-%% generated_on_date : 2019-06-24 12:01:18.897744
+%% generated_on_date : 2019-07-01 11:02:05.499610
 %% accessed_environment:
 %% additional_parameters:
-%%    commandrun=/usr/bin/python3 /usr/lib/python3.7/site-packages/ipykernel_launcher.py -f /run/user/1000/jupyter/kernel-643ea638-030a-4c37-8ad6-35f2db38b723.json
+%%    commandrun=/usr/bin/python3 /usr/lib/python3.7/site-packages/ipykernel_launcher.py -f /home/kjetil/.local/share/jupyter/runtime/kernel-9a585092-33af-49b7-bb48-e4c0da4a97d4.json
 %% python_version: 
-%%    /usr/bin/python3 (Version: 3.7.3 (default, Mar 26 2019, 21:43:19) 
-%%    [GCC 8.2.1 20181127])
+%%    /usr/bin/python3 (Version: 3.7.3 (default, Jun 24 2019, 04:54:02) 
+%%    [GCC 9.1.0])
 %% python modules:
 %%     sys: Unknown (Unknown)
 %%     builtins: Unknown (Unknown)
@@ -214,8 +214,8 @@ Hostname: galerkin};
 %%     pkgutil: Unknown (/usr/lib/python3.7/pkgutil.py)
 %%     weakref: Unknown (/usr/lib/python3.7/weakref.py)
 %%     _weakrefset: Unknown (/usr/lib/python3.7/_weakrefset.py)
-%%     ipykernel: 5.1.0 (/usr/lib/python3.7/site-packages/ipykernel/__init__.py)
-%%     ipykernel._version: 5.1.0 (/usr/lib/python3.7/site-packages/ipykernel/_version.py)
+%%     ipykernel: 5.1.1 (/usr/lib/python3.7/site-packages/ipykernel/__init__.py)
+%%     ipykernel._version: 5.1.1 (/usr/lib/python3.7/site-packages/ipykernel/_version.py)
 %%     ipykernel.connect: Unknown (/usr/lib/python3.7/site-packages/ipykernel/connect.py)
 %%     __future__: Unknown (/usr/lib/python3.7/__future__.py)
 %%     json: 2.0.9 (/usr/lib/python3.7/json/__init__.py)
@@ -615,7 +615,7 @@ Hostname: galerkin};
 %%     IPython.utils.generics: Unknown (/usr/lib/python3.7/site-packages/IPython/utils/generics.py)
 %%     jedi: 0.13.3 (/usr/lib/python3.7/site-packages/jedi/__init__.py)
 %%     jedi.api: Unknown (/usr/lib/python3.7/site-packages/jedi/api/__init__.py)
-%%     parso: 0.4.0 (/usr/lib/python3.7/site-packages/parso/__init__.py)
+%%     parso: 0.5.0 (/usr/lib/python3.7/site-packages/parso/__init__.py)
 %%     parso.parser: Unknown (/usr/lib/python3.7/site-packages/parso/parser.py)
 %%     parso.tree: Unknown (/usr/lib/python3.7/site-packages/parso/tree.py)
 %%     parso._compatibility: Unknown (/usr/lib/python3.7/site-packages/parso/_compatibility.py)
@@ -805,8 +805,8 @@ Hostname: galerkin};
 %%     zmq.sugar.version: 18.0.1 (/usr/lib/python3.7/site-packages/zmq/sugar/version.py)
 %%     zmq.sugar.stopwatch: Unknown (/usr/lib/python3.7/site-packages/zmq/sugar/stopwatch.py)
 %%     jupyter_client.localinterfaces: Unknown (/usr/lib/python3.7/site-packages/jupyter_client/localinterfaces.py)
-%%     jupyter_core: 4.4.0 (/usr/lib/python3.7/site-packages/jupyter_core/__init__.py)
-%%     jupyter_core.version: 4.4.0 (/usr/lib/python3.7/site-packages/jupyter_core/version.py)
+%%     jupyter_core: 4.5.0 (/usr/lib/python3.7/site-packages/jupyter_core/__init__.py)
+%%     jupyter_core.version: 4.5.0 (/usr/lib/python3.7/site-packages/jupyter_core/version.py)
 %%     jupyter_core.paths: Unknown (/usr/lib/python3.7/site-packages/jupyter_core/paths.py)
 %%     jupyter_client.launcher: Unknown (/usr/lib/python3.7/site-packages/jupyter_client/launcher.py)
 %%     traitlets.log: Unknown (/usr/lib/python3.7/site-packages/traitlets/log.py)
@@ -1235,11 +1235,15 @@ Hostname: galerkin};
 %%     [function: run_cell, line: 536, file: /usr/lib/python3.7/site-packages/ipykernel/zmqshell.py]
 %%     [function: do_execute, line: 294, file: /usr/lib/python3.7/site-packages/ipykernel/ipkernel.py]
 %%     [function: wrapper, line: 326, file: /usr/lib/python3.7/site-packages/tornado/gen.py]
-%%     [function: execute_request, line: 534, file: /usr/lib/python3.7/site-packages/ipykernel/kernelbase.py]
+%%     [function: execute_request, line: 542, file: /usr/lib/python3.7/site-packages/ipykernel/kernelbase.py]
 %%     [function: wrapper, line: 326, file: /usr/lib/python3.7/site-packages/tornado/gen.py]
-%%     [function: dispatch_shell, line: 267, file: /usr/lib/python3.7/site-packages/ipykernel/kernelbase.py]
+%%     [function: dispatch_shell, line: 272, file: /usr/lib/python3.7/site-packages/ipykernel/kernelbase.py]
 %%     [function: wrapper, line: 326, file: /usr/lib/python3.7/site-packages/tornado/gen.py]
-%%     [function: process_one, line: 357, file: /usr/lib/python3.7/site-packages/ipykernel/kernelbase.py]
+%%     [function: process_one, line: 365, file: /usr/lib/python3.7/site-packages/ipykernel/kernelbase.py]
+%%     [function: run, line: 1147, file: /usr/lib/python3.7/site-packages/tornado/gen.py]
+%%     [function: __init__, line: 1080, file: /usr/lib/python3.7/site-packages/tornado/gen.py]
+%%     [function: wrapper, line: 346, file: /usr/lib/python3.7/site-packages/tornado/gen.py]
+%%     [function: dispatch_queue, line: 378, file: /usr/lib/python3.7/site-packages/ipykernel/kernelbase.py]
 %%     [function: run, line: 1147, file: /usr/lib/python3.7/site-packages/tornado/gen.py]
 %%     [function: inner, line: 1233, file: /usr/lib/python3.7/site-packages/tornado/gen.py]
 %%     [function: null_wrapper, line: 300, file: /usr/lib/python3.7/site-packages/tornado/stack_context.py]
