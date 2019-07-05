@@ -1,0 +1,88 @@
+% This file was created by matplotlib2tikz v0.7.4.
+\begin{tikzpicture}
+
+\definecolor{color0}{rgb}{0.12156862745098,0.466666666666667,0.705882352941177}
+
+\begin{axis}[
+height=\figureheight,
+legend cell align={left},
+legend style={draw=white!80.0!black},
+log basis x={2},
+log basis y={2},
+tick align=outside,
+tick pos=left,
+title={Convergence of variance,
+Richtmeyer-Meshkov instability $\epsilon=0.05, T=4$ (using =N$ samples)
+Variable: $\rho$},
+width=\figurewidth,
+x grid style={white!69.01960784313725!black},
+xlabel={Resolution (\(\displaystyle N^3\))},
+xmin=119.428222916711, xmax=548.748012818582,
+xmode=log,
+xtick style={color=black},
+xtick={128,256,512},
+xticklabels={\(\displaystyle 128^3\),\(\displaystyle 256^3\),\(\displaystyle 512^3\)},
+y grid style={white!69.01960784313725!black},
+ylabel={Error (\(\displaystyle \lVert \mathrm{Var}(\rho^{N})-\mathrm{Var}(\rho^{N/2})\rVert_{L^1(D)}\))},
+ymin=0.001953125, ymax=0.03125,
+ymode=log,
+ytick style={color=black}
+]
+\addplot [semithick, color0, mark=*, mark size=3, mark options={solid}, forget plot]
+table {%
+128 0.00841862781733896
+256 0.0106918753965101
+512 0.00677613416458102
+};
+\addplot [semithick, color0, dashed]
+table {%
+128 0.00945268941480913
+256 0.00848058344387621
+512 0.00760844796570517
+};
+\addlegendentry{$\mathcal{O}(N^{-0.16})$}
+\node at (axis cs:0.95,0.01)[
+  scale=0.15,
+  anchor=south east,
+  text=white!50.19607843137255!black,
+  rotate=0.0,
+  align=right
+]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
+Commit: a6dd229fb9a5ae8bd6f1cbbbbbc6f03151dbfe96
+Repo: git@github.com:kjetil-lye/3druns.git
+Hostname: daint102};
+\node at (axis cs:0.2,0.93)[
+  scale=0.5,
+  anchor=south east,
+  text=white!50.19607843137255!black,
+  rotate=0.0
+]{@a6dd};
+\end{axis}
+
+\end{tikzpicture}
+
+%% INCLUDE THE COMMENTS AT THE END WHEN COPYING
+%%%%%%%%%%%%%TITLE%%%%%%%%%%%%%%%%%
+%% Convergence of variance,
+%% Richtmeyer-Meshkov instability $\epsilon=0.05, T=4$ (using =N$ samples)
+%% Variable: $\rho$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% script name: ../python/compute_mean_variance_convergence.py
+%% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
+%% DO NOT REMOVE THE COMMENTS BELOW!
+%% GIT git_commit : a6dd229fb9a5ae8bd6f1cbbbbbc6f03151dbfe96
+%% GIT git_repo_modified : True
+%% GIT git_branch : master
+%% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
+%% GIT git_short_commit : a6dd
+%% working_directory : /scratch/snx3000/klye/3druns/postprocessing/notebooks
+%% hostname : daint102
+%% generated_on_date : 2019-07-05 16:18:39.109273
+%% accessed_environment:
+%% additional_parameters:
+%%    commandrun=/scratch/snx3000/klye/3druns/tools/.venv/bin/python ../python/compute_mean_variance_convergence.py --input_basename /scratch/snx3000/klye/3druns/richtmeyermeshkov/stats/p0_05/N{resolution}/richtmeyermeshkov_samples_{stat}_0.nc --title Richtmeyer-Meshkov instability $\epsilon=0.05, T=4$ (using =N$ samples) --starting_resolution 64 --stat variance --variable rho --compute_rate
+%%    basename=/scratch/snx3000/klye/3druns/richtmeyermeshkov/stats/p0_05/N{resolution}/richtmeyermeshkov_samples_{stat}_0.nc
+%%    _scratch_snx3000_klye_3druns_richtmeyermeshkov_stats_p0_05_N64_richtmeyermeshkov_samples_variance_0.nc_WORKING_DIR=/scratch/snx3000/klye/3druns/richtmeyermeshkov/stats/p0_05/N64
+%%    _scratch_snx3000_klye_3druns_richtmeyermeshkov_stats_p0_05_N64_richtmeyermeshkov_samples_variance_0.nc_IMPORTANT_NODE=This file was converted with the script tools/compute_mean_var.pyin the 3druns repository. This was done as a postprocessing step            
+%%    _scratch_snx3000_klye_3druns_richtmeyermeshkov_stats_p0_05_N64_richtmeyermeshkov_samples_variance_0.nc_COMMAND_RUN_TO_COMPUTE_MEAN_VAR=/scratch/snx3000/klye/3druns/tools/.venv/bin/python /scratch/snx3000/klye/3druns/tools/compute_mean_var.py --number_of_samples 64 --input_file rm_cuda_0.nc --output_file richtmeyermeshkov_samples
+%%    _scratch_snx3000_klye_3druns_richtmeyermeshkov_stats_p0_05_N64_richtmeyermeshkov_samples_variance_0.nc_SCRIPTFILE=#!/usr/bin/env python3# -*- coding: utf-8 -*-"""Created on Mon Jul 1 09:25 2019@author: Kjetil Olsen LyeComputes the mean and var from a file with samples"""import netCDF4import numpy as npimport argparseimport collectionsimport osimport sysimport reclass MeanVarianceComputer:    def __init__(self):        self.count = 0        self.mean = None        self.m2 = None            def update(self, data):        if self.mean is None:            self.mean = np.zeros_like(data, dtype=np.float64)            self.m2 = np.zeros_like(data, dtype=np.float64)                    self.count += 1        delta = data - self.mean        self.mean += delta / self.count                delta2 = data - self.mean        self.m2 += delta * delta2            def get_mean(self):        return self.mean        def get_variance(self):        return self.m2/self.count        def __getitem__(self, stat):                if stat == 'mean':            return self.get_mean()        elif stat == 'variance':            return self.get_variance()                raise Exception(f'Unknown statistics: {stat}')            if __name__ == '__main__':            parser = argparse.ArgumentParser(description="""Converts the file to teh new file format            """)    parser.add_argument('--input_file', type=str, required=True,                        help='Input file')    parser.add_argument('--output_file_base', type=str, required=True,                        help='Output file')    parser.add_argument('--number_of_samples', type=int, default=-1,                        help='Number of samples to use. If -1, it will use all available samples')    args = parser.parse_args()           time_match = re.search(r'_(\d+).nc', args.input_file)    if time_match:        timestep = int(time_match.group(1))    else:        timestep = 0    mean_variance = collections.defaultdict(lambda : MeanVarianceComputer())        attributes = {}    time = 0.0    with netCDF4.Dataset(args.input_file) as f:                variables_to_use = []                for v in f.variables.keys():            if v == 'time':                time = f.variables['time'][0]            else:                variable_match = re.match(r'sample_(\d+)_(.+)', v)                variable = str(variable_match.group(2))                sample = int(variable_match.group(1))                                if args.number_of_samples < 0 or sample < args.number_of_samples:                    variables_to_use.append(v)        for v in variables_to_use:            d = f.variables[v][:,:,:]                        variable_match = re.match(r'sample_(\d+)_(.+)', v)            variable = str(variable_match.group(2))            mean_variance[variable].update(d)                     for attribute_name in f.ncattrs():            attributes[attribute_name] = f.getncattr(attribute_name)                for stat in ['mean', 'variance']:        outname = f'{args.output_file_base}_{stat}_{timestep}.nc'        with netCDF4.Dataset(outname, 'w', format='NETCDF4_CLASSIC') as outf:            xdim = None            ydim = None            zdim = None            tdim = outf.createDimension('t', 1)            t = outf.createVariable("time", np.float64, ("t",))            t[0] = time            for variable in mean_variance.keys():                d = mean_variance[variable][stat]                if xdim is None:                    xdim = outf.createDimension("x", d.shape[0])                    ydim = outf.createDimension("y", d.shape[1])                    zdim = outf.createDimension("z", d.shape[2])                                    newvar = outf.createVariable(variable, d.dtype, ("x", "y", "z"))                newvar[:,:,:] = d[:,:,:]                       outf.setncattr("WORKING_DIR", os.getcwd())            outf.setncattr("IMPORTANT_NODE", """This file was converted with the script tools/compute_mean_var.pyin the 3druns repository. This was done as a postprocessing step            """)                                    outf.setncattr("COMMAND_RUN_TO_COMPUTE_MEAN_VAR", " ".join([                    sys.executable,                    *sys.argv]))                with open(sys.argv[0]) as scriptfile:                outf.setncattr("SCRIPTFILE", scriptfile.read())                            outf.setncattr("NUMBER_OF_SAMPLES", mean_variance[variable].count)                            for attr_name, attr_value in attributes.items():                outf.setncattr(attr_name, attr_value)                
