@@ -1,0 +1,189 @@
+{
+    "report": {
+        "software": "alsvinn https:\/\/github.com\/alsvinn",
+        "softwareVersion": "0.5.0",
+        "currentWorkingDirectory": "\/scratch\/snx3000\/klye\/3druns\/fbm\/stats_float\/H0_75\/N256",
+        "operatingSystem": "Linux: Linux 4.4.103-6.38_4.0.153-cray_ari_c #1 SMP Thu Nov 1 16:05:05 UTC 2018 (6ef8fef) x86_64",
+        "username": "klye",
+        "host": "nid04326",
+        "standardCLibrary": "GNU libc 2.22 stable",
+        "generatedAt": "20190622T042153",
+        "CPU": "Intel(R) Xeon(R) CPU E5-2690 v3 @ 2.60GHz",
+        "revision": "4585474e9c1637f2118ef1f2e180d8de8c747565",
+        "versionControlStatus": "DIRTY",
+        "buildType": "Release",
+        "cxxFlags": "",
+        "cxxFlagsDebug": "-g",
+        "cxxFlagsRelease": "-O3 -DNDEBUG",
+        "cxxFlagsMinSizeRel": "-Os -DNDEBUG",
+        "cxxFlagsRelWithDebInfo": "-O2 -g -DNDEBUG",
+        "cudaFlags": "--use_fast_math -Xptxas -warn-spills -gencode arch=compute_50,code=sm_50 -gencode arch=compute_60,code=sm_60  -gencode arch=compute_61,code=sm_61",
+        "cudaVersion": "9.1",
+        "cxxCompiler": "GNU 6.2.0",
+        "cudaCompiler": "NVIDIA 9.1.85",
+        "boost": {
+            "BOOST_VERSION": "106700",
+            "BOOST_LIB_VERSION": "1_67",
+            "BOOST_PLATFORM": "linux",
+            "BOOST_PLATFORM_CONFIG": "boost\/config\/platform\/linux.hpp",
+            "BOOST_COMPILER": "GNU C++ version 6.2.0 20160822 (Cray Inc.)",
+            "BOOST_LIBSTDCXX_VERSION": "60200",
+            "C++11": "true",
+            "BOOST_STDLIB": "GNU libstdc++ version 20160822",
+            "BOOST_STDLIB_CONFIG": "boost\/config\/stdlib\/libstdcpp3.hpp"
+        },
+        "floatingPointPrecisionDescription": "float (single precision, 32 bits)",
+        "floatingPointType": "float",
+        "floatingPointMax": "3.40282e+38",
+        "floatingPointMin": "1.17549e-38",
+        "floatingPointEpsilon": "1.19209e-07",
+        "cudaProperties": {
+            "name": "Tesla P100-PCIE-16GB",
+            "totalGlobalMem": "17071734784",
+            "sharedMemPerBlock": "49152",
+            "regsPerBlock": "65536",
+            "warpSize": "32",
+            "memPitch": "2147483647",
+            "maxThreadsPerBlock": "1024",
+            "maxThreadsDim": "1024, 1024, 64",
+            "maxGridSize": "2147483647, 65535, 65535",
+            "totalConstMem": "65536",
+            "major": "6",
+            "minor": "0",
+            "clockRate": "1328500",
+            "textureAlignment": "512",
+            "deviceOverlap": "1",
+            "multiProcessorCount": "56",
+            "kernelExecTimeoutEnabled": "0",
+            "integrated": "0",
+            "canMapHostMemory": "1",
+            "computeMode": "3",
+            "concurrentKernels": "1",
+            "ECCEnabled": "1",
+            "pciBusID": "2",
+            "pciDeviceID": "0",
+            "tccDriver": "0"
+        },
+        "mpiEnabled": "true",
+        "mpiProcesses": "32",
+        "mpiVersion": "MPI VERSION    : CRAY MPICH version 7.7.2 (ANL base 3.2)\nMPI BUILD INFO : Built Thu Jul 19 20:01:04 2018 (git hash 5d705bad2) MT-G",
+        "ompEnabled": "true",
+        "ompThreads": "1",
+        "loadedTextFiles": {
+            "_dash_scratch_dash_snx3000_dash_klye_dash_3druns_dash_fbm_dash_stats_float_dash_H0_75_dash_N256_dash_fbm_DOT_py": "import scipy.stats\n# This is found in the paper\n# Brouste, A., Istas, J., & Lambert-Lacroix, S. (2007).\n#  On Fractional Gaussian Random Fields Simulations. Journal of Statistical Software, 23(1), 1–23.\n#  http:\/\/doi.org\/http:\/\/dx.doi.org\/10.18637\/jss.v023.i01\n# in the section 2.3\n\ndef init_global(rho, ux, uy, uz, p, nx, ny, nz, ax, ay, az, bx, by, bz):\n\n    ### WARNING:\n    ### THE CURRENT IMPLEMENTATION IS SUBOPTIMAL!!!\n    ### WE GENERATE THE WHOLE FIELD FOR EVERY NODE.\n    ### THIS IS SIMPLY DONE FOR SIMPLICITY (AT MOST\n    ### WE RUN 8 NODES FOR THIS CONFIG, HENCE NOT A BIG ISSUE)\n    total_nx = int(nx\/(bx-ax))\n    total_ny = int(ny\/(by-ay))\n    total_nz = int(nz\/(bz-az))\n\n    # X is uniform, ppf is the inverse of the normal pdf, so that means Y will uniform\n    Y = scipy.stats.norm.ppf(X)\n\n    # This looks a bit weird, but this was the fastest and easiest way to ensure we get the same parameter for every resolution.\n    # We fix the highest resolution to 512\n    number_of_parameters=(512-1)**3\n    # uses fbmpy at https:\/\/github.com\/alsvinn\/fractional_brownian_motion\n    # Needs to have a newer version of alsvinn (at or after 2019-06-17)\n    dux = fbmpy.fractional_brownian_bridge_3d(hurst_index, total_nx, Y[:number_of_parameters]).reshape(total_nx+1,total_nx+1,total_nx+1)\n    duy = fbmpy.fractional_brownian_bridge_3d(hurst_index, total_nx, Y[number_of_parameters:2*number_of_parameters]).reshape(total_nx+1,total_nx+1,total_nx+1)\n    duz = fbmpy.fractional_brownian_bridge_3d(hurst_index, total_nx, Y[2*number_of_parameters:3*number_of_parameters]).reshape(total_nx+1,total_nx+1,total_nx+1)\n\n    start_x = int(ax*total_nx)\n    end_x = int(bx*total_nx)\n    \n    start_y = int(ay*total_ny)\n    end_y = int(by*total_ny)\n\n    start_z = int(az*total_nz)\n    end_z = int(bz*total_nz)\n\n    rho[:,:,:] = 4*ones_like(rho)\n    ux[:,:,:] = dux[start_x:end_x,start_y:end_y,start_z:end_z]\n    uy[:,:,:] = duy[start_x:end_x,start_y:end_y,start_z:end_z]\n    uz[:,:,:] = duz[start_x:end_x,start_y:end_y,start_z:end_z]\n    p[:,:,:] = 2.5*ones_like(rho[:,:,:])\n\n\n\n\n",
+            "_dash_scratch_dash_snx3000_dash_klye_dash_3druns_dash_fbm_dash_stats_float_dash_H0_75_dash_N256_dash_fbm_DOT_xml": "<?xml version=\"1.0\" ?><config>\n<fvm>\n  <name>\n    fbm\n  <\/name>\n  <platform>cuda<\/platform>\n  <grid>\n    <lowerCorner>0 0 0<\/lowerCorner>\n    <upperCorner>1 1 1<\/upperCorner>\n    <dimension>256 256 256<\/dimension>\n  <\/grid>\n  <boundary>periodic<\/boundary>\n  <flux>hll3<\/flux>\n  <endTime>.2<\/endTime>\n  <equation>euler3<\/equation>\n  <equationParameters>\n    <gamma>1.4<\/gamma>\n  <\/equationParameters>\n  <reconstruction>wenof2<\/reconstruction>\n  <cfl>auto<\/cfl>\n  <integrator>auto<\/integrator>\n\n  <initialData>\n    <python>fbm.py<\/python>\n    <parameters>\n      <parameter>\n\t<name>hurst_index<\/name>\n\t<length>1<\/length>\n\t<value>0.75<\/value>\n      <\/parameter>\n      <parameter>\n        <name>X<\/name>\n        <length>400298493<\/length>\n        <values><value>0<\/value><\/values>\n      <\/parameter>\n    <\/parameters>\n  <\/initialData>\n  <diffusion>\n    <name>none<\/name>\n    <reconstruction>none<\/reconstruction>\n  <\/diffusion>\n  <writer>\n    <type>netcdf<\/type>\n    <basename>fbm<\/basename>\n    <numberOfSaves>1<\/numberOfSaves><writeInitialTimestep>false<\/writeInitialTimestep>\n  <\/writer>\n<\/fvm>\n<uq>\n  <samples>512<\/samples>\n  <generator>auto<\/generator>\n  <parameters>\n    <parameter>\n      <name>X<\/name>\n      <length>400298493<\/length>\n      <type>uniform<\/type>\n    <\/parameter>\n  <\/parameters>\n  <stats>\n    <stat>\n    <name>\n      meanvar\n    <\/name>\n    <numberOfSaves>1<\/numberOfSaves><writeInitialTimestep>false<\/writeInitialTimestep>\n    <writer>\n      <type>netcdf<\/type>\n      <basename>fbm<\/basename>\n    <\/writer>\n    <\/stat>\n<\/stats>\n<\/uq>\n<\/config>"
+        },
+        "pythonVersion": "Runtime: 2.7.15 (default, Jul 23 2018, 02:11:24) \n[GCC 6.1.0 20160427 (Cray Inc.)], compile time: 2.7.15",
+        "timings": {
+            "allTimedEvents": {
+                "totalTime": "2492.3383768409999",
+                "percentOfProgramTotalTime": "100",
+                "hasIndividualTimeData": "false",
+                "alsvinn": {
+                    "totalTime": "2492.3383768409999",
+                    "percentOfProgramTotalTime": "100",
+                    "hasIndividualTimeData": "true",
+                    "fvm": {
+                        "totalTime": "2036.8887982949955",
+                        "percentOfProgramTotalTime": "82",
+                        "hasIndividualTimeData": "false",
+                        "init": {
+                            "totalTime": "1035.8357113910001",
+                            "percentOfProgramTotalTime": "42",
+                            "hasIndividualTimeData": "false",
+                            "python": {
+                                "totalTime": "1035.8357113910001",
+                                "percentOfProgramTotalTime": "42",
+                                "hasIndividualTimeData": "true",
+                                "evaluation": {
+                                    "totalTime": "0.76447222999999986",
+                                    "percentOfProgramTotalTime": "1",
+                                    "hasIndividualTimeData": "true"
+                                },
+                                "init_global": {
+                                    "totalTime": "1013.703846913",
+                                    "percentOfProgramTotalTime": "41",
+                                    "hasIndividualTimeData": "true"
+                                }
+                            }
+                        },
+                        "io": {
+                            "totalTime": "449.73139586500002",
+                            "percentOfProgramTotalTime": "19",
+                            "hasIndividualTimeData": "false",
+                            "netcdf": {
+                                "totalTime": "449.73139586500002",
+                                "percentOfProgramTotalTime": "19",
+                                "hasIndividualTimeData": "true"
+                            }
+                        },
+                        "numflux": {
+                            "totalTime": "548.99721300599538",
+                            "percentOfProgramTotalTime": "23",
+                            "hasIndividualTimeData": "true"
+                        },
+                        "reconstruction": {
+                            "totalTime": "2.3244780330000037",
+                            "percentOfProgramTotalTime": "1",
+                            "hasIndividualTimeData": "true"
+                        }
+                    },
+                    "mpi": {
+                        "totalTime": "117.3139033560002",
+                        "percentOfProgramTotalTime": "5",
+                        "hasIndividualTimeData": "false",
+                        "exchange": {
+                            "totalTime": "117.3139033560002",
+                            "percentOfProgramTotalTime": "5",
+                            "hasIndividualTimeData": "true",
+                            "wait": {
+                                "totalTime": "0.012834009000000044",
+                                "percentOfProgramTotalTime": "1",
+                                "hasIndividualTimeData": "true"
+                            }
+                        }
+                    },
+                    "uq": {
+                        "totalTime": "217.93278005799996",
+                        "percentOfProgramTotalTime": "9",
+                        "hasIndividualTimeData": "false",
+                        "generate": {
+                            "totalTime": "215.94039025999996",
+                            "percentOfProgramTotalTime": "9",
+                            "hasIndividualTimeData": "true"
+                        },
+                        "init": {
+                            "totalTime": "0.027104461999999999",
+                            "percentOfProgramTotalTime": "1",
+                            "hasIndividualTimeData": "true"
+                        },
+                        "stats": {
+                            "totalTime": "1.9652853360000002",
+                            "percentOfProgramTotalTime": "1",
+                            "hasIndividualTimeData": "false",
+                            "combine": {
+                                "totalTime": "1.9573278360000002",
+                                "percentOfProgramTotalTime": "1",
+                                "hasIndividualTimeData": "true"
+                            },
+                            "compute": {
+                                "totalTime": "0.007957500000000001",
+                                "percentOfProgramTotalTime": "1",
+                                "hasIndividualTimeData": "true"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "executable": "alsuqcli",
+        "name": "fbm",
+        "endTime": "20190622T042153",
+        "cpuDuration": "2471266",
+        "cpuDurationHuman": "00:41:11",
+        "wallTime": "2493000",
+        "wallTimeHuman": "00:41:33",
+        "timesteps": "7452",
+        "command": "\/users\/klye\/alsvinn\/build_float\/alsuqcli\/alsuqcli --multi-sample 32 --multi-x 1 --multi-y 1 --multi-z 1 fbm.xml "
+    }
+}

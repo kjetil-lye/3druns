@@ -206,6 +206,32 @@
             "E"
         ],
         "cube_filename": "../structure/scripts/fbm/H0_1/N{resolution}/structure_fbm_float_cuda_t_{t}_p_{p}_structure_cube_{p}.000000_0.nc"
+    },
+   "rm_0_05": {
+       "name": "Richtmeyer-Meshkov $\\epsilon=0.05$",
+        "Tarray": [
+            0
+        ],
+       "maxT": 4,
+       "t_start" : 4,
+        "perturbations": [
+            0.05
+        ],
+        "resolutions": [
+	    64,
+            128,
+            256,
+	    512
+        ],
+        "variables": [
+            "rho",
+            "mx",
+            "my",
+	    "mz",
+            "E"
+        ],
+        "cube_filename": "../structure/scripts/rm/p0_05/N{resolution}/structure_fbm_cuda_t_{t}_p_{p}_structure_cube_{p}.000000_0.nc"
     }
+
     
 }

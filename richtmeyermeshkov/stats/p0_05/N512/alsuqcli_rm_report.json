@@ -1,0 +1,174 @@
+{
+    "report": {
+        "software": "alsvinn https:\/\/github.com\/alsvinn",
+        "softwareVersion": "0.5.1",
+        "currentWorkingDirectory": "\/scratch\/snx3000\/klye\/3druns\/richtmeyermeshkov\/stats\/p0_05\/N512",
+        "operatingSystem": "Linux: Linux 4.4.103-6.38_4.0.153-cray_ari_c #1 SMP Thu Nov 1 16:05:05 UTC 2018 (6ef8fef) x86_64",
+        "username": "klye",
+        "host": "nid02037",
+        "standardCLibrary": "GNU libc 2.22 stable",
+        "generatedAt": "20190628T161326",
+        "CPU": "Intel(R) Xeon(R) CPU E5-2690 v3 @ 2.60GHz",
+        "revision": "4dd59a537d371a07973f80f0b5c4be3590383ae4",
+        "versionControlStatus": "DIRTY",
+        "buildType": "Release",
+        "cxxFlags": "",
+        "cxxFlagsDebug": "-g",
+        "cxxFlagsRelease": "-O3 -DNDEBUG",
+        "cxxFlagsMinSizeRel": "-Os -DNDEBUG",
+        "cxxFlagsRelWithDebInfo": "-O2 -g -DNDEBUG",
+        "cudaFlags": "--use_fast_math -Xptxas -warn-spills -gencode arch=compute_50,code=sm_50 -gencode arch=compute_60,code=sm_60  -gencode arch=compute_61,code=sm_61",
+        "cudaVersion": "9.1",
+        "cxxCompiler": "GNU 6.2.0",
+        "cudaCompiler": "NVIDIA 9.1.85",
+        "boost": {
+            "BOOST_VERSION": "106700",
+            "BOOST_LIB_VERSION": "1_67",
+            "BOOST_PLATFORM": "linux",
+            "BOOST_PLATFORM_CONFIG": "boost\/config\/platform\/linux.hpp",
+            "BOOST_COMPILER": "GNU C++ version 6.2.0 20160822 (Cray Inc.)",
+            "BOOST_LIBSTDCXX_VERSION": "60200",
+            "C++11": "true",
+            "BOOST_STDLIB": "GNU libstdc++ version 20160822",
+            "BOOST_STDLIB_CONFIG": "boost\/config\/stdlib\/libstdcpp3.hpp"
+        },
+        "floatingPointPrecisionDescription": "float (single precision, 32 bits)",
+        "floatingPointType": "float",
+        "floatingPointMax": "3.40282e+38",
+        "floatingPointMin": "1.17549e-38",
+        "floatingPointEpsilon": "1.19209e-07",
+        "cudaProperties": {
+            "name": "Tesla P100-PCIE-16GB",
+            "totalGlobalMem": "17071734784",
+            "sharedMemPerBlock": "49152",
+            "regsPerBlock": "65536",
+            "warpSize": "32",
+            "memPitch": "2147483647",
+            "maxThreadsPerBlock": "1024",
+            "maxThreadsDim": "1024, 1024, 64",
+            "maxGridSize": "2147483647, 65535, 65535",
+            "totalConstMem": "65536",
+            "major": "6",
+            "minor": "0",
+            "clockRate": "1328500",
+            "textureAlignment": "512",
+            "deviceOverlap": "1",
+            "multiProcessorCount": "56",
+            "kernelExecTimeoutEnabled": "0",
+            "integrated": "0",
+            "canMapHostMemory": "1",
+            "computeMode": "3",
+            "concurrentKernels": "1",
+            "ECCEnabled": "1",
+            "pciBusID": "2",
+            "pciDeviceID": "0",
+            "tccDriver": "0"
+        },
+        "mpiEnabled": "true",
+        "mpiProcesses": "1024",
+        "mpiVersion": "MPI VERSION    : CRAY MPICH version 7.7.2 (ANL base 3.2)\nMPI BUILD INFO : Built Thu Jul 19 20:01:04 2018 (git hash 5d705bad2) MT-G",
+        "ompEnabled": "true",
+        "ompThreads": "1",
+        "loadedTextFiles": {
+            "_dash_scratch_dash_snx3000_dash_klye_dash_3druns_dash_richtmeyermeshkov_dash_stats_dash_p0_05_dash_N512_dash_richtmeyermeshkov_DOT_py": "def init_global(rho, ux, uy, uz, p, nx, ny, nz, ax, ay, az, bx, by, bz):\n    x = linspace(ax, bx, nx)\n    y = linspace(ay, by, ny)\n    z = linspace(az, bz, nz)\n    Y, X, Z = meshgrid(y, x, z)\n\n\n    XC = X - 0.5\n    YC = Y - 0.5\n    ZC = Z - 0.5\n\n    R = sqrt(XC**2+YC**2+ZC**2)\n\n    Theta = arctan2(ZC, YC)\n    Phi = arctan2(XC, YC)\n\n    N = int(len(a)\/4)\n\n    a1 = a[:N]\n    b1 = a[N:2*N]\n    a2 = a[2*N:3*N]\n    b2 = a[3*N:4*N]\n\n    normalization1 = sum(a1)\n    if abs(normalization1) < 1e-8:\n        normalization1 = N\n\n    normalization2 = sum(a2)\n    if abs(normalization2) < 1e-8:\n        normalization2 = N\n\n    perturbation = epsilon * sum([a1[n] * cos(Phi+2*pi*b1[n]) for n in range(N)], 0) \/ normalization1\n    \n    perturbation += epsilon * sum([a2[n] * cos(Theta+2*pi*b2[n]) for n in range(N)], 0) \/ normalization2\n\n    inner_01 = (R < 0.1)\n\n    inner_025 = (R < 0.25 + perturbation)\n    \n    p[:,:,:] = 20.0 * inner_01 + 1.0 * (1-inner_01)\n\n    rho[:,:,:] = 2.0 * inner_025 + 1.0 * (1-inner_025)\n    ux[:,:,:] = zeros_like(X)\n    uy[:,:,:] = zeros_like(X)\n    uz[:,:,:] = zeros_like(X)\n\n\n\n\n",
+            "_dash_scratch_dash_snx3000_dash_klye_dash_3druns_dash_richtmeyermeshkov_dash_stats_dash_p0_05_dash_N512_dash_richtmeyermeshkov_DOT_xml": "<?xml version=\"1.0\" ?><config>\n<fvm>\n  <name>\n    rm\n  <\/name>\n  <platform>cuda<\/platform>\n  <grid>\n    <lowerCorner>0 0 0<\/lowerCorner>\n    <upperCorner>1 1 1<\/upperCorner>\n    <dimension>512 512 512<\/dimension>\n  <\/grid>\n  <boundary>periodic<\/boundary>\n  <flux>HLL3<\/flux>\n  <endTime>4<\/endTime>\n  <equation>euler3<\/equation>\n  <equationParameters>\n    <gamma>1.4<\/gamma>\n  <\/equationParameters>\n  <reconstruction>mc<\/reconstruction>\n  <cfl>auto<\/cfl>\n  <integrator>auto<\/integrator>\n  <initialData>\n    <python>richtmeyermeshkov.py<\/python>\n    <parameters>\n      <parameter>\n        <name>a<\/name>\n        <length>40<\/length>\n        <values><value>0<\/value><\/values>\n      <\/parameter>\n      <parameter>\n        <name>epsilon<\/name>\n        <length>1<\/length>\n        <value>0.05<\/value>\n      <\/parameter>\n    <\/parameters>\n  <\/initialData>\n  <writer>\n    <type>netcdf<\/type>\n    <basename>rm_cuda<\/basename>\n    <numberOfSaves>1<\/numberOfSaves>\n  <\/writer>\n<\/fvm>\n<uq>\n  <samples>1024<\/samples>\n  <generator>auto<\/generator>\n  <parameters>\n    <parameter>\n      <name>a<\/name>\n      <length>40<\/length>\n      <type>uniform<\/type>\n    <\/parameter>\n  <\/parameters>\n  <stats>\n  <\/stats>\n<\/uq>\n\n<\/config>"
+        },
+        "pythonVersion": "Runtime: 2.7.15 (default, Jul 23 2018, 02:11:24) \n[GCC 6.1.0 20160427 (Cray Inc.)], compile time: 2.7.15",
+        "timings": {
+            "allTimedEvents": {
+                "totalTime": "39966.102488994999",
+                "percentOfProgramTotalTime": "100",
+                "hasIndividualTimeData": "false",
+                "alsvinn": {
+                    "totalTime": "39966.102488994999",
+                    "percentOfProgramTotalTime": "100",
+                    "hasIndividualTimeData": "true",
+                    "fvm": {
+                        "totalTime": "34126.184025356037",
+                        "percentOfProgramTotalTime": "86",
+                        "hasIndividualTimeData": "false",
+                        "init": {
+                            "totalTime": "145.438747103",
+                            "percentOfProgramTotalTime": "1",
+                            "hasIndividualTimeData": "false",
+                            "python": {
+                                "totalTime": "145.438747103",
+                                "percentOfProgramTotalTime": "1",
+                                "hasIndividualTimeData": "true",
+                                "evaluation": {
+                                    "totalTime": "0.004856867",
+                                    "percentOfProgramTotalTime": "1",
+                                    "hasIndividualTimeData": "true"
+                                },
+                                "init_global": {
+                                    "totalTime": "140.81928302099999",
+                                    "percentOfProgramTotalTime": "1",
+                                    "hasIndividualTimeData": "true"
+                                }
+                            }
+                        },
+                        "io": {
+                            "totalTime": "7250.5166126160002",
+                            "percentOfProgramTotalTime": "19",
+                            "hasIndividualTimeData": "false",
+                            "netcdf": {
+                                "totalTime": "7250.5166126160002",
+                                "percentOfProgramTotalTime": "19",
+                                "hasIndividualTimeData": "true"
+                            }
+                        },
+                        "numflux": {
+                            "totalTime": "25586.091718874301",
+                            "percentOfProgramTotalTime": "65",
+                            "hasIndividualTimeData": "true"
+                        },
+                        "reconstruction": {
+                            "totalTime": "1144.1369467627378",
+                            "percentOfProgramTotalTime": "3",
+                            "hasIndividualTimeData": "true"
+                        }
+                    },
+                    "mpi": {
+                        "totalTime": "22948.222517099515",
+                        "percentOfProgramTotalTime": "58",
+                        "hasIndividualTimeData": "false",
+                        "exchange": {
+                            "totalTime": "22948.222517099515",
+                            "percentOfProgramTotalTime": "58",
+                            "hasIndividualTimeData": "true",
+                            "wait": {
+                                "totalTime": "0.87456882099990885",
+                                "percentOfProgramTotalTime": "1",
+                                "hasIndividualTimeData": "true"
+                            }
+                        }
+                    },
+                    "uq": {
+                        "totalTime": "0.153487282",
+                        "percentOfProgramTotalTime": "1",
+                        "hasIndividualTimeData": "false",
+                        "generate": {
+                            "totalTime": "5.9282000000000006e-05",
+                            "percentOfProgramTotalTime": "1",
+                            "hasIndividualTimeData": "true"
+                        },
+                        "init": {
+                            "totalTime": "0.15342800000000001",
+                            "percentOfProgramTotalTime": "1",
+                            "hasIndividualTimeData": "true"
+                        }
+                    }
+                }
+            }
+        },
+        "executable": "alsuqcli",
+        "name": "rm",
+        "endTime": "20190628T161326",
+        "cpuDuration": "24515692",
+        "cpuDurationHuman": "06:48:35",
+        "wallTime": "39967000",
+        "wallTimeHuman": "11:06:07",
+        "timesteps": "361077",
+        "command": "\/users\/klye\/alsvinn\/build_float\/alsuqcli\/alsuqcli --multi-sample 128 --multi-x 2 --multi-y 2 --multi-z 2 richtmeyermeshkov.xml "
+    }
+}
