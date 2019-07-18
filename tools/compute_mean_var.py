@@ -80,7 +80,7 @@ Converts the file to teh new file format
 
     attributes = {}
     time = 0.0
-    if '{' not in args.input_file:
+    if '*' not in args.input_file:
         with netCDF4.Dataset(args.input_file) as f:
 
             variables_to_use = []
@@ -105,17 +105,17 @@ Converts the file to teh new file format
             for attribute_name in f.ncattrs():
                 attributes[attribute_name] = f.getncattr(attribute_name)
     else:
-        sample = 0
-        while os.path.exists(args.input_file.format(sample=sample)):
 
-            with netCDF4.Dataset(args.input_file.format(sample=sample)) as f:
+        for filename in glob.glob(args.input_file):
+
+            with netCDF4.Dataset(filename) as f:
                 for v in f.variables.keys():
                     if v == 'time':
                         time = f.variables['time'][0]
                     else:
                         variable_match = re.match(r'sample_(\d+)_(.+)', v)
                         variable = str(variable_match.group(2))
-
+                        sample = int(variable_match.group(1))
 
                         if args.number_of_samples < 0 or sample < args.number_of_samples:
                             variables_to_use.append(v)
@@ -128,7 +128,7 @@ Converts the file to teh new file format
 
                 for attribute_name in f.ncattrs():
                     attributes[f'sample_{sample}_{attribute_name}'] = f.getncattr(attribute_name)
-            sample += 1
+        
 
 
     for stat in ['mean', 'variance']:
