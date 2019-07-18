@@ -15,6 +15,7 @@ import collections
 import os
 import sys
 import re
+import glob
 
 class MeanVarianceComputer:
 
@@ -128,7 +129,7 @@ Converts the file to teh new file format
 
                 for attribute_name in f.ncattrs():
                     attributes[f'sample_{sample}_{attribute_name}'] = f.getncattr(attribute_name)
-        
+
 
 
     for stat in ['mean', 'variance']:
