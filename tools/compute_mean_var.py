@@ -119,13 +119,7 @@ Converts the file to teh new file format
                         sample = int(variable_match.group(1))
 
                         if args.number_of_samples < 0 or sample < args.number_of_samples:
-                            variables_to_use.append(v)
-                for v in variables_to_use:
-                    d = f.variables[v][:,:,:]
-
-                    variable_match = re.match(r'sample_(\d+)_(.+)', v)
-                    variable = str(variable_match.group(2))
-                    mean_variance[variable].update(d)
+                            mean_variance[variable].update(d)
 
                 for attribute_name in f.ncattrs():
                     attributes[f'sample_{sample}_{attribute_name}'] = f.getncattr(attribute_name)
