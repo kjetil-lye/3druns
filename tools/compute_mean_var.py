@@ -119,6 +119,7 @@ Converts the file to teh new file format
                         sample = int(variable_match.group(1))
 
                         if args.number_of_samples < 0 or sample < args.number_of_samples:
+                            d = f.variables[v][:,:,:]
                             mean_variance[variable].update(d)
 
                 for attribute_name in f.ncattrs():
