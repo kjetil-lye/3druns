@@ -63,7 +63,7 @@ Converts the file to teh new file format
                             ydim = outf.createDimension("y", d.shape[1])
                             zdim = outf.createDimension("z", d.shape[2])
 
-                        newvar = outf.createVariable(variable, d.dtype, ("x", "y", "z"))
+                        newvar = outf.createVariable(v, d.dtype, ("x", "y", "z"))
                         newvar[:,:,:] = d[:,:,:]
 
                 for attribute_name in f.ncattrs():
