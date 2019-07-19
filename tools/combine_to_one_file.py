@@ -46,9 +46,10 @@ Converts the file to teh new file format
 
 
         for filename in glob.glob(args.input_file):
-
+            print(filename)
             with netCDF4.Dataset(filename) as f:
                 for v in f.variables.keys():
+                    print(f'\t{v}')
                     if v == 'time':
 
                         time = f.variables['time'][0]
@@ -67,7 +68,7 @@ Converts the file to teh new file format
                         newvar[:,:,:] = d[:,:,:]
 
                         variable_match = re.match(r'sample_(\d+)_(.+)', v)
-                    
+
                         sample = int(variable_match.group(1))
 
                 for attribute_name in f.ncattrs():
