@@ -38,7 +38,7 @@ Converts the file to teh new file format
 
     attributes = {}
     time = 0.0
-    with netCDF4.Dataset(args.output_file,'w', format='NETCDF4_CLASSIC'):
+    with netCDF4.Dataset(args.output_file,'w', format='NETCDF4_CLASSIC') as outf:
         xdim = None
         ydim = None
         zdim = None
