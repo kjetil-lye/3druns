@@ -17,39 +17,6 @@ import sys
 import re
 import glob
 
-class MeanVarianceComputer:
-
-    def __init__(self):
-        self.count = 0
-        self.mean = None
-        self.m2 = None
-
-    def update(self, data):
-        if self.mean is None:
-            self.mean = np.zeros_like(data, dtype=np.float64)
-            self.m2 = np.zeros_like(data, dtype=np.float64)
-
-        self.count += 1
-        delta = data - self.mean
-        self.mean += delta / self.count
-
-        delta2 = data - self.mean
-        self.m2 += delta * delta2
-
-    def get_mean(self):
-        return self.mean
-
-    def get_variance(self):
-        return self.m2/self.count
-
-    def __getitem__(self, stat):
-
-        if stat == 'mean':
-            return self.get_mean()
-        elif stat == 'variance':
-            return self.get_variance()
-
-        raise Exception(f'Unknown statistics: {stat}')
 
 if __name__ == '__main__':
 
@@ -62,22 +29,12 @@ Converts the file to teh new file format
                         help='Input file')
 
 
-    parser.add_argument('--output_file_base', type=str, required=True,
+    parser.add_argument('--output_file', type=str, required=True,
                         help='Output file')
-
-    parser.add_argument('--number_of_samples', type=int, default=-1,
-                        help='Number of samples to use. If -1, it will use all available samples')
 
 
     args = parser.parse_args()
 
-
-    time_match = re.search(r'_(\d+).nc', args.input_file)
-    if time_match:
-        timestep = int(time_match.group(1))
-    else:
-        timestep = 0
-    mean_variance = collections.defaultdict(lambda : MeanVarianceComputer())
 
     attributes = {}
     time = 0.0
