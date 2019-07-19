@@ -66,6 +66,10 @@ Converts the file to teh new file format
                         newvar = outf.createVariable(v, d.dtype, ("x", "y", "z"))
                         newvar[:,:,:] = d[:,:,:]
 
+                        variable_match = re.match(r'sample_(\d+)_(.+)', v)
+                    
+                        sample = int(variable_match.group(1))
+
                 for attribute_name in f.ncattrs():
                     outf.setncattr(f'sample_{sample}_{attribute_name}',
                         f.getncattr(attribute_name))
