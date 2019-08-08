@@ -224,8 +224,8 @@ def wasserstein_1pt(filenames, title):
             d2 = np.zeros((r, r//2, r//2, number_of_variables))
             
             for n, variable in enumerate(conserved_variables):
-                d1[:,:,n] = load_plane(filenames[r], variable, i, r)
-                d2[:,:,n] = load_plane(filenames[r//2], variable, i//2, r)
+                d1[:,:,:,n] = load_plane(filenames[r], variable, i, r)
+                d2[:,:,:,n] = load_plane(filenames[r//2], variable, i//2, r)
             for j in range(r):
                 for k in range(r):
 
