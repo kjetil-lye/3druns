@@ -1,7 +1,7 @@
 #!/bin/bash
 N=50
 
-for int_points in 10 20 40;
+for int_points in 8 16 32 64
 do
     
     for t in 0 1;
@@ -27,7 +27,8 @@ do
     do
 	bsub -W 24:00 -R "rusage[mem=8000]" python \
 	     ../python/compute_wasserstein.py \
-	"/cluster/project/sam/klye/3druns_kh_tube/kelvinhelmholtz_3d_tube/stats/kelvinhelmholtz_{resolution}_${p}/kh_${t}.nc"
+	    --input_basename "/cluster/project/sam/klye/3druns_kh_tube/kelvinhelmholtz_3d_tube/stats/kelvinhelmholtz_{resolution}_${p}/kh_${t}.nc" \
+	    --title "Kelvin-Helmholtz \$T=$((2*${t}))\$ \$\\epsilon=$p\$ \$K_I=${int_points}\$"
     done
 done
 
