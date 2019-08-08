@@ -204,7 +204,7 @@ def progress(part, total):
             pass
     
 
-def wasserstein_1pt(filenames, variable, title):
+def wasserstein_1pt(filenames, title):
     # don't judge me for the next line
     resolutions = np.array(sorted(list([k for k in filenames.keys()])))
 
