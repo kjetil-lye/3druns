@@ -125,7 +125,7 @@ def wasserstein2pt_fast(filename_a, filename_b, N, number_of_integration_points=
         xt[:, :number_of_variables] = np.repeat(load_samples(filename_b, N // 2, i // 2, j // 2, k // 2), 2, 0)
 
         for nzp, zp in enumerate(points):
-            kp = int(zp * N)
+            kp = int(zp * N / number_of_integration_points)
             samples_plane_a = load_samples_plane(filename_a, N, kp, N)
             samples_plane_b = np.repeat(load_samples_plane(filename_b, N // 2, kp // 2, N), 2, 2)
 
