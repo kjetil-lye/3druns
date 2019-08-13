@@ -41,11 +41,11 @@ def load_samples_plane(filename, N, kp, upscale_resolution):
     return data
 
 
-def load_sample(filename, sample, i, j, k):
+def load_sample(filename, sample_number, i, j, k):
     sample = np.zeros(len(compressible_euler.conserved_variables))
     with netCDF4.Dataset(filename) as f:
         for n, variable_name in enumerate(compressible_euler.conserved_variables):
-            d = f.variables[f'sample_{sample}_{variable_name}']
+            d = f.variables[f'sample_{sample_number}_{variable_name}']
             
             sample[n] = d[i,j,k]
 
@@ -53,7 +53,7 @@ def load_sample(filename, sample, i, j, k):
 
 
 def load_samples(filename, N, i, j, k):
-    data = np.zeros(N, len(compressible_euler.conserved_variables))
+    data = np.zeros((N, len(compressible_euler.conserved_variables)))
     for sample in range(N):
         data[sample, :] = load_sample(filename, sample, i, j, k)
     return data
