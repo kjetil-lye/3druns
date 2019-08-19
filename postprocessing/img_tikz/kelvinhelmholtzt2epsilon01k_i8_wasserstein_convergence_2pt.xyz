@@ -1,0 +1,77 @@
+% This file was created by matplotlib2tikz v0.7.4.
+\begin{tikzpicture}
+
+\definecolor{color0}{rgb}{0.12156862745098,0.466666666666667,0.705882352941177}
+
+\begin{axis}[
+height=\figureheight,
+log basis x={2},
+log basis y={2},
+tick align=outside,
+tick pos=left,
+title={Wasserstein convergence for Kelvin-Helmholtz $T=2$ $\epsilon=0.1$ $K_I=8$
+for second correlation marginal
+Using $8^6=262144$ equidistant integration points
+        },
+width=\figurewidth,
+x grid style={white!69.01960784313725!black},
+xlabel={Resolution},
+xmin=119.428222916711, xmax=548.748012818582,
+xmode=log,
+xtick style={color=black},
+xtick={128,256,512},
+xticklabels={\(\displaystyle 128^3\),\(\displaystyle 256^3\),\(\displaystyle 512^3\)},
+y grid style={white!69.01960784313725!black},
+ylabel={\(\displaystyle ||W_1(\nu^{2, \Delta x}, \nu^{2,\Delta x/2})||_{L^1(D\times D)}\)},
+ymin=0.25, ymax=0.5,
+ymode=log,
+ytick style={color=black}
+]
+\addplot [semithick, color0, mark=*, mark size=3, mark options={solid}]
+table {%
+128 0.323980373159981
+256 0.299171286508612
+512 0.270825145955415
+};
+\node at (axis cs:0.95,0.01)[
+  scale=0.15,
+  anchor=south east,
+  text=white!50.19607843137255!black,
+  rotate=0.0,
+  align=right
+]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
+Commit: 892676067fb257597bf830a16754b0fcae181113
+Repo: git@github.com:kjetil-lye/3druns.git
+Hostname: eu-c7-064-04};
+\node at (axis cs:0.2,0.93)[
+  scale=0.5,
+  anchor=south east,
+  text=white!50.19607843137255!black,
+  rotate=0.0
+]{@8926};
+\end{axis}
+
+\end{tikzpicture}
+
+%% INCLUDE THE COMMENTS AT THE END WHEN COPYING
+%%%%%%%%%%%%%TITLE%%%%%%%%%%%%%%%%%
+%% Wasserstein convergence for Kelvin-Helmholtz $T=2$ $\epsilon=0.1$ $K_I=8$
+%% for second correlation marginal
+%% Using $8^6=262144$ equidistant integration points
+%%         
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% script name: ../python/wasserstein_two_point.py
+%% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
+%% DO NOT REMOVE THE COMMENTS BELOW!
+%% GIT git_commit : 892676067fb257597bf830a16754b0fcae181113
+%% GIT git_repo_modified : False
+%% GIT git_branch : master
+%% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
+%% GIT git_short_commit : 8926
+%% working_directory : /cluster/scratch/klye/3druns/postprocessing/notebooks
+%% hostname : eu-c7-064-04
+%% generated_on_date : 2019-08-14 02:14:15.743719
+%% accessed_environment:
+%% additional_parameters:
+%%    commandrun=/cluster/scratch/klye/3druns/postprocessing/.venv/bin/python ../python/wasserstein_two_point.py --input_basename /cluster/project/sam/klye/3druns_kh_tube/kelvinhelmholtz_3d_tube/stats/kelvinhelmholtz_{resolution}_0.1/kh_1.nc --title Kelvin-Helmholtz $T=2$ $\epsilon=0.1$ $K_I=8$ --number_of_integration_points=8
+%%    basename=/cluster/project/sam/klye/3druns_kh_tube/kelvinhelmholtz_3d_tube/stats/kelvinhelmholtz_{resolution}_0.1/kh_1.nc

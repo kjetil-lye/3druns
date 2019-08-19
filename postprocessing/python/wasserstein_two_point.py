@@ -23,40 +23,46 @@ import plot_info
 
 from mpi4py import MPI
 
+import compressible_euler
 
 def load_samples_plane(filename, N, kp, upscale_resolution):
-    data = np.zeros((upscale_resolution, upscale_resolution, N))
+    number_of_variables = len(compressible_euler.conserved_variables)
+    data = np.zeros((upscale_resolution, upscale_resolution, N, number_of_variables))
     with netCDF4.Dataset(filename) as f:
         for k in range(N):
-            d = f.variables['sample_{}_rho'.format(k)][kp, :, :]
-
-            while d.shape[1] < upscale_resolution:
-                d = np.repeat(np.repeat(d, 2, 0), 2, 1)
-
-            data[:, :, k] = d
+            for n, variable_name in enumerate(compressible_euler.conserved_variables):
+                d = f.variables[f'sample_{k}_{variable_name}'][kp, :, :]
+    
+                while d.shape[1] < upscale_resolution:
+                    d = np.repeat(np.repeat(d, 2, 0), 2, 1)
+    
+                data[:, :, k, n] = d
 
     return data
 
 
-def load_sample(filename, sample, i, j, k):
+def load_sample(filename, sample_number, i, j, k):
+    sample = np.zeros(len(compressible_euler.conserved_variables))
     with netCDF4.Dataset(filename) as f:
-        d = f.variables['sample_{}_rho'.format(sample)]
+        for n, variable_name in enumerate(compressible_euler.conserved_variables):
+            d = f.variables[f'sample_{sample_number}_{variable_name}']
+            
+            sample[n] = d[i,j,k]
 
-        return d[i, j, k]
+    return sample 
 
 
 def load_samples(filename, N, i, j, k):
-    data = np.zeros(N)
+    data = np.zeros((N, len(compressible_euler.conserved_variables)))
     for sample in range(N):
-        data[sample] = load_sample(filename, sample, i, j, k)
+        data[sample, :] = load_sample(filename, sample, i, j, k)
     return data
 
 
 def wasserstein_point2_fast(a, b, xs, xt):
     """
-    Computes the Wasserstein distance for a single point in the spatain domain
+    Computes the Wasserstein distance for a single point in the spatial domain
     """
-
     M = ot.dist(xs, xt, metric='euclidean')
     G0 = ot.emd(a, b, M)
 
@@ -90,44 +96,47 @@ def get_points_per_node(points_base):
     return points[points_start:points_end]
 
 
-def wasserstein2pt_fast(filename_a, filename_b, N, number_of_integration_points=10):
+def wasserstein2pt_fast(filename_a, filename_b, N, number_of_integration_points=16):
     """
     Approximate the L^1(W_1) distance (||W_1(nu1, nu2)||_{L^1})
     """
 
+    number_of_variables = len(compressible_euler.conserved_variables)
     a = np.ones(N) / N
     b = np.ones(N) / N
-    xs = np.zeros((N, 2))
-    xt = np.zeros((N, 2))
+    xs = np.zeros((N, 2 * number_of_variables))
+    xt = np.zeros((N, 2 * number_of_variables))
     distance = 0
-
-    points = 1.0 / number_of_integration_points * np.arange(0, number_of_integration_points)
+    if 2**np.log2(number_of_integration_points) != number_of_integration_points:
+        raise Exception(f'number_of_integration_points must be a power of 2, given \n{number_of_integration_points}')
+    
+    points = np.arange(0, number_of_integration_points)
     comm = MPI.COMM_WORLD
     rank = comm.Get_rank()
     for n, (x, y, z) in enumerate(get_points_per_node(points)):
         if rank == 0:
             sys.stdout.write("{}\r".format(n))
             sys.stdout.flush()
-        i = int(x * N)
-        j = int(y * N)
-        k = int(z * N)
+        i = int(x * N / number_of_integration_points)
+        j = int(y * N / number_of_integration_points)
+        k = int(z * N / number_of_integration_points)
 
-        xs[:, 0] = load_samples(filename_a, N, i, j, k)
-        xt[:, 0] = np.repeat(load_samples(filename_b, N // 2, i // 2, j // 2, k // 2), 2, 0)
+        xs[:, :number_of_variables] = load_samples(filename_a, N, i, j, k)
+        xt[:, :number_of_variables] = np.repeat(load_samples(filename_b, N // 2, i // 2, j // 2, k // 2), 2, 0)
 
         for nzp, zp in enumerate(points):
-            kp = int(zp * N)
+            kp = int(zp * N / number_of_integration_points)
             samples_plane_a = load_samples_plane(filename_a, N, kp, N)
             samples_plane_b = np.repeat(load_samples_plane(filename_b, N // 2, kp // 2, N), 2, 2)
 
             for nxp, xp in enumerate(points):
                 for nyp, yp in enumerate(points):
-                    ip = int(xp * N)
-                    jp = int(yp * N)
+                    ip = int(xp * N / number_of_integration_points)
+                    jp = int(yp * N / number_of_integration_points)
 
-                    xs[:, 1] = samples_plane_a[ip, jp, :]
+                    xs[:, number_of_variables:] = samples_plane_a[ip, jp, :]
 
-                    xt[:, 1] = samples_plane_b[ip, jp, :]
+                    xt[:, number_of_variables:] = samples_plane_b[ip, jp, :]
 
                     distance += wasserstein_point2_fast(a, b, xs, xt)
 

@@ -7,17 +7,9 @@ from plot_info import *
 import netCDF4
 import scipy
 import scipy.stats
-latex_variables = {
-    'rho' : '\\rho',
-    'E'   : 'E',
-    'mx' : 'm_x',
-    'my' : 'm_y',
-    'mz' : 'm_z',
-    'ux' : 'u_x',
-    'uy' : 'u_y',
-    'uz' : 'u_z',
-    'p'  : 'p'
-}
+import ot
+
+from compressible_euler import latex_variables, conserved_variables
 
 def load(filename, variable):
     with netCDF4.Dataset(filename) as f:
@@ -185,12 +177,14 @@ def load_samples_point(filename, variable, i, j, k):
                 samples.append(f.variables[key][i,j,k])
     return np.array(samples)
 
-def load_plane(filename, variable, k):
+def load_plane(filename, variable, k, number_of_samples):
     samples = []
     with netCDF4.Dataset(filename) as f:
         for attr in f.ncattrs():
             plot_info.add_additional_plot_parameters(filename.replace("/", "_") + "_" + attr, f.getncattr(attr))
         for key in f.variables.keys():
+            if len(samples) == number_of_samples:
+                break
             if variable in key:
 
                 samples.append(f.variables[key][k,:,:])
@@ -210,26 +204,37 @@ def progress(part, total):
             pass
     
 
-def wasserstein_1pt(filenames, variable, title):
+def wasserstein_1pt(filenames, title):
     # don't judge me for the next line
     resolutions = np.array(sorted(list([k for k in filenames.keys()])))
 
     errors = []
+    
+    number_of_variables = len(conserved_variables)
+    
     for r in resolutions[1:]:
+        weights_a = np.ones(r) / r
+        weights_b = np.ones(r) / r
 
         wasserstein_error = 0.0
 
         for i in range(r):
             progress(i, r)
-            d1 = load_plane(filenames[r], variable, i)
-            d2 = load_plane(filenames[r//2], variable, i//2)
+            d1 = np.zeros((r, r, r, number_of_variables))
+            d2 = np.zeros((r, r//2, r//2, number_of_variables))
+            
+            for n, variable in enumerate(conserved_variables):
+                d1[:,:,:,n] = load_plane(filenames[r], variable, i, r)
+                d2[:,:,:,n] = load_plane(filenames[r//2], variable, i//2, r)
             for j in range(r):
                 for k in range(r):
 
 #                    d1 = load_samples_point(filenames[r], variable, i, j, k)
 #                    d2 = load_samples_point(filenames[r//2], variable, i//2, j//2, k//2)
-
-                    wasserstein_error += scipy.stats.wasserstein_distance(d1[:,j,k], d2[:,j//2,k//2])
+                    distances = ot.dist(d1[:,j,k,:], d2[:,j//2,k//2,:], metric='euclidean')
+                    emd_pairing = ot.emd(weights_a, weights_b, distances)
+                    wasserstein_distance = np.sum(emd_pairing * distances)
+                    wasserstein_error += wasserstein_distance
         wasserstein_error /= r**3
 
         errors.append(wasserstein_error)
@@ -241,24 +246,24 @@ def wasserstein_1pt(filenames, variable, title):
     
     plt.xticks(resolutions[1:], ["${}^{{3}}$".format(r) for r in resolutions[1:]])
     
-    saveData(f"wasserstein_1pt_{title}_{variable}_errors", errors)
-    saveData(f"wasserstein_1pt_{title}_{variable}_resolutions", resolutions)
+    saveData(f"wasserstein_1pt_{title}_all_errors", errors)
+    saveData(f"wasserstein_1pt_{title}_all_resolutions", resolutions)
     plt.ylabel("Error ($\\lVert W_1(\\nu^{1,N}, \\nu^{1,2 N })\\rVert_{L^1(D)}$")
-    plt.title(f"One point $W_1$-convergence\n{title}\nVariable: ${variable}$")
+    plt.title(f"One point $W_1$-convergence\n{title}")
 
         
         
 
 
-def plot_wasserstein_convergence(resolutions, basename, variable, title):
+def plot_wasserstein_convergence(resolutions, basename, title):
     filenames = {}
 
     for r in resolutions:
         filenames[r] = basename.format(resolution=r)
     
-    wasserstein_1pt(filenames, variable, title)
+    wasserstein_1pt(filenames, title)
     
-    showAndSave(f"wasserstein_1pt_{title}_{variable}")
+    showAndSave(f"wasserstein_1pt_{title}_all")
     
 
 
