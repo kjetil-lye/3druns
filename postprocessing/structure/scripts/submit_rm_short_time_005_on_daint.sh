@@ -21,7 +21,7 @@ do
 	for H in 0.05
 	do
 
-	    folder="rm/p${H//./_}/N${x}"
+	    folder="rm_short_time/p${H//./_}/N${x}"
 	    mkdir -p ${folder}
 
 	    for p in 1 2 3;
