@@ -289,7 +289,7 @@ def wasserstein_1pt(filenames, title, reference_solution=False):
     filename_append = ''
     
     if reference_solution:
-        filename_append = '_reference
+        filename_append = '_reference'
     
     saveData(f"wasserstein_1pt{filename_append}_{title}_all_errors", errors)
     saveData(f"wasserstein_1pt{filename_append}_{title}_all_resolutions", resolutions)
