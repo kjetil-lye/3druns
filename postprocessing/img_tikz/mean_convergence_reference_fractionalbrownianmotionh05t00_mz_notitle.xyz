@@ -1,0 +1,1514 @@
+% This file was created by matplotlib2tikz v0.7.4.
+\begin{tikzpicture}
+
+\definecolor{color0}{rgb}{0.12156862745098,0.466666666666667,0.705882352941177}
+
+\begin{axis}[
+height=\figureheight,
+legend cell align={left},
+legend style={draw=white!80.0!black},
+log basis x={2},
+log basis y={2},
+tick align=outside,
+tick pos=left,
+width=\figurewidth,
+x grid style={white!69.01960784313725!black},
+xlabel={Resolution (\(\displaystyle N^3\))},
+xmin=28.8400148035466, xmax=284.049784849368,
+xmode=log,
+xtick style={color=black},
+xtick={32,64,128,256},
+xticklabels={\(\displaystyle 32^3\),\(\displaystyle 64^3\),\(\displaystyle 128^3\),\(\displaystyle 256^3\)},
+y grid style={white!69.01960784313725!black},
+ylabel={Error (\(\displaystyle \lVert \mathbb{E}(m_z^{N})-\mathbb{E}(m_z^{512})\rVert_{L^1(D)}\))},
+ymin=0.00604871043694779, ymax=0.0240113305560134,
+ymode=log,
+ytick style={color=black},
+ytick={0.001953125,0.00390625,0.0078125,0.015625,0.03125,0.0625},
+yticklabels={\(\displaystyle 2^{-9}\),\(\displaystyle 2^{-8}\),\(\displaystyle 2^{-7}\),\(\displaystyle 2^{-6}\),\(\displaystyle 2^{-5}\),\(\displaystyle 2^{-4}\)}
+]
+\addplot [semithick, color0, mark=*, mark size=3, mark options={solid}, forget plot]
+table {%
+32 0.021520333228711
+64 0.0157081103948117
+128 0.0108472740421682
+256 0.00643989608540573
+};
+\addplot [semithick, color0, dashed]
+table {%
+32 0.0225527840531935
+64 0.015133130895359
+128 0.0101544736186857
+256 0.0068137476101661
+};
+\addlegendentry{$\mathcal{O}(N^{-0.58})$}
+\node at (axis cs:0.95,0.01)[
+  scale=0.15,
+  anchor=south east,
+  text=white!50.19607843137255!black,
+  rotate=0.0,
+  align=right
+]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
+Commit: c6e7e2e3d9570bfe7969aebd327618e51a58cda7
+Repo: git@github.com:kjetil-lye/3druns.git
+Hostname: daint103};
+\node at (axis cs:0.2,0.93)[
+  scale=0.5,
+  anchor=south east,
+  text=white!50.19607843137255!black,
+  rotate=0.0
+]{@c6e7};
+\node at (axis cs:0.95,0.01)[
+  scale=0.15,
+  anchor=south east,
+  text=white!50.19607843137255!black,
+  rotate=0.0,
+  align=right
+]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
+Commit: c6e7e2e3d9570bfe7969aebd327618e51a58cda7
+Repo: git@github.com:kjetil-lye/3druns.git
+Hostname: daint103};
+\end{axis}
+
+\end{tikzpicture}
+
+%% INCLUDE THE COMMENTS AT THE END WHEN COPYING
+%%%%%%%%%%%%%TITLE%%%%%%%%%%%%%%%%%
+%% None
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% script name: ../python/compute_mean_variance_convergence.py
+%% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
+%% DO NOT REMOVE THE COMMENTS BELOW!
+%% GIT git_commit : c6e7e2e3d9570bfe7969aebd327618e51a58cda7
+%% GIT git_repo_modified : False
+%% GIT git_branch : master
+%% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
+%% GIT git_short_commit : c6e7
+%% working_directory : /scratch/snx3000/klye/3druns_newest/postprocessing/notebooks
+%% hostname : daint103
+%% generated_on_date : 2019-09-17 17:01:13.955547
+%% accessed_environment:
+%% additional_parameters:
+%%    commandrun=/scratch/snx3000/klye/3druns_new/postprocessing/.venv/bin/python ../python/compute_mean_variance_convergence.py --input_basename /project/s913/klye/3druns_fbm/3druns/fbm/stats/H0_5/N{resolution}/fbm_{stat}_0.nc --title Fractional Brownian motion $H=0.5, T=0.0$ --starting_resolution 32 --stat mean --variable mz --not_zoom --compute_rate --reference_solution
+%%    basename=/project/s913/klye/3druns_fbm/3druns/fbm/stats/H0_5/N{resolution}/fbm_{stat}_0.nc
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.software=alsvinn https://github.com/alsvinn
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.softwareVersion=0.4.2
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.currentWorkingDirectory=/scratch/snx3000/klye/3druns/fbm/stats/H0_5/N32
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.operatingSystem=Linux: Linux 4.4.103-6.38_4.0.153-cray_ari_c #1 SMP Thu Nov 1 16:05:05 UTC 2018 (6ef8fef) x86_64
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.username=klye
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.host=nid02700
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.standardCLibrary=GNU libc 2.22 stable
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.generatedAt=20190618T083151
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.CPU=Intel(R) Xeon(R) CPU E5-2690 v3 @ 2.60GHz
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.revision=ace845d81bbce8cf30948a6e12d477d9bf8cbfa4
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.versionControlStatus=DIRTY
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.buildType=Release
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.cxxFlags=
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.cxxFlagsDebug=-g
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.cxxFlagsRelease=-O3 -DNDEBUG
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.cxxFlagsMinSizeRel=-Os -DNDEBUG
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.cxxFlagsRelWithDebInfo=-O2 -g -DNDEBUG
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.cudaFlags=--use_fast_math -Xptxas -warn-spills -gencode arch=compute_50,code=sm_50 -gencode arch=compute_60,code=sm_60  -gencode arch=compute_61,code=sm_61
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.cudaVersion=9.1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.cxxCompiler=GNU 6.2.0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.cudaCompiler=NVIDIA 9.1.85
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.boost.BOOST_VERSION=106700
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.boost.BOOST_LIB_VERSION=1_67
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.boost.BOOST_PLATFORM=linux
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.boost.BOOST_PLATFORM_CONFIG=boost/config/platform/linux.hpp
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.boost.BOOST_COMPILER=GNU C++ version 6.2.0 20160822 (Cray Inc.)
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.boost.BOOST_LIBSTDCXX_VERSION=60200
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.boost.C++11=true
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.boost.BOOST_STDLIB=GNU libstdc++ version 20160822
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.boost.BOOST_STDLIB_CONFIG=boost/config/stdlib/libstdcpp3.hpp
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.floatingPointPrecisionDescription=double (double precision, 64 bits)
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.floatingPointType=double
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.floatingPointMax=1.79769e+308
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.floatingPointMin=2.22507e-308
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.floatingPointEpsilon=2.22045e-16
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.cudaProperties.name=Tesla P100-PCIE-16GB
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.cudaProperties.totalGlobalMem=17071734784
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.cudaProperties.sharedMemPerBlock=49152
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.cudaProperties.regsPerBlock=65536
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.cudaProperties.warpSize=32
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.cudaProperties.memPitch=2147483647
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.cudaProperties.maxThreadsPerBlock=1024
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.cudaProperties.maxThreadsDim=1024, 1024, 64
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.cudaProperties.maxGridSize=2147483647, 65535, 65535
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.cudaProperties.totalConstMem=65536
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.cudaProperties.major=6
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.cudaProperties.minor=0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.cudaProperties.clockRate=1328500
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.cudaProperties.textureAlignment=512
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.cudaProperties.deviceOverlap=1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.cudaProperties.multiProcessorCount=56
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.cudaProperties.kernelExecTimeoutEnabled=0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.cudaProperties.integrated=0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.cudaProperties.canMapHostMemory=1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.cudaProperties.computeMode=3
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.cudaProperties.concurrentKernels=1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.cudaProperties.ECCEnabled=1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.cudaProperties.pciBusID=2
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.cudaProperties.pciDeviceID=0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.cudaProperties.tccDriver=0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.mpiEnabled=true
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.mpiProcesses=32
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.mpiVersion=MPI VERSION    : CRAY MPICH version 7.7.2 (ANL base 3.2)MPI BUILD INFO : Built Thu Jul 19 20:01:04 2018 (git hash 5d705bad2) MT-G
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.ompEnabled=true
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_alsvinn_report.ompThreads=1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_uqAttributes.fvm.name=    fbm  
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_uqAttributes.fvm.platform=cuda
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_uqAttributes.fvm.grid.lowerCorner=0 0 0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_uqAttributes.fvm.grid.upperCorner=1 1 1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_uqAttributes.fvm.grid.dimension=32 32 32
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_uqAttributes.fvm.boundary=periodic
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_uqAttributes.fvm.flux=hll3
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_uqAttributes.fvm.endTime=.2
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_uqAttributes.fvm.equation=euler3
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_uqAttributes.fvm.equationParameters.gamma=1.4
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_uqAttributes.fvm.reconstruction=wenof2
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_uqAttributes.fvm.cfl=auto
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_uqAttributes.fvm.integrator=auto
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_uqAttributes.fvm.initialData.python=fbm.py
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_uqAttributes.fvm.initialData.parameters.parameter.name=X
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_uqAttributes.fvm.initialData.parameters.parameter.length=400298493
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_uqAttributes.fvm.initialData.parameters.parameter.value=0.5
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_uqAttributes.fvm.initialData.parameters.parameter.values.value=0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_uqAttributes.fvm.diffusion.name=none
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_uqAttributes.fvm.diffusion.reconstruction=none
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_uqAttributes.fvm.writer.type=netcdf
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_uqAttributes.fvm.writer.basename=fbm
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_uqAttributes.fvm.writer.numberOfSaves=1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_uqAttributes.uq.samples=512
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_uqAttributes.uq.generator=auto
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_uqAttributes.uq.parameters.parameter.name=X
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_uqAttributes.uq.parameters.parameter.length=400298493
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_uqAttributes.uq.parameters.parameter.type=uniform
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_uqAttributes.uq.stats.stat.name=      meanvar    
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_uqAttributes.uq.stats.stat.numberOfSaves=1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_uqAttributes.uq.stats.stat.writer.type=netcdf
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N32_fbm_mean_0.nc_uqAttributes.uq.stats.stat.writer.basename=fbm
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.software=alsvinn https://github.com/alsvinn
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.softwareVersion=0.4.2
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.currentWorkingDirectory=/scratch/snx3000/klye/3druns/fbm/stats/H0_5/N64
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.operatingSystem=Linux: Linux 4.4.103-6.38_4.0.153-cray_ari_c #1 SMP Thu Nov 1 16:05:05 UTC 2018 (6ef8fef) x86_64
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.username=klye
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.host=nid06209
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.standardCLibrary=GNU libc 2.22 stable
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.generatedAt=20190618T083328
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.CPU=Intel(R) Xeon(R) CPU E5-2690 v3 @ 2.60GHz
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.revision=ace845d81bbce8cf30948a6e12d477d9bf8cbfa4
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.versionControlStatus=DIRTY
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.buildType=Release
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.cxxFlags=
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.cxxFlagsDebug=-g
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.cxxFlagsRelease=-O3 -DNDEBUG
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.cxxFlagsMinSizeRel=-Os -DNDEBUG
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.cxxFlagsRelWithDebInfo=-O2 -g -DNDEBUG
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.cudaFlags=--use_fast_math -Xptxas -warn-spills -gencode arch=compute_50,code=sm_50 -gencode arch=compute_60,code=sm_60  -gencode arch=compute_61,code=sm_61
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.cudaVersion=9.1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.cxxCompiler=GNU 6.2.0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.cudaCompiler=NVIDIA 9.1.85
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.boost.BOOST_VERSION=106700
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.boost.BOOST_LIB_VERSION=1_67
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.boost.BOOST_PLATFORM=linux
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.boost.BOOST_PLATFORM_CONFIG=boost/config/platform/linux.hpp
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.boost.BOOST_COMPILER=GNU C++ version 6.2.0 20160822 (Cray Inc.)
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.boost.BOOST_LIBSTDCXX_VERSION=60200
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.boost.C++11=true
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.boost.BOOST_STDLIB=GNU libstdc++ version 20160822
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.boost.BOOST_STDLIB_CONFIG=boost/config/stdlib/libstdcpp3.hpp
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.floatingPointPrecisionDescription=double (double precision, 64 bits)
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.floatingPointType=double
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.floatingPointMax=1.79769e+308
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.floatingPointMin=2.22507e-308
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.floatingPointEpsilon=2.22045e-16
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.cudaProperties.name=Tesla P100-PCIE-16GB
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.cudaProperties.totalGlobalMem=17071734784
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.cudaProperties.sharedMemPerBlock=49152
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.cudaProperties.regsPerBlock=65536
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.cudaProperties.warpSize=32
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.cudaProperties.memPitch=2147483647
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.cudaProperties.maxThreadsPerBlock=1024
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.cudaProperties.maxThreadsDim=1024, 1024, 64
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.cudaProperties.maxGridSize=2147483647, 65535, 65535
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.cudaProperties.totalConstMem=65536
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.cudaProperties.major=6
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.cudaProperties.minor=0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.cudaProperties.clockRate=1328500
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.cudaProperties.textureAlignment=512
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.cudaProperties.deviceOverlap=1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.cudaProperties.multiProcessorCount=56
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.cudaProperties.kernelExecTimeoutEnabled=0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.cudaProperties.integrated=0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.cudaProperties.canMapHostMemory=1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.cudaProperties.computeMode=3
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.cudaProperties.concurrentKernels=1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.cudaProperties.ECCEnabled=1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.cudaProperties.pciBusID=2
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.cudaProperties.pciDeviceID=0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.cudaProperties.tccDriver=0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.mpiEnabled=true
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.mpiProcesses=32
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.mpiVersion=MPI VERSION    : CRAY MPICH version 7.7.2 (ANL base 3.2)MPI BUILD INFO : Built Thu Jul 19 20:01:04 2018 (git hash 5d705bad2) MT-G
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.ompEnabled=true
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_alsvinn_report.ompThreads=1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_uqAttributes.fvm.name=    fbm  
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_uqAttributes.fvm.platform=cuda
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_uqAttributes.fvm.grid.lowerCorner=0 0 0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_uqAttributes.fvm.grid.upperCorner=1 1 1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_uqAttributes.fvm.grid.dimension=64 64 64
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_uqAttributes.fvm.boundary=periodic
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_uqAttributes.fvm.flux=hll3
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_uqAttributes.fvm.endTime=.2
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_uqAttributes.fvm.equation=euler3
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_uqAttributes.fvm.equationParameters.gamma=1.4
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_uqAttributes.fvm.reconstruction=wenof2
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_uqAttributes.fvm.cfl=auto
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_uqAttributes.fvm.integrator=auto
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_uqAttributes.fvm.initialData.python=fbm.py
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_uqAttributes.fvm.initialData.parameters.parameter.name=X
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_uqAttributes.fvm.initialData.parameters.parameter.length=400298493
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_uqAttributes.fvm.initialData.parameters.parameter.value=0.5
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_uqAttributes.fvm.initialData.parameters.parameter.values.value=0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_uqAttributes.fvm.diffusion.name=none
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_uqAttributes.fvm.diffusion.reconstruction=none
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_uqAttributes.fvm.writer.type=netcdf
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_uqAttributes.fvm.writer.basename=fbm
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_uqAttributes.fvm.writer.numberOfSaves=1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_uqAttributes.uq.samples=512
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_uqAttributes.uq.generator=auto
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_uqAttributes.uq.parameters.parameter.name=X
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_uqAttributes.uq.parameters.parameter.length=400298493
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_uqAttributes.uq.parameters.parameter.type=uniform
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_uqAttributes.uq.stats.stat.name=      meanvar    
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_uqAttributes.uq.stats.stat.numberOfSaves=1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_uqAttributes.uq.stats.stat.writer.type=netcdf
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N64_fbm_mean_0.nc_uqAttributes.uq.stats.stat.writer.basename=fbm
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.software=alsvinn https://github.com/alsvinn
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.softwareVersion=0.4.2
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.currentWorkingDirectory=/scratch/snx3000/klye/3druns/fbm/stats/H0_5/N128
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.operatingSystem=Linux: Linux 4.4.103-6.38_4.0.153-cray_ari_c #1 SMP Thu Nov 1 16:05:05 UTC 2018 (6ef8fef) x86_64
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.username=klye
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.host=nid06788
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.standardCLibrary=GNU libc 2.22 stable
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.generatedAt=20190618T083949
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.CPU=Intel(R) Xeon(R) CPU E5-2690 v3 @ 2.60GHz
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.revision=ace845d81bbce8cf30948a6e12d477d9bf8cbfa4
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.versionControlStatus=DIRTY
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.buildType=Release
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.cxxFlags=
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.cxxFlagsDebug=-g
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.cxxFlagsRelease=-O3 -DNDEBUG
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.cxxFlagsMinSizeRel=-Os -DNDEBUG
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.cxxFlagsRelWithDebInfo=-O2 -g -DNDEBUG
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.cudaFlags=--use_fast_math -Xptxas -warn-spills -gencode arch=compute_50,code=sm_50 -gencode arch=compute_60,code=sm_60  -gencode arch=compute_61,code=sm_61
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.cudaVersion=9.1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.cxxCompiler=GNU 6.2.0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.cudaCompiler=NVIDIA 9.1.85
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.boost.BOOST_VERSION=106700
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.boost.BOOST_LIB_VERSION=1_67
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.boost.BOOST_PLATFORM=linux
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.boost.BOOST_PLATFORM_CONFIG=boost/config/platform/linux.hpp
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.boost.BOOST_COMPILER=GNU C++ version 6.2.0 20160822 (Cray Inc.)
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.boost.BOOST_LIBSTDCXX_VERSION=60200
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.boost.C++11=true
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.boost.BOOST_STDLIB=GNU libstdc++ version 20160822
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.boost.BOOST_STDLIB_CONFIG=boost/config/stdlib/libstdcpp3.hpp
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.floatingPointPrecisionDescription=double (double precision, 64 bits)
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.floatingPointType=double
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.floatingPointMax=1.79769e+308
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.floatingPointMin=2.22507e-308
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.floatingPointEpsilon=2.22045e-16
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.cudaProperties.name=Tesla P100-PCIE-16GB
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.cudaProperties.totalGlobalMem=17071734784
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.cudaProperties.sharedMemPerBlock=49152
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.cudaProperties.regsPerBlock=65536
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.cudaProperties.warpSize=32
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.cudaProperties.memPitch=2147483647
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.cudaProperties.maxThreadsPerBlock=1024
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.cudaProperties.maxThreadsDim=1024, 1024, 64
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.cudaProperties.maxGridSize=2147483647, 65535, 65535
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.cudaProperties.totalConstMem=65536
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.cudaProperties.major=6
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.cudaProperties.minor=0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.cudaProperties.clockRate=1328500
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.cudaProperties.textureAlignment=512
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.cudaProperties.deviceOverlap=1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.cudaProperties.multiProcessorCount=56
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.cudaProperties.kernelExecTimeoutEnabled=0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.cudaProperties.integrated=0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.cudaProperties.canMapHostMemory=1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.cudaProperties.computeMode=3
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.cudaProperties.concurrentKernels=1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.cudaProperties.ECCEnabled=1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.cudaProperties.pciBusID=2
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.cudaProperties.pciDeviceID=0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.cudaProperties.tccDriver=0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.mpiEnabled=true
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.mpiProcesses=32
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.mpiVersion=MPI VERSION    : CRAY MPICH version 7.7.2 (ANL base 3.2)MPI BUILD INFO : Built Thu Jul 19 20:01:04 2018 (git hash 5d705bad2) MT-G
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.ompEnabled=true
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_alsvinn_report.ompThreads=1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_uqAttributes.fvm.name=    fbm  
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_uqAttributes.fvm.platform=cuda
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_uqAttributes.fvm.grid.lowerCorner=0 0 0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_uqAttributes.fvm.grid.upperCorner=1 1 1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_uqAttributes.fvm.grid.dimension=128 128 128
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_uqAttributes.fvm.boundary=periodic
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_uqAttributes.fvm.flux=hll3
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_uqAttributes.fvm.endTime=.2
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_uqAttributes.fvm.equation=euler3
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_uqAttributes.fvm.equationParameters.gamma=1.4
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_uqAttributes.fvm.reconstruction=wenof2
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_uqAttributes.fvm.cfl=auto
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_uqAttributes.fvm.integrator=auto
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_uqAttributes.fvm.initialData.python=fbm.py
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_uqAttributes.fvm.initialData.parameters.parameter.name=X
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_uqAttributes.fvm.initialData.parameters.parameter.length=400298493
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_uqAttributes.fvm.initialData.parameters.parameter.value=0.5
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_uqAttributes.fvm.initialData.parameters.parameter.values.value=0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_uqAttributes.fvm.diffusion.name=none
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_uqAttributes.fvm.diffusion.reconstruction=none
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_uqAttributes.fvm.writer.type=netcdf
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_uqAttributes.fvm.writer.basename=fbm
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_uqAttributes.fvm.writer.numberOfSaves=1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_uqAttributes.uq.samples=512
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_uqAttributes.uq.generator=auto
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_uqAttributes.uq.parameters.parameter.name=X
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_uqAttributes.uq.parameters.parameter.length=400298493
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_uqAttributes.uq.parameters.parameter.type=uniform
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_uqAttributes.uq.stats.stat.name=      meanvar    
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_uqAttributes.uq.stats.stat.numberOfSaves=1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_uqAttributes.uq.stats.stat.writer.type=netcdf
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N128_fbm_mean_0.nc_uqAttributes.uq.stats.stat.writer.basename=fbm
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.software=alsvinn https://github.com/alsvinn
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.softwareVersion=0.4.2
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.currentWorkingDirectory=/scratch/snx3000/klye/3druns/fbm/stats/H0_5/N256
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.operatingSystem=Linux: Linux 4.4.103-6.38_4.0.153-cray_ari_c #1 SMP Thu Nov 1 16:05:05 UTC 2018 (6ef8fef) x86_64
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.username=klye
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.host=nid05558
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.standardCLibrary=GNU libc 2.22 stable
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.generatedAt=20190618T093922
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.CPU=Intel(R) Xeon(R) CPU E5-2690 v3 @ 2.60GHz
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.revision=ace845d81bbce8cf30948a6e12d477d9bf8cbfa4
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.versionControlStatus=DIRTY
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.buildType=Release
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.cxxFlags=
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.cxxFlagsDebug=-g
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.cxxFlagsRelease=-O3 -DNDEBUG
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.cxxFlagsMinSizeRel=-Os -DNDEBUG
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.cxxFlagsRelWithDebInfo=-O2 -g -DNDEBUG
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.cudaFlags=--use_fast_math -Xptxas -warn-spills -gencode arch=compute_50,code=sm_50 -gencode arch=compute_60,code=sm_60  -gencode arch=compute_61,code=sm_61
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.cudaVersion=9.1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.cxxCompiler=GNU 6.2.0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.cudaCompiler=NVIDIA 9.1.85
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.boost.BOOST_VERSION=106700
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.boost.BOOST_LIB_VERSION=1_67
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.boost.BOOST_PLATFORM=linux
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.boost.BOOST_PLATFORM_CONFIG=boost/config/platform/linux.hpp
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.boost.BOOST_COMPILER=GNU C++ version 6.2.0 20160822 (Cray Inc.)
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.boost.BOOST_LIBSTDCXX_VERSION=60200
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.boost.C++11=true
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.boost.BOOST_STDLIB=GNU libstdc++ version 20160822
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.boost.BOOST_STDLIB_CONFIG=boost/config/stdlib/libstdcpp3.hpp
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.floatingPointPrecisionDescription=double (double precision, 64 bits)
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.floatingPointType=double
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.floatingPointMax=1.79769e+308
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.floatingPointMin=2.22507e-308
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.floatingPointEpsilon=2.22045e-16
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.cudaProperties.name=Tesla P100-PCIE-16GB
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.cudaProperties.totalGlobalMem=17071734784
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.cudaProperties.sharedMemPerBlock=49152
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.cudaProperties.regsPerBlock=65536
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.cudaProperties.warpSize=32
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.cudaProperties.memPitch=2147483647
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.cudaProperties.maxThreadsPerBlock=1024
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.cudaProperties.maxThreadsDim=1024, 1024, 64
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.cudaProperties.maxGridSize=2147483647, 65535, 65535
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.cudaProperties.totalConstMem=65536
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.cudaProperties.major=6
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.cudaProperties.minor=0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.cudaProperties.clockRate=1328500
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.cudaProperties.textureAlignment=512
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.cudaProperties.deviceOverlap=1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.cudaProperties.multiProcessorCount=56
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.cudaProperties.kernelExecTimeoutEnabled=0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.cudaProperties.integrated=0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.cudaProperties.canMapHostMemory=1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.cudaProperties.computeMode=3
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.cudaProperties.concurrentKernels=1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.cudaProperties.ECCEnabled=1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.cudaProperties.pciBusID=2
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.cudaProperties.pciDeviceID=0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.cudaProperties.tccDriver=0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.mpiEnabled=true
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.mpiProcesses=32
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.mpiVersion=MPI VERSION    : CRAY MPICH version 7.7.2 (ANL base 3.2)MPI BUILD INFO : Built Thu Jul 19 20:01:04 2018 (git hash 5d705bad2) MT-G
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.ompEnabled=true
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_alsvinn_report.ompThreads=1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_uqAttributes.fvm.name=    fbm  
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_uqAttributes.fvm.platform=cuda
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_uqAttributes.fvm.grid.lowerCorner=0 0 0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_uqAttributes.fvm.grid.upperCorner=1 1 1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_uqAttributes.fvm.grid.dimension=256 256 256
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_uqAttributes.fvm.boundary=periodic
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_uqAttributes.fvm.flux=hll3
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_uqAttributes.fvm.endTime=.2
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_uqAttributes.fvm.equation=euler3
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_uqAttributes.fvm.equationParameters.gamma=1.4
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_uqAttributes.fvm.reconstruction=wenof2
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_uqAttributes.fvm.cfl=auto
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_uqAttributes.fvm.integrator=auto
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_uqAttributes.fvm.initialData.python=fbm.py
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_uqAttributes.fvm.initialData.parameters.parameter.name=X
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_uqAttributes.fvm.initialData.parameters.parameter.length=400298493
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_uqAttributes.fvm.initialData.parameters.parameter.value=0.5
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_uqAttributes.fvm.initialData.parameters.parameter.values.value=0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_uqAttributes.fvm.diffusion.name=none
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_uqAttributes.fvm.diffusion.reconstruction=none
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_uqAttributes.fvm.writer.type=netcdf
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_uqAttributes.fvm.writer.basename=fbm
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_uqAttributes.fvm.writer.numberOfSaves=1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_uqAttributes.uq.samples=512
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_uqAttributes.uq.generator=auto
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_uqAttributes.uq.parameters.parameter.name=X
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_uqAttributes.uq.parameters.parameter.length=400298493
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_uqAttributes.uq.parameters.parameter.type=uniform
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_uqAttributes.uq.stats.stat.name=      meanvar    
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_uqAttributes.uq.stats.stat.numberOfSaves=1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_uqAttributes.uq.stats.stat.writer.type=netcdf
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N256_fbm_mean_0.nc_uqAttributes.uq.stats.stat.writer.basename=fbm
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.software=alsvinn https://github.com/alsvinn
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.softwareVersion=0.4.2
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.currentWorkingDirectory=/scratch/snx3000/klye/3druns/fbm/stats/H0_5/N512
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.operatingSystem=Linux: Linux 4.4.103-6.38_4.0.153-cray_ari_c #1 SMP Thu Nov 1 16:05:05 UTC 2018 (6ef8fef) x86_64
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.username=klye
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.host=nid03527
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.standardCLibrary=GNU libc 2.22 stable
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.generatedAt=20190618T150915
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.CPU=Intel(R) Xeon(R) CPU E5-2690 v3 @ 2.60GHz
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.revision=ace845d81bbce8cf30948a6e12d477d9bf8cbfa4
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.versionControlStatus=DIRTY
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.buildType=Release
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.cxxFlags=
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.cxxFlagsDebug=-g
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.cxxFlagsRelease=-O3 -DNDEBUG
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.cxxFlagsMinSizeRel=-Os -DNDEBUG
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.cxxFlagsRelWithDebInfo=-O2 -g -DNDEBUG
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.cudaFlags=--use_fast_math -Xptxas -warn-spills -gencode arch=compute_50,code=sm_50 -gencode arch=compute_60,code=sm_60  -gencode arch=compute_61,code=sm_61
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.cudaVersion=9.1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.cxxCompiler=GNU 6.2.0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.cudaCompiler=NVIDIA 9.1.85
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.boost.BOOST_VERSION=106700
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.boost.BOOST_LIB_VERSION=1_67
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.boost.BOOST_PLATFORM=linux
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.boost.BOOST_PLATFORM_CONFIG=boost/config/platform/linux.hpp
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.boost.BOOST_COMPILER=GNU C++ version 6.2.0 20160822 (Cray Inc.)
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.boost.BOOST_LIBSTDCXX_VERSION=60200
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.boost.C++11=true
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.boost.BOOST_STDLIB=GNU libstdc++ version 20160822
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.boost.BOOST_STDLIB_CONFIG=boost/config/stdlib/libstdcpp3.hpp
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.floatingPointPrecisionDescription=double (double precision, 64 bits)
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.floatingPointType=double
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.floatingPointMax=1.79769e+308
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.floatingPointMin=2.22507e-308
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.floatingPointEpsilon=2.22045e-16
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.cudaProperties.name=Tesla P100-PCIE-16GB
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.cudaProperties.totalGlobalMem=17071734784
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.cudaProperties.sharedMemPerBlock=49152
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.cudaProperties.regsPerBlock=65536
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.cudaProperties.warpSize=32
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.cudaProperties.memPitch=2147483647
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.cudaProperties.maxThreadsPerBlock=1024
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.cudaProperties.maxThreadsDim=1024, 1024, 64
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.cudaProperties.maxGridSize=2147483647, 65535, 65535
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.cudaProperties.totalConstMem=65536
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.cudaProperties.major=6
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.cudaProperties.minor=0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.cudaProperties.clockRate=1328500
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.cudaProperties.textureAlignment=512
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.cudaProperties.deviceOverlap=1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.cudaProperties.multiProcessorCount=56
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.cudaProperties.kernelExecTimeoutEnabled=0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.cudaProperties.integrated=0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.cudaProperties.canMapHostMemory=1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.cudaProperties.computeMode=3
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.cudaProperties.concurrentKernels=1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.cudaProperties.ECCEnabled=1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.cudaProperties.pciBusID=2
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.cudaProperties.pciDeviceID=0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.cudaProperties.tccDriver=0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.mpiEnabled=true
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.mpiProcesses=256
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.mpiVersion=MPI VERSION    : CRAY MPICH version 7.7.2 (ANL base 3.2)MPI BUILD INFO : Built Thu Jul 19 20:01:04 2018 (git hash 5d705bad2) MT-G
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.ompEnabled=true
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_alsvinn_report.ompThreads=1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_uqAttributes.fvm.name=    fbm  
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_uqAttributes.fvm.platform=cuda
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_uqAttributes.fvm.grid.lowerCorner=0 0 0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_uqAttributes.fvm.grid.upperCorner=1 1 1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_uqAttributes.fvm.grid.dimension=512 512 512
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_uqAttributes.fvm.boundary=periodic
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_uqAttributes.fvm.flux=hll3
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_uqAttributes.fvm.endTime=.2
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_uqAttributes.fvm.equation=euler3
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_uqAttributes.fvm.equationParameters.gamma=1.4
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_uqAttributes.fvm.reconstruction=wenof2
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_uqAttributes.fvm.cfl=auto
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_uqAttributes.fvm.integrator=auto
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_uqAttributes.fvm.initialData.python=fbm.py
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_uqAttributes.fvm.initialData.parameters.parameter.name=X
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_uqAttributes.fvm.initialData.parameters.parameter.length=400298493
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_uqAttributes.fvm.initialData.parameters.parameter.value=0.5
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_uqAttributes.fvm.initialData.parameters.parameter.values.value=0
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_uqAttributes.fvm.diffusion.name=none
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_uqAttributes.fvm.diffusion.reconstruction=none
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_uqAttributes.fvm.writer.type=netcdf
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_uqAttributes.fvm.writer.basename=fbm
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_uqAttributes.fvm.writer.numberOfSaves=1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_uqAttributes.uq.samples=512
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_uqAttributes.uq.generator=auto
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_uqAttributes.uq.parameters.parameter.name=X
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_uqAttributes.uq.parameters.parameter.length=400298493
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_uqAttributes.uq.parameters.parameter.type=uniform
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_uqAttributes.uq.stats.stat.name=      meanvar    
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_uqAttributes.uq.stats.stat.numberOfSaves=1
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_uqAttributes.uq.stats.stat.writer.type=netcdf
+%%    _project_s913_klye_3druns_fbm_3druns_fbm_stats_H0_5_N512_fbm_mean_0.nc_uqAttributes.uq.stats.stat.writer.basename=fbm
+%% python_version: 
+%%    /scratch/snx3000/klye/3druns_new/postprocessing/.venv/bin/python (Version: 3.6.5 (default, Oct  8 2018, 17:39:55) 
+%%    [GCC 7.3.0 20180125 (Cray Inc.)])
+%% python modules:
+%%     builtins: Unknown (Unknown)
+%%     sys: Unknown (Unknown)
+%%     importlib._bootstrap: Unknown (/opt/python/3.6.5.3/lib/python3.6/importlib/_bootstrap.py)
+%%     _imp: Unknown (Unknown)
+%%     _warnings: Unknown (Unknown)
+%%     _thread: Unknown (Unknown)
+%%     _weakref: Unknown (Unknown)
+%%     importlib._bootstrap_external: Unknown (/opt/python/3.6.5.3/lib/python3.6/importlib/_bootstrap_external.py)
+%%     io: Unknown (Unknown)
+%%     marshal: Unknown (Unknown)
+%%     posix: Unknown (Unknown)
+%%     zipimport: Unknown (Unknown)
+%%     encodings: Unknown (/opt/python/3.6.5.3/lib/python3.6/encodings/__init__.py)
+%%     codecs: Unknown (/opt/python/3.6.5.3/lib/python3.6/codecs.py)
+%%     _codecs: Unknown (Unknown)
+%%     encodings.aliases: Unknown (/opt/python/3.6.5.3/lib/python3.6/encodings/aliases.py)
+%%     encodings.utf_8: Unknown (/opt/python/3.6.5.3/lib/python3.6/encodings/utf_8.py)
+%%     _signal: Unknown (Unknown)
+%%     __main__: Unknown (../python/compute_mean_variance_convergence.py)
+%%     encodings.latin_1: Unknown (/opt/python/3.6.5.3/lib/python3.6/encodings/latin_1.py)
+%%     io: Unknown (/opt/python/3.6.5.3/lib/python3.6/io.py)
+%%     abc: Unknown (/opt/python/3.6.5.3/lib/python3.6/abc.py)
+%%     _weakrefset: Unknown (/opt/python/3.6.5.3/lib/python3.6/_weakrefset.py)
+%%     site: Unknown (/opt/python/3.6.5.3/lib/python3.6/site.py)
+%%     os: Unknown (/opt/python/3.6.5.3/lib/python3.6/os.py)
+%%     errno: Unknown (Unknown)
+%%     stat: Unknown (/opt/python/3.6.5.3/lib/python3.6/stat.py)
+%%     _stat: Unknown (Unknown)
+%%     posixpath: Unknown (/opt/python/3.6.5.3/lib/python3.6/posixpath.py)
+%%     genericpath: Unknown (/opt/python/3.6.5.3/lib/python3.6/genericpath.py)
+%%     posixpath: Unknown (/opt/python/3.6.5.3/lib/python3.6/posixpath.py)
+%%     collections.abc: Unknown (/opt/python/3.6.5.3/lib/python3.6/_collections_abc.py)
+%%     _sitebuiltins: Unknown (/opt/python/3.6.5.3/lib/python3.6/_sitebuiltins.py)
+%%     _bootlocale: Unknown (/opt/python/3.6.5.3/lib/python3.6/_bootlocale.py)
+%%     _locale: Unknown (Unknown)
+%%     types: Unknown (/opt/python/3.6.5.3/lib/python3.6/types.py)
+%%     functools: Unknown (/opt/python/3.6.5.3/lib/python3.6/functools.py)
+%%     _functools: Unknown (Unknown)
+%%     collections: Unknown (/opt/python/3.6.5.3/lib/python3.6/collections/__init__.py)
+%%     operator: Unknown (/opt/python/3.6.5.3/lib/python3.6/operator.py)
+%%     _operator: Unknown (Unknown)
+%%     keyword: Unknown (/opt/python/3.6.5.3/lib/python3.6/keyword.py)
+%%     heapq: Unknown (/opt/python/3.6.5.3/lib/python3.6/heapq.py)
+%%     _heapq: Unknown (/opt/python/3.6.5.3/lib/python3.6/lib-dynload/_heapq.cpython-36m-x86_64-linux-gnu.so)
+%%     itertools: Unknown (Unknown)
+%%     reprlib: Unknown (/opt/python/3.6.5.3/lib/python3.6/reprlib.py)
+%%     _collections: Unknown (Unknown)
+%%     weakref: Unknown (/opt/python/3.6.5.3/lib/python3.6/weakref.py)
+%%     collections.abc: Unknown (/opt/python/3.6.5.3/lib/python3.6/collections/abc.py)
+%%     importlib: Unknown (/opt/python/3.6.5.3/lib/python3.6/importlib/__init__.py)
+%%     importlib._bootstrap: Unknown (/opt/python/3.6.5.3/lib/python3.6/importlib/_bootstrap.py)
+%%     importlib._bootstrap_external: Unknown (/opt/python/3.6.5.3/lib/python3.6/importlib/_bootstrap_external.py)
+%%     warnings: Unknown (/opt/python/3.6.5.3/lib/python3.6/warnings.py)
+%%     importlib.util: Unknown (/opt/python/3.6.5.3/lib/python3.6/importlib/util.py)
+%%     importlib.abc: Unknown (/opt/python/3.6.5.3/lib/python3.6/importlib/abc.py)
+%%     importlib.machinery: Unknown (/opt/python/3.6.5.3/lib/python3.6/importlib/machinery.py)
+%%     contextlib: Unknown (/opt/python/3.6.5.3/lib/python3.6/contextlib.py)
+%%     mpl_toolkits: Unknown (Unknown)
+%%     sysconfig: Unknown (/opt/python/3.6.5.3/lib/python3.6/sysconfig.py)
+%%     _sysconfigdata_m_linux_x86_64-linux-gnu: Unknown (/opt/python/3.6.5.3/lib/python3.6/_sysconfigdata_m_linux_x86_64-linux-gnu.py)
+%%     numpy: 1.16.3 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/__init__.py)
+%%     __future__: Unknown (/opt/python/3.6.5.3/lib/python3.6/__future__.py)
+%%     numpy._globals: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/_globals.py)
+%%     numpy.__config__: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/__config__.py)
+%%     numpy.version: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/version.py)
+%%     numpy._distributor_init: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/_distributor_init.py)
+%%     numpy.core: 1.16.3 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/core/__init__.py)
+%%     numpy.core.info: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/core/info.py)
+%%     numpy.core.multiarray: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/core/multiarray.py)
+%%     numpy.core.overrides: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/core/overrides.py)
+%%     datetime: Unknown (/opt/python/3.6.5.3/lib/python3.6/datetime.py)
+%%     time: Unknown (Unknown)
+%%     math: Unknown (/opt/python/3.6.5.3/lib/python3.6/lib-dynload/math.cpython-36m-x86_64-linux-gnu.so)
+%%     _datetime: Unknown (/opt/python/3.6.5.3/lib/python3.6/lib-dynload/_datetime.cpython-36m-x86_64-linux-gnu.so)
+%%     numpy.core._multiarray_umath: 3.1 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/core/_multiarray_umath.cpython-36m-x86_64-linux-gnu.so)
+%%     numpy.compat: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/compat/__init__.py)
+%%     numpy.compat._inspect: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/compat/_inspect.py)
+%%     numpy.compat.py3k: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/compat/py3k.py)
+%%     pathlib: Unknown (/opt/python/3.6.5.3/lib/python3.6/pathlib.py)
+%%     fnmatch: Unknown (/opt/python/3.6.5.3/lib/python3.6/fnmatch.py)
+%%     re: 2.2.1 (/opt/python/3.6.5.3/lib/python3.6/re.py)
+%%     enum: Unknown (/opt/python/3.6.5.3/lib/python3.6/enum.py)
+%%     sre_compile: Unknown (/opt/python/3.6.5.3/lib/python3.6/sre_compile.py)
+%%     _sre: Unknown (Unknown)
+%%     sre_parse: Unknown (/opt/python/3.6.5.3/lib/python3.6/sre_parse.py)
+%%     sre_constants: Unknown (/opt/python/3.6.5.3/lib/python3.6/sre_constants.py)
+%%     copyreg: Unknown (/opt/python/3.6.5.3/lib/python3.6/copyreg.py)
+%%     ntpath: Unknown (/opt/python/3.6.5.3/lib/python3.6/ntpath.py)
+%%     urllib: Unknown (/opt/python/3.6.5.3/lib/python3.6/urllib/__init__.py)
+%%     urllib.parse: Unknown (/opt/python/3.6.5.3/lib/python3.6/urllib/parse.py)
+%%     numpy.core.umath: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/core/umath.py)
+%%     numpy.core.numerictypes: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/core/numerictypes.py)
+%%     numbers: Unknown (/opt/python/3.6.5.3/lib/python3.6/numbers.py)
+%%     numpy.core._string_helpers: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/core/_string_helpers.py)
+%%     numpy.core._type_aliases: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/core/_type_aliases.py)
+%%     numpy.core._dtype: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/core/_dtype.py)
+%%     numpy.core.numeric: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/core/numeric.py)
+%%     numpy.core._internal: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/core/_internal.py)
+%%     ctypes: 1.1.0 (/opt/python/3.6.5.3/lib/python3.6/ctypes/__init__.py)
+%%     _ctypes: 1.1.0 (/opt/python/3.6.5.3/lib/python3.6/lib-dynload/_ctypes.cpython-36m-x86_64-linux-gnu.so)
+%%     struct: Unknown (/opt/python/3.6.5.3/lib/python3.6/struct.py)
+%%     _struct: Unknown (/opt/python/3.6.5.3/lib/python3.6/lib-dynload/_struct.cpython-36m-x86_64-linux-gnu.so)
+%%     ctypes._endian: Unknown (/opt/python/3.6.5.3/lib/python3.6/ctypes/_endian.py)
+%%     pickle: Unknown (/opt/python/3.6.5.3/lib/python3.6/pickle.py)
+%%     _compat_pickle: Unknown (/opt/python/3.6.5.3/lib/python3.6/_compat_pickle.py)
+%%     _pickle: Unknown (/opt/python/3.6.5.3/lib/python3.6/lib-dynload/_pickle.cpython-36m-x86_64-linux-gnu.so)
+%%     numpy.core.fromnumeric: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/core/fromnumeric.py)
+%%     numpy.core._methods: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/core/_methods.py)
+%%     numpy.core.arrayprint: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/core/arrayprint.py)
+%%     numpy.core.defchararray: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/core/defchararray.py)
+%%     numpy.core.records: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/core/records.py)
+%%     numpy.core.memmap: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/core/memmap.py)
+%%     numpy.core.function_base: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/core/function_base.py)
+%%     numpy.core.machar: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/core/machar.py)
+%%     numpy.core.getlimits: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/core/getlimits.py)
+%%     numpy.core.shape_base: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/core/shape_base.py)
+%%     numpy.core.einsumfunc: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/core/einsumfunc.py)
+%%     numpy.core._add_newdocs: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/core/_add_newdocs.py)
+%%     numpy.core._multiarray_tests: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/core/_multiarray_tests.cpython-36m-x86_64-linux-gnu.so)
+%%     numpy.core._dtype_ctypes: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/core/_dtype_ctypes.py)
+%%     numpy._pytesttester: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/_pytesttester.py)
+%%     numpy.lib: 1.16.3 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/lib/__init__.py)
+%%     numpy.lib.info: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/lib/info.py)
+%%     numpy.lib.type_check: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/lib/type_check.py)
+%%     numpy.lib.ufunclike: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/lib/ufunclike.py)
+%%     numpy.lib.index_tricks: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/lib/index_tricks.py)
+%%     numpy.matrixlib: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/matrixlib/__init__.py)
+%%     numpy.matrixlib.defmatrix: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/matrixlib/defmatrix.py)
+%%     ast: Unknown (/opt/python/3.6.5.3/lib/python3.6/ast.py)
+%%     _ast: Unknown (Unknown)
+%%     numpy.linalg: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/linalg/__init__.py)
+%%     numpy.linalg.info: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/linalg/info.py)
+%%     numpy.linalg.linalg: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/linalg/linalg.py)
+%%     numpy.lib.twodim_base: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/lib/twodim_base.py)
+%%     numpy.linalg.lapack_lite: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/linalg/lapack_lite.cpython-36m-x86_64-linux-gnu.so)
+%%     numpy.linalg._umath_linalg: b'0.1.5' (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/linalg/_umath_linalg.cpython-36m-x86_64-linux-gnu.so)
+%%     numpy.lib.function_base: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/lib/function_base.py)
+%%     numpy.lib.utils: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/lib/utils.py)
+%%     numpy.lib.histograms: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/lib/histograms.py)
+%%     numpy.lib.stride_tricks: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/lib/stride_tricks.py)
+%%     numpy.lib.mixins: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/lib/mixins.py)
+%%     numpy.lib.nanfunctions: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/lib/nanfunctions.py)
+%%     numpy.lib.shape_base: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/lib/shape_base.py)
+%%     numpy.lib.scimath: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/lib/scimath.py)
+%%     numpy.lib.polynomial: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/lib/polynomial.py)
+%%     numpy.lib.arraysetops: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/lib/arraysetops.py)
+%%     numpy.lib.npyio: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/lib/npyio.py)
+%%     numpy.lib.format: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/lib/format.py)
+%%     numpy.lib._datasource: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/lib/_datasource.py)
+%%     shutil: Unknown (/opt/python/3.6.5.3/lib/python3.6/shutil.py)
+%%     zlib: 1.0 (/opt/python/3.6.5.3/lib/python3.6/lib-dynload/zlib.cpython-36m-x86_64-linux-gnu.so)
+%%     bz2: Unknown (/opt/python/3.6.5.3/lib/python3.6/bz2.py)
+%%     _compression: Unknown (/opt/python/3.6.5.3/lib/python3.6/_compression.py)
+%%     threading: Unknown (/opt/python/3.6.5.3/lib/python3.6/threading.py)
+%%     traceback: Unknown (/opt/python/3.6.5.3/lib/python3.6/traceback.py)
+%%     linecache: Unknown (/opt/python/3.6.5.3/lib/python3.6/linecache.py)
+%%     tokenize: Unknown (/opt/python/3.6.5.3/lib/python3.6/tokenize.py)
+%%     token: Unknown (/opt/python/3.6.5.3/lib/python3.6/token.py)
+%%     _bz2: Unknown (/opt/python/3.6.5.3/lib/python3.6/lib-dynload/_bz2.cpython-36m-x86_64-linux-gnu.so)
+%%     lzma: Unknown (/opt/python/3.6.5.3/lib/python3.6/lzma.py)
+%%     _lzma: Unknown (/opt/python/3.6.5.3/lib/python3.6/lib-dynload/_lzma.cpython-36m-x86_64-linux-gnu.so)
+%%     pwd: Unknown (Unknown)
+%%     grp: Unknown (/opt/python/3.6.5.3/lib/python3.6/lib-dynload/grp.cpython-36m-x86_64-linux-gnu.so)
+%%     numpy.lib._iotools: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/lib/_iotools.py)
+%%     numpy.lib.financial: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/lib/financial.py)
+%%     decimal: 1.70 (/opt/python/3.6.5.3/lib/python3.6/decimal.py)
+%%     decimal: 1.70 (/opt/python/3.6.5.3/lib/python3.6/lib-dynload/_decimal.cpython-36m-x86_64-linux-gnu.so)
+%%     numpy.lib.arrayterator: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/lib/arrayterator.py)
+%%     numpy.lib.arraypad: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/lib/arraypad.py)
+%%     numpy.lib._version: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/lib/_version.py)
+%%     numpy.fft: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/fft/__init__.py)
+%%     numpy.fft.info: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/fft/info.py)
+%%     numpy.fft.fftpack: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/fft/fftpack.py)
+%%     numpy.fft.fftpack_lite: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/fft/fftpack_lite.cpython-36m-x86_64-linux-gnu.so)
+%%     numpy.fft.helper: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/fft/helper.py)
+%%     numpy.polynomial: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/polynomial/__init__.py)
+%%     numpy.polynomial.polynomial: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/polynomial/polynomial.py)
+%%     numpy.polynomial.polyutils: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/polynomial/polyutils.py)
+%%     numpy.polynomial._polybase: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/polynomial/_polybase.py)
+%%     numpy.polynomial.chebyshev: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/polynomial/chebyshev.py)
+%%     numpy.polynomial.legendre: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/polynomial/legendre.py)
+%%     numpy.polynomial.hermite: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/polynomial/hermite.py)
+%%     numpy.polynomial.hermite_e: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/polynomial/hermite_e.py)
+%%     numpy.polynomial.laguerre: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/polynomial/laguerre.py)
+%%     numpy.random: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/random/__init__.py)
+%%     numpy.random.mtrand: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/random/mtrand.cpython-36m-x86_64-linux-gnu.so)
+%%     cython_runtime: Unknown (Unknown)
+%%     numpy.random.mtrand: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/random/mtrand.cpython-36m-x86_64-linux-gnu.so)
+%%     numpy.ctypeslib: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/ctypeslib.py)
+%%     numpy.ma: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/ma/__init__.py)
+%%     numpy.ma.core: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/ma/core.py)
+%%     textwrap: Unknown (/opt/python/3.6.5.3/lib/python3.6/textwrap.py)
+%%     numpy.ma.extras: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/ma/extras.py)
+%%     numpy.testing: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/testing/__init__.py)
+%%     unittest: Unknown (/opt/python/3.6.5.3/lib/python3.6/unittest/__init__.py)
+%%     unittest.result: Unknown (/opt/python/3.6.5.3/lib/python3.6/unittest/result.py)
+%%     unittest.util: Unknown (/opt/python/3.6.5.3/lib/python3.6/unittest/util.py)
+%%     unittest.case: Unknown (/opt/python/3.6.5.3/lib/python3.6/unittest/case.py)
+%%     difflib: Unknown (/opt/python/3.6.5.3/lib/python3.6/difflib.py)
+%%     logging: 0.5.1.2 (/opt/python/3.6.5.3/lib/python3.6/logging/__init__.py)
+%%     string: Unknown (/opt/python/3.6.5.3/lib/python3.6/string.py)
+%%     _string: Unknown (Unknown)
+%%     atexit: Unknown (Unknown)
+%%     pprint: Unknown (/opt/python/3.6.5.3/lib/python3.6/pprint.py)
+%%     unittest.suite: Unknown (/opt/python/3.6.5.3/lib/python3.6/unittest/suite.py)
+%%     unittest.loader: Unknown (/opt/python/3.6.5.3/lib/python3.6/unittest/loader.py)
+%%     unittest.main: Unknown (/opt/python/3.6.5.3/lib/python3.6/unittest/main.py)
+%%     argparse: 1.1 (/opt/python/3.6.5.3/lib/python3.6/argparse.py)
+%%     copy: Unknown (/opt/python/3.6.5.3/lib/python3.6/copy.py)
+%%     gettext: Unknown (/opt/python/3.6.5.3/lib/python3.6/gettext.py)
+%%     locale: Unknown (/opt/python/3.6.5.3/lib/python3.6/locale.py)
+%%     unittest.runner: Unknown (/opt/python/3.6.5.3/lib/python3.6/unittest/runner.py)
+%%     unittest.signals: Unknown (/opt/python/3.6.5.3/lib/python3.6/unittest/signals.py)
+%%     signal: Unknown (/opt/python/3.6.5.3/lib/python3.6/signal.py)
+%%     numpy.testing._private: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/testing/_private/__init__.py)
+%%     numpy.testing._private.utils: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/testing/_private/utils.py)
+%%     gc: Unknown (Unknown)
+%%     tempfile: Unknown (/opt/python/3.6.5.3/lib/python3.6/tempfile.py)
+%%     random: Unknown (/opt/python/3.6.5.3/lib/python3.6/random.py)
+%%     hashlib: Unknown (/opt/python/3.6.5.3/lib/python3.6/hashlib.py)
+%%     _hashlib: Unknown (/opt/python/3.6.5.3/lib/python3.6/lib-dynload/_hashlib.cpython-36m-x86_64-linux-gnu.so)
+%%     _blake2: Unknown (/opt/python/3.6.5.3/lib/python3.6/lib-dynload/_blake2.cpython-36m-x86_64-linux-gnu.so)
+%%     _sha3: Unknown (/opt/python/3.6.5.3/lib/python3.6/lib-dynload/_sha3.cpython-36m-x86_64-linux-gnu.so)
+%%     bisect: Unknown (/opt/python/3.6.5.3/lib/python3.6/bisect.py)
+%%     _bisect: Unknown (/opt/python/3.6.5.3/lib/python3.6/lib-dynload/_bisect.cpython-36m-x86_64-linux-gnu.so)
+%%     _random: Unknown (/opt/python/3.6.5.3/lib/python3.6/lib-dynload/_random.cpython-36m-x86_64-linux-gnu.so)
+%%     numpy.testing._private.decorators: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/testing/_private/decorators.py)
+%%     numpy.testing._private.nosetester: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/numpy/testing/_private/nosetester.py)
+%%     netCDF4: 1.5.1.2 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/netCDF4/__init__.py)
+%%     netCDF4._netCDF4: 1.5.1.2 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/netCDF4/_netCDF4.cpython-36m-x86_64-linux-gnu.so)
+%%     _cython_0_29_7: Unknown (Unknown)
+%%     netCDF4.utils: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/netCDF4/utils.py)
+%%     getopt: Unknown (/opt/python/3.6.5.3/lib/python3.6/getopt.py)
+%%     cftime: 1.0.3.4 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/cftime/__init__.py)
+%%     cftime._cftime: 1.0.3.4 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/cftime/_cftime.cpython-36m-x86_64-linux-gnu.so)
+%%     _cython_0_29_1: Unknown (Unknown)
+%%     glob: Unknown (/opt/python/3.6.5.3/lib/python3.6/glob.py)
+%%     latex_plots: Unknown (/scratch/snx3000/klye/3druns_newest/postprocessing/python/latex_plots.py)
+%%     matplotlib: 3.1.0 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/__init__.py)
+%%     distutils: 3.6.5 (/opt/python/3.6.5.3/lib/python3.6/distutils/__init__.py)
+%%     distutils.version: Unknown (/opt/python/3.6.5.3/lib/python3.6/distutils/version.py)
+%%     inspect: Unknown (/opt/python/3.6.5.3/lib/python3.6/inspect.py)
+%%     dis: Unknown (/opt/python/3.6.5.3/lib/python3.6/dis.py)
+%%     opcode: Unknown (/opt/python/3.6.5.3/lib/python3.6/opcode.py)
+%%     _opcode: Unknown (/opt/python/3.6.5.3/lib/python3.6/lib-dynload/_opcode.cpython-36m-x86_64-linux-gnu.so)
+%%     subprocess: Unknown (/opt/python/3.6.5.3/lib/python3.6/subprocess.py)
+%%     _posixsubprocess: Unknown (/opt/python/3.6.5.3/lib/python3.6/lib-dynload/_posixsubprocess.cpython-36m-x86_64-linux-gnu.so)
+%%     select: Unknown (/opt/python/3.6.5.3/lib/python3.6/lib-dynload/select.cpython-36m-x86_64-linux-gnu.so)
+%%     selectors: Unknown (/opt/python/3.6.5.3/lib/python3.6/selectors.py)
+%%     matplotlib.cbook: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/cbook/__init__.py)
+%%     gzip: Unknown (/opt/python/3.6.5.3/lib/python3.6/gzip.py)
+%%     matplotlib.cbook.deprecation: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/cbook/deprecation.py)
+%%     matplotlib.rcsetup: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/rcsetup.py)
+%%     matplotlib.fontconfig_pattern: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/fontconfig_pattern.py)
+%%     pyparsing: 2.4.0 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/pyparsing.py)
+%%     matplotlib.colors: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/colors.py)
+%%     matplotlib._color_data: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/_color_data.py)
+%%     cycler: 0.10.0 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/cycler.py)
+%%     six: 1.12.0 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/six.py)
+%%     six.moves: Unknown (Unknown)
+%%     matplotlib._version: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/_version.py)
+%%     json: 2.0.9 (/opt/python/3.6.5.3/lib/python3.6/json/__init__.py)
+%%     json.decoder: Unknown (/opt/python/3.6.5.3/lib/python3.6/json/decoder.py)
+%%     json.scanner: Unknown (/opt/python/3.6.5.3/lib/python3.6/json/scanner.py)
+%%     _json: Unknown (/opt/python/3.6.5.3/lib/python3.6/lib-dynload/_json.cpython-36m-x86_64-linux-gnu.so)
+%%     json.encoder: Unknown (/opt/python/3.6.5.3/lib/python3.6/json/encoder.py)
+%%     dateutil: 2.8.0 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/dateutil/__init__.py)
+%%     dateutil._version: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/dateutil/_version.py)
+%%     kiwisolver: 1.1.0 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/kiwisolver.cpython-36m-x86_64-linux-gnu.so)
+%%     socket: Unknown (/opt/python/3.6.5.3/lib/python3.6/socket.py)
+%%     _socket: Unknown (/opt/python/3.6.5.3/lib/python3.6/lib-dynload/_socket.cpython-36m-x86_64-linux-gnu.so)
+%%     matplotlib.pyplot: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/pyplot.py)
+%%     matplotlib.colorbar: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/colorbar.py)
+%%     matplotlib.artist: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/artist.py)
+%%     matplotlib.docstring: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/docstring.py)
+%%     matplotlib.path: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/path.py)
+%%     matplotlib._path: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/_path.cpython-36m-x86_64-linux-gnu.so)
+%%     matplotlib.transforms: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/transforms.py)
+%%     matplotlib.collections: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/collections.py)
+%%     matplotlib.cm: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/cm.py)
+%%     matplotlib._cm: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/_cm.py)
+%%     matplotlib._cm_listed: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/_cm_listed.py)
+%%     matplotlib.lines: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/lines.py)
+%%     matplotlib.markers: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/markers.py)
+%%     matplotlib.contour: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/contour.py)
+%%     matplotlib.ticker: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/ticker.py)
+%%     matplotlib.font_manager: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/font_manager.py)
+%%     matplotlib.afm: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/afm.py)
+%%     matplotlib._mathtext_data: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/_mathtext_data.py)
+%%     matplotlib.ft2font: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/ft2font.cpython-36m-x86_64-linux-gnu.so)
+%%     matplotlib.text: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/text.py)
+%%     matplotlib.patches: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/patches.py)
+%%     matplotlib.bezier: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/bezier.py)
+%%     matplotlib.textpath: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/textpath.py)
+%%     matplotlib.dviread: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/dviread.py)
+%%     matplotlib.mathtext: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/mathtext.py)
+%%     unicodedata: Unknown (/opt/python/3.6.5.3/lib/python3.6/lib-dynload/unicodedata.cpython-36m-x86_64-linux-gnu.so)
+%%     matplotlib.texmanager: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/texmanager.py)
+%%     matplotlib.blocking_input: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/blocking_input.py)
+%%     matplotlib.gridspec: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/gridspec.py)
+%%     matplotlib._pylab_helpers: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/_pylab_helpers.py)
+%%     matplotlib.tight_layout: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/tight_layout.py)
+%%     matplotlib._layoutbox: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/_layoutbox.py)
+%%     matplotlib._constrained_layout: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/_constrained_layout.py)
+%%     matplotlib.image: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/image.py)
+%%     matplotlib.backend_bases: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/backend_bases.py)
+%%     matplotlib.backend_tools: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/backend_tools.py)
+%%     matplotlib.tight_bbox: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/tight_bbox.py)
+%%     matplotlib.widgets: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/widgets.py)
+%%     PIL: 6.0.0 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/PIL/__init__.py)
+%%     PIL._version: 6.0.0 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/PIL/_version.py)
+%%     matplotlib._image: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/_image.cpython-36m-x86_64-linux-gnu.so)
+%%     matplotlib.style: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/style/__init__.py)
+%%     matplotlib.style.core: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/style/core.py)
+%%     matplotlib.figure: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/figure.py)
+%%     matplotlib.backends: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/backends/__init__.py)
+%%     matplotlib.projections: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/projections/__init__.py)
+%%     matplotlib.axes: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/axes/__init__.py)
+%%     matplotlib.axes._subplots: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/axes/_subplots.py)
+%%     uuid: Unknown (/opt/python/3.6.5.3/lib/python3.6/uuid.py)
+%%     ctypes.util: Unknown (/opt/python/3.6.5.3/lib/python3.6/ctypes/util.py)
+%%     matplotlib.axes._axes: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/axes/_axes.py)
+%%     matplotlib.category: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/category.py)
+%%     dateutil.parser: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/dateutil/parser/__init__.py)
+%%     dateutil.parser._parser: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/dateutil/parser/_parser.py)
+%%     calendar: Unknown (/opt/python/3.6.5.3/lib/python3.6/calendar.py)
+%%     dateutil.relativedelta: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/dateutil/relativedelta.py)
+%%     dateutil._common: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/dateutil/_common.py)
+%%     dateutil.tz: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/dateutil/tz/__init__.py)
+%%     dateutil.tz.tz: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/dateutil/tz/tz.py)
+%%     dateutil.tz._common: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/dateutil/tz/_common.py)
+%%     dateutil.tz._factories: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/dateutil/tz/_factories.py)
+%%     dateutil.parser.isoparser: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/dateutil/parser/isoparser.py)
+%%     matplotlib.units: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/units.py)
+%%     matplotlib.dates: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/dates.py)
+%%     dateutil.rrule: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/dateutil/rrule.py)
+%%     matplotlib.legend: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/legend.py)
+%%     matplotlib.offsetbox: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/offsetbox.py)
+%%     matplotlib.container: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/container.py)
+%%     matplotlib.legend_handler: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/legend_handler.py)
+%%     matplotlib.mlab: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/mlab.py)
+%%     csv: 1.0 (/opt/python/3.6.5.3/lib/python3.6/csv.py)
+%%     _csv: 1.0 (/opt/python/3.6.5.3/lib/python3.6/lib-dynload/_csv.cpython-36m-x86_64-linux-gnu.so)
+%%     matplotlib.quiver: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/quiver.py)
+%%     matplotlib.stackplot: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/stackplot.py)
+%%     matplotlib.streamplot: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/streamplot.py)
+%%     matplotlib.table: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/table.py)
+%%     matplotlib.tri: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/tri/__init__.py)
+%%     matplotlib.tri.triangulation: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/tri/triangulation.py)
+%%     matplotlib.tri.tricontour: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/tri/tricontour.py)
+%%     matplotlib.tri.tritools: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/tri/tritools.py)
+%%     matplotlib.tri.trifinder: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/tri/trifinder.py)
+%%     matplotlib.tri.triinterpolate: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/tri/triinterpolate.py)
+%%     matplotlib.tri.trirefine: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/tri/trirefine.py)
+%%     matplotlib.tri.tripcolor: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/tri/tripcolor.py)
+%%     matplotlib.tri.triplot: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/tri/triplot.py)
+%%     matplotlib.axes._base: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/axes/_base.py)
+%%     matplotlib.axis: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/axis.py)
+%%     matplotlib.scale: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/scale.py)
+%%     matplotlib.spines: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/spines.py)
+%%     matplotlib.axes._secondary_axes: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/axes/_secondary_axes.py)
+%%     matplotlib.projections.geo: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/projections/geo.py)
+%%     matplotlib.projections.polar: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/projections/polar.py)
+%%     matplotlib.backends.backend_agg: 3.1.0 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/backends/backend_agg.py)
+%%     matplotlib.backends._backend_agg: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/backends/_backend_agg.cpython-36m-x86_64-linux-gnu.so)
+%%     PIL.Image: 6.0.0 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/PIL/Image.py)
+%%     PIL._util: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/PIL/_util.py)
+%%     PIL.ImageMode: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/PIL/ImageMode.py)
+%%     PIL.TiffTags: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/PIL/TiffTags.py)
+%%     PIL._binary: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/PIL/_binary.py)
+%%     PIL._imaging: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/PIL/_imaging.cpython-36m-x86_64-linux-gnu.so)
+%%     plot_info: 1.16.3 (/scratch/snx3000/klye/3druns_newest/postprocessing/python/plot_info.py)
+%%     matplotlib2tikz: 0.7.4 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib2tikz/__init__.py)
+%%     matplotlib2tikz.__about__: 0.7.4 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib2tikz/__about__.py)
+%%     matplotlib2tikz.save: 0.7.4 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib2tikz/save.py)
+%%     matplotlib2tikz.axes: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib2tikz/axes.py)
+%%     matplotlib.backends.backend_pgf: 3.1.0 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/backends/backend_pgf.py)
+%%     matplotlib._png: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/_png.cpython-36m-x86_64-linux-gnu.so)
+%%     matplotlib.backends.backend_mixed: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib/backends/backend_mixed.py)
+%%     matplotlib2tikz.color: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib2tikz/color.py)
+%%     matplotlib2tikz.legend: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib2tikz/legend.py)
+%%     matplotlib2tikz.line2d: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib2tikz/line2d.py)
+%%     matplotlib2tikz.path: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib2tikz/path.py)
+%%     matplotlib2tikz.util: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib2tikz/util.py)
+%%     matplotlib2tikz.files: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib2tikz/files.py)
+%%     matplotlib2tikz.image: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib2tikz/image.py)
+%%     matplotlib2tikz.quadmesh: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib2tikz/quadmesh.py)
+%%     matplotlib2tikz.patch: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib2tikz/patch.py)
+%%     matplotlib2tikz.text: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/matplotlib2tikz/text.py)
+%%     IPython: 7.5.0 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/__init__.py)
+%%     IPython.core: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/__init__.py)
+%%     IPython.core.getipython: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/getipython.py)
+%%     IPython.core.release: 7.5.0 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/release.py)
+%%     IPython.core.application: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/application.py)
+%%     traitlets: 4.3.2 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/traitlets/__init__.py)
+%%     traitlets.traitlets: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/traitlets/traitlets.py)
+%%     traitlets.utils: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/traitlets/utils/__init__.py)
+%%     traitlets.utils.getargspec: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/traitlets/utils/getargspec.py)
+%%     traitlets.utils.importstring: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/traitlets/utils/importstring.py)
+%%     ipython_genutils: 0.2.0 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/ipython_genutils/__init__.py)
+%%     ipython_genutils._version: 0.2.0 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/ipython_genutils/_version.py)
+%%     ipython_genutils.py3compat: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/ipython_genutils/py3compat.py)
+%%     ipython_genutils.encoding: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/ipython_genutils/encoding.py)
+%%     platform: 1.0.8 (/opt/python/3.6.5.3/lib/python3.6/platform.py)
+%%     traitlets.utils.sentinel: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/traitlets/utils/sentinel.py)
+%%     traitlets.utils.bunch: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/traitlets/utils/bunch.py)
+%%     traitlets._version: 4.3.2 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/traitlets/_version.py)
+%%     traitlets.config: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/traitlets/config/__init__.py)
+%%     traitlets.config.application: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/traitlets/config/application.py)
+%%     decorator: 4.4.0 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/decorator.py)
+%%     traitlets.config.configurable: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/traitlets/config/configurable.py)
+%%     traitlets.config.loader: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/traitlets/config/loader.py)
+%%     ipython_genutils.path: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/ipython_genutils/path.py)
+%%     ipython_genutils.text: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/ipython_genutils/text.py)
+%%     ipython_genutils.importstring: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/ipython_genutils/importstring.py)
+%%     IPython.core.crashhandler: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/crashhandler.py)
+%%     IPython.core.ultratb: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/ultratb.py)
+%%     pydoc: Unknown (/opt/python/3.6.5.3/lib/python3.6/pydoc.py)
+%%     pkgutil: Unknown (/opt/python/3.6.5.3/lib/python3.6/pkgutil.py)
+%%     IPython.core.debugger: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/debugger.py)
+%%     bdb: Unknown (/opt/python/3.6.5.3/lib/python3.6/bdb.py)
+%%     IPython.utils: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/utils/__init__.py)
+%%     IPython.utils.PyColorize: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/utils/PyColorize.py)
+%%     IPython.utils.coloransi: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/utils/coloransi.py)
+%%     IPython.utils.ipstruct: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/utils/ipstruct.py)
+%%     IPython.utils.colorable: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/utils/colorable.py)
+%%     pygments: 2.4.0 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/pygments/__init__.py)
+%%     pygments.util: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/pygments/util.py)
+%%     IPython.utils.py3compat: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/utils/py3compat.py)
+%%     IPython.utils.encoding: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/utils/encoding.py)
+%%     IPython.core.excolors: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/excolors.py)
+%%     IPython.testing: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/testing/__init__.py)
+%%     IPython.testing.skipdoctest: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/testing/skipdoctest.py)
+%%     pdb: Unknown (/opt/python/3.6.5.3/lib/python3.6/pdb.py)
+%%     cmd: Unknown (/opt/python/3.6.5.3/lib/python3.6/cmd.py)
+%%     code: Unknown (/opt/python/3.6.5.3/lib/python3.6/code.py)
+%%     codeop: Unknown (/opt/python/3.6.5.3/lib/python3.6/codeop.py)
+%%     IPython.core.display_trap: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/display_trap.py)
+%%     IPython.utils.path: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/utils/path.py)
+%%     IPython.utils.process: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/utils/process.py)
+%%     IPython.utils._process_posix: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/utils/_process_posix.py)
+%%     pexpect: 4.7.0 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/pexpect/__init__.py)
+%%     pexpect.exceptions: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/pexpect/exceptions.py)
+%%     pexpect.utils: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/pexpect/utils.py)
+%%     pexpect.expect: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/pexpect/expect.py)
+%%     pexpect.pty_spawn: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/pexpect/pty_spawn.py)
+%%     pty: Unknown (/opt/python/3.6.5.3/lib/python3.6/pty.py)
+%%     tty: Unknown (/opt/python/3.6.5.3/lib/python3.6/tty.py)
+%%     termios: Unknown (/opt/python/3.6.5.3/lib/python3.6/lib-dynload/termios.cpython-36m-x86_64-linux-gnu.so)
+%%     ptyprocess: 0.6.0 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/ptyprocess/__init__.py)
+%%     ptyprocess.ptyprocess: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/ptyprocess/ptyprocess.py)
+%%     fcntl: Unknown (/opt/python/3.6.5.3/lib/python3.6/lib-dynload/fcntl.cpython-36m-x86_64-linux-gnu.so)
+%%     resource: Unknown (/opt/python/3.6.5.3/lib/python3.6/lib-dynload/resource.cpython-36m-x86_64-linux-gnu.so)
+%%     ptyprocess.util: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/ptyprocess/util.py)
+%%     pexpect.spawnbase: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/pexpect/spawnbase.py)
+%%     pexpect.run: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/pexpect/run.py)
+%%     IPython.utils._process_common: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/utils/_process_common.py)
+%%     shlex: Unknown (/opt/python/3.6.5.3/lib/python3.6/shlex.py)
+%%     IPython.utils.decorators: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/utils/decorators.py)
+%%     IPython.utils.data: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/utils/data.py)
+%%     IPython.utils.terminal: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/utils/terminal.py)
+%%     IPython.utils.sysinfo: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/utils/sysinfo.py)
+%%     IPython.utils._sysinfo: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/utils/_sysinfo.py)
+%%     IPython.core.profiledir: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/profiledir.py)
+%%     IPython.paths: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/paths.py)
+%%     IPython.utils.importstring: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/utils/importstring.py)
+%%     IPython.terminal: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/terminal/__init__.py)
+%%     IPython.terminal.embed: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/terminal/embed.py)
+%%     IPython.core.compilerop: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/compilerop.py)
+%%     IPython.core.magic_arguments: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/magic_arguments.py)
+%%     IPython.core.error: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/error.py)
+%%     IPython.utils.text: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/utils/text.py)
+%%     IPython.core.magic: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/magic.py)
+%%     IPython.core.oinspect: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/oinspect.py)
+%%     IPython.core.page: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/page.py)
+%%     IPython.core.display: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/display.py)
+%%     binascii: Unknown (/opt/python/3.6.5.3/lib/python3.6/lib-dynload/binascii.cpython-36m-x86_64-linux-gnu.so)
+%%     mimetypes: Unknown (/opt/python/3.6.5.3/lib/python3.6/mimetypes.py)
+%%     IPython.lib: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/lib/__init__.py)
+%%     IPython.lib.security: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/lib/security.py)
+%%     getpass: Unknown (/opt/python/3.6.5.3/lib/python3.6/getpass.py)
+%%     IPython.lib.pretty: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/lib/pretty.py)
+%%     IPython.utils.openpy: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/utils/openpy.py)
+%%     IPython.utils.dir2: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/utils/dir2.py)
+%%     IPython.utils.wildcard: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/utils/wildcard.py)
+%%     pygments.lexers: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/pygments/lexers/__init__.py)
+%%     pygments.lexers._mapping: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/pygments/lexers/_mapping.py)
+%%     pygments.modeline: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/pygments/modeline.py)
+%%     pygments.plugin: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/pygments/plugin.py)
+%%     pygments.lexers.python: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/pygments/lexers/python.py)
+%%     pygments.lexer: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/pygments/lexer.py)
+%%     pygments.filter: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/pygments/filter.py)
+%%     pygments.filters: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/pygments/filters/__init__.py)
+%%     pygments.token: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/pygments/token.py)
+%%     pygments.regexopt: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/pygments/regexopt.py)
+%%     pygments.unistring: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/pygments/unistring.py)
+%%     pygments.formatters: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/pygments/formatters/__init__.py)
+%%     pygments.formatters._mapping: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/pygments/formatters/_mapping.py)
+%%     pygments.formatters.html: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/pygments/formatters/html.py)
+%%     pygments.formatter: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/pygments/formatter.py)
+%%     pygments.styles: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/pygments/styles/__init__.py)
+%%     IPython.core.inputtransformer2: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/inputtransformer2.py)
+%%     typing: Unknown (/opt/python/3.6.5.3/lib/python3.6/typing.py)
+%%     typing.io: Unknown (Unknown)
+%%     typing.re: Unknown (Unknown)
+%%     IPython.core.interactiveshell: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/interactiveshell.py)
+%%     asyncio: Unknown (/opt/python/3.6.5.3/lib/python3.6/asyncio/__init__.py)
+%%     asyncio.base_events: Unknown (/opt/python/3.6.5.3/lib/python3.6/asyncio/base_events.py)
+%%     concurrent: Unknown (/opt/python/3.6.5.3/lib/python3.6/concurrent/__init__.py)
+%%     concurrent.futures: Unknown (/opt/python/3.6.5.3/lib/python3.6/concurrent/futures/__init__.py)
+%%     concurrent.futures._base: Unknown (/opt/python/3.6.5.3/lib/python3.6/concurrent/futures/_base.py)
+%%     concurrent.futures.process: Unknown (/opt/python/3.6.5.3/lib/python3.6/concurrent/futures/process.py)
+%%     queue: Unknown (/opt/python/3.6.5.3/lib/python3.6/queue.py)
+%%     multiprocessing: Unknown (/opt/python/3.6.5.3/lib/python3.6/multiprocessing/__init__.py)
+%%     multiprocessing.context: Unknown (/opt/python/3.6.5.3/lib/python3.6/multiprocessing/context.py)
+%%     multiprocessing.process: Unknown (/opt/python/3.6.5.3/lib/python3.6/multiprocessing/process.py)
+%%     multiprocessing.reduction: Unknown (/opt/python/3.6.5.3/lib/python3.6/multiprocessing/reduction.py)
+%%     array: Unknown (/opt/python/3.6.5.3/lib/python3.6/lib-dynload/array.cpython-36m-x86_64-linux-gnu.so)
+%%     __main__: Unknown (../python/compute_mean_variance_convergence.py)
+%%     multiprocessing.connection: Unknown (/opt/python/3.6.5.3/lib/python3.6/multiprocessing/connection.py)
+%%     _multiprocessing: Unknown (/opt/python/3.6.5.3/lib/python3.6/lib-dynload/_multiprocessing.cpython-36m-x86_64-linux-gnu.so)
+%%     multiprocessing.util: Unknown (/opt/python/3.6.5.3/lib/python3.6/multiprocessing/util.py)
+%%     concurrent.futures.thread: Unknown (/opt/python/3.6.5.3/lib/python3.6/concurrent/futures/thread.py)
+%%     asyncio.compat: Unknown (/opt/python/3.6.5.3/lib/python3.6/asyncio/compat.py)
+%%     asyncio.coroutines: Unknown (/opt/python/3.6.5.3/lib/python3.6/asyncio/coroutines.py)
+%%     asyncio.constants: Unknown (/opt/python/3.6.5.3/lib/python3.6/asyncio/constants.py)
+%%     asyncio.events: Unknown (/opt/python/3.6.5.3/lib/python3.6/asyncio/events.py)
+%%     asyncio.base_futures: Unknown (/opt/python/3.6.5.3/lib/python3.6/asyncio/base_futures.py)
+%%     asyncio.log: Unknown (/opt/python/3.6.5.3/lib/python3.6/asyncio/log.py)
+%%     asyncio.futures: Unknown (/opt/python/3.6.5.3/lib/python3.6/asyncio/futures.py)
+%%     asyncio.base_tasks: Unknown (/opt/python/3.6.5.3/lib/python3.6/asyncio/base_tasks.py)
+%%     _asyncio: Unknown (/opt/python/3.6.5.3/lib/python3.6/lib-dynload/_asyncio.cpython-36m-x86_64-linux-gnu.so)
+%%     asyncio.tasks: Unknown (/opt/python/3.6.5.3/lib/python3.6/asyncio/tasks.py)
+%%     asyncio.locks: Unknown (/opt/python/3.6.5.3/lib/python3.6/asyncio/locks.py)
+%%     asyncio.protocols: Unknown (/opt/python/3.6.5.3/lib/python3.6/asyncio/protocols.py)
+%%     asyncio.queues: Unknown (/opt/python/3.6.5.3/lib/python3.6/asyncio/queues.py)
+%%     asyncio.streams: Unknown (/opt/python/3.6.5.3/lib/python3.6/asyncio/streams.py)
+%%     asyncio.subprocess: Unknown (/opt/python/3.6.5.3/lib/python3.6/asyncio/subprocess.py)
+%%     asyncio.transports: Unknown (/opt/python/3.6.5.3/lib/python3.6/asyncio/transports.py)
+%%     asyncio.unix_events: Unknown (/opt/python/3.6.5.3/lib/python3.6/asyncio/unix_events.py)
+%%     asyncio.base_subprocess: Unknown (/opt/python/3.6.5.3/lib/python3.6/asyncio/base_subprocess.py)
+%%     asyncio.selector_events: Unknown (/opt/python/3.6.5.3/lib/python3.6/asyncio/selector_events.py)
+%%     ssl: Unknown (/opt/python/3.6.5.3/lib/python3.6/ssl.py)
+%%     ipaddress: 1.0 (/opt/python/3.6.5.3/lib/python3.6/ipaddress.py)
+%%     _ssl: Unknown (/opt/python/3.6.5.3/lib/python3.6/lib-dynload/_ssl.cpython-36m-x86_64-linux-gnu.so)
+%%     base64: Unknown (/opt/python/3.6.5.3/lib/python3.6/base64.py)
+%%     asyncio.sslproto: Unknown (/opt/python/3.6.5.3/lib/python3.6/asyncio/sslproto.py)
+%%     runpy: Unknown (/opt/python/3.6.5.3/lib/python3.6/runpy.py)
+%%     pickleshare: 0.7.5 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/pickleshare.py)
+%%     IPython.core.prefilter: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/prefilter.py)
+%%     IPython.core.autocall: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/autocall.py)
+%%     IPython.core.macro: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/macro.py)
+%%     IPython.core.splitinput: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/splitinput.py)
+%%     IPython.core.alias: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/alias.py)
+%%     IPython.core.builtin_trap: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/builtin_trap.py)
+%%     IPython.core.events: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/events.py)
+%%     backcall: 0.1.0 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/backcall/__init__.py)
+%%     backcall.backcall: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/backcall/backcall.py)
+%%     IPython.core.displayhook: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/displayhook.py)
+%%     IPython.core.displaypub: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/displaypub.py)
+%%     IPython.core.extensions: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/extensions.py)
+%%     IPython.core.formatters: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/formatters.py)
+%%     IPython.utils.sentinel: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/utils/sentinel.py)
+%%     IPython.core.history: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/history.py)
+%%     sqlite3: Unknown (/opt/python/3.6.5.3/lib/python3.6/sqlite3/__init__.py)
+%%     sqlite3.dbapi2: Unknown (/opt/python/3.6.5.3/lib/python3.6/sqlite3/dbapi2.py)
+%%     _sqlite3: Unknown (/opt/python/3.6.5.3/lib/python3.6/lib-dynload/_sqlite3.cpython-36m-x86_64-linux-gnu.so)
+%%     IPython.core.logger: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/logger.py)
+%%     IPython.core.payload: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/payload.py)
+%%     IPython.core.usage: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/usage.py)
+%%     IPython.display: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/display.py)
+%%     IPython.lib.display: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/lib/display.py)
+%%     html: Unknown (/opt/python/3.6.5.3/lib/python3.6/html/__init__.py)
+%%     html.entities: Unknown (/opt/python/3.6.5.3/lib/python3.6/html/entities.py)
+%%     IPython.utils.io: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/utils/io.py)
+%%     IPython.utils.capture: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/utils/capture.py)
+%%     IPython.utils.strdispatch: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/utils/strdispatch.py)
+%%     IPython.core.hooks: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/hooks.py)
+%%     IPython.utils.syspathcontext: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/utils/syspathcontext.py)
+%%     IPython.utils.tempdir: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/utils/tempdir.py)
+%%     IPython.utils.contexts: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/utils/contexts.py)
+%%     IPython.core.async_helpers: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/async_helpers.py)
+%%     IPython.terminal.interactiveshell: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/terminal/interactiveshell.py)
+%%     prompt_toolkit: 2.0.9 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/__init__.py)
+%%     prompt_toolkit.application: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/application/__init__.py)
+%%     prompt_toolkit.application.application: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/application/application.py)
+%%     prompt_toolkit.buffer: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/buffer.py)
+%%     prompt_toolkit.application.current: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/application/current.py)
+%%     prompt_toolkit.eventloop: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/eventloop/__init__.py)
+%%     prompt_toolkit.eventloop.base: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/eventloop/base.py)
+%%     prompt_toolkit.log: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/log.py)
+%%     prompt_toolkit.eventloop.coroutine: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/eventloop/coroutine.py)
+%%     prompt_toolkit.eventloop.defaults: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/eventloop/defaults.py)
+%%     prompt_toolkit.utils: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/utils.py)
+%%     wcwidth: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/wcwidth/__init__.py)
+%%     wcwidth.wcwidth: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/wcwidth/wcwidth.py)
+%%     wcwidth.table_wide: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/wcwidth/table_wide.py)
+%%     wcwidth.table_zero: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/wcwidth/table_zero.py)
+%%     prompt_toolkit.cache: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/cache.py)
+%%     prompt_toolkit.eventloop.future: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/eventloop/future.py)
+%%     prompt_toolkit.eventloop.context: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/eventloop/context.py)
+%%     prompt_toolkit.eventloop.async_generator: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/eventloop/async_generator.py)
+%%     queue: Unknown (/opt/python/3.6.5.3/lib/python3.6/queue.py)
+%%     prompt_toolkit.eventloop.event: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/eventloop/event.py)
+%%     prompt_toolkit.application.run_in_terminal: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/application/run_in_terminal.py)
+%%     prompt_toolkit.auto_suggest: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/auto_suggest.py)
+%%     prompt_toolkit.filters: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/filters/__init__.py)
+%%     prompt_toolkit.filters.base: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/filters/base.py)
+%%     prompt_toolkit.filters.app: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/filters/app.py)
+%%     prompt_toolkit.enums: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/enums.py)
+%%     prompt_toolkit.filters.utils: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/filters/utils.py)
+%%     prompt_toolkit.filters.cli: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/filters/cli.py)
+%%     prompt_toolkit.clipboard: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/clipboard/__init__.py)
+%%     prompt_toolkit.clipboard.base: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/clipboard/base.py)
+%%     prompt_toolkit.selection: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/selection.py)
+%%     prompt_toolkit.clipboard.in_memory: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/clipboard/in_memory.py)
+%%     prompt_toolkit.completion: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/completion/__init__.py)
+%%     prompt_toolkit.completion.base: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/completion/base.py)
+%%     prompt_toolkit.completion.filesystem: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/completion/filesystem.py)
+%%     prompt_toolkit.completion.word_completer: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/completion/word_completer.py)
+%%     prompt_toolkit.completion.fuzzy_completer: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/completion/fuzzy_completer.py)
+%%     prompt_toolkit.document: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/document.py)
+%%     prompt_toolkit.history: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/history.py)
+%%     prompt_toolkit.search: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/search.py)
+%%     prompt_toolkit.key_binding: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/key_binding/__init__.py)
+%%     prompt_toolkit.key_binding.key_bindings: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/key_binding/key_bindings.py)
+%%     prompt_toolkit.keys: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/keys.py)
+%%     prompt_toolkit.key_binding.vi_state: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/key_binding/vi_state.py)
+%%     prompt_toolkit.validation: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/validation.py)
+%%     prompt_toolkit.input: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/input/__init__.py)
+%%     prompt_toolkit.input.base: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/input/base.py)
+%%     prompt_toolkit.input.defaults: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/input/defaults.py)
+%%     prompt_toolkit.input.typeahead: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/input/typeahead.py)
+%%     prompt_toolkit.key_binding.bindings: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/key_binding/bindings/__init__.py)
+%%     prompt_toolkit.key_binding.bindings.page_navigation: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/key_binding/bindings/page_navigation.py)
+%%     prompt_toolkit.key_binding.bindings.scroll: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/key_binding/bindings/scroll.py)
+%%     prompt_toolkit.key_binding.defaults: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/key_binding/defaults.py)
+%%     prompt_toolkit.key_binding.bindings.basic: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/key_binding/bindings/basic.py)
+%%     prompt_toolkit.key_binding.key_processor: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/key_binding/key_processor.py)
+%%     prompt_toolkit.key_binding.bindings.named_commands: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/key_binding/bindings/named_commands.py)
+%%     prompt_toolkit.key_binding.bindings.completion: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/key_binding/bindings/completion.py)
+%%     prompt_toolkit.key_binding.bindings.emacs: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/key_binding/bindings/emacs.py)
+%%     prompt_toolkit.key_binding.bindings.vi: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/key_binding/bindings/vi.py)
+%%     prompt_toolkit.input.vt100_parser: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/input/vt100_parser.py)
+%%     prompt_toolkit.input.ansi_escape_sequences: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/input/ansi_escape_sequences.py)
+%%     prompt_toolkit.key_binding.digraphs: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/key_binding/digraphs.py)
+%%     prompt_toolkit.key_binding.bindings.mouse: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/key_binding/bindings/mouse.py)
+%%     prompt_toolkit.layout: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/layout/__init__.py)
+%%     prompt_toolkit.layout.containers: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/layout/containers.py)
+%%     prompt_toolkit.layout.controls: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/layout/controls.py)
+%%     prompt_toolkit.formatted_text: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/formatted_text/__init__.py)
+%%     prompt_toolkit.formatted_text.base: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/formatted_text/base.py)
+%%     prompt_toolkit.formatted_text.html: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/formatted_text/html.py)
+%%     xml: Unknown (/opt/python/3.6.5.3/lib/python3.6/xml/__init__.py)
+%%     xml.dom: Unknown (/opt/python/3.6.5.3/lib/python3.6/xml/dom/__init__.py)
+%%     xml.dom.domreg: Unknown (/opt/python/3.6.5.3/lib/python3.6/xml/dom/domreg.py)
+%%     xml.dom.minidom: Unknown (/opt/python/3.6.5.3/lib/python3.6/xml/dom/minidom.py)
+%%     xml.dom.minicompat: Unknown (/opt/python/3.6.5.3/lib/python3.6/xml/dom/minicompat.py)
+%%     xml.dom.xmlbuilder: Unknown (/opt/python/3.6.5.3/lib/python3.6/xml/dom/xmlbuilder.py)
+%%     xml.dom.NodeFilter: Unknown (/opt/python/3.6.5.3/lib/python3.6/xml/dom/NodeFilter.py)
+%%     prompt_toolkit.formatted_text.ansi: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/formatted_text/ansi.py)
+%%     prompt_toolkit.output: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/output/__init__.py)
+%%     prompt_toolkit.output.base: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/output/base.py)
+%%     prompt_toolkit.layout.screen: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/layout/screen.py)
+%%     prompt_toolkit.output.defaults: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/output/defaults.py)
+%%     prompt_toolkit.output.color_depth: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/output/color_depth.py)
+%%     prompt_toolkit.output.vt100: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/output/vt100.py)
+%%     prompt_toolkit.styles: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/styles/__init__.py)
+%%     prompt_toolkit.styles.base: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/styles/base.py)
+%%     prompt_toolkit.styles.defaults: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/styles/defaults.py)
+%%     prompt_toolkit.styles.style: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/styles/style.py)
+%%     prompt_toolkit.styles.named_colors: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/styles/named_colors.py)
+%%     prompt_toolkit.styles.pygments: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/styles/pygments.py)
+%%     prompt_toolkit.styles.style_transformation: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/styles/style_transformation.py)
+%%     colorsys: Unknown (/opt/python/3.6.5.3/lib/python3.6/colorsys.py)
+%%     prompt_toolkit.formatted_text.pygments: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/formatted_text/pygments.py)
+%%     prompt_toolkit.formatted_text.utils: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/formatted_text/utils.py)
+%%     prompt_toolkit.lexers: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/lexers/__init__.py)
+%%     prompt_toolkit.lexers.base: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/lexers/base.py)
+%%     prompt_toolkit.lexers.pygments: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/lexers/pygments.py)
+%%     prompt_toolkit.mouse_events: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/mouse_events.py)
+%%     prompt_toolkit.layout.processors: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/layout/processors.py)
+%%     prompt_toolkit.layout.utils: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/layout/utils.py)
+%%     prompt_toolkit.layout.dimension: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/layout/dimension.py)
+%%     prompt_toolkit.layout.margins: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/layout/margins.py)
+%%     prompt_toolkit.layout.layout: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/layout/layout.py)
+%%     prompt_toolkit.layout.menus: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/layout/menus.py)
+%%     prompt_toolkit.renderer: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/renderer.py)
+%%     prompt_toolkit.layout.mouse_handlers: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/layout/mouse_handlers.py)
+%%     prompt_toolkit.key_binding.bindings.cpr: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/key_binding/bindings/cpr.py)
+%%     prompt_toolkit.key_binding.emacs_state: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/key_binding/emacs_state.py)
+%%     prompt_toolkit.layout.dummy: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/layout/dummy.py)
+%%     prompt_toolkit.application.dummy: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/application/dummy.py)
+%%     prompt_toolkit.shortcuts: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/shortcuts/__init__.py)
+%%     prompt_toolkit.shortcuts.dialogs: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/shortcuts/dialogs.py)
+%%     prompt_toolkit.key_binding.bindings.focus: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/key_binding/bindings/focus.py)
+%%     prompt_toolkit.widgets: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/widgets/__init__.py)
+%%     prompt_toolkit.widgets.base: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/widgets/base.py)
+%%     prompt_toolkit.widgets.toolbars: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/widgets/toolbars.py)
+%%     prompt_toolkit.widgets.dialogs: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/widgets/dialogs.py)
+%%     prompt_toolkit.widgets.menus: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/widgets/menus.py)
+%%     prompt_toolkit.shortcuts.prompt: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/shortcuts/prompt.py)
+%%     prompt_toolkit.key_binding.bindings.auto_suggest: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/key_binding/bindings/auto_suggest.py)
+%%     prompt_toolkit.key_binding.bindings.open_in_editor: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/key_binding/bindings/open_in_editor.py)
+%%     prompt_toolkit.shortcuts.utils: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/shortcuts/utils.py)
+%%     prompt_toolkit.shortcuts.progress_bar: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/shortcuts/progress_bar/__init__.py)
+%%     prompt_toolkit.shortcuts.progress_bar.base: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/shortcuts/progress_bar/base.py)
+%%     prompt_toolkit.shortcuts.progress_bar.formatters: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/shortcuts/progress_bar/formatters.py)
+%%     prompt_toolkit.patch_stdout: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/prompt_toolkit/patch_stdout.py)
+%%     pygments.style: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/pygments/style.py)
+%%     IPython.terminal.debugger: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/terminal/debugger.py)
+%%     IPython.core.completer: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/completer.py)
+%%     IPython.core.latex_symbols: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/latex_symbols.py)
+%%     IPython.utils.generics: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/utils/generics.py)
+%%     jedi: 0.13.3 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/__init__.py)
+%%     jedi.api: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/api/__init__.py)
+%%     parso: 0.4.0 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/parso/__init__.py)
+%%     parso.parser: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/parso/parser.py)
+%%     parso.tree: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/parso/tree.py)
+%%     parso._compatibility: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/parso/_compatibility.py)
+%%     parso.utils: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/parso/utils.py)
+%%     parso.pgen2: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/parso/pgen2/__init__.py)
+%%     parso.pgen2.generator: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/parso/pgen2/generator.py)
+%%     parso.pgen2.grammar_parser: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/parso/pgen2/grammar_parser.py)
+%%     parso.python: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/parso/python/__init__.py)
+%%     parso.python.tokenize: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/parso/python/tokenize.py)
+%%     parso.python.token: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/parso/python/token.py)
+%%     parso.grammar: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/parso/grammar.py)
+%%     parso.python.diff: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/parso/python/diff.py)
+%%     parso.python.parser: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/parso/python/parser.py)
+%%     parso.python.tree: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/parso/python/tree.py)
+%%     parso.python.prefix: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/parso/python/prefix.py)
+%%     parso.cache: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/parso/cache.py)
+%%     parso.python.errors: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/parso/python/errors.py)
+%%     parso.normalizer: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/parso/normalizer.py)
+%%     parso.python.pep8: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/parso/python/pep8.py)
+%%     parso.file_io: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/parso/file_io.py)
+%%     jedi._compatibility: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/_compatibility.py)
+%%     jedi.parser_utils: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/parser_utils.py)
+%%     jedi.debug: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/debug.py)
+%%     jedi.settings: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/settings.py)
+%%     jedi.cache: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/cache.py)
+%%     jedi.api.classes: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/api/classes.py)
+%%     jedi.evaluate: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/evaluate/__init__.py)
+%%     jedi.evaluate.utils: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/evaluate/utils.py)
+%%     jedi.evaluate.imports: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/evaluate/imports.py)
+%%     jedi.evaluate.sys_path: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/evaluate/sys_path.py)
+%%     jedi.evaluate.cache: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/evaluate/cache.py)
+%%     jedi.evaluate.base_context: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/evaluate/base_context.py)
+%%     jedi.common: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/common/__init__.py)
+%%     jedi.common.context: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/common/context.py)
+%%     jedi.evaluate.helpers: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/evaluate/helpers.py)
+%%     jedi.common.utils: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/common/utils.py)
+%%     jedi.evaluate.compiled: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/evaluate/compiled/__init__.py)
+%%     jedi.evaluate.compiled.context: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/evaluate/compiled/context.py)
+%%     jedi.evaluate.filters: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/evaluate/filters.py)
+%%     jedi.evaluate.flow_analysis: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/evaluate/flow_analysis.py)
+%%     jedi.evaluate.recursion: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/evaluate/recursion.py)
+%%     jedi.evaluate.lazy_context: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/evaluate/lazy_context.py)
+%%     jedi.evaluate.compiled.access: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/evaluate/compiled/access.py)
+%%     jedi.evaluate.compiled.getattr_static: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/evaluate/compiled/getattr_static.py)
+%%     jedi.evaluate.compiled.fake: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/evaluate/compiled/fake.py)
+%%     jedi.evaluate.analysis: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/evaluate/analysis.py)
+%%     jedi.evaluate.context: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/evaluate/context/__init__.py)
+%%     jedi.evaluate.context.module: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/evaluate/context/module.py)
+%%     jedi.evaluate.context.klass: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/evaluate/context/klass.py)
+%%     jedi.evaluate.context.function: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/evaluate/context/function.py)
+%%     jedi.evaluate.docstrings: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/evaluate/docstrings.py)
+%%     jedi.evaluate.pep0484: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/evaluate/pep0484.py)
+%%     jedi.evaluate.arguments: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/evaluate/arguments.py)
+%%     jedi.evaluate.context.iterable: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/evaluate/context/iterable.py)
+%%     jedi.evaluate.param: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/evaluate/param.py)
+%%     jedi.evaluate.context.asynchronous: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/evaluate/context/asynchronous.py)
+%%     jedi.evaluate.parser_cache: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/evaluate/parser_cache.py)
+%%     jedi.evaluate.context.instance: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/evaluate/context/instance.py)
+%%     jedi.evaluate.syntax_tree: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/evaluate/syntax_tree.py)
+%%     jedi.evaluate.finder: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/evaluate/finder.py)
+%%     jedi.api.keywords: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/api/keywords.py)
+%%     pydoc_data: Unknown (/opt/python/3.6.5.3/lib/python3.6/pydoc_data/__init__.py)
+%%     pydoc_data.topics: Unknown (/opt/python/3.6.5.3/lib/python3.6/pydoc_data/topics.py)
+%%     jedi.api.interpreter: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/api/interpreter.py)
+%%     jedi.evaluate.compiled.mixed: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/evaluate/compiled/mixed.py)
+%%     jedi.api.helpers: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/api/helpers.py)
+%%     jedi.api.completion: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/api/completion.py)
+%%     jedi.api.environment: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/api/environment.py)
+%%     filecmp: Unknown (/opt/python/3.6.5.3/lib/python3.6/filecmp.py)
+%%     jedi.evaluate.compiled.subprocess: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/evaluate/compiled/subprocess/__init__.py)
+%%     jedi.evaluate.compiled.subprocess.functions: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/evaluate/compiled/subprocess/functions.py)
+%%     jedi.api.exceptions: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/api/exceptions.py)
+%%     jedi.api.project: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/api/project.py)
+%%     jedi.evaluate.usages: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/jedi/evaluate/usages.py)
+%%     IPython.terminal.ptutils: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/terminal/ptutils.py)
+%%     IPython.terminal.shortcuts: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/terminal/shortcuts.py)
+%%     IPython.terminal.magics: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/terminal/magics.py)
+%%     IPython.lib.clipboard: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/lib/clipboard.py)
+%%     IPython.terminal.pt_inputhooks: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/terminal/pt_inputhooks/__init__.py)
+%%     IPython.terminal.prompts: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/terminal/prompts.py)
+%%     IPython.terminal.ipapp: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/terminal/ipapp.py)
+%%     IPython.core.magics: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/magics/__init__.py)
+%%     IPython.core.magics.auto: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/magics/auto.py)
+%%     IPython.core.magics.basic: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/magics/basic.py)
+%%     IPython.core.magics.code: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/magics/code.py)
+%%     urllib.request: 3.6 (/opt/python/3.6.5.3/lib/python3.6/urllib/request.py)
+%%     email: Unknown (/opt/python/3.6.5.3/lib/python3.6/email/__init__.py)
+%%     http: Unknown (/opt/python/3.6.5.3/lib/python3.6/http/__init__.py)
+%%     http.client: Unknown (/opt/python/3.6.5.3/lib/python3.6/http/client.py)
+%%     email.parser: Unknown (/opt/python/3.6.5.3/lib/python3.6/email/parser.py)
+%%     email.feedparser: Unknown (/opt/python/3.6.5.3/lib/python3.6/email/feedparser.py)
+%%     email.errors: Unknown (/opt/python/3.6.5.3/lib/python3.6/email/errors.py)
+%%     email._policybase: Unknown (/opt/python/3.6.5.3/lib/python3.6/email/_policybase.py)
+%%     email.header: Unknown (/opt/python/3.6.5.3/lib/python3.6/email/header.py)
+%%     email.quoprimime: Unknown (/opt/python/3.6.5.3/lib/python3.6/email/quoprimime.py)
+%%     email.base64mime: Unknown (/opt/python/3.6.5.3/lib/python3.6/email/base64mime.py)
+%%     email.charset: Unknown (/opt/python/3.6.5.3/lib/python3.6/email/charset.py)
+%%     email.encoders: Unknown (/opt/python/3.6.5.3/lib/python3.6/email/encoders.py)
+%%     quopri: Unknown (/opt/python/3.6.5.3/lib/python3.6/quopri.py)
+%%     email.utils: Unknown (/opt/python/3.6.5.3/lib/python3.6/email/utils.py)
+%%     email._parseaddr: Unknown (/opt/python/3.6.5.3/lib/python3.6/email/_parseaddr.py)
+%%     email.message: Unknown (/opt/python/3.6.5.3/lib/python3.6/email/message.py)
+%%     uu: Unknown (/opt/python/3.6.5.3/lib/python3.6/uu.py)
+%%     email._encoded_words: Unknown (/opt/python/3.6.5.3/lib/python3.6/email/_encoded_words.py)
+%%     email.iterators: Unknown (/opt/python/3.6.5.3/lib/python3.6/email/iterators.py)
+%%     urllib.error: Unknown (/opt/python/3.6.5.3/lib/python3.6/urllib/error.py)
+%%     urllib.response: Unknown (/opt/python/3.6.5.3/lib/python3.6/urllib/response.py)
+%%     IPython.core.magics.config: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/magics/config.py)
+%%     IPython.core.magics.display: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/magics/display.py)
+%%     IPython.core.magics.execution: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/magics/execution.py)
+%%     timeit: Unknown (/opt/python/3.6.5.3/lib/python3.6/timeit.py)
+%%     cProfile: Unknown (/opt/python/3.6.5.3/lib/python3.6/cProfile.py)
+%%     _lsprof: Unknown (/opt/python/3.6.5.3/lib/python3.6/lib-dynload/_lsprof.cpython-36m-x86_64-linux-gnu.so)
+%%     profile: Unknown (/opt/python/3.6.5.3/lib/python3.6/profile.py)
+%%     optparse: 1.5.3 (/opt/python/3.6.5.3/lib/python3.6/optparse.py)
+%%     pstats: Unknown (/opt/python/3.6.5.3/lib/python3.6/pstats.py)
+%%     IPython.utils.module_paths: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/utils/module_paths.py)
+%%     IPython.utils.timing: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/utils/timing.py)
+%%     IPython.core.magics.extension: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/magics/extension.py)
+%%     IPython.core.magics.history: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/magics/history.py)
+%%     IPython.core.magics.logging: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/magics/logging.py)
+%%     IPython.core.magics.namespace: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/magics/namespace.py)
+%%     IPython.core.magics.osm: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/magics/osm.py)
+%%     IPython.core.magics.packaging: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/magics/packaging.py)
+%%     IPython.core.magics.pylab: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/magics/pylab.py)
+%%     IPython.core.pylabtools: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/pylabtools.py)
+%%     IPython.core.magics.script: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/magics/script.py)
+%%     IPython.lib.backgroundjobs: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/lib/backgroundjobs.py)
+%%     IPython.core.shellapp: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/core/shellapp.py)
+%%     IPython.extensions: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/extensions/__init__.py)
+%%     IPython.extensions.storemagic: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/extensions/storemagic.py)
+%%     IPython.utils.frame: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/IPython/utils/frame.py)
+%%     git: 2.1.11 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/git/__init__.py)
+%%     gitdb: 2.0.5 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/gitdb/__init__.py)
+%%     smmap: 2.0.5 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/smmap/__init__.py)
+%%     smmap.mman: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/smmap/mman.py)
+%%     smmap.util: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/smmap/util.py)
+%%     mmap: Unknown (/opt/python/3.6.5.3/lib/python3.6/lib-dynload/mmap.cpython-36m-x86_64-linux-gnu.so)
+%%     smmap.buf: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/smmap/buf.py)
+%%     gitdb.base: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/gitdb/base.py)
+%%     gitdb.util: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/gitdb/util.py)
+%%     gitdb.const: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/gitdb/const.py)
+%%     gitdb.fun: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/gitdb/fun.py)
+%%     gitdb.utils: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/gitdb/utils/__init__.py)
+%%     gitdb.utils.encoding: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/gitdb/utils/encoding.py)
+%%     gitdb.utils.compat: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/gitdb/utils/compat.py)
+%%     gitdb.typ: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/gitdb/typ.py)
+%%     gitdb.db: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/gitdb/db/__init__.py)
+%%     gitdb.db.base: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/gitdb/db/base.py)
+%%     gitdb.exc: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/gitdb/exc.py)
+%%     gitdb.db.loose: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/gitdb/db/loose.py)
+%%     gitdb.stream: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/gitdb/stream.py)
+%%     gitdb.db.mem: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/gitdb/db/mem.py)
+%%     gitdb.db.pack: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/gitdb/db/pack.py)
+%%     gitdb.pack: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/gitdb/pack.py)
+%%     gitdb.db.git: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/gitdb/db/git.py)
+%%     gitdb.db.ref: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/gitdb/db/ref.py)
+%%     git.exc: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/git/exc.py)
+%%     git.compat: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/git/compat.py)
+%%     encodings.ascii: Unknown (/opt/python/3.6.5.3/lib/python3.6/encodings/ascii.py)
+%%     git.config: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/git/config.py)
+%%     git.util: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/git/util.py)
+%%     configparser: Unknown (/opt/python/3.6.5.3/lib/python3.6/configparser.py)
+%%     git.objects: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/git/objects/__init__.py)
+%%     git.objects.base: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/git/objects/base.py)
+%%     git.objects.util: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/git/objects/util.py)
+%%     git.objects.blob: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/git/objects/blob.py)
+%%     git.objects.commit: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/git/objects/commit.py)
+%%     git.diff: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/git/diff.py)
+%%     git.cmd: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/git/cmd.py)
+%%     git.objects.tree: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/git/objects/tree.py)
+%%     git.objects.submodule: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/git/objects/submodule/__init__.py)
+%%     git.objects.submodule.base: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/git/objects/submodule/base.py)
+%%     git.objects.submodule.util: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/git/objects/submodule/util.py)
+%%     git.objects.fun: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/git/objects/fun.py)
+%%     git.objects.submodule.root: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/git/objects/submodule/root.py)
+%%     git.objects.tag: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/git/objects/tag.py)
+%%     git.refs: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/git/refs/__init__.py)
+%%     git.refs.symbolic: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/git/refs/symbolic.py)
+%%     git.refs.log: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/git/refs/log.py)
+%%     git.refs.reference: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/git/refs/reference.py)
+%%     git.refs.head: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/git/refs/head.py)
+%%     git.refs.tag: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/git/refs/tag.py)
+%%     git.refs.remote: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/git/refs/remote.py)
+%%     git.db: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/git/db.py)
+%%     git.repo: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/git/repo/__init__.py)
+%%     git.repo.base: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/git/repo/base.py)
+%%     git.index: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/git/index/__init__.py)
+%%     git.index.base: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/git/index/base.py)
+%%     git.index.fun: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/git/index/fun.py)
+%%     git.index.typ: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/git/index/typ.py)
+%%     git.index.util: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/git/index/util.py)
+%%     git.remote: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/git/remote.py)
+%%     git.repo.fun: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/git/repo/fun.py)
+%%     PIL.BmpImagePlugin: 0.7 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/PIL/BmpImagePlugin.py)
+%%     PIL.ImageFile: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/PIL/ImageFile.py)
+%%     PIL.ImagePalette: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/PIL/ImagePalette.py)
+%%     PIL.ImageColor: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/PIL/ImageColor.py)
+%%     PIL.GimpPaletteFile: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/PIL/GimpPaletteFile.py)
+%%     PIL.GimpGradientFile: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/PIL/GimpGradientFile.py)
+%%     PIL.PaletteFile: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/PIL/PaletteFile.py)
+%%     PIL.GifImagePlugin: 0.9 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/PIL/GifImagePlugin.py)
+%%     PIL.ImageChops: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/PIL/ImageChops.py)
+%%     PIL.ImageSequence: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/PIL/ImageSequence.py)
+%%     PIL.JpegImagePlugin: 0.6 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/PIL/JpegImagePlugin.py)
+%%     PIL.TiffImagePlugin: 1.3.5 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/PIL/TiffImagePlugin.py)
+%%     fractions: Unknown (/opt/python/3.6.5.3/lib/python3.6/fractions.py)
+%%     PIL.JpegPresets: Unknown (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/PIL/JpegPresets.py)
+%%     PIL.PpmImagePlugin: 0.2 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/PIL/PpmImagePlugin.py)
+%%     PIL.PngImagePlugin: 0.9 (/scratch/snx3000/klye/3druns_new/postprocessing/.venv/lib/python3.6/site-packages/PIL/PngImagePlugin.py)
+%% stacktrace:
+%%     [function: savePlot, line: 304, file: /scratch/snx3000/klye/3druns_newest/postprocessing/python/plot_info.py]
+%%     [function: savePlot, line: 326, file: /scratch/snx3000/klye/3druns_newest/postprocessing/python/plot_info.py]
+%%     [function: plot_convergence, line: 133, file: ../python/compute_mean_variance_convergence.py]
+%%     [function: <module>, line: 180, file: ../python/compute_mean_variance_convergence.py]

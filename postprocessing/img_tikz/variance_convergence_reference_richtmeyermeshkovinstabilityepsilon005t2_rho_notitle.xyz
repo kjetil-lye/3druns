@@ -47,15 +47,15 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: ad74957fe7eeaf5c63f9ff86b31bc3b3e61ffc82
+Commit: c6e7e2e3d9570bfe7969aebd327618e51a58cda7
 Repo: git@github.com:kjetil-lye/3druns.git
-Hostname: daint106};
+Hostname: daint104};
 \node at (axis cs:0.2,0.93)[
   scale=0.5,
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@ad74};
+]{@c6e7};
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -63,9 +63,9 @@ Hostname: daint106};
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: ad74957fe7eeaf5c63f9ff86b31bc3b3e61ffc82
+Commit: c6e7e2e3d9570bfe7969aebd327618e51a58cda7
 Repo: git@github.com:kjetil-lye/3druns.git
-Hostname: daint106};
+Hostname: daint104};
 \end{axis}
 
 \end{tikzpicture}
@@ -77,14 +77,14 @@ Hostname: daint106};
 %% script name: ../python/compute_mean_variance_convergence.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : ad74957fe7eeaf5c63f9ff86b31bc3b3e61ffc82
-%% GIT git_repo_modified : False
+%% GIT git_commit : c6e7e2e3d9570bfe7969aebd327618e51a58cda7
+%% GIT git_repo_modified : True
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : ad74
+%% GIT git_short_commit : c6e7
 %% working_directory : /scratch/snx3000/klye/3druns_newest/postprocessing/notebooks
-%% hostname : daint106
-%% generated_on_date : 2019-09-17 12:40:38.475495
+%% hostname : daint104
+%% generated_on_date : 2019-09-17 17:49:15.564023
 %% accessed_environment:
 %% additional_parameters:
 %%    commandrun=/scratch/snx3000/klye/3druns_new/postprocessing/.venv/bin/python ../python/compute_mean_variance_convergence.py --input_basename /scratch/snx3000/klye/3druns/richtmeyermeshkov/short_time/p0_05/N{resolution}/richtmeyermeshkov_{stat}_0.nc --title Richtmeyer-Meshkov instability $\epsilon=0.05, T=2$ --starting_resolution 64 --stat variance --variable rho --compute_rate --reference_solution --not_zoom
