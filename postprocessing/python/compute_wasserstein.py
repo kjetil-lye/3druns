@@ -22,6 +22,10 @@ Computes the 1 pt wasserstein convergence
 
     parser.add_argument('--starting_resolution', type=int, default=32,
                         help='Starting resolution (smallest resolution)')
+    
+    
+    parser.add_argument('--reference_solution', action='store_true',
+                        help='Compute convergence against a reference solution')
 
     args = parser.parse_args()
 
