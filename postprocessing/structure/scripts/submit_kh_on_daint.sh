@@ -26,12 +26,8 @@ do
 
 	    for p in 1 2 3;
 	    do
-		if [ $x -gt 256 ];
-		then
-		    NODES=16
-		else
-		    NODES=1
-		fi
+
+		NODES=16
 		
 
 		python -m submit_command_on_daint \
