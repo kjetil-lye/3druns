@@ -1,4 +1,4 @@
-<config>
+<?xml version="1.0" ?><config>
 <fvm>
   <name>
     kh
@@ -49,7 +49,7 @@
   </writer>
 </fvm>
 <uq>
-  <samples>1</samples>
+  <samples>512</samples>
   <generator>auto</generator>
   <parameters>
     <parameter>

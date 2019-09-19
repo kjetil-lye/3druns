@@ -1,4 +1,4 @@
-<config>
+<?xml version="1.0" ?><config>
 <fvm>
   <name>
     kh
@@ -7,7 +7,7 @@
   <grid>
     <lowerCorner>0 0 0</lowerCorner>
     <upperCorner>1 1 1</upperCorner>
-    <dimension>256 256 256</dimension>
+    <dimension>64 64 64</dimension>
   </grid>
   <boundary>periodic</boundary>
   <flux>hll3</flux>
@@ -34,7 +34,7 @@
       <parameter>
         <name>epsilon</name>
         <length>1</length>
-        <value>0.1</value>
+        <value>0.01</value>
       </parameter>
     </parameters>
   </initialData>
@@ -46,6 +46,7 @@
     <type>netcdf</type>
     <basename>kh</basename>
     <numberOfSaves>1</numberOfSaves>
+    <writeInitialTimestep>1</writeInitialTimestep>
   </writer>
 </fvm>
 <uq>

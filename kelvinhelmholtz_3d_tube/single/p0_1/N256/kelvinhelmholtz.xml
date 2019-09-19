@@ -1,4 +1,4 @@
-<config>
+<?xml version="1.0" ?><config>
 <fvm>
   <name>
     kh
@@ -46,6 +46,7 @@
     <type>netcdf</type>
     <basename>kh</basename>
     <numberOfSaves>1</numberOfSaves>
+    <writeInitialTimestep>1</writeInitialTimestep>
   </writer>
 </fvm>
 <uq>
