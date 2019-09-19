@@ -38,7 +38,7 @@ do
 		       -w ${folder} \
 		       --nodes ${NODES} \
 		       --name "kh_${t}_${pert}_${x}_${p}" \
-		       --command "$STRUCTURE_BIN_DIR/structure_standalone -i $SCRATCH/3druns_new/kelvinhelmholtz_3d_tube/stats/p${pert//./_}/N${x}/kh_${t}.nc -o structure_kh_cuda_t_${t}_p_${p} --samples ${x} --number-of-h  16 --nx 512 --ny 512 --nz 512 --platform cuda --p ${p}" \
+		       --command "$STRUCTURE_BIN_DIR/structure_standalone -i $SCRATCH/3druns_new/kelvinhelmholtz_3d_tube/stats/p${pert//./_}/N${x}/kh_${t}.nc -o structure_kh_cuda_t_${t}_p_${p} --samples ${x} --number-of-h  16 --nx 512 --ny 512 --nz 512 --platform cuda --p ${p} --equation euler3" \
 		       "$@"
 	    done
 	done
