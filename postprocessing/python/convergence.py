@@ -289,7 +289,7 @@ def wasserstein_1pt(filenames, title, reference_solution=False):
     filename_append = ''
     
     if reference_solution:
-        filename_append = '_reference
+        filename_append = '_reference'
     
     saveData(f"wasserstein_1pt{filename_append}_{title}_all_errors", errors)
     saveData(f"wasserstein_1pt{filename_append}_{title}_all_resolutions", resolutions)
@@ -312,7 +312,7 @@ def plot_wasserstein_convergence(resolutions, basename, title, reference_solutio
     for r in resolutions:
         filenames[r] = basename.format(resolution=r)
     
-    wasserstein_1pt(filenames, title)
+    wasserstein_1pt(filenames, title, reference_solution)
     
     if reference_solution:
         showAndSave(f"wasserstein_1pt_{title}_all_reference")

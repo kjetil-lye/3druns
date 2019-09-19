@@ -40,4 +40,4 @@ Computes the 1 pt wasserstein convergence
     
     plot_info.add_additional_plot_parameters("basename", args.input_basename)
 
-    convergence.plot_wasserstein_convergence(resolutions, basename, args.title)
+    convergence.plot_wasserstein_convergence(resolutions, basename, args.title, args.reference_solution)
