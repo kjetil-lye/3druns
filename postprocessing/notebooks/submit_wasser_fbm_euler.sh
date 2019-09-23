@@ -7,7 +7,7 @@ set -e
 ## and copy the next one
 
 function submit { 
-    echo bsub -W 120:00 -R 'rusage[mem=32000]' "$@"
+    bsub -W 120:00 -R 'rusage[mem=32000]' "$@"
 }
 
 
