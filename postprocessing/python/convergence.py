@@ -177,18 +177,21 @@ def load_samples_point(filename, variable, i, j, k):
                 samples.append(f.variables[key][i,j,k])
     return np.array(samples)
 
-def load_plane(filename, variable, k, number_of_samples):
-    samples = []
+def load_plane(filename, k, number_of_samples, variables):
+    
     with netCDF4.Dataset(filename) as f:
         for attr in f.ncattrs():
             plot_info.add_additional_plot_parameters(filename.replace("/", "_") + "_" + attr, f.getncattr(attr))
-        for key in f.variables.keys():
-            if len(samples) == number_of_samples:
-                break
-            if variable in key:
-
-                samples.append(f.variables[key][k,:,:])
-    return np.array(samples)
+        resolution = f.variables['sample_0_rho'].shape[0]
+        
+        samples = np.zeros(number_of_samples, resolution, resolution, len(variables))
+        for variable_index, variable in enumerate(variables):
+            for sample in range(number_of_samples):
+                key = f'sample_{sample}_{variable}'
+                
+                samples[sample,:,:,variable_index] = f.variables[key][k,:,:]
+                
+    return samples
 
 
 def progress(part, total):
@@ -220,25 +223,23 @@ def wasserstein_1pt(filenames, title, reference_solution=False):
     
             wasserstein_error = 0.0
     
-            for i in range(max_resolution):
-                progress(i, max_resolution)
-                d1 = np.zeros((max_resolution, max_resolution, max_resolution, number_of_variables))
-                d2 = np.zeros((max_resolution, r, r, number_of_variables))
-                
+            for coarse_plane in range(r):
+                d2 = load_plane(filenames[r], coarse_plane, max_resolution, conserved_variables)
                 factor = max_resolution // r
-                
-                for n, variable in enumerate(conserved_variables):
-                    d1[:,:,:,n] = load_plane(filenames[max_resolution], variable, i, max_resolution)
-                    d2[:,:,:,n] = load_plane(filenames[r], variable, i//factor, max_resolution)
-                for j in range(max_resolution):
-                    for k in range(max_resolution):
-    
-    #                    d1 = load_samples_point(filenames[r], variable, i, j, k)
-    #                    d2 = load_samples_point(filenames[r//2], variable, i//2, j//2, k//2)
-                        distances = ot.dist(d1[:,j,k,:], d2[:,j//factor,k//factor,:], metric='euclidean')
-                        emd_pairing = ot.emd(weights_a, weights_b, distances)
-                        wasserstein_distance = np.sum(emd_pairing * distances)
-                        wasserstein_error += wasserstein_distance
+                for fine_plane_local_index in range(factor):
+                    fine_plane = coarse_plane * factor + fine_plane_local_index
+                    
+                    d1 = load_plane(filenames[max_resolution], fine_plane, max_resolution, conserved_variables)
+            
+                    for j in range(max_resolution):
+                        for k in range(max_resolution):
+        
+        #                    d1 = load_samples_point(filenames[r], variable, i, j, k)
+        #                    d2 = load_samples_point(filenames[r//2], variable, i//2, j//2, k//2)
+                            distances = ot.dist(d1[:,j,k,:], d2[:,j//factor,k//factor,:], metric='euclidean')
+                            emd_pairing = ot.emd(weights_a, weights_b, distances)
+                            wasserstein_distance = np.sum(emd_pairing * distances)
+                            wasserstein_error += wasserstein_distance
             wasserstein_error /= max_resolution**3
     
             errors.append(wasserstein_error)
@@ -258,12 +259,9 @@ def wasserstein_1pt(filenames, title, reference_solution=False):
     
             for i in range(r):
                 progress(i, r)
-                d1 = np.zeros((r, r, r, number_of_variables))
-                d2 = np.zeros((r, r//2, r//2, number_of_variables))
                 
-                for n, variable in enumerate(conserved_variables):
-                    d1[:,:,:,n] = load_plane(filenames[r], variable, i, r)
-                    d2[:,:,:,n] = load_plane(filenames[r//2], variable, i//2, r)
+                d1 = load_plane(filenames[r], i, r, conserved_variables)
+                d2 = load_plane(filenames[r//2], i//2, r, conserved_variables)
                 for j in range(r):
                     for k in range(r):
     
