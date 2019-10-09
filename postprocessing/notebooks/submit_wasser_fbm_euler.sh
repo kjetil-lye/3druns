@@ -29,6 +29,6 @@ done
 submit python ../python/compute_wasserstein.py \
     --input_basename=${input_filename} \
     --starting_resolution 64 \
-    --title 'Fractional Brownian motion \$H=${H}, T=0.2\$'  \
+    --title "Fractional Brownian motion \$H=${H}, T=0.2\$"  \
     --reference_solution
 
