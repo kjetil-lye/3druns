@@ -184,7 +184,7 @@ def load_plane(filename, k, number_of_samples, variables):
             plot_info.add_additional_plot_parameters(filename.replace("/", "_") + "_" + attr, f.getncattr(attr))
         resolution = f.variables['sample_0_rho'].shape[0]
         
-        samples = np.zeros(number_of_samples, resolution, resolution, len(variables))
+        samples = np.zeros((number_of_samples, resolution, resolution, len(variables)))
         for variable_index, variable in enumerate(variables):
             for sample in range(number_of_samples):
                 key = f'sample_{sample}_{variable}'
