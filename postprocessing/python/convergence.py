@@ -246,6 +246,10 @@ def progress(part, total):
             pass
     
 @timeit
+def wasserstein_inner_compute(weights_a, weights_b, distances)
+    return ot.emd(weights_a, weights_b, distances)
+    
+@timeit
 def wasserstein_1pt(filenames, title, reference_solution=False):
     # don't judge me for the next line
     resolutions = np.array(sorted(list([k for k in filenames.keys()])))
@@ -276,7 +280,8 @@ def wasserstein_1pt(filenames, title, reference_solution=False):
         #                    d1 = load_samples_point(filenames[r], variable, i, j, k)
         #                    d2 = load_samples_point(filenames[r//2], variable, i//2, j//2, k//2)
                             distances = ot.dist(d1[:,j,k,:], d2[:,j//factor,k//factor,:], metric='euclidean')
-                            emd_pairing = ot.emd(weights_a, weights_b, distances)
+                            
+                            emd_pairing = wasserstein_inner_compute(weights_a, weights_b, distances)
                             wasserstein_distance = np.sum(emd_pairing * distances)
                             wasserstein_error += wasserstein_distance
             wasserstein_error /= max_resolution**3
