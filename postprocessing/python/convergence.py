@@ -8,9 +8,45 @@ import netCDF4
 import scipy
 import scipy.stats
 import ot
+import collections
+import atexit
+import json
+import sys
+import time
 
+        
+
+# We want to time some functions
+# inspired by https://medium.com/pythonhive/python-decorator-to-measure-the-execution-time-of-methods-fa04cb6bb36d
+def timeit(method):
+    def timed(*args, **kwargs):
+        start_time= time.time()
+        result = method(*args, **kwargs)
+        end_time = time.time()
+        
+        timeit.timings[method.__name__] += end_time - start_time
+        
+        return result
+    return timed
+
+timeit.timings = collections.defaultdict(lambda : 0)
+
+def write_timings_output():
+    outputname = f'{sys.argv[0]}.timings.json'
+    
+    with open(outputname, 'w') as f:
+        json.dump(timeit.timings, f, indent=4)
+
+# see https://docs.python.org/3.7/library/atexit.html
+@atexit.register
+def print_timings():
+    print(json.dumps({"timings" : timeit.timings}, indent=4))
+  
+
+    
 from compressible_euler import latex_variables, conserved_variables
 
+@timeit
 def load(filename, variable):
     with netCDF4.Dataset(filename) as f:
         for attr in f.ncattrs():
@@ -167,6 +203,7 @@ def get_number_of_samples(filename, variable):
 
     return samples
 
+@timeit
 def load_samples_point(filename, variable, i, j, k):
     samples = []
 
@@ -177,6 +214,8 @@ def load_samples_point(filename, variable, i, j, k):
                 samples.append(f.variables[key][i,j,k])
     return np.array(samples)
 
+
+@timeit
 def load_plane(filename, k, number_of_samples, variables):
     
     with netCDF4.Dataset(filename) as f:
@@ -206,7 +245,11 @@ def progress(part, total):
         except:
             pass
     
-
+@timeit
+def wasserstein_inner_compute(weights_a, weights_b, distances)
+    return ot.emd(weights_a, weights_b, distances)
+    
+@timeit
 def wasserstein_1pt(filenames, title, reference_solution=False):
     # don't judge me for the next line
     resolutions = np.array(sorted(list([k for k in filenames.keys()])))
@@ -237,7 +280,8 @@ def wasserstein_1pt(filenames, title, reference_solution=False):
         #                    d1 = load_samples_point(filenames[r], variable, i, j, k)
         #                    d2 = load_samples_point(filenames[r//2], variable, i//2, j//2, k//2)
                             distances = ot.dist(d1[:,j,k,:], d2[:,j//factor,k//factor,:], metric='euclidean')
-                            emd_pairing = ot.emd(weights_a, weights_b, distances)
+                            
+                            emd_pairing = wasserstein_inner_compute(weights_a, weights_b, distances)
                             wasserstein_distance = np.sum(emd_pairing * distances)
                             wasserstein_error += wasserstein_distance
             wasserstein_error /= max_resolution**3
