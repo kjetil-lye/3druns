@@ -246,7 +246,7 @@ def progress(part, total):
             pass
     
 @timeit
-def wasserstein_inner_compute(weights_a, weights_b, distances)
+def wasserstein_inner_compute(weights_a, weights_b, distances):
     return ot.emd(weights_a, weights_b, distances)
     
 @timeit
