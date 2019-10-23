@@ -5,7 +5,7 @@ import mpi4py
 from mpi4py import MPI
 import netCDF4
 import ot
-
+import numpy as np
 from compressible_euler import conserved_variables
 
 # We are not going to plot, but we will save data
@@ -50,8 +50,8 @@ def get_node_z_y_ranges(multi_y, multi_z, resolution):
     
     size = get_global_size()
     
-    rank_z = size // multi_y
-    rank_y = size % multi_y
+    rank_z = rank // multi_y
+    rank_y = rank % multi_y
     
     number_of_lines_per_node = resolution // multi_y
     number_of_planes_per_node = resolution // multi_z
@@ -61,7 +61,6 @@ def get_node_z_y_ranges(multi_y, multi_z, resolution):
     
     start_z = rank_z * number_of_planes_per_node    
     end_z = (rank_z  + 1) * number_of_planes_per_node
-    
 
     return start_y, end_y, start_z, end_z
 
@@ -102,7 +101,7 @@ def compute_wasserstein_one_point(file_a, file_b, multi_y, multi_z):
     for z in range(start_z, end_z):
         for y in range(start_y, end_y):
             for x in range(resolution):
-                distances = ot.dist(data_a[:,z//factor, y//factor,x//factor:],
+                distances = ot.dist(data_a[:,z//factor, y//factor,x//factor,:],
                                     data_b[:,z, y, x,:], metric='euclidean')
                             
                 emd_pairing = wasserstein_inner_compute(weights_a, weights_b, distances)
