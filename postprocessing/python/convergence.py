@@ -8,9 +8,45 @@ import netCDF4
 import scipy
 import scipy.stats
 import ot
+import collections
+import atexit
+import json
+import sys
+import time
 
+        
+
+# We want to time some functions
+# inspired by https://medium.com/pythonhive/python-decorator-to-measure-the-execution-time-of-methods-fa04cb6bb36d
+def timeit(method):
+    def timed(*args, **kwargs):
+        start_time= time.time()
+        result = method(*args, **kwargs)
+        end_time = time.time()
+        
+        timeit.timings[method.__name__] += end_time - start_time
+        
+        return result
+    return timed
+
+timeit.timings = collections.defaultdict(lambda : 0)
+
+def write_timings_output():
+    outputname = f'{sys.argv[0]}.timings.json'
+    
+    with open(outputname, 'w') as f:
+        json.dump(timeit.timings, f, indent=4)
+
+# see https://docs.python.org/3.7/library/atexit.html
+@atexit.register
+def print_timings():
+    print(json.dumps({"timings" : timeit.timings}, indent=4))
+  
+
+    
 from compressible_euler import latex_variables, conserved_variables
 
+@timeit
 def load(filename, variable):
     with netCDF4.Dataset(filename) as f:
         for attr in f.ncattrs():
@@ -167,6 +203,7 @@ def get_number_of_samples(filename, variable):
 
     return samples
 
+@timeit
 def load_samples_point(filename, variable, i, j, k):
     samples = []
 
@@ -177,18 +214,23 @@ def load_samples_point(filename, variable, i, j, k):
                 samples.append(f.variables[key][i,j,k])
     return np.array(samples)
 
-def load_plane(filename, variable, k, number_of_samples):
-    samples = []
+
+@timeit
+def load_plane(filename, k, number_of_samples, variables):
+    
     with netCDF4.Dataset(filename) as f:
         for attr in f.ncattrs():
             plot_info.add_additional_plot_parameters(filename.replace("/", "_") + "_" + attr, f.getncattr(attr))
-        for key in f.variables.keys():
-            if len(samples) == number_of_samples:
-                break
-            if variable in key:
-
-                samples.append(f.variables[key][k,:,:])
-    return np.array(samples)
+        resolution = f.variables['sample_0_rho'].shape[0]
+        
+        samples = np.zeros((number_of_samples, resolution, resolution, len(variables)))
+        for variable_index, variable in enumerate(variables):
+            for sample in range(number_of_samples):
+                key = f'sample_{sample}_{variable}'
+                
+                samples[sample,:,:,variable_index] = f.variables[key][k,:,:]
+                
+    return samples
 
 
 def progress(part, total):
@@ -203,8 +245,12 @@ def progress(part, total):
         except:
             pass
     
-
-def wasserstein_1pt(filenames, title):
+@timeit
+def wasserstein_inner_compute(weights_a, weights_b, distances)
+    return ot.emd(weights_a, weights_b, distances)
+    
+@timeit
+def wasserstein_1pt(filenames, title, reference_solution=False):
     # don't judge me for the next line
     resolutions = np.array(sorted(list([k for k in filenames.keys()])))
 
@@ -212,58 +258,108 @@ def wasserstein_1pt(filenames, title):
     
     number_of_variables = len(conserved_variables)
     
-    for r in resolutions[1:]:
-        weights_a = np.ones(r) / r
-        weights_b = np.ones(r) / r
-
-        wasserstein_error = 0.0
-
-        for i in range(r):
-            progress(i, r)
-            d1 = np.zeros((r, r, r, number_of_variables))
-            d2 = np.zeros((r, r//2, r//2, number_of_variables))
+    if reference_solution:
+        for r in resolutions[:-1]:
+            max_resolution = resolutions[-1]
+            weights_a = np.ones(max_resolution) / max_resolution
+            weights_b = np.ones(max_resolution) / max_resolution
+    
+            wasserstein_error = 0.0
+    
+            for coarse_plane in range(r):
+                d2 = load_plane(filenames[r], coarse_plane, max_resolution, conserved_variables)
+                factor = max_resolution // r
+                for fine_plane_local_index in range(factor):
+                    fine_plane = coarse_plane * factor + fine_plane_local_index
+                    
+                    d1 = load_plane(filenames[max_resolution], fine_plane, max_resolution, conserved_variables)
             
-            for n, variable in enumerate(conserved_variables):
-                d1[:,:,:,n] = load_plane(filenames[r], variable, i, r)
-                d2[:,:,:,n] = load_plane(filenames[r//2], variable, i//2, r)
-            for j in range(r):
-                for k in range(r):
-
-#                    d1 = load_samples_point(filenames[r], variable, i, j, k)
-#                    d2 = load_samples_point(filenames[r//2], variable, i//2, j//2, k//2)
-                    distances = ot.dist(d1[:,j,k,:], d2[:,j//2,k//2,:], metric='euclidean')
-                    emd_pairing = ot.emd(weights_a, weights_b, distances)
-                    wasserstein_distance = np.sum(emd_pairing * distances)
-                    wasserstein_error += wasserstein_distance
-        wasserstein_error /= r**3
-
-        errors.append(wasserstein_error)
-        print()
-        console_log("")
-        console_log("Done with {}".format(r))
-    plt.loglog(resolutions[1:], errors, '-o', basex=2, basey=2)
+                    for j in range(max_resolution):
+                        for k in range(max_resolution):
+        
+        #                    d1 = load_samples_point(filenames[r], variable, i, j, k)
+        #                    d2 = load_samples_point(filenames[r//2], variable, i//2, j//2, k//2)
+                            distances = ot.dist(d1[:,j,k,:], d2[:,j//factor,k//factor,:], metric='euclidean')
+                            
+                            emd_pairing = wasserstein_inner_compute(weights_a, weights_b, distances)
+                            wasserstein_distance = np.sum(emd_pairing * distances)
+                            wasserstein_error += wasserstein_distance
+            wasserstein_error /= max_resolution**3
+    
+            errors.append(wasserstein_error)
+            print()
+            console_log("")
+            console_log("Done with {}".format(r))
+            
+            
+            plt.loglog(resolutions[:-1], errors, '-o', basex=2, basey=2)
+        
+    else:
+        for r in resolutions[1:]:
+            weights_a = np.ones(r) / r
+            weights_b = np.ones(r) / r
+    
+            wasserstein_error = 0.0
+    
+            for i in range(r):
+                progress(i, r)
+                
+                d1 = load_plane(filenames[r], i, r, conserved_variables)
+                d2 = load_plane(filenames[r//2], i//2, r, conserved_variables)
+                for j in range(r):
+                    for k in range(r):
+    
+    #                    d1 = load_samples_point(filenames[r], variable, i, j, k)
+    #                    d2 = load_samples_point(filenames[r//2], variable, i//2, j//2, k//2)
+                        distances = ot.dist(d1[:,j,k,:], d2[:,j//2,k//2,:], metric='euclidean')
+                        emd_pairing = ot.emd(weights_a, weights_b, distances)
+                        wasserstein_distance = np.sum(emd_pairing * distances)
+                        wasserstein_error += wasserstein_distance
+            wasserstein_error /= r**3
+    
+            errors.append(wasserstein_error)
+            print()
+            console_log("")
+            console_log("Done with {}".format(r))
+            
+    
+        plt.loglog(resolutions[1:], errors, '-o', basex=2, basey=2)
     plt.xlabel("Resolution ($N^3$)")
     
     plt.xticks(resolutions[1:], ["${}^{{3}}$".format(r) for r in resolutions[1:]])
     
-    saveData(f"wasserstein_1pt_{title}_all_errors", errors)
-    saveData(f"wasserstein_1pt_{title}_all_resolutions", resolutions)
-    plt.ylabel("Error ($\\lVert W_1(\\nu^{1,N}, \\nu^{1,2 N })\\rVert_{L^1(D)}$")
+    filename_append = ''
+    
+    if reference_solution:
+        filename_append = '_reference'
+    
+    saveData(f"wasserstein_1pt{filename_append}_{title}_all_errors", errors)
+    saveData(f"wasserstein_1pt{filename_append}_{title}_all_resolutions", resolutions)
+    
+    if reference_solution:
+        plt.ylabel(f"Error ($\\lVert W_1(\\nu^{{1,N}}, \\nu^{{1,{max_resolution}}})\\rVert_{{L^1(D)}}$")
+    else:
+        plt.ylabel("Error ($\\lVert W_1(\\nu^{1,N}, \\nu^{1,2 N })\\rVert_{L^1(D)}$")
+    
+    
     plt.title(f"One point $W_1$-convergence\n{title}")
 
         
         
 
 
-def plot_wasserstein_convergence(resolutions, basename, title):
+def plot_wasserstein_convergence(resolutions, basename, title, reference_solution=False):
     filenames = {}
 
     for r in resolutions:
         filenames[r] = basename.format(resolution=r)
     
-    wasserstein_1pt(filenames, title)
+    wasserstein_1pt(filenames, title, reference_solution)
     
-    showAndSave(f"wasserstein_1pt_{title}_all")
+    if reference_solution:
+        showAndSave(f"wasserstein_1pt_{title}_all_reference")
+    else:
+        showAndSave(f"wasserstein_1pt_{title}_all")
     
 
 
