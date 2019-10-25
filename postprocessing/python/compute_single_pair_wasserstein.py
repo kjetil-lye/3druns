@@ -98,8 +98,8 @@ def compute_wasserstein_one_point(file_a, file_b, multi_y, multi_z):
     weights_a = np.ones(resolution) / resolution
     weights_b = np.ones(resolution) / resolution
     
-    for z in range(start_z, end_z):
-        for y in range(start_y, end_y):
+    for z in range(end_z-start_z):
+        for y in range(end_y-start_y):
             for x in range(resolution):
                 distances = ot.dist(data_a[:,z//factor, y//factor,x//factor,:],
                                     data_b[:,z, y, x,:], metric='euclidean')
