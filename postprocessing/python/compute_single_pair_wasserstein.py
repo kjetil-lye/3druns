@@ -155,7 +155,7 @@ Computes the 1 pt wasserstein distance between two files
         raise Exception(f'multi_z must be power of 2, given {args.multi_z}')
         
     wasserstein = compute_wasserstein_one_point(args.file_a, args.file_b, args.multi_y, args.multi_z)
-    
+    comm = MPI.COMM_WORLD
     sum_distance = comm.reduce(distance, op=MPI.SUM)
     
     if get_rank_global() == 0:
