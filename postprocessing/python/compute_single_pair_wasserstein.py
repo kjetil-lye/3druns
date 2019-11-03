@@ -159,5 +159,5 @@ Computes the 1 pt wasserstein distance between two files
     sum_distance = comm.reduce(wasserstein, op=MPI.SUM)
     
     if get_rank_global() == 0:
-        plot_info.saveData(args.outfile, np.array(sum_distance).reshaoe(1))
+        plot_info.saveData(args.outfile, np.array(sum_distance).reshape(1))
     
