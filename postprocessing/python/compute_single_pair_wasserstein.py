@@ -78,31 +78,35 @@ def compute_wasserstein_one_point(file_a, file_b, multi_y, multi_z):
     
     start_y, end_y, start_z, end_z = get_node_z_y_ranges(multi_y, multi_z, resolution)
     
-    data_a = load_plane_line(file_a,
-                             start_y // factor, 
-                             end_y // factor,
-                             start_z // factor,
-                             end_z // factor,
-                             resolution, 
-                             conserved_variables)
     
-    data_b = load_plane_line(file_b,
-                             start_y, 
-                             end_y,
-                             start_z,
-                             end_z,
-                             resolution, 
-                             conserved_variables)
+    
+    
     
     wasserstein_distance_sum = 0.0
     weights_a = np.ones(resolution) / resolution
     weights_b = np.ones(resolution) / resolution
     
-    for z in range(end_z-start_z):
+    
+    for z in range(start_z, end_z):
+        data_a = load_plane_line(file_a,
+                             start_y // factor, 
+                             end_y // factor,
+                             z // factor,
+                             z // factor + 1,
+                             resolution, 
+                             conserved_variables)
+    
+        data_b = load_plane_line(file_b,
+                             start_y, 
+                             end_y,
+                             z,
+                             z + 1, 
+                             resolution, 
+                             conserved_variables)
         for y in range(end_y-start_y):
             for x in range(resolution):
-                distances = ot.dist(data_a[:,z//factor, y//factor,x//factor,:],
-                                    data_b[:,z, y, x,:], metric='euclidean')
+                distances = ot.dist(data_a[:,0, y//factor,x//factor,:],
+                                    data_b[:,0, y, x,:], metric='euclidean')
                             
                 emd_pairing = wasserstein_inner_compute(weights_a, weights_b, distances)
                 wasserstein_distance = np.sum(emd_pairing * distances)
