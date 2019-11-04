@@ -6,6 +6,8 @@ from mpi4py import MPI
 import netCDF4
 import ot
 import numpy as np
+import copy
+
 from compressible_euler import conserved_variables
 
 # We are not going to plot, but we will save data
@@ -94,25 +96,25 @@ def compute_wasserstein_two_points(file_a, file_b, number_of_points_per_directio
     # We do not want to fetch more than 1024 points per direction
     batch_size = 1024
 
-    number_of_batches = (len(points) + batch_size - 1) / batch_size
+    number_of_batches = (len(points) + batch_size - 1) // batch_size
     
     wasserstein_distance_sum = 0.0
     weights_a = np.ones(resolution) / resolution
     weights_b = np.ones(resolution) / resolution
     
     
-    for batch in range(number_of_bathces):
+    for batch in range(number_of_batches):
         points_in_batch = points[batch * batch_size : (batch+1)*batch_size]
         points_in_batch_downscaled = list(map(lambda point : np.array(point) // factor, points_in_batch))
-        data_a = load_plane_line(file_a,
-                                 points_in_batch_downscaled,
-                                 resolution, 
-                                 conserved_variables)
+        data_a = load_points(file_a,
+                             points_in_batch_downscaled,
+                             resolution, 
+                             conserved_variables)
     
-        data_b = load_plane_line(file_b,
-                                 points_in_batch,
-                                 resolution, 
-                                 conserved_variables)
+        data_b = load_points(file_b,
+                             points_in_batch,
+                             resolution, 
+                             conserved_variables)
         for point_index in range(len(points_in_batch)):
             
             distances = ot.dist(data_a[:,point_index,:],
