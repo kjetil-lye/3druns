@@ -124,7 +124,7 @@ def compute_wasserstein_two_points(file_a, file_b, number_of_points_per_directio
             wasserstein_distance = np.sum(emd_pairing * distances)
             wasserstein_distance_sum += wasserstein_distance
 
-    return wasserstein_distance_sum / resolution**6
+    return wasserstein_distance_sum / number_of_points_per_direction
     
 def is_power_of_two(n):
     """ see https://stackoverflow.com/a/57027610 """
