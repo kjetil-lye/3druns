@@ -28,7 +28,7 @@ done
 for statistics in "single_sample" "mean" "variance";
 do
     total=1     
-    bsub -n $total -W 24:00 -N -B -R 'rusage[mem=1000]' python ../python/compute_convergence.py --input_basename $SCRATCH/rm/N{resolution}/rm_cuda_0.nc --statistics_name ${statistics} \
+    bsub -n $total -W 24:00 -N -B -R 'rusage[mem=1000]' python ../python/compute_convergence.py --input_basename $SCRATCH/rm/N{resolution}/rm_cuda_0.nc --statistic_name ${statistics} \
 	--title "Richtmeyer-Meshkov $\\epsilon=0.1$" --reference
 done
 
