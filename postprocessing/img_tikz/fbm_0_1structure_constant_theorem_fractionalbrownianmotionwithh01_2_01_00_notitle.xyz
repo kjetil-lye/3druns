@@ -3,7 +3,6 @@
 
 \definecolor{color0}{rgb}{0.12156862745098,0.466666666666667,0.705882352941177}
 \definecolor{color1}{rgb}{1,0.498039215686275,0.0549019607843137}
-\definecolor{color2}{rgb}{0.172549019607843,0.627450980392157,0.172549019607843}
 
 \begin{axis}[
 height=\figureheight,
@@ -36,16 +35,8 @@ table {%
 256 1
 512 1
 };
-\addlegendentry{$s=1$}
-\addplot [semithick, color1, mark=*, mark size=3, mark options={solid}]
-table {%
-64 1
-128 1
-256 1
-512 1
-};
 \addlegendentry{$s=2$}
-\addplot [semithick, color2, mark=*, mark size=3, mark options={solid}]
+\addplot [semithick, color1, mark=*, mark size=3, mark options={solid}]
 table {%
 64 1
 128 1
@@ -60,7 +51,7 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 33a07656dabd1d82f45586c46cffc58b30504882
+Commit: 9ada7087315431b9b4a4acfc796324d34f64b6df
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: lyelaptop};
 \node at (axis cs:0.2,0.93)[
@@ -68,7 +59,7 @@ Hostname: lyelaptop};
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@33a07};
+]{@9ada};
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -76,7 +67,7 @@ Hostname: lyelaptop};
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 33a07656dabd1d82f45586c46cffc58b30504882
+Commit: 9ada7087315431b9b4a4acfc796324d34f64b6df
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: lyelaptop};
 \end{axis}
@@ -90,14 +81,14 @@ Hostname: lyelaptop};
 %% script name: structure_postprocess.ipynb
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : 33a07656dabd1d82f45586c46cffc58b30504882
+%% GIT git_commit : 9ada7087315431b9b4a4acfc796324d34f64b6df
 %% GIT git_repo_modified : True
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : 33a07
+%% GIT git_short_commit : 9ada
 %% working_directory : /home/kjetil/projects/3druns/postprocessing/notebooks
 %% hostname : lyelaptop
-%% generated_on_date : 2019-11-15 18:15:37.642601
+%% generated_on_date : 2019-11-16 12:08:53.320965
 %% accessed_environment:
 %% additional_parameters:
 %%    commandrun=/usr/bin/python3 /usr/lib/python3.7/site-packages/ipykernel_launcher.py -f /home/kjetil/.local/share/jupyter/runtime/kernel-a75667d5-e641-4d3a-a185-6ea66ab0b0d2.json
@@ -1210,9 +1201,9 @@ Hostname: lyelaptop};
 %%     [function: savePlot, line: 304, file: ../python/plot_info.py]
 %%     [function: savePlot, line: 326, file: ../python/plot_info.py]
 %%     [function: showAndSave, line: 338, file: ../python/plot_info.py]
-%%     [function: convergence_structure_functions, line: 119, file: <ipython-input-4-b37b17713a6a>]
+%%     [function: convergence_structure_functions, line: 121, file: <ipython-input-4-ce2c67272219>]
 %%     [function: for_each_config, line: 36, file: <ipython-input-1-3676195326ac>]
-%%     [function: <module>, line: 123, file: <ipython-input-4-b37b17713a6a>]
+%%     [function: <module>, line: 125, file: <ipython-input-4-ce2c67272219>]
 %%     [function: run_code, line: 3326, file: /usr/lib/python3.7/site-packages/IPython/core/interactiveshell.py]
 %%     [function: run_ast_nodes, line: 3249, file: /usr/lib/python3.7/site-packages/IPython/core/interactiveshell.py]
 %%     [function: run_cell_async, line: 3058, file: /usr/lib/python3.7/site-packages/IPython/core/interactiveshell.py]
