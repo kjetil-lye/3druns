@@ -84,7 +84,7 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: ad15ca6b6b7d45b478fbb3eb5b0a55507a0884f6
+Commit: 4e5b534089f475688c7919ea9aa882477bfd8086
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: galerkin};
 \node at (axis cs:0.2,0.93)[
@@ -92,7 +92,7 @@ Hostname: galerkin};
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@ad15c};
+]{@4e5b};
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -100,7 +100,7 @@ Hostname: galerkin};
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: ad15ca6b6b7d45b478fbb3eb5b0a55507a0884f6
+Commit: 4e5b534089f475688c7919ea9aa882477bfd8086
 Repo: git@github.com:kjetil-lye/3druns.git
 Hostname: galerkin};
 \end{axis}
@@ -114,17 +114,17 @@ Hostname: galerkin};
 %% script name: structure_postprocess.ipynb
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : ad15ca6b6b7d45b478fbb3eb5b0a55507a0884f6
-%% GIT git_repo_modified : True
+%% GIT git_commit : 4e5b534089f475688c7919ea9aa882477bfd8086
+%% GIT git_repo_modified : False
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/3druns.git
-%% GIT git_short_commit : ad15c
+%% GIT git_short_commit : 4e5b
 %% working_directory : /home/kjetil/projects/3druns/postprocessing/notebooks
 %% hostname : galerkin
-%% generated_on_date : 2019-11-18 13:27:06.552923
+%% generated_on_date : 2019-11-18 16:44:34.930998
 %% accessed_environment:
 %% additional_parameters:
-%%    commandrun=/usr/bin/python3 /usr/lib/python3.7/site-packages/ipykernel_launcher.py -f /home/kjetil/.local/share/jupyter/runtime/kernel-46bdb1dc-1f98-4150-9dc1-21be0ab95b52.json
+%%    commandrun=/usr/bin/python3 /usr/lib/python3.7/site-packages/ipykernel_launcher.py -f /home/kjetil/.local/share/jupyter/runtime/kernel-d6dc60c9-fcc6-4da9-b432-c2686e61b5d8.json
 %% python_version: 
 %%    /usr/bin/python3 (Version: 3.7.4 (default, Oct  4 2019, 06:57:26) 
 %%    [GCC 9.2.0])
@@ -1235,9 +1235,9 @@ Hostname: galerkin};
 %%     [function: savePlot, line: 304, file: ../python/plot_info.py]
 %%     [function: savePlot, line: 326, file: ../python/plot_info.py]
 %%     [function: showAndSave, line: 338, file: ../python/plot_info.py]
-%%     [function: convergence_structure_functions, line: 89, file: <ipython-input-5-d76f72379cda>]
+%%     [function: convergence_structure_functions, line: 89, file: <ipython-input-4-9a8d8f2b778e>]
 %%     [function: for_each_config, line: 37, file: <ipython-input-1-45c60f402429>]
-%%     [function: <module>, line: 127, file: <ipython-input-5-d76f72379cda>]
+%%     [function: <module>, line: 127, file: <ipython-input-4-9a8d8f2b778e>]
 %%     [function: run_code, line: 3326, file: /usr/lib/python3.7/site-packages/IPython/core/interactiveshell.py]
 %%     [function: run_ast_nodes, line: 3249, file: /usr/lib/python3.7/site-packages/IPython/core/interactiveshell.py]
 %%     [function: run_cell_async, line: 3058, file: /usr/lib/python3.7/site-packages/IPython/core/interactiveshell.py]
@@ -1252,6 +1252,10 @@ Hostname: galerkin};
 %%     [function: dispatch_shell, line: 268, file: /usr/lib/python3.7/site-packages/ipykernel/kernelbase.py]
 %%     [function: wrapper, line: 209, file: /usr/lib/python3.7/site-packages/tornado/gen.py]
 %%     [function: process_one, line: 361, file: /usr/lib/python3.7/site-packages/ipykernel/kernelbase.py]
+%%     [function: run, line: 748, file: /usr/lib/python3.7/site-packages/tornado/gen.py]
+%%     [function: __init__, line: 714, file: /usr/lib/python3.7/site-packages/tornado/gen.py]
+%%     [function: wrapper, line: 225, file: /usr/lib/python3.7/site-packages/tornado/gen.py]
+%%     [function: dispatch_queue, line: 377, file: /usr/lib/python3.7/site-packages/ipykernel/kernelbase.py]
 %%     [function: run, line: 748, file: /usr/lib/python3.7/site-packages/tornado/gen.py]
 %%     [function: inner, line: 787, file: /usr/lib/python3.7/site-packages/tornado/gen.py]
 %%     [function: _run_callback, line: 743, file: /usr/lib/python3.7/site-packages/tornado/ioloop.py]
