@@ -29,9 +29,9 @@ def init_global(rho, ux, uy, uz, p, nx, ny, nz, ax, ay, az, bx, by, bz):
     if abs(normalization2) < 1e-8:
         normalization2 = N
 
-    perturbation = epsilon * sum([a1[n] * cos(Phi+2*pi*b1[n]) for n in range(N)], 0) / normalization1
+    perturbation = epsilon * sum([a1[n] * cos((n+1)*(Phi+2*pi*b1[n])) for n in range(N)], 0) / normalization1
     
-    perturbation += epsilon * sum([a2[n] * cos(Theta+2*pi*b2[n]) for n in range(N)], 0) / normalization2
+    perturbation += epsilon * sum([a2[n] * cos((n+1)*(Theta+2*pi*b2[n])) for n in range(N)], 0) / normalization2
 
     inner_01 = (R < 0.1)
 
